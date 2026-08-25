@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standards Tracker, EcoLedger</title>
+<meta name="description" content="A free, continuously verified tracker of every major change to corporate emissions accounting and disclosure standards, GHG Protocol, ISO, SBTi, ISSB, EU, US, UK and seven more jurisdictions. Every entry linked to the regulator's own publication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
+<style>
+/* ==========================================================================
+   EcoLedger Standards Tracker
+   Palette from theecoledger.com. Categorical series validated light + dark.
+   ========================================================================== */
+:root{
+  --navy:#0A1628; --navy-2:#162340; --navy-3:#1E3350;
+  --ink:#0E1116; --ink-2:#2A313A; --mute:#5B6470; --mute-2:#8A929B; --mute-3:#B4BCC4;
+  --accent:#4E9D8F; --accent-lt:#6DB8AC; --accent-dk:#1A6B5E; --tint:#EAF3F0;
+  --paper:#FFFFFF; --ground:#FFFFFF; --sunk:#F6F8F9; --rail:#FAFBFB;
+  --rule:#E4E8EB; --rule-2:#CFD6DC; --rule-3:#F0F3F5;
+  --amber:#8A6510; --amber-bg:#FCF5E6; --amber-line:#EBD9AE;
+  --rust:#9E3B2C; --rust-bg:#FCEDEA; --rust-line:#F0CCC3;
+  --info:#2C5F8F; --info-bg:#EAF1F8;
+  --shadow:0 1px 2px rgba(10,22,40,.035);
+  /* categorical series, fixed order: ghgp, iso, sbti, issb, eu, us, uk */
+  --s-ghgp:#2a78d6; --s-iso:#eb6834; --s-sbti:#1baf7a; --s-issb:#eda100;
+  --s-eu:#e87ba4; --s-us:#008300; --s-uk:#4a3aa7; --s-other:#64748B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --navy:#060D18; --navy-2:#0E1728; --navy-3:#16243A;
+    --ink:#E9EDF0; --ink-2:#C7CED5; --mute:#98A2AC; --mute-2:#78838E; --mute-3:#4F5963;
+    --accent:#5EB5A5; --accent-lt:#7FCBBC; --accent-dk:#8FD4C6; --tint:#12291F;
+    --paper:#111820; --ground:#0B1118; --sunk:#161E27; --rail:#0E151D;
+    --rule:#222C38; --rule-2:#2E3A47; --rule-3:#19212B;
+    --amber:#D6A24E; --amber-bg:#2A2213; --amber-line:#4A3C1E;
+    --rust:#D4796A; --rust-bg:#2C1A16; --rust-line:#4A2A22;
+    --info:#7BA8D0; --info-bg:#152230;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+    --s-ghgp:#3987e5; --s-iso:#d95926; --s-sbti:#199e70; --s-issb:#c98500;
+    --s-eu:#d55181; --s-us:#008300; --s-uk:#9085e9; --s-other:#94A3B8;
+  }
+}
+:root[data-theme="dark"]{
+  --navy:#060D18; --navy-2:#0E1728; --navy-3:#16243A;
+  --ink:#E9EDF0; --ink-2:#C7CED5; --mute:#98A2AC; --mute-2:#78838E; --mute-3:#4F5963;
+  --accent:#5EB5A5; --accent-lt:#7FCBBC; --accent-dk:#8FD4C6; --tint:#12291F;
+  --paper:#111820; --ground:#0B1118; --sunk:#161E27; --rail:#0E151D;
+  --rule:#222C38; --rule-2:#2E3A47; --rule-3:#19212B;
+  --amber:#D6A24E; --amber-bg:#2A2213; --amber-line:#4A3C1E;
+  --rust:#D4796A; --rust-bg:#2C1A16; --rust-line:#4A2A22;
+  --info:#7BA8D0; --info-bg:#152230;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+  --s-ghgp:#3987e5; --s-iso:#d95926; --s-sbti:#199e70; --s-issb:#c98500;
+  --s-eu:#d55181; --s-us:#008300; --s-uk:#9085e9; --s-other:#94A3B8;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  font-weight:300;font-size:14.5px;line-height:1.58;letter-spacing:.008em;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:"Assistant",system-ui,sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1.1;}
+.mono,.lbl{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;}
+.lbl{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;}
+a{color:var(--accent-dk);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:2px;}
+abbr.gl{text-decoration:underline dotted var(--mute-3);text-underline-offset:3px;text-decoration-thickness:1px;cursor:help;}
+abbr.gl:hover{text-decoration-color:var(--accent);color:var(--accent-dk);}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+::selection{background:var(--tint);color:var(--accent-dk);}
+
+/* ---------------- top bar (bright) ---------------- */
+.top{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--rule);}
+.top-in{display:flex;align-items:center;gap:16px;padding:10px 18px;}
+.brand{display:flex;align-items:center;gap:9px;flex-shrink:0;width:186px;}
+.brand svg{width:28px;height:28px;flex-shrink:0;border-radius:6px;}
+.brand b{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.16em;
+  color:var(--ink);text-transform:uppercase;display:block;line-height:1.2;}
+.brand i{font-family:"IBM Plex Mono",monospace;font-size:8px;font-style:normal;letter-spacing:.15em;
+  color:var(--mute-2);text-transform:uppercase;display:block;margin-top:1px;}
+
+/* framework key, the colour legend running across the top, and the filter */
+.key{display:flex;align-items:center;gap:3px;flex-wrap:wrap;flex:1;min-width:0;}
+.key .kt{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--mute-2);margin-right:4px;}
+.kb{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border-radius:4px;border:1px solid transparent;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--mute);transition:.12s;white-space:nowrap;}
+.kb i{width:8px;height:8px;border-radius:2px;background:var(--sc);flex-shrink:0;}
+.kb .kc{color:var(--mute-3);font-size:9px;}
+.kb:hover{background:var(--sunk);color:var(--ink);}
+.kb.on{background:var(--sunk);border-color:var(--rule-2);color:var(--ink);}
+.kb.off{opacity:.36;}
+.kb.clear{color:var(--accent-dk);}
+
+.srch{position:relative;flex-shrink:0;}
+.srch input{width:236px;padding:6px 10px 6px 27px;font-family:inherit;font-size:12.5px;font-weight:400;
+  color:var(--ink);background:var(--sunk);border:1px solid var(--rule);border-radius:4px;}
+.srch input::placeholder{color:var(--mute-2);}
+.srch input:focus{outline:none;background:var(--paper);border-color:var(--accent);}
+.srch svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:12px;height:12px;stroke:var(--mute-2);fill:none;stroke-width:1.8;}
+.sres{position:absolute;top:calc(100% + 5px);right:0;width:min(500px,86vw);max-height:66vh;overflow-y:auto;
+  background:var(--paper);border:1px solid var(--rule-2);border-radius:5px;box-shadow:0 14px 40px rgba(10,22,40,.16);display:none;z-index:70;}
+.sres.on{display:block;}
+.sres button{display:block;width:100%;text-align:left;padding:9px 13px;border-top:1px solid var(--rule-3);}
+.sres button:first-child{border-top:none;}
+.sres button:hover{background:var(--sunk);}
+.sres .t{font-size:13px;font-weight:500;color:var(--ink);line-height:1.35;}
+.sres .m{font-size:9.5px;color:var(--mute-2);margin-top:2px;font-family:"IBM Plex Mono",monospace;}
+.sres .none{padding:14px;font-size:13px;color:var(--mute);}
+
+.stamp{display:flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mute);flex-shrink:0;white-space:nowrap;}
+.stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--tint);}
+
+/* ---------------- shell ---------------- */
+.shell{display:flex;align-items:stretch;min-height:calc(100vh - 47px);}
+.side{width:186px;flex-shrink:0;background:var(--rail);border-right:1px solid var(--rule);
+  position:sticky;top:47px;height:calc(100vh - 47px);overflow-y:auto;padding:12px 0 20px;}
+.side nav{display:flex;flex-direction:column;padding:0 8px;}
+.side nav button{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 10px;border-radius:5px;
+  font-size:13px;font-weight:400;color:var(--mute);text-align:left;position:relative;}
+.side nav button:hover{background:var(--sunk);color:var(--ink);}
+.side nav button.on{background:var(--paper);color:var(--ink);font-weight:500;box-shadow:inset 2px 0 0 var(--accent),var(--shadow);}
+.side nav button .n{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--mute-2);}
+.side nav button.on .n{color:var(--accent-dk);}
+.side-sec{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--mute-2);padding:15px 18px 6px;margin-top:7px;border-top:1px solid var(--rule);}
+.scope-sum{padding:0 16px;}
+.scope-sum .row{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--rule-3);}
+.scope-sum .row span:first-child{color:var(--mute-2);font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px;}
+.scope-sum .row b{font-weight:500;color:var(--ink);text-align:right;}
+.scope-sum .none{font-size:12px;color:var(--mute-2);line-height:1.5;}
+.scope-sum button{font-size:11.5px;color:var(--accent-dk);margin-top:9px;text-decoration:underline;text-underline-offset:2px;}
+
+.main{flex:1;min-width:0;padding:20px 22px 70px;max-width:1420px;}
+.view{display:none;} .view.on{display:block;}
+.vhead{margin-bottom:16px;}
+.vhead .lbl{color:var(--accent-dk);display:block;margin-bottom:5px;}
+.vhead h2{font-size:clamp(22px,2.6vw,29px);margin-bottom:6px;}
+.vhead p{font-size:14.5px;color:var(--mute);max-width:76ch;}
+.vhead p.lead{max-width:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media (max-width:1180px){.vhead p.lead{white-space:normal;}}
+
+/* ---------------- scoper strip (compact) ---------------- */
+.strip{border:1px solid var(--rule);border-radius:5px;background:var(--paper);margin-bottom:16px;box-shadow:var(--shadow);}
+.strip-in{display:flex;gap:20px;flex-wrap:wrap;padding:11px 14px;align-items:flex-start;}
+.fld{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+.fld > .lbl{color:var(--mute-2);padding-top:4px;white-space:nowrap;}
+.opts{display:flex;flex-wrap:wrap;gap:4px;}
+.opt{font-size:11.5px;font-weight:400;padding:3px 8px;border:1px solid var(--rule-2);border-radius:4px;color:var(--ink-2);}
+.opt:hover{border-color:var(--accent);}
+.opt.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500;}
+:root[data-theme="dark"] .opt.on,:root:not([data-theme="light"]) .opt.on{color:var(--navy);}
+.strip-ft{border-top:1px solid var(--rule-3);padding:7px 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  font-size:11.5px;color:var(--mute-2);background:var(--sunk);border-radius:0 0 5px 5px;}
+.strip-ft button{font-size:11.5px;color:var(--accent-dk);text-decoration:underline;text-underline-offset:2px;}
+
+/* ---------------- key dates rail ---------------- */
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:8px;margin-bottom:20px;}
+.dt{border:1px solid var(--rule);border-left:3px solid var(--sc,var(--accent));border-radius:4px;padding:9px 11px;background:var(--paper);}
+.dt .w{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--mute-2);display:block;}
+.dt .v{font-family:"Assistant",sans-serif;font-weight:600;font-size:16px;letter-spacing:-.03em;margin:2px 0 1px;}
+.dt .c{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:500;color:var(--accent-dk);}
+.dt .c.soon{color:var(--rust);}
+.dt p{font-size:11.5px;color:var(--mute);line-height:1.42;margin-top:5px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+
+/* ---------------- two-column dashboard ---------------- */
+.cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;margin-bottom:20px;align-items:start;}
+.panel{border:1px solid var(--rule);border-radius:5px;background:var(--paper);box-shadow:var(--shadow);overflow:hidden;}
+.panel-hd{display:flex;align-items:baseline;gap:10px;padding:10px 14px;border-bottom:1px solid var(--rule-3);flex-wrap:wrap;}
+.panel-hd h3{font-size:15px;}
+.panel-hd .lbl{color:var(--mute-2);margin-left:auto;}
+.panel-bd{padding:12px 14px;}
+.panel-bd.flush{padding:0;}
+
+/* verdict rows, compact, no scrolling */
+.vrow{display:grid;grid-template-columns:74px 1fr auto;gap:10px;padding:8px 14px;border-bottom:1px solid var(--rule-3);align-items:baseline;}
+.vrow:last-child{border-bottom:none;}
+.vrow:hover{background:var(--sunk);}
+.vrow .st{font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 5px;border-radius:3px;text-align:center;}
+.vrow.in .st{background:var(--rust-bg);color:var(--rust);}
+.vrow.likely .st{background:var(--amber-bg);color:var(--amber);}
+.vrow.indirect .st{background:var(--info-bg);color:var(--info);}
+.vrow.out .st{background:var(--sunk);color:var(--mute-2);}
+.vrow.out{opacity:.55;}
+.vrow .nm{font-size:13.5px;font-weight:500;color:var(--ink);}
+.vrow .ln{font-size:12px;color:var(--mute);line-height:1.45;margin-top:2px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.vrow .fw{width:8px;height:8px;border-radius:2px;background:var(--sc);flex-shrink:0;}
+
+/* ---------------- matrix ---------------- */
+.mx{width:100%;height:auto;display:block;}
+.mx text{font-family:"IBM Plex Sans",sans-serif;}
+.mx .q{fill:var(--mute-3);font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;}
+.mx .ax{fill:var(--mute-2);font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.11em;text-transform:uppercase;}
+.mx .pl{fill:var(--ink-2);font-size:10.5px;font-weight:400;}
+.mx .gl{stroke:var(--rule);stroke-width:1;}
+.mx .mid{stroke:var(--rule-2);stroke-width:1;stroke-dasharray:3 3;}
+.mx g.pt{cursor:help;}
+.mx g.pt:hover circle{stroke:var(--ink);stroke-width:2;}
+.mx g.pt.dim{opacity:.2;}
+
+/* ---------------- generic ---------------- */
+.chip{font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 7px;border-radius:3px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;}
+.c-confirmed{background:var(--tint);color:var(--accent-dk);}
+.c-high{background:var(--info-bg);color:var(--info);}
+.c-medium{background:var(--amber-bg);color:var(--amber);}
+.c-low{background:var(--sunk);color:var(--mute);}
+.c-lit{background:var(--rust-bg);color:var(--rust);}
+.c-stale{background:var(--amber-bg);color:var(--amber);}
+.c-neutral{background:var(--sunk);color:var(--mute);}
+.chip[data-tip]{cursor:help;}
+.chip i{width:7px;height:7px;border-radius:2px;background:var(--sc);}
+
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}
+.fcard{border:1px solid var(--rule);border-top:3px solid var(--sc);border-radius:4px;padding:10px 12px;background:var(--paper);text-align:left;width:100%;}
+.fcard:hover{border-color:var(--rule-2);background:var(--sunk);}
+.fcard h4{font-size:14px;margin-bottom:2px;}
+.fcard .o{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--mute-2);}
+.fcard p{font-size:11.5px;color:var(--mute);line-height:1.45;margin-top:6px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.fcard .m{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+
+/* workstream */
+.ws{border-top:1px solid var(--rule);padding:14px 0;}
+.ws:first-of-type{border-top:1.5px solid var(--ink);}
+.ws-top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:7px;}
+.ws-top h4{font-size:15.5px;flex:1;min-width:200px;}
+.ws-sum{font-size:13px;color:var(--mute);line-height:1.55;margin-bottom:9px;max-width:90ch;}
+.ws-meta{display:flex;gap:12px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:9px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--mute-2);margin-bottom:9px;}
+.ws-meta .v{color:var(--ink-2);}
+.kp{list-style:none;margin-bottom:9px;}
+.kp li{position:relative;padding-left:14px;font-size:12.5px;color:var(--ink-2);line-height:1.5;margin-bottom:4px;}
+.kp li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:1.5px;background:var(--accent);}
+.kp li.more{display:none;} .kp.exp li.more{display:block;}
+.sowhat{background:var(--tint);border-radius:4px;padding:9px 12px;font-size:12.5px;color:var(--accent-dk);margin-bottom:9px;}
+.sowhat b{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;display:block;margin-bottom:2px;opacity:.85;font-weight:600;}
+.srcs{display:flex;flex-direction:column;gap:3px;}
+.src{font-size:11.5px;padding:4px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--paper);
+  color:var(--accent-dk);display:inline-flex;gap:7px;align-items:baseline;max-width:100%;width:fit-content;font-weight:400;}
+.src:hover{border-color:var(--accent);background:var(--tint);text-decoration:none;}
+.src .h{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--mute-2);flex-shrink:0;}
+.src:hover .h{color:var(--accent-dk);}
+.src .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62ch;}
+.src .ar{margin-left:auto;padding-left:4px;flex-shrink:0;font-size:10px;opacity:.75;}
+.src:hover .ar{opacity:1;}
+.srcs-inline{display:flex;flex-wrap:wrap;gap:5px;}
+.srcs-inline .src{width:auto;}
+.step{display:flex;gap:2.5px;align-items:center;flex-wrap:wrap;margin-bottom:9px;}
+.step i{display:block;height:3px;width:22px;border-radius:2px;background:var(--rule-2);}
+.step i.done{background:var(--accent);}
+.step i.now{background:var(--accent);box-shadow:0 0 0 2px var(--tint);}
+.step em{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--mute-2);font-style:normal;margin-left:6px;}
+
+/* updates */
+.bucket{margin-bottom:24px;}
+.bucket-hd{display:flex;align-items:baseline;gap:10px;border-bottom:1.5px solid var(--ink);padding-bottom:7px;}
+.bucket-hd h3{font-size:16px;}
+.bucket-hd .lbl{color:var(--mute-2);}
+.upd{display:grid;grid-template-columns:92px 1fr 230px;gap:16px;padding:13px 0;border-bottom:1px solid var(--rule-3);align-items:start;}
+.upd .d{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--mute-2);padding-top:2px;}
+.upd .d b{display:block;color:var(--ink);font-weight:500;font-size:11px;}
+.upd h4{font-size:14.5px;margin-bottom:5px;}
+.upd .det{font-size:12.5px;color:var(--mute);line-height:1.55;}
+.upd .det li{margin-bottom:3px;list-style:none;position:relative;padding-left:13px;}
+.upd .det li::before{content:"";position:absolute;left:1px;top:8px;width:4px;height:1.5px;background:var(--mute-3);}
+.upd .sw{background:var(--sunk);border-left:2px solid var(--accent);border-radius:0 4px 4px 0;padding:9px 11px;font-size:12px;color:var(--ink-2);line-height:1.5;}
+.upd .sw b{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute-2);display:block;margin-bottom:3px;font-weight:600;}
+.upd .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;align-items:center;}
+.sig{display:inline-flex;gap:2px;align-items:flex-end;height:9px;}
+.sig i{width:3px;background:var(--rule-2);border-radius:1px;}
+.sig i:nth-child(1){height:3px;}.sig i:nth-child(2){height:6px;}.sig i:nth-child(3){height:9px;}
+.sig.high i{background:var(--rust);}.sig.medium i:nth-child(-n+2){background:var(--amber);}.sig.low i:nth-child(1){background:var(--mute-2);}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:5px;background:var(--paper);margin-bottom:16px;box-shadow:var(--shadow);}
+table{border-collapse:collapse;width:100%;min-width:740px;font-size:12.5px;}
+th{text-align:left;font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mute-2);padding:9px 13px;background:var(--sunk);border-bottom:1.5px solid var(--ink);white-space:nowrap;}
+td{padding:11px 13px;border-bottom:1px solid var(--rule-3);vertical-align:top;color:var(--mute);line-height:1.5;}
+tr:last-child td{border-bottom:none;}
+td strong{color:var(--ink);font-weight:500;}
+td.new{color:var(--ink-2);}
+tbody tr:hover{background:var(--sunk);}
+
+/* timeline */
+.tl-q{margin-bottom:20px;}
+.tl-q>h3{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mute-2);padding-bottom:6px;border-bottom:1px solid var(--rule);}
+.tl-q.now>h3{color:var(--rust);border-bottom-color:var(--rust);}
+.ms{display:grid;grid-template-columns:84px 12px 1fr auto;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule-3);align-items:start;}
+.ms .dd{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--mute-2);padding-top:2px;}
+.ms .pin{padding-top:5px;}
+.ms .pin i{display:block;width:8px;height:8px;border-radius:50%;background:var(--sc);margin:0 auto;}
+.ms.projected .pin i{background:transparent;border:1.5px solid var(--sc);}
+.ms.completed .pin i{background:var(--mute-3);}
+.ms .lb{font-size:13px;color:var(--ink-2);line-height:1.45;}
+.ms .lb .srcs{flex-direction:row;}
+.ms.completed .lb{color:var(--mute);}
+.ms .cd{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-2);white-space:nowrap;padding-top:2px;}
+.ms .cd.soon{color:var(--rust);font-weight:500;}
+
+/* toolbar */
+.tools{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+.btn{font-size:12px;font-weight:400;padding:6px 11px;border-radius:4px;border:1px solid var(--rule-2);background:var(--paper);
+  color:var(--ink-2);display:inline-flex;gap:6px;align-items:center;}
+.btn:hover{border-color:var(--accent);color:var(--accent-dk);}
+.btn.pri{background:var(--navy);border-color:var(--navy);color:#fff;}
+.btn.pri:hover{background:var(--navy-2);color:#fff;}
+.btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.7;}
+.tools .sp{flex:1;}
+.tools .cnt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute-2);}
+
+.ban{border-radius:4px;padding:11px 14px;margin-bottom:14px;font-size:12.5px;display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+.ban.amber{background:var(--amber-bg);border:1px solid var(--amber-line);color:var(--amber);}
+.ban.info{background:var(--info-bg);color:var(--info);}
+.ban .ic{font-family:"IBM Plex Mono",monospace;font-weight:600;}
+
+.prose{max-width:76ch;}
+.prose h3{font-size:17px;margin:22px 0 7px;}
+.prose h3:first-child{margin-top:0;}
+.prose p{font-size:13.5px;color:var(--mute);margin-bottom:10px;line-height:1.62;}
+.deflist{border-top:1px solid var(--rule);margin-bottom:14px;}
+.deflist div{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:9px 0;border-bottom:1px solid var(--rule-3);}
+.deflist dt{font-size:12.5px;font-weight:500;color:var(--ink);}
+.deflist dd{font-size:12.5px;color:var(--mute);line-height:1.5;}
+
+footer{border-top:1px solid var(--rule);margin-top:34px;padding:16px 0 0;font-size:11.5px;color:var(--mute-2);display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+footer .sp{flex:1;}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:var(--navy);color:#fff;
+  padding:10px 16px;border-radius:5px;font-size:12.5px;box-shadow:0 12px 30px rgba(0,0,0,.28);z-index:200;transition:transform .22s ease;max-width:90vw;}
+#toast.on{transform:translate(-50%,0);}
+#tip{position:fixed;z-index:210;background:var(--navy);color:#E6EDF3;font-size:12px;line-height:1.5;
+  padding:8px 11px;border-radius:4px;max-width:330px;box-shadow:0 10px 28px rgba(0,0,0,.26);display:none;pointer-events:none;font-weight:300;}
+.empty{padding:32px 16px;color:var(--mute-2);font-size:13px;}
+
+@media (max-width:1080px){.cols{grid-template-columns:1fr;}}
+@media (max-width:860px){
+  .shell{flex-direction:column;}
+  .side{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid var(--rule);padding:6px 0;}
+  .side nav{flex-direction:row;overflow-x:auto;gap:2px;}
+  .side nav button{white-space:nowrap;}
+  .side-sec,.scope-sum{display:none;}
+  .top{position:static;}
+  .brand{width:auto;}
+  .key{order:5;width:100%;overflow-x:auto;flex-wrap:nowrap;}
+  .srch input{width:100%;}
+  .srch{flex:1;}
+  .main{padding:14px 14px 60px;}
+  .upd{grid-template-columns:1fr;gap:9px;}
+  .upd .d{display:flex;gap:9px;align-items:baseline;}.upd .d b{display:inline;}
+  .ms{grid-template-columns:76px 12px 1fr;}.ms .cd{grid-column:3;padding-top:0;}
+  .vrow{grid-template-columns:66px 1fr;}
+  .deflist div{grid-template-columns:1fr;gap:2px;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+@media print{.top,.side,.tools,.strip,#toast{display:none!important;}.view{display:block!important;}body{background:#fff;}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="top-in">
+  <div class="brand" id="brand"></div>
+  <div class="key" id="key"></div>
+  <div class="srch">
+    <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6"/><path d="m10.6 10.6 3.2 3.2"/></svg>
+    <input id="q" type="search" placeholder="Search standards, deadlines, updates…" autocomplete="off" aria-label="Search">
+    <div class="sres" id="sres"></div>
+  </div>
+  <div class="stamp"><span class="dot"></span><span id="stamp">Loading…</span></div>
+</div></div>
+
+<div class="shell">
+  <aside class="side">
+    <nav id="nav"></nav>
+    <div class="side-sec" style="margin-top:0;border-top:none;padding-top:14px">Your scope</div>
+    <div class="scope-sum" id="scopesum"></div>
+  </aside>
+  <main class="main">
+    <div class="view on" id="v-overview"></div>
+    <div class="view" id="v-updates"></div>
+    <div class="view" id="v-frameworks"></div>
+    <div class="view" id="v-changes"></div>
+    <div class="view" id="v-jurisdictions"></div>
+    <div class="view" id="v-timeline"></div>
+    <div class="view" id="v-method"></div>
+    <footer>
+      <span>Free and open. Verified against primary sources, refreshed Mondays.</span>
+      <span class="sp"></span>
+      <a href="#" id="err-link">Report an error</a>
+      <span id="foot-stamp" class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase"></span>
+    </footer>
+  </main>
+</div>
+
+<div id="toast"></div><div id="tip"></div>
+
+<script>
+"use strict";
+/* ============================== CONFIG ============================== */
+const LOGO='<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="256" height="256" rx="54" fill="#0A1628"/><rect x="155.9" y="24.5" width="42.7" height="7" fill="#4F9D8F"/><rect x="113.3" y="67.1" width="42.6" height="7" fill="#7FA7C0"/><rect x="155.9" y="67.1" width="42.7" height="7" fill="#4F9D8F"/><rect x="70.7" y="109.8" width="42.6" height="7" fill="#F9FAFA"/><rect x="113.3" y="109.8" width="42.6" height="7" fill="#F9FAFA"/><rect x="70.7" y="152.5" width="42.6" height="7" fill="#F9FAFA"/><rect x="113.3" y="152.5" width="42.6" height="7" fill="#F9FAFA"/><rect x="152.4" y="28.0" width="7" height="42.6" fill="#4F9D8F"/><rect x="195.1" y="28.0" width="7" height="42.6" fill="#4F9D8F"/><rect x="109.8" y="70.7" width="7" height="42.6" fill="#7FA7C0"/><rect x="152.4" y="70.7" width="7" height="42.6" fill="#4F9D8F"/><rect x="67.1" y="113.3" width="7" height="42.6" fill="#F9FAFA"/><rect x="152.4" y="113.3" width="7" height="42.6" fill="#F9FAFA"/><circle cx="28.0" cy="28.0" r="11.5" fill="#47505F"/><circle cx="70.7" cy="28.0" r="11.5" fill="#47505F"/><circle cx="113.3" cy="28.0" r="11.5" fill="#47505F"/><circle cx="155.9" cy="28.0" r="11.5" fill="#4F9D8F"/><circle cx="198.6" cy="28.0" r="11.5" fill="#4F9D8F"/><circle cx="28.0" cy="70.7" r="11.5" fill="#47505F"/><circle cx="70.7" cy="70.7" r="11.5" fill="#47505F"/><circle cx="113.3" cy="70.7" r="11.5" fill="#7FA7C0"/><circle cx="155.9" cy="70.7" r="11.5" fill="#4F9D8F"/><circle cx="198.6" cy="70.7" r="11.5" fill="#4F9D8F"/><circle cx="28.0" cy="113.3" r="11.5" fill="#47505F"/><circle cx="70.7" cy="113.3" r="11.5" fill="#F9FAFA"/><circle cx="113.3" cy="113.3" r="11.5" fill="#F9FAFA"/><circle cx="155.9" cy="113.3" r="11.5" fill="#F9FAFA"/><circle cx="198.6" cy="113.3" r="11.5" fill="#47505F"/><circle cx="28.0" cy="155.9" r="11.5" fill="#47505F"/><circle cx="70.7" cy="155.9" r="11.5" fill="#F9FAFA"/><circle cx="113.3" cy="155.9" r="11.5" fill="#F9FAFA"/><circle cx="155.9" cy="155.9" r="11.5" fill="#F9FAFA"/><circle cx="198.6" cy="155.9" r="11.5" fill="#47505F"/><circle cx="28.0" cy="198.6" r="11.5" fill="#47505F"/><circle cx="70.7" cy="198.6" r="11.5" fill="#47505F"/><circle cx="113.3" cy="198.6" r="11.5" fill="#47505F"/><circle cx="155.9" cy="198.6" r="11.5" fill="#47505F"/><circle cx="198.6" cy="198.6" r="11.5" fill="#47505F"/></svg>';
+
+/* fixed categorical order, validated light + dark, adjacent pairlist */
+const FW={
+  ghgp:{n:"GHG Protocol",s:"GHGP",v:"--s-ghgp"}, iso:{n:"ISO",s:"ISO",v:"--s-iso"},
+  sbti:{n:"SBTi",s:"SBTi",v:"--s-sbti"}, issb:{n:"ISSB / IFRS",s:"ISSB",v:"--s-issb"},
+  eu:{n:"European Union",s:"EU",v:"--s-eu"}, us:{n:"United States",s:"US",v:"--s-us"},
+  uk:{n:"United Kingdom",s:"UK",v:"--s-uk"},
+  ca:{n:"Canada",s:"CA",v:"--s-other"}, au:{n:"Australia",s:"AU",v:"--s-other"},
+  sg:{n:"Singapore",s:"SG",v:"--s-other"}, hk:{n:"Hong Kong",s:"HK",v:"--s-other"},
+  jp:{n:"Japan",s:"JP",v:"--s-other"}, ae:{n:"UAE",s:"UAE",v:"--s-other"}, qa:{n:"Qatar",s:"QA",v:"--s-other"}
+};
+const KEY_ORDER=["ghgp","iso","sbti","issb","eu","us","uk"];
+const OTHER_JU=["ca","au","sg","hk","jp","ae","qa"];
+const PHASES=["scoping","drafting","consultation","draft","adopted-pending","legislation","final","implementation"];
+const PHASE_LABEL={scoping:"Scoping",drafting:"Drafting",consultation:"Consultation open",draft:"Draft published",
+ "adopted-pending":"Adopted, not in force",legislation:"In legislation",final:"Final",implementation:"In force",
+ litigation:"In litigation",rescinding:"Being rescinded"};
+const VIEWS=[["overview","Dashboard"],["updates","Updates"],["frameworks","Frameworks"],["changes","What's changing"],
+ ["jurisdictions","Jurisdictions"],["timeline","Deadlines"],["method","Method"]];
+const STALE_DAYS=45, TODAY=new Date("2026-08-25T00:00:00Z");
+let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""};
+
+/* ============================== UTIL ============================== */
+const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)];
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fwc=id=>"var("+((FW[id]||{}).v||"--s-other")+")";
+const fwn=id=>(FW[id]||{}).n||id, fws=id=>(FW[id]||{}).s||String(id||"").toUpperCase();
+function parseDate(s){const m=String(s||"").match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);return m?new Date(Date.UTC(+m[1],+m[2]-1,m[3]?+m[3]:1)):null;}
+const dayDiff=(a,b)=>Math.round((b-a)/864e5);
+function fmtDate(s){const d=parseDate(s);if(!d)return esc(s||"");
+  return d.toLocaleDateString("en-GB",String(s).length>7?{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"}:{month:"short",year:"numeric",timeZone:"UTC"});}
+function relTime(s){const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d),a=Math.abs(g);
+  if(a===0)return"today";let n;
+  if(a<14)n=a+(a===1?" day":" days");else if(a<60)n=Math.round(a/7)+" weeks";
+  else if(a<730)n=Math.round(a/30.44)+" months";else n=(a/365.25).toFixed(1).replace(/\.0$/,"")+" years";
+  return g>=0?"in "+n:n+" ago";}
+const isSoon=s=>{const d=parseDate(s);if(!d)return false;const g=dayDiff(TODAY,d);return g>=0&&g<=120;};
+const staleDays=s=>{const d=parseDate(s);return d?dayDiff(d,TODAY):999;};
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),3600);}
+const sentences=t=>String(t||"").split(/(?<=[.!?])\s+(?=[A-Z(“"])/).filter(x=>x.trim());
+function gloss(text,seen){
+  const src=esc(text);
+  const acr=(DATA&&DATA.acronyms)||{}, glo=(DATA&&DATA.glossary)||{};
+  const rx=x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  const hits=[];
+  Object.keys(acr).forEach(a=>{
+    if(!/^[A-Z][A-Za-z0-9 .&/-]{1,14}$/.test(a))return;
+    const re=new RegExp("(?<![\\w-])"+rx(esc(a))+"(?![\\w-])","g");
+    let m; while((m=re.exec(src))!==null){hits.push({s:m.index,e:m.index+m[0].length,key:a,kind:"a",txt:m[0]});
+      if(re.lastIndex===m.index)re.lastIndex++;}
+  });
+  Object.keys(glo).forEach(t=>{
+    if(acr[t]||t.length<6)return;
+    const re=new RegExp("(?<![\\w-])"+rx(esc(t))+"(?![\\w-])","gi");
+    let m; while((m=re.exec(src))!==null){hits.push({s:m.index,e:m.index+m[0].length,key:t,kind:"g",txt:m[0]});
+      if(re.lastIndex===m.index)re.lastIndex++;}
+  });
+  // longest match wins; never overlap; one mark per term per card
+  hits.sort((a,b)=>(b.e-b.s)-(a.e-a.s)||a.s-b.s);
+  const keep=[],used=new Set();
+  for(const h of hits){
+    const k=h.kind+":"+h.key;
+    if(h.kind==="g"&&used.has(k))continue;
+    if(keep.some(t=>h.s<t.e&&h.e>t.s))continue;
+    keep.push(h);used.add(k);
+  }
+  keep.sort((a,b)=>a.s-b.s);
+  const mark=(d,t)=>'<abbr class="gl" data-tip="'+esc(d)+'">'+t+"</abbr>";
+  let out="",pos=0;
+  for(const h of keep){
+    out+=src.slice(pos,h.s);
+    if(h.kind==="a"){
+      if(seen&&!seen.has(h.key)){seen.add(h.key);out+=esc(acr[h.key])+" ("+h.txt+")";}
+      else out+=glo[h.key]?mark(glo[h.key],h.txt):h.txt;
+    }else{
+      if(seen&&seen.has("g:"+h.key))out+=h.txt;
+      else{if(seen)seen.add("g:"+h.key);out+=mark(glo[h.key],h.txt);}
+    }
+    pos=h.e;
+  }
+  return out+src.slice(pos);
+}
+
+/* ========================= APPLICABILITY ========================= */
+const REV=[["u50","<£50m",25],["50-250","£50–250m",150],["250-450","£250–450m",350],["450-1000","£450m–1bn",700],["o1000",">£1bn",1500]];
+const EMP=[["u250","<250",150],["250-500","250–500",375],["500-1000","500–1,000",750],["o1000",">1,000",2000]];
+const GEOS=[["uk","UK"],["eu","EU"],["us","US"],["ca","Canada"],["au","Australia"],["sg","Singapore"],["hk","Hong Kong"],["jp","Japan"],["ae","UAE"],["qa","Qatar"]];
+const revV=()=>{const b=REV.find(b=>b[0]===SCOPE.rev);return b?b[2]:null;};
+const empV=()=>{const b=EMP.find(b=>b[0]===SCOPE.emp);return b?b[2]:null;};
+const scoped=()=>SCOPE.geo.size>0||SCOPE.rev||SCOPE.emp||SCOPE.listed;
+
+function verdicts(){
+  const g=SCOPE.geo,rev=revV(),emp=empV(),listed=SCOPE.listed,o=[];
+  const P=(n,fw,status,line,why)=>o.push({name:n,fw,status,line,why});
+  P("GHG Protocol Corporate Suite","ghgp","in","The accounting rules underneath every regime below. Today's 2004, 2011 and 2015 texts stay in force until the consolidated GHGP–ISO standard publishes.","Applies to anyone producing a GHG inventory, whatever the disclosure regime.");
+  if(g.has("eu")){
+    if(rev!==null&&emp!==null){
+      if(rev>=450&&emp>=1000) P("EU CSRD / ESRS","eu","in","Both post-Omnibus limbs met. First reporting for financial years starting on or after 1 January 2027.","Amended Article 19a(1) of Directive 2013/34/EU requires both limbs.");
+      else P("EU CSRD / ESRS","eu","indirect","Below one or both limbs, so not a direct filer. You may still get value-chain requests, but at 1,000 employees or fewer you are a protected undertaking and can decline anything beyond the voluntary SME standard.","Both limbs (>€450m turnover AND >1,000 employees) must be met.");
+    } else P("EU CSRD / ESRS","eu","likely","Needs both >€450m net turnover and >1,000 employees. Answer revenue and headcount for a verdict.","Thresholds are cumulative, not alternative.");
+    P("EU CBAM","eu","likely","Definitive regime live since 1 January 2026. Over 50 tonnes of covered imports in 2026 means authorised declarant status; first declaration and certificate surrender 30 September 2027.","Driven by import volume, not company size.");
+  }
+  if(!g.has("eu")&&g.size&&rev!==null&&rev>=450) P("EU Article 40a (third-country)","eu","likely","A non-EU parent with >€450m EU turnover and a qualifying EU branch or subsidiary reports for FY2028 under ESRS-40a. EFRAG's consultation closes 31 October 2026.","The test is EU-generated turnover, not group turnover.");
+  if(g.has("us")){
+    if(rev!==null){
+      if(rev>=1000) P("California SB 253","us","in","US entities over $1bn gross receipts doing business in California report Scope 1 and 2 first. CARB staff propose 10 November 2026; not yet legally fixed.","A UK parent may file one consolidated report, but each US subsidiary stays individually liable.");
+      else P("California SB 253","us","out","Below the $1bn gross receipts threshold.","Gross receipts, on the lesser of the two prior fiscal years.");
+      if(rev>=500) P("California SB 261","us","likely","US entities over $500m gross receipts must publish a climate-related financial risk report. Enforcement is currently enjoined; CARB will name an alternate date once the appeal is decided.","Paused, not cancelled, Chamber of Commerce v. Sanchez, 9th Cir. No. 25-5327.");
+      else P("California SB 261","us","out","Below the $500m gross receipts threshold.","");
+    } else P("California SB 253 / SB 261","us","likely","Thresholds are $1bn and $500m of gross receipts for US entities doing business in California.","Gross receipts, not net revenue.");
+    P("SEC climate rule","us","out","Stayed and proposed for rescission; comments closed 3 August 2026. California is the only live US mandate.","");
+  }
+  if(g.has("uk")){
+    if(listed==="yes"){
+      P("UK SRS S1 & S2","uk","likely","Final standards published 25 February 2026 but voluntary today. FCA CP26/5 would apply them to listed issuers for periods beginning on or after 1 January 2027; policy statement expected autumn 2026.","The mandate lands through FCA listing rules, not the standards.");
+      P("UK TCFD listing rule","uk","in","The comply-or-explain TCFD listing rule still applies for FY2026. Nothing has been switched off pending the UK SRS decision.","");
+    } else P("UK SRS S1 & S2","uk","indirect","Final standards published 25 February 2026, currently voluntary. The proposed mandate covers listed issuers only.","Watch the autumn 2026 FCA policy statement and any later legislation.");
+    if(emp!==null&&emp>=250) P("UK SECR","uk","in","Streamlined Energy and Carbon Reporting remains in force. From periods beginning on or after 6 April 2025 'large' means two of £54m turnover, £27m balance sheet, 250 employees.","Re-run the size test, some companies drop out under the uprated thresholds.");
+    else if(emp!==null) P("UK SECR","uk","likely","Under 250 employees, but the size test is two of three. Check turnover and balance sheet before concluding you are out.","");
+  }
+  P("SBTi Corporate Net-Zero V2.0","sbti","likely","Voluntary, but if you hold or plan validated targets: V1.3.1 governs 2026 validations, the V2.0 portal opens 1 February 2027, and V2.0 is mandatory from 1 February 2028.",
+    (rev!==null&&rev>=450)||(emp!==null&&emp>=1000)?"At your size you are Category A: separate Scope 1 and 2 targets, mandatory limited assurance, a transition plan within 15 months, removals from 2035.":"Category A obligations start around €450m turnover or 1,000 employees.");
+  P("ISSB, IFRS S1 & S2","issb","indirect","The global baseline most jurisdictions are adopting. The December 2025 GHG amendments are final, effective for periods beginning on or after 1 January 2027, early application permitted.","Applies through whichever jurisdiction adopts it, rarely direct.");
+  (DATA.jurisdictions||[]).forEach(j=>{ if(!g.has(j.id))return;
+    P(j.name+", "+j.standard,j.id,/^mandatory/.test(j.status)?"likely":j.status==="voluntary"?"indirect":"likely",
+      j.who_is_in_scope,"First period: "+(j.first_reporting_period||"not stated")+". Assurance: "+(j.assurance||"not stated"));});
+  const ord={in:0,likely:1,indirect:2,out:3};
+  return o.sort((a,b)=>ord[a.status]-ord[b.status]);
+}
+function relevantFw(){if(!SCOPE.geo.size)return null;const s=new Set(["ghgp","iso","sbti","issb"]);SCOPE.geo.forEach(g=>s.add(g));return s;}
+function fwPass(id){if(FWSEL.size)return FWSEL.has(id);const r=relevantFw();return r?r.has(id):true;}
+const upds=()=>(DATA.updates||[]).filter(u=>fwPass(u.framework));
+
+/* ============================== BITS ============================== */
+const confChip=c=>c?'<span class="chip c-'+esc(c.level)+'" data-tip="'+esc(c.reasoning||"")+'">'+esc(c.level)+"</span>":"";
+function staleChip(lv){const d=staleDays(lv);
+  return d>STALE_DAYS?'<span class="chip c-stale" data-tip="Not re-checked against the primary source in '+d+' days.">Stale · '+d+"d</span>":"";}
+function stepper(p){const i=PHASES.indexOf(p);
+  if(i<0)return'<div class="step"><em>'+esc(PHASE_LABEL[p]||p||"")+"</em></div>";
+  return'<div class="step">'+PHASES.map((x,k)=>'<i class="'+(k<i?"done":k===i?"now":"")+'"></i>').join("")+"<em>"+esc(PHASE_LABEL[p]||p)+"</em></div>";}
+function srcLinks(ss){if(!ss||!ss.length)return"";
+  return'<div class="srcs">'+ss.map(s=>srcLink(s.url,s.title,s.publisher)).join("")+"</div>";}
+function srcLink(url,title,publisher){
+  if(!url)return"";
+  let h=publisher||"";
+  if(!h){try{h=new URL(url).hostname.replace(/^www\./,"");}catch(e){h="Source";}}
+  return'<a class="src" href="'+esc(url)+'" target="_blank" rel="noopener" title="Opens '+esc(url)+' in a new tab">'+
+    '<span class="h">'+esc(h)+'</span><span class="t">'+esc(title||"Read the original")+'</span><span class="ar" aria-hidden="true">&#8599;</span></a>';}
+const fwTag=id=>'<span class="chip c-neutral" style="--sc:'+fwc(id)+'"><i></i>'+esc(fws(id))+"</span>";
+
+/* ============================== MATRIX ============================== */
+function matrixSVG(){
+  const pts=(DATA.matrix||[]).filter(p=>fwPass(p.framework));
+  if(!pts.length)return'<div class="empty">No workstreams in the current filter.</div>';
+  const W=640,H=470,L=52,R=18,T=26,B=46, pw=W-L-R, ph=H-T-B;
+  const X=v=>L+(v/100)*pw, Y=v=>T+ph-(v/100)*ph;
+  // label placement: try both sides at increasing vertical offsets, keep inside the plot, no overlaps
+  const CH=6.1, LH=11.5;                       // approx char width, line height at 10.5px
+  const boxes=[                               // occupied: quadrant captions, kept clear
+    {x1:L+4,y1:T+4,x2:L+150,y2:T+18},{x1:L+pw-150,y1:T+4,x2:L+pw-4,y2:T+18},
+    {x1:L+4,y1:T+ph-18,x2:L+90,y2:T+ph-2},{x1:L+pw-90,y1:T+ph-18,x2:L+pw-4,y2:T+ph-2}]
+    .concat(pts.map(q=>({x1:X(q.x)-9,y1:Y(q.y)-9,x2:X(q.x)+9,y2:Y(q.y)+9})));   // never run a label under a dot
+  const free=(x1,y1,x2,y2)=>!boxes.some(b=>x1<b.x2+3&&x2>b.x1-3&&y1<b.y2+2&&y2>b.y1-2);
+  const order=[...pts].sort((a,b)=>(b.y-a.y)||(b.x-a.x));   // place the important ones first
+  const lab=[];
+  order.forEach(p=>{
+    const cx=X(p.x),cy=Y(p.y), tw=p.label.length*CH;
+    let best=null;
+    outer:
+    for(let step=0;step<13;step++){
+      for(const dy of step?[-step*LH,step*LH]:[0]){
+        for(const side of (cx>L+pw*0.58?[-1,1]:[1,-1])){
+          const ly=cy+3.5+dy;
+          const x1=side>0?cx+13:cx-13-tw, x2=x1+tw;
+          if(x1<L+3||x2>L+pw-3) continue;
+          if(ly<T+22||ly>T+ph-14) continue;
+          if(!free(x1,ly-9,x2,ly+3)) continue;
+          boxes.push({x1,y1:ly-9,x2,y2:ly+3});
+          best={cx,cy,lx:side>0?cx+13:cx-13,ly,side,p};
+          break outer;
+        }
+      }
+    }
+    if(!best){const ly=cy+3.5,side=cx>L+pw*0.58?-1:1;best={cx,cy,lx:cx+side*13,ly,side,p};}
+    lab.push(best);
+  });
+  const solid=c=>c==="confirmed"||c==="high";
+  return `<svg class="mx" viewBox="0 0 ${W} ${H}" role="img" aria-label="Workstreams plotted by how settled they are against how much work they create">
+    <rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none" class="gl"/>
+    <line x1="${X(50)}" y1="${T}" x2="${X(50)}" y2="${T+ph}" class="mid"/>
+    <line x1="${L}" y1="${Y(50)}" x2="${L+pw}" y2="${Y(50)}" class="mid"/>
+    <text class="q" x="${L+8}" y="${T+15}">Plan, don't build yet</text>
+    <text class="q" x="${L+pw-8}" y="${T+15}" text-anchor="end">Act now</text>
+    <text class="q" x="${L+8}" y="${T+ph-8}">Watch</text>
+    <text class="q" x="${L+pw-8}" y="${T+ph-8}" text-anchor="end">Absorb</text>
+    <text class="ax" x="${L+pw/2}" y="${H-24}" text-anchor="middle">How settled the change is →</text>
+    <text class="ax" x="${L-10}" y="${T-10}" text-anchor="start">↑ Work it creates</text>
+    <text class="ax" x="${L}" y="${H-8}" style="font-size:8px">Open</text>
+    <text class="ax" x="${L+pw}" y="${H-8}" text-anchor="end" style="font-size:8px">Settled</text>
+    ${lab.map(({p,cx,cy,lx,ly,side})=>`
+      <g class="pt" data-tip="${esc(p.label+", "+p.note+(p.why?"  ·  Confidence ("+p.conf+"): "+p.why:""))}">
+        ${Math.abs(ly-3.5-cy)>2?`<line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${lx.toFixed(1)}" y2="${(ly-3.5).toFixed(1)}" stroke="var(--rule-2)" stroke-width="1"/>`:""}
+        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="6"
+          fill="${solid(p.conf)?fwc(p.framework):"var(--paper)"}" stroke="${fwc(p.framework)}" stroke-width="2"/>
+        <text class="pl" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${side>0?"start":"end"}">${esc(p.label)}</text>
+      </g>`).join("")}
+  </svg>`;
+}
+
+/* ============================== VIEWS ============================== */
+function renderOverview(){
+  const v=verdicts(), hits=v.filter(x=>x.status==="in"||x.status==="likely").length;
+  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
+    .sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(0,5);
+  $("#v-overview").innerHTML=`
+  <div class="vhead"><span class="lbl">Sustainability and regulatory disclosure tracker</span>
+    <h2>Every change to the disclosure rulebook, in one place, kept current.</h2>
+    <p class="lead">GHG Protocol, ISO, SBTi, ISSB, EU, US, UK, plus seven more jurisdictions. Free, vendor-neutral, re-verified every Monday.</p></div>
+
+  <div class="strip"><div class="strip-in">
+    <div class="fld"><span class="lbl">Where</span><div class="opts" data-f="geo">
+      ${GEOS.map(([k,l])=>`<button class="opt ${SCOPE.geo.has(k)?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
+    <div class="fld"><span class="lbl">Turnover</span><div class="opts" data-f="rev">
+      ${REV.map(([k,l])=>`<button class="opt ${SCOPE.rev===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
+    <div class="fld"><span class="lbl">Staff</span><div class="opts" data-f="emp">
+      ${EMP.map(([k,l])=>`<button class="opt ${SCOPE.emp===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
+    <div class="fld"><span class="lbl">Listed</span><div class="opts" data-f="listed">
+      <button class="opt ${SCOPE.listed==="yes"?"on":""}" data-v="yes">Yes</button>
+      <button class="opt ${SCOPE.listed==="no"?"on":""}" data-v="no">No</button></div></div>
+  </div><div class="strip-ft">
+    <span>${scoped()?`<b style="color:var(--ink);font-weight:500">${hits}</b> regimes likely to apply. Indicative only. Check the linked legislation.`:"Answer four questions and the whole tracker re-sorts to your business."}</span>
+    <button data-act="reset">Clear</button><button data-act="share">Copy link to this view</button>
+  </div></div>
+
+  <div class="rail">${ms.map(m=>`<div class="dt" style="--sc:${fwc(m.framework)}">
+    <span class="w">${fws(m.framework)} · ${m.state==="projected"?"projected":"confirmed"}</span>
+    <div class="v">${fmtDate(m.date)}</div>
+    <span class="c ${isSoon(m.date)?"soon":""}">${relTime(m.date)}</span>
+    <p>${esc(m.label)}</p></div>`).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>
+
+  <div class="cols">
+    <div class="panel">
+      <div class="panel-hd"><h3>Settled against effort</h3><span class="lbl">${(DATA.matrix||[]).filter(p=>fwPass(p.framework)).length} workstreams</span></div>
+      <div class="panel-bd">${matrixSVG()}
+        <p style="font-size:11px;color:var(--mute-2);line-height:1.5;margin-top:6px">
+          Filled dot = confirmed or high confidence; hollow = still open. Vertical position is our own estimate of the work created for a mid-sized reporting team, not a sourced figure. The reasoning sits on every point and on the Method page.</p></div>
+    </div>
+    <div class="panel">
+      <div class="panel-hd"><h3>${scoped()?"What applies to you":"Every regime tracked"}</h3><span class="lbl">${v.length} regimes</span></div>
+      <div class="panel-bd flush">${v.map(x=>`<div class="vrow ${x.status}" style="--sc:${fwc(x.fw)}" data-tip="${esc(x.why||"")}">
+        <span class="st">${x.status==="in"?"In scope":x.status==="likely"?"Check":x.status==="indirect"?"Indirect":"Out"}</span>
+        <div><div class="nm">${esc(x.name)}</div><div class="ln">${esc(x.line)}</div></div>
+        <span class="chip c-neutral" style="--sc:${fwc(x.fw)};margin-top:3px"><i></i>${esc(fws(x.fw))}</span></div>`).join("")}</div>
+    </div>
+  </div>
+
+  <div class="panel"><div class="panel-hd"><h3>Coverage</h3><span class="lbl">7 frameworks · 7 more jurisdictions</span></div>
+    <div class="panel-bd"><div class="grid3">${(DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{
+      const ws=f.workstreams||[], act=ws.filter(w=>["consultation","drafting","draft","legislation","adopted-pending"].includes(w.phase)).length;
+      return `<button class="fcard" style="--sc:${fwc(f.id)}" data-goto="frameworks" data-fw="${f.id}">
+        <h4>${esc(f.name)}</h4><span class="o">${esc(f.org||"")}</span>
+        <p>${esc(f.status_headline||f.tagline||"")}</p>
+        <div class="m"><span class="chip c-neutral">${ws.length} workstreams</span>${act?`<span class="chip c-medium">${act} moving</span>`:""}</div>
+      </button>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}</div></div></div>`;
+}
+
+function renderUpdates(){
+  const list=upds(), B=[["Past week",7],["Past month",31],["Past three months",92],["Earlier",99999]];
+  let html="";
+  B.forEach(([label,days],i)=>{
+    const prev=i?B[i-1][1]:0, inB=list.filter(u=>{const d=staleDays(u.date);return d>prev&&d<=days;});
+    if(!inB.length){ if(i<3) html+=`<div class="bucket"><div class="bucket-hd"><h3>${label}</h3><span class="lbl">nothing new</span></div>
+      <div class="empty">A quiet week is a real result. It means we checked and nothing moved.</div></div>`; return; }
+    html+=`<div class="bucket"><div class="bucket-hd"><h3>${label}</h3><span class="lbl">${inB.length} update${inB.length===1?"":"s"}</span></div>
+      ${inB.map(u=>{const seen=new Set();return`<div class="upd">
+        <div class="d"><b>${fmtDate(u.date)}</b>${relTime(u.date)}</div>
+        <div><h4>${gloss(u.headline,seen)}</h4>
+          <ul class="det">${sentences(u.detail).map(s=>"<li>"+gloss(s,seen)+"</li>").join("")}</ul>
+          <div class="tags">${fwTag(u.framework)}
+            <span class="sig ${esc(u.significance)}" title="${esc(u.significance)} significance"><i></i><i></i><i></i></span>
+            ${staleChip(u.last_verified)}</div>
+          <div class="srcs" style="margin-top:7px">${srcLink(u.source_url,u.source_title,u.source_publisher)}</div></div>
+        <div class="sw"><b>What it means for you</b>${esc(u.so_what||"")}</div></div>`;}).join("")}</div>`;
+  });
+  $("#v-updates").innerHTML=`<div class="vhead"><span class="lbl">Dated feed · ${list.length} entries</span><h2>What changed, and when</h2>
+    <p>Newest first, every entry citing the publication it came from. Buckets are computed from the date, so an empty week is genuinely empty.</p></div>
+    ${toolbar("updates")}${html}`;
+}
+
+function renderFrameworks(){
+  $("#v-frameworks").innerHTML=`<div class="vhead"><span class="lbl">Standards pipeline</span><h2>Where every workstream sits</h2>
+    <p>Phase, next milestone, and a confidence rating with its reasoning shown, so you can disagree with our judgement rather than take it on trust.</p></div>
+  ${(DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{const seen=new Set();
+    return`<div class="panel" style="margin-bottom:16px;--sc:${fwc(f.id)}">
+    <div class="panel-hd" style="border-top:3px solid ${fwc(f.id)}">
+      <div><h3 style="font-size:19px">${esc(f.name)}</h3><span class="lbl" style="color:var(--mute-2)">${esc(f.org||"")}</span></div>
+      <span class="lbl">${(f.workstreams||[]).length} workstreams</span></div>
+    <div class="panel-bd">
+      <p style="font-size:13.5px;color:var(--mute);line-height:1.6;max-width:92ch">${gloss(f.description||"",seen)}</p>
+      ${(f.workstreams||[]).map(w=>{const s2=new Set(seen),kp=w.key_points||[];
+        return`<div class="ws"><div class="ws-top"><h4>${gloss(w.name,s2)}</h4>${confChip(w.confidence)}
+          ${w.effort!=null?`<span class="chip c-neutral" data-tip="${esc(w.effort_note||"")}">effort ${w.effort}/100</span>`:""}
+          ${w.litigation_risk&&w.litigation_risk.exposed?`<span class="chip c-lit" data-tip="${esc((w.litigation_risk.case||"")+", "+(w.litigation_risk.posture||""))}">Litigation risk</span>`:""}
+          ${staleChip(w.last_verified)}</div>
+        ${stepper(w.phase)}
+        <div class="ws-meta">
+          ${w.stat&&w.stat.value?`<span data-tip="${esc(w.stat.label||"")}"><span class="v">${esc(w.stat.value)}</span> ${esc(String(w.stat.label||"").length>40?String(w.stat.label).slice(0,38)+"…":w.stat.label||"")}</span>`:""}
+          ${w.next_milestone&&w.next_milestone.date?`<span>next <span class="v">${fmtDate(w.next_milestone.date)}</span> · ${relTime(w.next_milestone.date)}${w.next_milestone.projected?" · projected":""}</span>`:""}
+          <span>verified <span class="v">${fmtDate(w.last_verified)}</span></span></div>
+        <p class="ws-sum">${gloss(w.summary||"",s2)}</p>
+        <ul class="kp">${kp.map((p,i)=>`<li class="${i>2?"more":""}">${gloss(p,s2)}</li>`).join("")}</ul>
+        ${kp.length>3?`<button class="btn" style="margin-bottom:9px;font-size:11px;padding:4px 9px" data-exp="1">Show ${kp.length-3} more</button>`:""}
+        ${w.so_what?`<div class="sowhat"><b>What to do about it</b>${esc(w.so_what)}</div>`:""}
+        ${w.confidence&&w.confidence.reasoning?`<p style="font-size:11.5px;color:var(--mute-2);margin-bottom:8px"><b style="color:var(--mute);font-weight:500">Why ${esc(w.confidence.level)}:</b> ${esc(w.confidence.reasoning)}</p>`:""}
+        ${srcLinks(w.sources)}</div>`;}).join("")}
+    </div></div>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}`;
+}
+
+function renderChanges(){
+  const ch=(DATA.changes||[]).filter(c=>fwPass(c.framework)),by={};
+  ch.forEach(c=>{(by[c.framework]=by[c.framework]||[]).push(c);});
+  $("#v-changes").innerHTML=`<div class="vhead"><span class="lbl">Old versus new · ${ch.length} rows</span><h2>What is actually changing</h2>
+    <p>The reference you take into a meeting. Left is the rule today, right is what replaces it, status says whether it is settled.</p></div>
+  ${toolbar("changes")}
+  ${Object.keys(by).map(f=>`<h3 style="font-size:17px;margin:20px 0 8px;display:flex;align-items:center;gap:8px">
+      <span style="width:10px;height:10px;border-radius:2px;background:${fwc(f)}"></span>${esc(fwn(f))}</h3>
+    <div class="tw"><table><thead><tr><th style="width:20%">Topic</th><th style="width:33%">Today</th><th style="width:33%">Proposed or adopted</th><th style="width:14%">Status</th></tr></thead>
+      <tbody>${by[f].map(c=>`<tr><td><strong>${esc(c.topic)}</strong>${c.source_url?`<div style="margin-top:7px">${srcLink(c.source_url,c.source_title)}</div>`:""}</td>
+        <td>${esc(c.old)}</td><td class="new">${esc(c.new)}</td>
+        <td><span class="chip ${c.status==="final"?"c-confirmed":c.status==="proposed"?"c-high":c.status==="litigation"?"c-lit":"c-medium"}">${esc(c.status)}</span></td></tr>`).join("")}</tbody></table></div>`).join("")||'<div class="empty">Nothing in this filter.</div>'}`;
+}
+
+function renderJurisdictions(){
+  const js=(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)),st=DATA.scope_tests||[];
+  $("#v-jurisdictions").innerHTML=`<div class="vhead"><span class="lbl">Where the rules bite</span><h2>Jurisdiction by jurisdiction</h2>
+    <p>The same four questions for every country: who is in scope, from which year, which standard, whether assurance is required. Fixed schema, so the rows actually compare.</p></div>
+  ${toolbar("jurisdictions")}
+  <div class="tw"><table style="min-width:1000px"><thead><tr><th>Jurisdiction</th><th>Standard</th><th>Status</th><th style="width:24%">Who is in scope</th><th>First period</th><th>Scope 3</th><th>Assurance</th><th>Confidence</th></tr></thead>
+    <tbody>${js.map(j=>`<tr><td><strong>${esc(j.name)}</strong><div style="font-size:11px;color:var(--mute-2);margin-top:2px">${esc(j.regulator||"")}</div></td>
+      <td class="new">${esc(j.standard||"")}</td>
+      <td><span class="chip ${/^mandatory/.test(j.status)?"c-lit":j.status==="voluntary"?"c-neutral":"c-medium"}">${esc(j.status)}</span></td>
+      <td>${esc(j.who_is_in_scope||"")}</td><td class="new">${esc(j.first_reporting_period||"")}</td>
+      <td>${esc(j.scope_3_required||"")}</td><td>${esc(j.assurance||"")}</td>
+      <td>${confChip(j.confidence)}${staleChip(j.last_verified)}${(j.sources||[]).slice(0,1).map(s=>`<div style="margin-top:6px">${srcLink(s.url,"Read the original",s.publisher)}</div>`).join("")}</td></tr>`).join("")||'<tr><td colspan="8" class="empty">Select a jurisdiction in the key, or clear your scope.</td></tr>'}</tbody></table></div>
+  ${st.length?`<h3 style="font-size:17px;margin:24px 0 8px">Scope tests, quoted from the legislation</h3>
+  <div class="tw"><table><thead><tr><th>Regime</th><th style="width:42%">Threshold as written</th><th>First reporting period</th><th>Assurance</th><th></th></tr></thead>
+  <tbody>${st.map(s=>`<tr><td><strong>${esc(s.regime)}</strong></td><td>${esc(s.who_is_in_scope)}</td>
+    <td class="new">${esc(s.first_reporting_period||"")}${s.first_deadline?`<div class="mono" style="font-size:10.5px;margin-top:3px">due ${fmtDate(s.first_deadline)}</div>`:""}</td>
+    <td>${esc(s.assurance||"")}</td><td>${s.source_url?srcLink(s.source_url,"Read the original"):""}</td></tr>`).join("")}</tbody></table></div>`:""}`;
+}
+
+function renderTimeline(){
+  const showPast=$("#tl-past")&&$("#tl-past").checked;
+  const all=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)).sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+  const fut=all.filter(m=>parseDate(m.date)>=TODAY), past=all.filter(m=>parseDate(m.date)<TODAY).reverse(), G={};
+  fut.forEach(m=>{const d=parseDate(m.date),k=d.getUTCFullYear()+" Q"+(Math.floor(d.getUTCMonth()/3)+1);(G[k]=G[k]||[]).push(m);});
+  const nowK=TODAY.getUTCFullYear()+" Q"+(Math.floor(TODAY.getUTCMonth()/3)+1);
+  $("#v-timeline").innerHTML=`<div class="vhead"><span class="lbl">${fut.length} dates ahead</span><h2>Deadlines</h2>
+    <p>Counted from today, grouped by quarter. Hollow markers are projected from a published plan rather than fixed in law.</p></div>
+  <div class="tools"><button class="btn pri" data-act="ics"><svg viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>Add these deadlines to my calendar</button>
+    <button class="btn" data-act="csv-timeline"><svg viewBox="0 0 16 16"><path d="M8 2v8m0 0 3-3m-3 3-3-3M2.5 12.5v1h11v-1"/></svg>CSV</button>
+    <span class="sp"></span><label class="cnt" style="cursor:pointer"><input type="checkbox" id="tl-past" ${showPast?"checked":""}> Show the ${past.length} already passed</label></div>
+  ${Object.keys(G).map(k=>`<div class="tl-q ${k===nowK?"now":""}"><h3>${k}${k===nowK?" · current quarter":""}</h3>${G[k].map(msRow).join("")}</div>`).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}
+  ${showPast?`<div class="tl-q"><h3>Already passed</h3>${past.map(msRow).join("")}</div>`:""}`;
+  const cb=$("#tl-past");if(cb)cb.onchange=renderTimeline;
+}
+function msRow(m){const passed=parseDate(m.date)<TODAY;
+  return`<div class="ms ${m.state==="projected"?"projected":""} ${passed?"completed":""}" style="--sc:${fwc(m.framework)}">
+    <div class="dd">${fmtDate(m.date)}</div><div class="pin"><i></i></div>
+    <div class="lb">${esc(m.label)}<div style="margin-top:4px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      ${fwTag(m.framework)}${m.state==="projected"?'<span class="chip c-medium">projected</span>':""}
+      ${m.source_url?srcLink(m.source_url,"Read the original"):""}</div></div>
+    <div class="cd ${isSoon(m.date)&&!passed?"soon":""}">${relTime(m.date)}</div></div>`;}
+
+function renderMethod(){
+  const g=DATA.glossary||{},notes=DATA.coverage_notes||{},ws=(DATA.frameworks||[]).flatMap(f=>f.workstreams||[]);
+  const stale=ws.filter(w=>staleDays(w.last_verified)>STALE_DAYS).length;
+  $("#v-method").innerHTML=`<div class="vhead"><span class="lbl">Method</span><h2>How this is built, and where it is weak</h2></div>
+  ${stale?`<div class="ban amber"><span class="ic">!</span><div><b>${stale} workstream${stale===1?"":"s"} not re-checked in over ${STALE_DAYS} days.</b> They carry a stale marker wherever they appear.</div></div>`
+   :`<div class="ban info"><span class="ic">✓</span><div>Every workstream has been re-checked against its primary source within the last ${STALE_DAYS} days.</div></div>`}
+  <div class="prose">
+    <h3>Sourcing</h3><p>${esc((DATA.meta||{}).sourcing_policy||"")}</p>
+    <p>Coverage window: ${fmtDate((DATA.meta||{}).coverage_window_start)} to ${fmtDate((DATA.meta||{}).coverage_window_end)}. Anything outside that window is not covered, and we would rather say so than let you assume otherwise.</p>
+    <h3>Confidence ratings</h3><p>Every workstream carries a rating and its reasoning. Hover any rating to see why.</p>
+    <dl class="deflist">
+      <div><dt>Confirmed</dt><dd>Final published text or a formally adopted decision. Changing it needs a new formal process.</dd></div>
+      <div><dt>High</dt><dd>Official draft, an adopted-but-not-in-force act, or a formally announced plan, with a procedural step remaining.</dd></div>
+      <div><dt>Medium</dt><dd>The outcome is genuinely open: a live consultation, a contested vote, or pending litigation.</dd></div>
+      <div><dt>Low</dt><dd>Early signal only: scoping work or political intent.</dd></div></dl>
+    <p>We never rate above <b>high</b> while a document says "subject to change", and never above <b>medium</b> while a court ruling could flip the outcome.</p>
+    <h3>The effort estimate</h3><p>${esc(DATA.matrix_method||"")}</p>
+    <p>${esc(DATA.matrix_x_rule||"")}</p>
+    ${DATA.verification?`<h3>Independent verification</h3>
+    <p>${esc(DATA.verification.note)}</p>
+    <div class="ban info" style="margin:10px 0"><span class="ic">✓</span><div>
+      <b>${DATA.verification.claims_checked} claims re-checked on ${fmtDate(DATA.verification.date)}.</b>
+      ${DATA.verification.confirmed} confirmed against the official source,
+      ${DATA.verification.corrected} corrected,
+      ${DATA.verification.removed} dates removed because no official source publishes them.</div></div>
+    <p>${esc(DATA.verification.known_limits)}</p>`:""}
+    <h3>What we could not verify</h3>
+    <p>Research runs per framework family. Where an official page was unreachable, or two official sources disagreed, it is recorded here rather than smoothed over.</p>
+    ${Object.entries(notes).map(([k,v])=>`<h4 class="lbl" style="color:var(--mute-2);margin:16px 0 5px">${esc(k)}</h4><p style="font-size:12.5px">${esc(v)}</p>`).join("")}
+    <h3>Corrections</h3><p>If something here is wrong, tell us and it gets priority in the next weekly pass. A tracker that admits its errors is worth more than one that never appears to have any.</p>
+    <h3>Not advice</h3><p>${esc((DATA.meta||{}).disclaimer||"")}</p>
+    <h3>Glossary</h3><dl class="deflist">${Object.entries(g).sort().map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+  </div>`;
+}
+
+function toolbar(kind){
+  const n={updates:upds().length,changes:(DATA.changes||[]).filter(c=>fwPass(c.framework)).length,
+    jurisdictions:(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).length}[kind]||0;
+  return`<div class="tools"><button class="btn" data-act="csv-${kind}"><svg viewBox="0 0 16 16"><path d="M8 2v8m0 0 3-3m-3 3-3-3M2.5 12.5v1h11v-1"/></svg>Download this view as CSV</button>
+    <button class="btn" data-act="share"><svg viewBox="0 0 16 16"><path d="M6 8.5 10 6M6 7.5l4 2.5"/><circle cx="12" cy="4.5" r="2"/><circle cx="4" cy="8" r="2"/><circle cx="12" cy="11.5" r="2"/></svg>Copy link</button>
+    <span class="sp"></span><span class="cnt">${n} shown</span></div>`;
+}
+
+/* ============================== EXPORT ============================== */
+const csvCell=v=>{const s=String(v==null?"":v).replace(/"/g,'""');return /[",\n]/.test(s)?'"'+s+'"':s;};
+const toCSV=r=>r.map(x=>x.map(csvCell).join(",")).join("\r\n");
+function deliver(text,filename,mime){
+  try{const b=new Blob([text],{type:mime||"text/plain;charset=utf-8"}),a=document.createElement("a");
+    a.href=URL.createObjectURL(b);a.download=filename;document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),2000);}catch(e){}
+  const sandboxed=window.self!==window.top;
+  if(navigator.clipboard&&navigator.clipboard.writeText)
+    navigator.clipboard.writeText(text).then(
+      ()=>toast(sandboxed?filename+" copied to your clipboard, downloads are blocked in this preview, they work on your own domain.":"Saved as "+filename+", and copied to your clipboard."),
+      ()=>toast("Saved as "+filename+"."));
+  else toast("Saved as "+filename+".");
+}
+function exportCSV(kind){
+  let rows=[];
+  if(kind==="updates"){rows=[["Date","Framework","Workstream","Headline","Detail","What it means","Significance","Source","Source URL","Verified"]];
+    upds().forEach(u=>rows.push([u.date,fwn(u.framework),u.workstream,u.headline,u.detail,u.so_what,u.significance,u.source_title,u.source_url,u.last_verified]));}
+  else if(kind==="changes"){rows=[["Framework","Topic","Today","Proposed or adopted","Status","Source","Source URL"]];
+    (DATA.changes||[]).filter(c=>fwPass(c.framework)).forEach(c=>rows.push([fwn(c.framework),c.topic,c.old,c.new,c.status,c.source_title,c.source_url]));}
+  else if(kind==="jurisdictions"){rows=[["Jurisdiction","Regulator","Standard","Status","Who is in scope","First reporting period","Scope 3","Assurance","Confidence","Verified","Source URL"]];
+    (DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).forEach(j=>rows.push([j.name,j.regulator,j.standard,j.status,j.who_is_in_scope,j.first_reporting_period,j.scope_3_required,j.assurance,(j.confidence||{}).level,j.last_verified,((j.sources||[])[0]||{}).url]));}
+  else if(kind==="timeline"){rows=[["Date","Framework","Milestone","State","Countdown","Source URL"]];
+    (DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)).sort((a,b)=>String(a.date).localeCompare(String(b.date)))
+      .forEach(m=>rows.push([m.date,fwn(m.framework),m.label,m.state,relTime(m.date),m.source_url]));}
+  rows.push([],["Source: EcoLedger Standards Tracker, every entry verified against the publication in the Source URL column."]);
+  deliver(toCSV(rows),"ecoledger-tracker-"+kind+".csv","text/csv;charset=utf-8");
+}
+function exportICS(){
+  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY);
+  const pad=n=>String(n).padStart(2,"0"), stamp=d=>d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate());
+  const fold=s=>String(s||"").replace(/\r?\n/g," ").replace(/([,;\\])/g,"\\$1");
+  const L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//EcoLedger//Standards Tracker//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH","X-WR-CALNAME:Sustainability reporting deadlines"];
+  ms.forEach((m,i)=>{const d=parseDate(m.date),e=new Date(d.getTime()+864e5);
+    L.push("BEGIN:VEVENT","UID:ecoledger-"+i+"-"+stamp(d)+"@theecoledger.com","DTSTAMP:"+stamp(TODAY)+"T000000Z",
+      "DTSTART;VALUE=DATE:"+stamp(d),"DTEND;VALUE=DATE:"+stamp(e),"SUMMARY:"+fold(fws(m.framework)+", "+m.label),
+      "DESCRIPTION:"+fold((m.state==="projected"?"Projected from a published plan, not fixed in law. ":"")+"Source: "+(m.source_url||"")),
+      "TRANSP:TRANSPARENT","BEGIN:VALARM","TRIGGER:-P30D","ACTION:DISPLAY","DESCRIPTION:"+fold(m.label+" in 30 days"),"END:VALARM","END:VEVENT");});
+  L.push("END:VCALENDAR");
+  deliver(L.join("\r\n"),"reporting-deadlines.ics","text/calendar;charset=utf-8");
+}
+
+/* ============================== SEARCH ============================== */
+let INDEX=[];
+function buildIndex(){INDEX=[];
+  (DATA.frameworks||[]).forEach(f=>(f.workstreams||[]).forEach(w=>INDEX.push({t:w.name,s:fwn(f.id)+" · workstream",v:"frameworks",fw:f.id,k:(w.name+" "+w.summary+" "+(w.key_points||[]).join(" ")).toLowerCase()})));
+  (DATA.updates||[]).forEach(u=>INDEX.push({t:u.headline,s:fwn(u.framework)+" · "+fmtDate(u.date),v:"updates",fw:u.framework,k:(u.headline+" "+u.detail+" "+u.so_what).toLowerCase()}));
+  (DATA.changes||[]).forEach(c=>INDEX.push({t:c.topic,s:fwn(c.framework)+" · change",v:"changes",fw:c.framework,k:(c.topic+" "+c.old+" "+c.new).toLowerCase()}));
+  (DATA.jurisdictions||[]).forEach(j=>INDEX.push({t:j.name+", "+j.standard,s:"jurisdiction",v:"jurisdictions",fw:j.id,k:(j.name+" "+j.standard+" "+j.who_is_in_scope).toLowerCase()}));
+  (DATA.timeline_milestones||[]).forEach(m=>INDEX.push({t:m.label,s:fwn(m.framework)+" · "+fmtDate(m.date),v:"timeline",fw:m.framework,k:(m.label+" "+m.date).toLowerCase()}));}
+function search(q){const box=$("#sres");q=q.trim().toLowerCase();
+  if(q.length<2){box.classList.remove("on");return;}
+  const T=q.split(/\s+/),h=INDEX.filter(x=>T.every(t=>x.k.includes(t))).slice(0,25);
+  box.innerHTML=h.length?h.map(x=>`<button data-v="${x.v}" data-fw="${x.fw}"><div class="t">${esc(x.t)}</div><div class="m">${esc(x.s)}</div></button>`).join("")
+    :'<div class="none">Nothing matches “'+esc(q)+'”. Try a standard name, a jurisdiction, or a year.</div>';
+  box.classList.add("on");}
+
+/* ============================== SHELL ============================== */
+function renderKey(){
+  const rel=relevantFw();
+  const cnt=id=>(DATA.updates||[]).filter(u=>u.framework===id).length;
+  $("#key").innerHTML='<span class="kt">Key</span>'+
+    KEY_ORDER.map(id=>`<button class="kb ${FWSEL.has(id)?"on":""} ${!FWSEL.size&&rel&&!rel.has(id)?"off":""}" data-fwb="${id}" style="--sc:${fwc(id)}"><i></i>${esc(fws(id))}<span class="kc">${cnt(id)}</span></button>`).join("")+
+    `<button class="kb ${OTHER_JU.some(j=>FWSEL.has(j))?"on":""}" data-fwb="_ju" style="--sc:var(--s-other)"><i></i>+7 more<span class="kc">${OTHER_JU.reduce((a,j)=>a+cnt(j),0)}</span></button>`+
+    (FWSEL.size?'<button class="kb clear" data-fwb="_clear">Clear</button>':"");
+}
+function renderScopeSum(){
+  const g=[...SCOPE.geo].map(k=>(GEOS.find(x=>x[0]===k)||[])[1]).filter(Boolean);
+  const rev=(REV.find(x=>x[0]===SCOPE.rev)||[])[1], emp=(EMP.find(x=>x[0]===SCOPE.emp)||[])[1];
+  $("#scopesum").innerHTML=scoped()
+    ?[["Where",g.join(", ")||""],["Turnover",rev||""],["Staff",emp||""],["Listed",SCOPE.listed||""]]
+       .map(([a,b])=>`<div class="row"><span>${a}</span><b>${esc(b)}</b></div>`).join("")+
+       '<button data-act="reset">Clear scope</button>'
+    :'<div class="none">Not set. Answer four questions on the dashboard, then every view filters to your business.</div>';
+}
+function renderNav(){
+  const c={updates:upds().length,frameworks:(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length,
+    changes:(DATA.changes||[]).filter(x=>fwPass(x.framework)).length,
+    jurisdictions:(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).length,
+    timeline:(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)>=TODAY).length};
+  $("#nav").innerHTML=VIEWS.map(([id,l])=>`<button data-v="${id}" class="${VIEW===id?"on":""}">${l}${c[id]!=null?`<span class="n">${c[id]}</span>`:""}</button>`).join("");
+}
+function writeHash(){const p=new URLSearchParams();p.set("v",VIEW);
+  if(FWSEL.size)p.set("fw",[...FWSEL].join(","));
+  if(SCOPE.geo.size)p.set("geo",[...SCOPE.geo].join(","));
+  if(SCOPE.rev)p.set("rev",SCOPE.rev);if(SCOPE.emp)p.set("emp",SCOPE.emp);if(SCOPE.listed)p.set("listed",SCOPE.listed);
+  history.replaceState(null,"","#"+p.toString());}
+function readHash(){const p=new URLSearchParams(location.hash.replace(/^#/,""));
+  if(p.get("v")&&VIEWS.some(v=>v[0]===p.get("v")))VIEW=p.get("v");
+  if(p.get("fw"))FWSEL=new Set(p.get("fw").split(",").filter(Boolean));
+  if(p.get("geo"))SCOPE.geo=new Set(p.get("geo").split(",").filter(Boolean));
+  SCOPE.rev=p.get("rev")||"";SCOPE.emp=p.get("emp")||"";SCOPE.listed=p.get("listed")||"";}
+function render(){renderNav();renderKey();renderScopeSum();
+  $$(".view").forEach(v=>v.classList.remove("on"));$("#v-"+VIEW).classList.add("on");
+  ({overview:renderOverview,updates:renderUpdates,frameworks:renderFrameworks,changes:renderChanges,
+    jurisdictions:renderJurisdictions,timeline:renderTimeline,method:renderMethod})[VIEW]();
+  writeHash();}
+function go(v,fw){VIEW=v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
+
+/* ============================== EVENTS ============================== */
+document.addEventListener("click",e=>{
+  const o=e.target.closest(".opt");
+  if(o&&o.parentElement.dataset.f){const f=o.parentElement.dataset.f,v=o.dataset.v;
+    if(f==="geo")SCOPE.geo.has(v)?SCOPE.geo.delete(v):SCOPE.geo.add(v);else SCOPE[f]=SCOPE[f]===v?"":v;
+    render();return;}
+  const t=e.target.closest("[data-v],[data-fwb],[data-act],[data-goto],[data-exp]");
+  if(!t){$("#sres").classList.remove("on");return;}
+  if(t.dataset.exp!=null){const ul=t.previousElementSibling;ul.classList.toggle("exp");
+    t.textContent=ul.classList.contains("exp")?"Show fewer":"Show more";return;}
+  if(t.dataset.goto){go(t.dataset.goto,t.dataset.fw);return;}
+  if(t.closest("#sres")){go(t.dataset.v,t.dataset.fw);$("#sres").classList.remove("on");$("#q").value="";return;}
+  if(t.closest("#nav")&&t.dataset.v){go(t.dataset.v);return;}
+  if(t.dataset.fwb){const id=t.dataset.fwb;
+    if(id==="_clear")FWSEL.clear();
+    else if(id==="_ju"){const on=OTHER_JU.some(j=>FWSEL.has(j));OTHER_JU.forEach(j=>on?FWSEL.delete(j):FWSEL.add(j));}
+    else FWSEL.has(id)?FWSEL.delete(id):FWSEL.add(id);
+    render();return;}
+  if(t.dataset.act){const a=t.dataset.act;
+    if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();render();return;}
+    if(a==="share"){writeHash();const u=location.href;
+      navigator.clipboard?navigator.clipboard.writeText(u).then(()=>toast("Link copied. It opens on exactly this view."),()=>toast(u)):toast(u);return;}
+    if(a==="ics"){exportICS();return;}
+    if(a.startsWith("csv-")){exportCSV(a.slice(4));return;}}
+});
+$("#q").addEventListener("input",e=>search(e.target.value));
+$("#q").addEventListener("keydown",e=>{if(e.key==="Escape"){$("#sres").classList.remove("on");e.target.blur();}});
+$("#err-link").addEventListener("click",e=>{e.preventDefault();toast("Corrections go into the weekly pass. Wire this to your HubSpot form before launch.");});
+const tip=$("#tip");let tipFor=null;
+function showTip(el){
+  tip.textContent=el.dataset.tip;tip.style.display="block";
+  const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+  tip.style.left=Math.max(8,Math.min(window.innerWidth-w-8,r.left))+"px";
+  tip.style.top=(r.bottom+8+h>window.innerHeight?Math.max(8,r.top-h-8):r.bottom+8)+"px";
+}
+function hideTip(){if(tipFor){tip.style.display="none";tipFor=null;}}
+document.addEventListener("mousemove",e=>{
+  const el=e.target.closest&&e.target.closest("[data-tip]");
+  if(!el||!el.dataset.tip){hideTip();return;}
+  if(el!==tipFor){tipFor=el;showTip(el);}
+},{passive:true});
+document.addEventListener("focusin",e=>{const el=e.target.closest&&e.target.closest("[data-tip]");
+  if(el&&el.dataset.tip){tipFor=el;showTip(el);}});
+document.addEventListener("focusout",hideTip);
+window.addEventListener("scroll",hideTip,{passive:true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")hideTip();});
+
+/* ============================== BOOT ============================== */
+(async function(){
+  try{DATA=window.__TRACKER_DATA__||await(await fetch("data/data.json",{cache:"no-store"})).json();}
+  catch(err){$(".main").innerHTML='<div class="ban amber"><span class="ic">!</span><div><b>Could not load the dataset.</b> This page needs <code>data/data.json</code> beside it, served over http.</div></div>';return;}
+  $("#brand").innerHTML=LOGO+"<span><b>EcoLedger</b><i>Standards Tracker</i></span>";
+  const lu=(DATA.meta||{}).last_updated;
+  $("#stamp").textContent="Verified "+fmtDate(lu);
+  $("#foot-stamp").textContent="Data as of "+fmtDate(lu);
+  buildIndex();readHash();render();
+})();
+</script>
+</body>
+</html>

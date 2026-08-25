@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tracker.theecoledger.com/sitemap.xml
