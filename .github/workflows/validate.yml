@@ -1,0 +1,19 @@
+name: Validate dataset
+
+# Guards the Monday-refresh pull requests: a wrong date or malformed JSON
+# should fail here before a human ever clicks merge.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate data/data.json
+        run: python3 .github/validate_data.py

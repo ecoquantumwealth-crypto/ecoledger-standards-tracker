@@ -362,6 +362,68 @@ footer .sp{flex:1;}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 @media print{.top,.side,.tools,.strip,#toast{display:none!important;}.view{display:block!important;}body{background:#fff;}}
+
+/* ---------------- what-changed hero ---------------- */
+.hero{border:1px solid var(--rule);border-radius:6px;background:var(--paper);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;}
+.hero-hd{display:flex;align-items:center;gap:10px;padding:11px 15px;border-bottom:1px solid var(--rule-3);background:var(--navy);color:#fff;flex-wrap:wrap;}
+.hero-hd h3{font-size:15px;color:#fff;margin:0;letter-spacing:-.01em;}
+.hero-hd .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent-lt);box-shadow:0 0 0 0 rgba(110,184,172,.6);animation:pulse 2.2s infinite;flex-shrink:0;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,184,172,.55);}70%{box-shadow:0 0 0 7px rgba(110,184,172,0);}100%{box-shadow:0 0 0 0 rgba(110,184,172,0);}}
+.hero-hd .cnt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#B9C6D6;margin-left:auto;}
+.hero-hd a.all{font-size:11.5px;color:#fff;text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
+.hero-bd{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;}
+.hc{padding:12px 15px;border-right:1px solid var(--rule-3);border-bottom:1px solid var(--rule-3);cursor:pointer;transition:background .12s;}
+.hc:hover{background:var(--sunk);}
+.hc .hct{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap;}
+.hc .age{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-2);}
+.hc h4{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;margin:0 0 4px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.hc .sw{font-size:11.5px;color:var(--mute);line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+/* ---------------- urgency tiers ---------------- */
+.dt.urgent{border-left-color:var(--rust);background:var(--rust-bg);}
+.dt.soon{border-left-color:var(--amber);}
+.dt .c.urgent{color:var(--rust);font-weight:600;}
+.dt .c.soon{color:var(--amber);}
+.dt .flag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;}
+.dt .flag.urgent{background:var(--rust);color:#fff;}
+.dt .flag.soon{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);}
+.ms .cd.urgent{color:var(--rust);font-weight:600;}
+.ms .cd.soon{color:var(--amber);font-weight:500;}
+.ms.urgent .pin i{box-shadow:0 0 0 3px var(--rust-bg);}
+
+/* ---------------- applicability pill on updates ---------------- */
+.apw{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
+.apw.yes{background:var(--tint);color:var(--accent-dk);}
+.apw.no{background:var(--sunk);color:var(--mute-2);}
+.apw::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;}
+
+/* ---------------- action-status tag on regimes ---------------- */
+.vrow .act{font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 5px;border-radius:3px;margin-top:4px;display:inline-block;white-space:nowrap;}
+.vrow .act.changed{background:var(--rust-bg);color:var(--rust);}
+.vrow .act.deadline{background:var(--amber-bg);color:var(--amber);}
+.vrow .act.new{background:var(--info-bg);color:var(--info);}
+.vrow .act.none{background:var(--sunk);color:var(--mute-2);}
+
+/* ---------------- more-filters toggle ---------------- */
+.fld.hid{display:none;}
+.morefilt{font-size:11.5px;color:var(--accent-dk);text-decoration:underline;text-underline-offset:2px;background:none;border:none;cursor:pointer;padding:3px 0;align-self:center;}
+
+/* ---------------- weekly digest CTA ---------------- */
+.digest{border:1px solid var(--accent);border-radius:6px;background:var(--tint);margin-bottom:20px;padding:15px 17px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+.digest .dtxt{flex:1;min-width:220px;}
+.digest .dtxt h3{font-size:15px;margin:0 0 3px;color:var(--ink);}
+.digest .dtxt p{font-size:12.5px;color:var(--mute);line-height:1.45;margin:0;}
+.digest form{display:flex;gap:7px;flex-wrap:wrap;}
+.digest input{font-size:13px;padding:8px 11px;border:1px solid var(--rule-2);border-radius:4px;background:var(--paper);color:var(--ink);min-width:190px;font-family:inherit;}
+.digest input:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.digest button{font-size:13px;font-weight:500;padding:8px 15px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;white-space:nowrap;}
+.digest button:hover{background:var(--navy-2);}
+.side-cta{margin:14px 16px 0;padding-top:13px;border-top:1px solid var(--rule);}
+.side-cta b{font-size:12px;color:var(--ink);display:block;margin-bottom:3px;}
+.side-cta p{font-size:11px;color:var(--mute-2);line-height:1.45;margin:0 0 8px;}
+.side-cta button{font-size:11.5px;font-weight:500;padding:6px 10px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;width:100%;}
 </style>
 </head>
 <body>
@@ -380,8 +442,10 @@ footer .sp{flex:1;}
 <div class="shell">
   <aside class="side">
     <nav id="nav"></nav>
-    <div class="side-sec" style="margin-top:0;border-top:none;padding-top:14px">Your scope</div>
+    <div class="side-sec" style="margin-top:0;border-top:none;padding-top:14px">My regulatory perimeter</div>
     <div class="scope-sum" id="scopesum"></div>
+    <div class="side-cta"><b>Weekly 5</b><p>The changes that matter, every Monday.</p>
+      <button data-act="digest-side">Get the digest</button></div>
   </aside>
   <main class="main">
     <div class="view on" id="v-overview"></div>
@@ -423,10 +487,13 @@ const PHASES=["scoping","drafting","consultation","draft","adopted-pending","leg
 const PHASE_LABEL={scoping:"Scoping",drafting:"Drafting",consultation:"Consultation open",draft:"Draft published",
  "adopted-pending":"Adopted, not in force",legislation:"In legislation",final:"Final",implementation:"In force",
  litigation:"In litigation",rescinding:"Being rescinded"};
-const VIEWS=[["overview","Dashboard"],["updates","Updates"],["frameworks","Frameworks"],["changes","What's changing"],
- ["jurisdictions","Jurisdictions"],["timeline","Deadlines"],["method","Method"]];
+const VIEWS=[["overview","Overview"],["changes","Changes"],["frameworks","Regulations"],
+ ["timeline","Deadlines"],["method","Method"]];
+/* legacy view ids fold into the five above (Updates→Changes, Jurisdictions→Regulations) */
+const VIEW_ALIAS={updates:"changes",jurisdictions:"frameworks"};
+const SCOPE_KEY="ecoledger-tracker-scope";
 const STALE_DAYS=45, TODAY=new Date("2026-08-25T00:00:00Z");
-let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""};
+let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""},MOREFILT=false;
 
 /* ============================== UTIL ============================== */
 const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)];
@@ -443,7 +510,12 @@ function relTime(s){const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d)
   else if(a<730)n=Math.round(a/30.44)+" months";else n=(a/365.25).toFixed(1).replace(/\.0$/,"")+" years";
   return g>=0?"in "+n:n+" ago";}
 const isSoon=s=>{const d=parseDate(s);if(!d)return false;const g=dayDiff(TODAY,d);return g>=0&&g<=120;};
+/* graded urgency: within 7 days = urgent, within 30 = soon, within 120 = near */
+const urgency=s=>{const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d);if(g<0)return"";if(g<=7)return"urgent";if(g<=30)return"soon";if(g<=120)return"near";return"";};
 const staleDays=s=>{const d=parseDate(s);return d?dayDiff(d,TODAY):999;};
+/* persist the saved scope ("My regulatory perimeter") across visits */
+function saveScope(){try{localStorage.setItem(SCOPE_KEY,JSON.stringify({geo:[...SCOPE.geo],rev:SCOPE.rev,emp:SCOPE.emp,listed:SCOPE.listed}));}catch(e){}}
+function loadScope(){try{const r=JSON.parse(localStorage.getItem(SCOPE_KEY)||"null");if(r){SCOPE.geo=new Set(r.geo||[]);SCOPE.rev=r.rev||"";SCOPE.emp=r.emp||"";SCOPE.listed=r.listed||"";return true;}}catch(e){}return false;}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),3600);}
 const sentences=t=>String(t||"").split(/(?<=[.!?])\s+(?=[A-Z(“"])/).filter(x=>x.trim());
 function gloss(text,seen){
@@ -538,6 +610,15 @@ function verdicts(){
 function relevantFw(){if(!SCOPE.geo.size)return null;const s=new Set(["ghgp","iso","sbti","issb"]);SCOPE.geo.forEach(g=>s.add(g));return s;}
 function fwPass(id){if(FWSEL.size)return FWSEL.has(id);const r=relevantFw();return r?r.has(id):true;}
 const upds=()=>(DATA.updates||[]).filter(u=>fwPass(u.framework));
+/* action-status for a framework: a change in the last 14 days, or a deadline inside 30 days */
+function fwAction(fw){
+  const recent=(DATA.updates||[]).filter(u=>u.framework===fw&&staleDays(u.date)>=0&&staleDays(u.date)<=14);
+  const soonMs=(DATA.timeline_milestones||[]).some(m=>m.framework===fw&&["urgent","soon"].includes(urgency(m.date)));
+  if(recent.some(u=>u.significance==="high"))return{k:"changed",l:"Changed"};
+  if(soonMs)return{k:"deadline",l:"Deadline soon"};
+  if(recent.length)return{k:"new",l:"New this month"};
+  return{k:"none",l:"No action"};
+}
 
 /* ============================== BITS ============================== */
 const confChip=c=>c?'<span class="chip c-'+esc(c.level)+'" data-tip="'+esc(c.reasoning||"")+'">'+esc(c.level)+"</span>":"";
@@ -620,31 +701,47 @@ function renderOverview(){
   const v=verdicts(), hits=v.filter(x=>x.status==="in"||x.status==="likely").length;
   const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
     .sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(0,5);
+  const feed=upds().slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  const wk=feed.filter(u=>staleDays(u.date)>=0&&staleDays(u.date)<=7).length;
+  const top=feed.slice(0,4);
+  const scopeNote=scoped()?"the changes that touch your business":"every framework we track";
   $("#v-overview").innerHTML=`
   <div class="vhead"><span class="lbl">Sustainability and regulatory disclosure tracker</span>
-    <h2>Every change to the disclosure rulebook, in one place, kept current.</h2>
-    <p class="lead">GHG Protocol, ISO, SBTi, ISSB, EU, US, UK, plus seven more jurisdictions. Free, vendor-neutral, re-verified every Monday.</p></div>
+    <h2>Your live view of sustainability regulation.</h2>
+    <p class="lead">Every change to the disclosure rulebook, in one place, kept current. GHG Protocol, ISO, SBTi, ISSB, EU, US, UK, plus seven more jurisdictions. Free, vendor-neutral, re-verified every Monday.</p></div>
+
+  <div class="hero">
+    <div class="hero-hd"><span class="pulse"></span><h3>What changed recently</h3>
+      <span class="cnt">${wk} in the past 7 days · ${scopeNote}</span>
+      <a class="all" data-goto="changes">See every change &#8594;</a></div>
+    <div class="hero-bd">${top.map(u=>`<div class="hc" data-goto="changes" data-fw="${u.framework}">
+      <div class="hct">${fwTag(u.framework)}<span class="age">${relTime(u.date)}</span>
+        <span class="sig ${esc(u.significance)}" title="${esc(u.significance)} significance"><i></i><i></i><i></i></span></div>
+      <h4>${esc(u.headline)}</h4>
+      <div class="sw">${esc(u.so_what||"")}</div></div>`).join("")||'<div class="empty" style="padding:14px">Nothing new in your current filter. A quiet week is a real result.</div>'}</div>
+  </div>
 
   <div class="strip"><div class="strip-in">
     <div class="fld"><span class="lbl">Where</span><div class="opts" data-f="geo">
       ${GEOS.map(([k,l])=>`<button class="opt ${SCOPE.geo.has(k)?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
     <div class="fld"><span class="lbl">Turnover</span><div class="opts" data-f="rev">
       ${REV.map(([k,l])=>`<button class="opt ${SCOPE.rev===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
-    <div class="fld"><span class="lbl">Staff</span><div class="opts" data-f="emp">
+    <div class="fld ${MOREFILT?"":"hid"}"><span class="lbl">Staff</span><div class="opts" data-f="emp">
       ${EMP.map(([k,l])=>`<button class="opt ${SCOPE.emp===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
-    <div class="fld"><span class="lbl">Listed</span><div class="opts" data-f="listed">
+    <div class="fld ${MOREFILT?"":"hid"}"><span class="lbl">Listed</span><div class="opts" data-f="listed">
       <button class="opt ${SCOPE.listed==="yes"?"on":""}" data-v="yes">Yes</button>
       <button class="opt ${SCOPE.listed==="no"?"on":""}" data-v="no">No</button></div></div>
+    <button class="morefilt" data-act="morefilt">${MOREFILT?"Fewer filters":"More filters"}</button>
   </div><div class="strip-ft">
-    <span>${scoped()?`<b style="color:var(--ink);font-weight:500">${hits}</b> regimes likely to apply. Indicative only. Check the linked legislation.`:"Answer four questions and the whole tracker re-sorts to your business."}</span>
+    <span>${scoped()?`<b style="color:var(--ink);font-weight:500">${hits}</b> regimes likely to apply, saved as your perimeter. Indicative only. Check the linked legislation.`:"Answer a couple of questions and the whole tracker re-sorts to your business. We remember it next time."}</span>
     <button data-act="reset">Clear</button><button data-act="share">Copy link to this view</button>
   </div></div>
 
-  <div class="rail">${ms.map(m=>`<div class="dt" style="--sc:${fwc(m.framework)}">
+  <div class="rail">${ms.map(m=>{const ug=urgency(m.date);return`<div class="dt ${ug}" style="--sc:${fwc(m.framework)}">
     <span class="w">${fws(m.framework)} · ${m.state==="projected"?"projected":"confirmed"}</span>
-    <div class="v">${fmtDate(m.date)}</div>
-    <span class="c ${isSoon(m.date)?"soon":""}">${relTime(m.date)}</span>
-    <p>${esc(m.label)}</p></div>`).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>
+    <div class="v">${fmtDate(m.date)}${ug==="urgent"?'<span class="flag urgent">Due this week</span>':ug==="soon"?'<span class="flag soon">Within 30 days</span>':""}</div>
+    <span class="c ${ug}">${relTime(m.date)}</span>
+    <p>${esc(m.label)}</p></div>`;}).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>
 
   <div class="cols">
     <div class="panel">
@@ -654,12 +751,20 @@ function renderOverview(){
           Filled dot = confirmed or high confidence; hollow = still open. Vertical position is our own estimate of the work created for a mid-sized reporting team, not a sourced figure. The reasoning sits on every point and on the Method page.</p></div>
     </div>
     <div class="panel">
-      <div class="panel-hd"><h3>${scoped()?"What applies to you":"Every regime tracked"}</h3><span class="lbl">${v.length} regimes</span></div>
-      <div class="panel-bd flush">${v.map(x=>`<div class="vrow ${x.status}" style="--sc:${fwc(x.fw)}" data-tip="${esc(x.why||"")}">
+      <div class="panel-hd"><h3>${scoped()?"What applies to you":"Everything tracked"}</h3><span class="lbl">${v.length} regimes · what needs action</span></div>
+      <div class="panel-bd flush">${v.map(x=>{const a=fwAction(x.fw);return`<div class="vrow ${x.status}" style="--sc:${fwc(x.fw)}" data-tip="${esc(x.why||"")}">
         <span class="st">${x.status==="in"?"In scope":x.status==="likely"?"Check":x.status==="indirect"?"Indirect":"Out"}</span>
-        <div><div class="nm">${esc(x.name)}</div><div class="ln">${esc(x.line)}</div></div>
-        <span class="chip c-neutral" style="--sc:${fwc(x.fw)};margin-top:3px"><i></i>${esc(fws(x.fw))}</span></div>`).join("")}</div>
+        <div><div class="nm">${esc(x.name)}</div><div class="ln">${esc(x.line)}</div>
+          <span class="act ${a.k}">${a.l}</span></div>
+        <span class="chip c-neutral" style="--sc:${fwc(x.fw)};margin-top:3px"><i></i>${esc(fws(x.fw))}</span></div>`;}).join("")}</div>
     </div>
+  </div>
+
+  <div class="digest">
+    <div class="dtxt"><h3>Get the 5 changes that matter this week</h3>
+      <p>One short email every Monday: the moves that affect reporters, verified against the primary source. No noise, unsubscribe anytime.</p></div>
+    <form data-digest><input type="email" name="email" placeholder="you@company.com" aria-label="Work email" required>
+      <button type="submit">Send me the weekly 5</button></form>
   </div>
 
   <div class="panel"><div class="panel-hd"><h3>Coverage</h3><span class="lbl">7 frameworks · 7 more jurisdictions</span></div>
@@ -672,7 +777,12 @@ function renderOverview(){
       </button>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}</div></div></div>`;
 }
 
-function renderUpdates(){
+function appliesPill(fw){
+  if(!SCOPE.geo.size)return"";
+  const r=relevantFw(),yes=r&&r.has(fw);
+  return `<span class="apw ${yes?"yes":"no"}">${yes?"Applies to you":"Outside your scope"}</span>`;
+}
+function updatesFeed(){
   const list=upds(), B=[["Past week",7],["Past month",31],["Past three months",92],["Earlier",99999]];
   let html="";
   B.forEach(([label,days],i)=>{
@@ -684,15 +794,13 @@ function renderUpdates(){
         <div class="d"><b>${fmtDate(u.date)}</b>${relTime(u.date)}</div>
         <div><h4>${gloss(u.headline,seen)}</h4>
           <ul class="det">${sentences(u.detail).map(s=>"<li>"+gloss(s,seen)+"</li>").join("")}</ul>
-          <div class="tags">${fwTag(u.framework)}
+          <div class="tags">${fwTag(u.framework)}${appliesPill(u.framework)}
             <span class="sig ${esc(u.significance)}" title="${esc(u.significance)} significance"><i></i><i></i><i></i></span>
             ${staleChip(u.last_verified)}</div>
           <div class="srcs" style="margin-top:7px">${srcLink(u.source_url,u.source_title,u.source_publisher)}</div></div>
         <div class="sw"><b>What it means for you</b>${esc(u.so_what||"")}</div></div>`;}).join("")}</div>`;
   });
-  $("#v-updates").innerHTML=`<div class="vhead"><span class="lbl">Dated feed · ${list.length} entries</span><h2>What changed, and when</h2>
-    <p>Newest first, every entry citing the publication it came from. Buckets are computed from the date, so an empty week is genuinely empty.</p></div>
-    ${toolbar("updates")}${html}`;
+  return {n:list.length,html};
 }
 
 function renderFrameworks(){
@@ -721,26 +829,31 @@ function renderFrameworks(){
         ${w.so_what?`<div class="sowhat"><b>What to do about it</b>${esc(w.so_what)}</div>`:""}
         ${w.confidence&&w.confidence.reasoning?`<p style="font-size:11.5px;color:var(--mute-2);margin-bottom:8px"><b style="color:var(--mute);font-weight:500">Why ${esc(w.confidence.level)}:</b> ${esc(w.confidence.reasoning)}</p>`:""}
         ${srcLinks(w.sources)}</div>`;}).join("")}
-    </div></div>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}`;
+    </div></div>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}
+  ${jurisdictionsSection()}`;
 }
 
 function renderChanges(){
+  const feed=updatesFeed();
   const ch=(DATA.changes||[]).filter(c=>fwPass(c.framework)),by={};
   ch.forEach(c=>{(by[c.framework]=by[c.framework]||[]).push(c);});
-  $("#v-changes").innerHTML=`<div class="vhead"><span class="lbl">Old versus new · ${ch.length} rows</span><h2>What is actually changing</h2>
-    <p>The reference you take into a meeting. Left is the rule today, right is what replaces it, status says whether it is settled.</p></div>
-  ${toolbar("changes")}
-  ${Object.keys(by).map(f=>`<h3 style="font-size:17px;margin:20px 0 8px;display:flex;align-items:center;gap:8px">
+  const tables=Object.keys(by).map(f=>`<h3 style="font-size:17px;margin:20px 0 8px;display:flex;align-items:center;gap:8px">
       <span style="width:10px;height:10px;border-radius:2px;background:${fwc(f)}"></span>${esc(fwn(f))}</h3>
     <div class="tw"><table><thead><tr><th style="width:20%">Topic</th><th style="width:33%">Today</th><th style="width:33%">Proposed or adopted</th><th style="width:14%">Status</th></tr></thead>
       <tbody>${by[f].map(c=>`<tr><td><strong>${esc(c.topic)}</strong>${c.source_url?`<div style="margin-top:7px">${srcLink(c.source_url,c.source_title)}</div>`:""}</td>
         <td>${esc(c.old)}</td><td class="new">${esc(c.new)}</td>
-        <td><span class="chip ${c.status==="final"?"c-confirmed":c.status==="proposed"?"c-high":c.status==="litigation"?"c-lit":"c-medium"}">${esc(c.status)}</span></td></tr>`).join("")}</tbody></table></div>`).join("")||'<div class="empty">Nothing in this filter.</div>'}`;
+        <td><span class="chip ${c.status==="final"?"c-confirmed":c.status==="proposed"?"c-high":c.status==="litigation"?"c-lit":"c-medium"}">${esc(c.status)}</span></td></tr>`).join("")}</tbody></table></div>`).join("")||'<div class="empty">Nothing in this filter.</div>';
+  $("#v-changes").innerHTML=`<div class="vhead"><span class="lbl">Dated feed · ${feed.n} entries</span><h2>What changed, and when</h2>
+    <p>Newest first, every entry citing the publication it came from, with what it means for you. Buckets are computed from the date, so an empty week is genuinely empty.</p></div>
+  ${toolbar("updates")}${feed.html}
+  <div class="vhead" style="margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)"><span class="lbl">Old versus new · ${ch.length} rows</span><h2>What is actually changing, side by side</h2>
+    <p>The reference you take into a meeting. Left is the rule today, right is what replaces it, status says whether it is settled.</p></div>
+  ${tables}`;
 }
 
-function renderJurisdictions(){
+function jurisdictionsSection(){
   const js=(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)),st=DATA.scope_tests||[];
-  $("#v-jurisdictions").innerHTML=`<div class="vhead"><span class="lbl">Where the rules bite</span><h2>Jurisdiction by jurisdiction</h2>
+  return `<div class="vhead" style="margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)"><span class="lbl">Where the rules bite</span><h2>Jurisdiction by jurisdiction</h2>
     <p>The same four questions for every country: who is in scope, from which year, which standard, whether assurance is required. Fixed schema, so the rows actually compare.</p></div>
   ${toolbar("jurisdictions")}
   <div class="tw"><table style="min-width:1000px"><thead><tr><th>Jurisdiction</th><th>Standard</th><th>Status</th><th style="width:24%">Who is in scope</th><th>First period</th><th>Scope 3</th><th>Assurance</th><th>Confidence</th></tr></thead>
@@ -895,13 +1008,12 @@ function renderScopeSum(){
   $("#scopesum").innerHTML=scoped()
     ?[["Where",g.join(", ")||""],["Turnover",rev||""],["Staff",emp||""],["Listed",SCOPE.listed||""]]
        .map(([a,b])=>`<div class="row"><span>${a}</span><b>${esc(b)}</b></div>`).join("")+
-       '<button data-act="reset">Clear scope</button>'
-    :'<div class="none">Not set. Answer four questions on the dashboard, then every view filters to your business.</div>';
+       '<button data-act="reset">Clear perimeter</button>'
+    :'<div class="none">Not set yet. Set it on the Overview and we save it, so every view filters to your business next time too.</div>';
 }
 function renderNav(){
-  const c={updates:upds().length,frameworks:(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length,
-    changes:(DATA.changes||[]).filter(x=>fwPass(x.framework)).length,
-    jurisdictions:(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).length,
+  const c={frameworks:(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length,
+    changes:upds().length,
     timeline:(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)>=TODAY).length};
   $("#nav").innerHTML=VIEWS.map(([id,l])=>`<button data-v="${id}" class="${VIEW===id?"on":""}">${l}${c[id]!=null?`<span class="n">${c[id]}</span>`:""}</button>`).join("");
 }
@@ -911,23 +1023,23 @@ function writeHash(){const p=new URLSearchParams();p.set("v",VIEW);
   if(SCOPE.rev)p.set("rev",SCOPE.rev);if(SCOPE.emp)p.set("emp",SCOPE.emp);if(SCOPE.listed)p.set("listed",SCOPE.listed);
   history.replaceState(null,"","#"+p.toString());}
 function readHash(){const p=new URLSearchParams(location.hash.replace(/^#/,""));
-  if(p.get("v")&&VIEWS.some(v=>v[0]===p.get("v")))VIEW=p.get("v");
+  let rv=p.get("v");if(rv){rv=VIEW_ALIAS[rv]||rv;if(VIEWS.some(v=>v[0]===rv))VIEW=rv;}
   if(p.get("fw"))FWSEL=new Set(p.get("fw").split(",").filter(Boolean));
   if(p.get("geo"))SCOPE.geo=new Set(p.get("geo").split(",").filter(Boolean));
-  SCOPE.rev=p.get("rev")||"";SCOPE.emp=p.get("emp")||"";SCOPE.listed=p.get("listed")||"";}
+  if(p.has("rev"))SCOPE.rev=p.get("rev")||"";if(p.has("emp"))SCOPE.emp=p.get("emp")||"";if(p.has("listed"))SCOPE.listed=p.get("listed")||"";}
 function render(){renderNav();renderKey();renderScopeSum();
   $$(".view").forEach(v=>v.classList.remove("on"));$("#v-"+VIEW).classList.add("on");
-  ({overview:renderOverview,updates:renderUpdates,frameworks:renderFrameworks,changes:renderChanges,
-    jurisdictions:renderJurisdictions,timeline:renderTimeline,method:renderMethod})[VIEW]();
+  ({overview:renderOverview,frameworks:renderFrameworks,changes:renderChanges,
+    timeline:renderTimeline,method:renderMethod})[VIEW]();
   writeHash();}
-function go(v,fw){VIEW=v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
+function go(v,fw){VIEW=VIEW_ALIAS[v]||v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
 
 /* ============================== EVENTS ============================== */
 document.addEventListener("click",e=>{
   const o=e.target.closest(".opt");
   if(o&&o.parentElement.dataset.f){const f=o.parentElement.dataset.f,v=o.dataset.v;
     if(f==="geo")SCOPE.geo.has(v)?SCOPE.geo.delete(v):SCOPE.geo.add(v);else SCOPE[f]=SCOPE[f]===v?"":v;
-    render();return;}
+    saveScope();render();return;}
   const t=e.target.closest("[data-v],[data-fwb],[data-act],[data-goto],[data-exp]");
   if(!t){$("#sres").classList.remove("on");return;}
   if(t.dataset.exp!=null){const ul=t.previousElementSibling;ul.classList.toggle("exp");
@@ -941,7 +1053,9 @@ document.addEventListener("click",e=>{
     else FWSEL.has(id)?FWSEL.delete(id):FWSEL.add(id);
     render();return;}
   if(t.dataset.act){const a=t.dataset.act;
-    if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();render();return;}
+    if(a==="morefilt"){MOREFILT=!MOREFILT;render();return;}
+    if(a==="digest-side"){if(VIEW!=="overview")go("overview");setTimeout(()=>{const i=document.querySelector("[data-digest] input");if(i){i.scrollIntoView({block:"center",behavior:"smooth"});i.focus();}},60);return;}
+    if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();saveScope();render();return;}
     if(a==="share"){writeHash();const u=location.href;
       navigator.clipboard?navigator.clipboard.writeText(u).then(()=>toast("Link copied. It opens on exactly this view."),()=>toast(u)):toast(u);return;}
     if(a==="ics"){exportICS();return;}
@@ -950,6 +1064,11 @@ document.addEventListener("click",e=>{
 $("#q").addEventListener("input",e=>search(e.target.value));
 $("#q").addEventListener("keydown",e=>{if(e.key==="Escape"){$("#sres").classList.remove("on");e.target.blur();}});
 $("#err-link").addEventListener("click",e=>{e.preventDefault();toast("Corrections go into the weekly pass. Wire this to your HubSpot form before launch.");});
+document.addEventListener("submit",e=>{const f=e.target.closest("[data-digest]");if(!f)return;e.preventDefault();
+  const em=(f.querySelector("input[name=email]")||{}).value||"";
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast("Enter a valid work email.");return;}
+  /* TODO before launch: POST to HubSpot form or Netlify Forms. Placeholder only. */
+  f.reset();toast("You are on the list. The weekly 5 lands each Monday.");});
 const tip=$("#tip");let tipFor=null;
 function showTip(el){
   tip.textContent=el.dataset.tip;tip.style.display="block";
@@ -977,7 +1096,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")hideTip();});
   const lu=(DATA.meta||{}).last_updated;
   $("#stamp").textContent="Verified "+fmtDate(lu);
   $("#foot-stamp").textContent="Data as of "+fmtDate(lu);
-  buildIndex();readHash();render();
+  buildIndex();loadScope();readHash();if(SCOPE.emp||SCOPE.listed)MOREFILT=true;render();
 })();
 </script>
 </body>

@@ -3,7 +3,7 @@
 A free, vendor-neutral tracker of every major change to corporate emissions accounting and
 disclosure standards, scoped to the reader's own business.
 
-Live at **https://tracker.theecoledger.com**
+Live at **https://news.theecoledger.com**
 
 ## What's here
 
@@ -51,7 +51,7 @@ Netlify, connected to this repo. Build command empty, publish directory `/`.
 Every push to `main` redeploys. Because the weekly refresh only ever edits
 `data/data.json`, a content update is a one-file commit.
 
-DNS lives in Cloudflare: `CNAME tracker -> <site>.netlify.app`, set to **DNS only**
+DNS lives in Cloudflare: `CNAME news -> <site>.netlify.app`, set to **DNS only**
 (grey cloud). Proxying breaks Netlify's certificate provisioning.
 
 ## Weekly refresh
