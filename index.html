@@ -140,8 +140,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .vhead .lbl{color:var(--accent-dk);display:block;margin-bottom:5px;}
 .vhead h2{font-size:clamp(22px,2.6vw,29px);margin-bottom:6px;}
 .vhead p{font-size:14.5px;color:var(--mute);max-width:76ch;}
-.vhead p.lead{max-width:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@media (max-width:1180px){.vhead p.lead{white-space:normal;}}
+.vhead p.lead{max-width:104ch;}
 
 /* ---------------- scoper strip (compact) ---------------- */
 .strip{border:1px solid var(--rule);border-radius:5px;background:var(--paper);margin-bottom:16px;box-shadow:var(--shadow);}
@@ -205,6 +204,126 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .mx g.pt.dim{opacity:.2;}
 
 /* ---------------- generic ---------------- */
+
+/* ---------------- sub-tabs ---------------- */
+.subtabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);margin-bottom:14px;}
+.subtab{padding:7px 13px;font-size:13px;color:var(--mute);border-bottom:2px solid transparent;margin-bottom:-1px;}
+.subtab:hover{color:var(--ink);}
+.subtab.on{color:var(--ink);font-weight:500;border-bottom-color:var(--accent);}
+.subtab .n{font-family:"IBM Plex Mono",monospace;font-size:9.5px;color:var(--mute-2);margin-left:6px;}
+.subtab.on .n{color:var(--accent-dk);}
+
+/* ---------------- section rule ---------------- */
+.secline{display:flex;align-items:baseline;gap:10px;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
+.secline h3{font-size:15px;}
+.secline .lbl{color:var(--mute-2);}
+
+/* ---------------- the week panel ---------------- */
+.panel.hero{border-color:var(--rule-2);}
+.panel-ft{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:11px 14px;
+  background:var(--sunk);border-top:1px solid var(--rule-3);font-size:12px;color:var(--mute);}
+.panel-ft .btn{margin-left:auto;}
+.wk{display:grid;grid-template-columns:104px 1fr;gap:14px;width:100%;text-align:left;
+  padding:12px 14px;border-bottom:1px solid var(--rule-3);align-items:start;}
+.wk:last-child{border-bottom:none;}
+.wk:hover{background:var(--sunk);}
+.wk-d{display:flex;flex-direction:column;gap:5px;font-size:10.5px;color:var(--mute-2);padding-top:2px;}
+.wk-h{font-family:"Assistant",sans-serif;font-weight:600;font-size:15px;letter-spacing:-.02em;line-height:1.25;color:var(--ink);margin-bottom:4px;}
+.wk-s{font-size:12.5px;color:var(--mute);line-height:1.5;margin-bottom:7px;}
+.wk-m{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+.hero{border:1px solid var(--rule);border-radius:6px;background:var(--paper);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;}
+.hero-hd{display:flex;align-items:center;gap:10px;padding:11px 15px;border-bottom:1px solid var(--rule-3);background:var(--navy);color:#fff;flex-wrap:wrap;}
+.hero-hd h3{font-size:15px;color:#fff;margin:0;letter-spacing:-.01em;}
+.hero-hd .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent-lt);box-shadow:0 0 0 0 rgba(110,184,172,.6);animation:pulse 2.2s infinite;flex-shrink:0;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,184,172,.55);}70%{box-shadow:0 0 0 7px rgba(110,184,172,0);}100%{box-shadow:0 0 0 0 rgba(110,184,172,0);}}
+.hero-hd .cnt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#B9C6D6;margin-left:auto;}
+.hero-hd a.all{font-size:11.5px;color:#fff;text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
+.hero-bd{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;}
+.hc{padding:12px 15px;border-right:1px solid var(--rule-3);border-bottom:1px solid var(--rule-3);cursor:pointer;transition:background .12s;}
+.hc:hover{background:var(--sunk);}
+.hc .hct{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap;}
+.hc .age{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-2);}
+.hc h4{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;margin:0 0 4px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.hc .sw{font-size:11.5px;color:var(--mute);line-height:1.45;
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,184,172,.55);}70%{box-shadow:0 0 0 7px rgba(110,184,172,0);}
+@media (prefers-reduced-motion:reduce){.hero-hd .pulse{animation:none;}}
+
+/* ---------------- the three-part card convention ---------------- */
+.three{display:flex;flex-direction:column;gap:7px;}
+.three > div{display:block;}
+.three dt{font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mute-2);margin-bottom:2px;}
+.three dd{font-size:12.5px;line-height:1.5;color:var(--ink-2);}
+.three dd.w-applies{color:var(--rust);font-weight:500;}
+.three dd.w-check{color:var(--amber);}
+.three dd.w-indirect{color:var(--info);}
+.three dd.w-not{color:var(--mute-2);}
+.upd .three{background:var(--sunk);border-left:2px solid var(--accent);border-radius:0 4px 4px 0;padding:11px 13px;}
+.panel-hd .hint{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute-2);}
+.panel-ft b{color:var(--ink);font-weight:600;font-size:12.5px;}
+.dt-fw{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--mute-2);display:block;margin-top:6px;}
+
+.hc3{display:flex;flex-direction:column;gap:5px;margin-top:6px;}
+.hc3 dt{font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mute-2);margin-bottom:1px;}
+.hc3 dd{font-size:11.5px;line-height:1.45;color:var(--ink-2);}
+.hc3 dd.w-applies{color:var(--rust);font-weight:500;}
+.hc3 dd.w-check{color:var(--amber);}
+.hc3 dd.w-indirect{color:var(--info);}
+.hc3 dd.w-not{color:var(--mute-2);}
+.hero .panel-ft{border-top:1px solid var(--rule-3);}
+
+/* ---------------- relevance ---------------- */
+.rel{font-size:12.5px;line-height:1.5;padding:9px 12px;border-radius:4px;margin-bottom:10px;border-left:2px solid;}
+.rel b{display:block;font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.13em;
+  text-transform:uppercase;margin-bottom:3px;font-weight:600;}
+.rel.r-applies{background:var(--rust-bg);border-color:var(--rust);color:var(--rust);}
+.rel.r-check{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);}
+.rel.r-indirect{background:var(--info-bg);border-color:var(--info);color:var(--info);}
+.rel.r-not{background:var(--sunk);border-color:var(--mute-3);color:var(--mute);}
+.rel.r-general{background:var(--sunk);border-color:var(--accent);color:var(--mute);}
+.rp{font-size:11.5px;line-height:1.45;padding:3px 8px;border-radius:3px;display:inline-block;}
+.rp.r-applies{background:var(--rust-bg);color:var(--rust);font-weight:500;}
+.rp.r-check{background:var(--amber-bg);color:var(--amber);}
+.rp.r-indirect{background:var(--info-bg);color:var(--info);}
+.rp.r-not{background:var(--sunk);color:var(--mute-2);}
+.rp.r-general{background:var(--sunk);color:var(--mute);}
+
+/* ---------------- urgency ---------------- */
+.dt .cd.q{color:var(--mute-2);font-weight:400;}
+.dt.u-now{border-color:var(--rust-line);background:var(--rust-bg);border-left-color:var(--rust)!important;}
+.dt.u-now .cd,.dt.u-now .w{color:var(--rust);font-weight:600;}
+.dt.u-soon{border-color:var(--amber-line);}
+.dt.u-soon .cd{color:var(--amber);font-weight:600;}
+.ms.u-now .lb{font-weight:500;}
+.ms .cd.u-now{color:var(--rust);font-weight:600;}
+.ms .cd.u-soon{color:var(--amber);font-weight:500;}
+
+/* ---------------- more filters ---------------- */
+.morebtn{font-size:11.5px;padding:3px 9px;border:1px dashed var(--rule-2);border-radius:4px;color:var(--mute);}
+.morebtn:hover,.morebtn.on{border-style:solid;border-color:var(--accent);color:var(--accent-dk);}
+.strip-in.more{border-top:1px dashed var(--rule);padding-top:11px;}
+.strip-ft button{font-size:11.5px;color:var(--accent-dk);text-decoration:underline;text-underline-offset:2px;}
+.strip-ft b{color:var(--ink);font-weight:600;}
+
+/* ---------------- framework status cards ---------------- */
+.fc-top{display:flex;align-items:baseline;gap:8px;justify-content:space-between;}
+.fstat{font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 6px;border-radius:3px;white-space:nowrap;flex-shrink:0;
+  background:var(--sunk);color:var(--mute-2);}
+.fcard.s-now .fstat{background:var(--rust-bg);color:var(--rust);}
+.fcard.s-new .fstat{background:var(--tint);color:var(--accent-dk);}
+.fcard.s-soon .fstat{background:var(--amber-bg);color:var(--amber);}
+.fcard.s-chg .fstat{background:var(--info-bg);color:var(--info);}
+.fcard .rp{margin-top:8px;}
+.fwh{font-size:17px;margin:20px 0 8px;display:flex;align-items:center;gap:8px;}
+.fwh span{width:10px;height:10px;border-radius:2px;display:inline-block;}
+.foot{font-size:11px;color:var(--mute-2);line-height:1.5;margin-top:6px;}
+
+/* generic */
 .chip{font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
   padding:3px 7px;border-radius:3px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;}
 .c-confirmed{background:var(--tint);color:var(--accent-dk);}
@@ -362,68 +481,6 @@ footer .sp{flex:1;}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 @media print{.top,.side,.tools,.strip,#toast{display:none!important;}.view{display:block!important;}body{background:#fff;}}
-
-/* ---------------- what-changed hero ---------------- */
-.hero{border:1px solid var(--rule);border-radius:6px;background:var(--paper);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;}
-.hero-hd{display:flex;align-items:center;gap:10px;padding:11px 15px;border-bottom:1px solid var(--rule-3);background:var(--navy);color:#fff;flex-wrap:wrap;}
-.hero-hd h3{font-size:15px;color:#fff;margin:0;letter-spacing:-.01em;}
-.hero-hd .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent-lt);box-shadow:0 0 0 0 rgba(110,184,172,.6);animation:pulse 2.2s infinite;flex-shrink:0;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(110,184,172,.55);}70%{box-shadow:0 0 0 7px rgba(110,184,172,0);}100%{box-shadow:0 0 0 0 rgba(110,184,172,0);}}
-.hero-hd .cnt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#B9C6D6;margin-left:auto;}
-.hero-hd a.all{font-size:11.5px;color:#fff;text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
-.hero-bd{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;}
-.hc{padding:12px 15px;border-right:1px solid var(--rule-3);border-bottom:1px solid var(--rule-3);cursor:pointer;transition:background .12s;}
-.hc:hover{background:var(--sunk);}
-.hc .hct{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap;}
-.hc .age{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-2);}
-.hc h4{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;margin:0 0 4px;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-.hc .sw{font-size:11.5px;color:var(--mute);line-height:1.45;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-
-/* ---------------- urgency tiers ---------------- */
-.dt.urgent{border-left-color:var(--rust);background:var(--rust-bg);}
-.dt.soon{border-left-color:var(--amber);}
-.dt .c.urgent{color:var(--rust);font-weight:600;}
-.dt .c.soon{color:var(--amber);}
-.dt .flag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;}
-.dt .flag.urgent{background:var(--rust);color:#fff;}
-.dt .flag.soon{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);}
-.ms .cd.urgent{color:var(--rust);font-weight:600;}
-.ms .cd.soon{color:var(--amber);font-weight:500;}
-.ms.urgent .pin i{box-shadow:0 0 0 3px var(--rust-bg);}
-
-/* ---------------- applicability pill on updates ---------------- */
-.apw{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
-.apw.yes{background:var(--tint);color:var(--accent-dk);}
-.apw.no{background:var(--sunk);color:var(--mute-2);}
-.apw::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;}
-
-/* ---------------- action-status tag on regimes ---------------- */
-.vrow .act{font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 5px;border-radius:3px;margin-top:4px;display:inline-block;white-space:nowrap;}
-.vrow .act.changed{background:var(--rust-bg);color:var(--rust);}
-.vrow .act.deadline{background:var(--amber-bg);color:var(--amber);}
-.vrow .act.new{background:var(--info-bg);color:var(--info);}
-.vrow .act.none{background:var(--sunk);color:var(--mute-2);}
-
-/* ---------------- more-filters toggle ---------------- */
-.fld.hid{display:none;}
-.morefilt{font-size:11.5px;color:var(--accent-dk);text-decoration:underline;text-underline-offset:2px;background:none;border:none;cursor:pointer;padding:3px 0;align-self:center;}
-
-/* ---------------- weekly digest CTA ---------------- */
-.digest{border:1px solid var(--accent);border-radius:6px;background:var(--tint);margin-bottom:20px;padding:15px 17px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-.digest .dtxt{flex:1;min-width:220px;}
-.digest .dtxt h3{font-size:15px;margin:0 0 3px;color:var(--ink);}
-.digest .dtxt p{font-size:12.5px;color:var(--mute);line-height:1.45;margin:0;}
-.digest form{display:flex;gap:7px;flex-wrap:wrap;}
-.digest input{font-size:13px;padding:8px 11px;border:1px solid var(--rule-2);border-radius:4px;background:var(--paper);color:var(--ink);min-width:190px;font-family:inherit;}
-.digest input:focus{outline:2px solid var(--accent);outline-offset:1px;}
-.digest button{font-size:13px;font-weight:500;padding:8px 15px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;white-space:nowrap;}
-.digest button:hover{background:var(--navy-2);}
-.side-cta{margin:14px 16px 0;padding-top:13px;border-top:1px solid var(--rule);}
-.side-cta b{font-size:12px;color:var(--ink);display:block;margin-bottom:3px;}
-.side-cta p{font-size:11px;color:var(--mute-2);line-height:1.45;margin:0 0 8px;}
-.side-cta button{font-size:11.5px;font-weight:500;padding:6px 10px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;width:100%;}
 </style>
 </head>
 <body>
@@ -444,15 +501,11 @@ footer .sp{flex:1;}
     <nav id="nav"></nav>
     <div class="side-sec" style="margin-top:0;border-top:none;padding-top:14px">My regulatory perimeter</div>
     <div class="scope-sum" id="scopesum"></div>
-    <div class="side-cta"><b>Weekly 5</b><p>The changes that matter, every Monday.</p>
-      <button data-act="digest-side">Get the digest</button></div>
   </aside>
   <main class="main">
     <div class="view on" id="v-overview"></div>
-    <div class="view" id="v-updates"></div>
-    <div class="view" id="v-frameworks"></div>
     <div class="view" id="v-changes"></div>
-    <div class="view" id="v-jurisdictions"></div>
+    <div class="view" id="v-regulations"></div>
     <div class="view" id="v-timeline"></div>
     <div class="view" id="v-method"></div>
     <footer>
@@ -487,13 +540,23 @@ const PHASES=["scoping","drafting","consultation","draft","adopted-pending","leg
 const PHASE_LABEL={scoping:"Scoping",drafting:"Drafting",consultation:"Consultation open",draft:"Draft published",
  "adopted-pending":"Adopted, not in force",legislation:"In legislation",final:"Final",implementation:"In force",
  litigation:"In litigation",rescinding:"Being rescinded"};
-const VIEWS=[["overview","Overview"],["changes","Changes"],["frameworks","Regulations"],
+const VIEWS=[["overview","Overview"],["changes","Changes"],["regulations","Regulations"],
  ["timeline","Deadlines"],["method","Method"]];
-/* legacy view ids fold into the five above (Updates→Changes, Jurisdictions→Regulations) */
-const VIEW_ALIAS={updates:"changes",jurisdictions:"frameworks"};
-const SCOPE_KEY="ecoledger-tracker-scope";
+const SUB={changes:"latest",regulations:"frameworks"};
 const STALE_DAYS=45, TODAY=new Date("2026-08-25T00:00:00Z");
-let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""},MOREFILT=false;
+let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""};
+let MOREFILTERS=false, SAVED=false;
+const STORE="ecoledger-perimeter-v1";
+function saveScope(){
+  try{localStorage.setItem(STORE,JSON.stringify({geo:[...SCOPE.geo],rev:SCOPE.rev,emp:SCOPE.emp,listed:SCOPE.listed}));
+    SAVED=true;return true;}catch(e){return false;}
+}
+function loadScope(){
+  try{const r=localStorage.getItem(STORE);if(!r)return false;const o=JSON.parse(r);
+    SCOPE.geo=new Set(o.geo||[]);SCOPE.rev=o.rev||"";SCOPE.emp=o.emp||"";SCOPE.listed=o.listed||"";
+    SAVED=true;return true;}catch(e){return false;}
+}
+function clearSaved(){try{localStorage.removeItem(STORE);}catch(e){}SAVED=false;}
 
 /* ============================== UTIL ============================== */
 const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)];
@@ -510,12 +573,7 @@ function relTime(s){const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d)
   else if(a<730)n=Math.round(a/30.44)+" months";else n=(a/365.25).toFixed(1).replace(/\.0$/,"")+" years";
   return g>=0?"in "+n:n+" ago";}
 const isSoon=s=>{const d=parseDate(s);if(!d)return false;const g=dayDiff(TODAY,d);return g>=0&&g<=120;};
-/* graded urgency: within 7 days = urgent, within 30 = soon, within 120 = near */
-const urgency=s=>{const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d);if(g<0)return"";if(g<=7)return"urgent";if(g<=30)return"soon";if(g<=120)return"near";return"";};
 const staleDays=s=>{const d=parseDate(s);return d?dayDiff(d,TODAY):999;};
-/* persist the saved scope ("My regulatory perimeter") across visits */
-function saveScope(){try{localStorage.setItem(SCOPE_KEY,JSON.stringify({geo:[...SCOPE.geo],rev:SCOPE.rev,emp:SCOPE.emp,listed:SCOPE.listed}));}catch(e){}}
-function loadScope(){try{const r=JSON.parse(localStorage.getItem(SCOPE_KEY)||"null");if(r){SCOPE.geo=new Set(r.geo||[]);SCOPE.rev=r.rev||"";SCOPE.emp=r.emp||"";SCOPE.listed=r.listed||"";return true;}}catch(e){}return false;}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),3600);}
 const sentences=t=>String(t||"").split(/(?<=[.!?])\s+(?=[A-Z(“"])/).filter(x=>x.trim());
 function gloss(text,seen){
@@ -610,15 +668,6 @@ function verdicts(){
 function relevantFw(){if(!SCOPE.geo.size)return null;const s=new Set(["ghgp","iso","sbti","issb"]);SCOPE.geo.forEach(g=>s.add(g));return s;}
 function fwPass(id){if(FWSEL.size)return FWSEL.has(id);const r=relevantFw();return r?r.has(id):true;}
 const upds=()=>(DATA.updates||[]).filter(u=>fwPass(u.framework));
-/* action-status for a framework: a change in the last 14 days, or a deadline inside 30 days */
-function fwAction(fw){
-  const recent=(DATA.updates||[]).filter(u=>u.framework===fw&&staleDays(u.date)>=0&&staleDays(u.date)<=14);
-  const soonMs=(DATA.timeline_milestones||[]).some(m=>m.framework===fw&&["urgent","soon"].includes(urgency(m.date)));
-  if(recent.some(u=>u.significance==="high"))return{k:"changed",l:"Changed"};
-  if(soonMs)return{k:"deadline",l:"Deadline soon"};
-  if(recent.length)return{k:"new",l:"New this month"};
-  return{k:"none",l:"No action"};
-}
 
 /* ============================== BITS ============================== */
 const confChip=c=>c?'<span class="chip c-'+esc(c.level)+'" data-tip="'+esc(c.reasoning||"")+'">'+esc(c.level)+"</span>":"";
@@ -696,93 +745,194 @@ function matrixSVG(){
   </svg>`;
 }
 
-/* ============================== VIEWS ============================== */
-function renderOverview(){
-  const v=verdicts(), hits=v.filter(x=>x.status==="in"||x.status==="likely").length;
-  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
-    .sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(0,5);
-  const feed=upds().slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
-  const wk=feed.filter(u=>staleDays(u.date)>=0&&staleDays(u.date)<=7).length;
-  const top=feed.slice(0,4);
-  const scopeNote=scoped()?"the changes that touch your business":"every framework we track";
-  $("#v-overview").innerHTML=`
-  <div class="vhead"><span class="lbl">Sustainability and regulatory disclosure tracker</span>
-    <h2>Your live view of sustainability regulation.</h2>
-    <p class="lead">Every change to the disclosure rulebook, in one place, kept current. GHG Protocol, ISO, SBTi, ISSB, EU, US, UK, plus seven more jurisdictions. Free, vendor-neutral, re-verified every Monday.</p></div>
+/* ============================== RELEVANCE ============================== */
+/* one line answering "does this apply to me", per framework */
+const GENERAL={
+  ghgp:"Relevant to anyone producing a greenhouse gas inventory, whatever the disclosure regime.",
+  iso:"Relevant to anyone producing a greenhouse gas inventory or seeking verification.",
+  sbti:"Relevant if you hold, or plan to seek, validated science-based targets.",
+  issb:"Relevant if you report in a jurisdiction that has adopted the ISSB standards.",
+  eu:"Likely relevant if you have EU operations, over €450m turnover and over 1,000 staff.",
+  us:"Likely relevant if you have US entities doing business in California over $500m gross receipts.",
+  uk:"Likely relevant if you are a UK company. Listed issuers are first in scope.",
+  ca:"Relevant if you are a Canadian reporting issuer.",
+  au:"Relevant if you meet the Australian ASRS size thresholds.",
+  sg:"Relevant if you are listed on SGX or a large Singapore company.",
+  hk:"Relevant if you are listed on HKEX.",
+  jp:"Relevant if you are a Prime Market listed company in Japan.",
+  ae:"Relevant if you are listed in the UAE.",
+  qa:"Relevant if you are listed in Qatar."
+};
+function relevance(fw){
+  if(!scoped()) return {level:"general", text:GENERAL[fw]||""};
+  const v=verdicts().filter(x=>x.fw===fw);
+  if(!v.length) return {level:"not", text:"Outside your perimeter as set."};
+  const rank={in:0,likely:1,indirect:2,out:3};
+  v.sort((a,b)=>rank[a.status]-rank[b.status]);
+  const t=v[0];
+  if(t.status==="in") return {level:"applies", text:"Applies to you. "+(t.why||t.name)};
+  if(t.status==="likely") return {level:"check", text:"Worth checking. "+(t.why||t.name)};
+  if(t.status==="indirect") return {level:"indirect", text:"Indirect. "+(t.why||t.name)};
+  return {level:"not", text:"Does not apply on the answers you gave."};
+}
+function relChip(fw){
+  const r=relevance(fw);
+  if(!r.text) return "";
+  const cls={applies:"r-applies",check:"r-check",indirect:"r-indirect",not:"r-not",general:"r-general"}[r.level];
+  const lbl={applies:"Applies to you",check:"Check",indirect:"Indirect",not:"Not yours",general:"Who it affects"}[r.level];
+  return '<div class="rel '+cls+'"><b>'+lbl+'</b>'+esc(r.text)+"</div>";
+}
+/* urgency */
+function urgency(dateStr){
+  const d=parseDate(dateStr); if(!d) return null;
+  const g=dayDiff(TODAY,d);
+  if(g<0) return null;
+  if(g<=7)  return {cls:"u-now",  label:g===0?"Due today":"Due in "+g+(g===1?" day":" days")};
+  if(g<=30) return {cls:"u-soon", label:"Due in "+g+" days"};
+  if(g<=90) return {cls:"u-near", label:relTime(dateStr)};
+  return null;
+}
 
-  <div class="hero">
-    <div class="hero-hd"><span class="pulse"></span><h3>What changed recently</h3>
-      <span class="cnt">${wk} in the past 7 days · ${scopeNote}</span>
+/* ============================== VIEWS ============================== */
+function subTabs(view,tabs){
+  return '<div class="subtabs">'+tabs.map(([k,l,n])=>
+    '<button class="subtab'+(SUB[view]===k?" on":"")+'" data-sub="'+view+':'+k+'">'+esc(l)+
+    (n!=null?'<span class="n">'+n+"</span>":"")+"</button>").join("")+"</div>";
+}
+
+/* What changed / Who it affects / What to do. The tracker's card convention. */
+function three(u){
+  const r=relevance(u.framework);
+  const what=sentences(u.detail)[0]||u.detail||"";
+  return `<dl class="three">
+    <div><dt>What changed</dt><dd>${esc(what)}</dd></div>
+    <div><dt>Who it affects</dt><dd class="${"w-"+r.level}">${esc(r.text)}</dd></div>
+    <div><dt>What to do</dt><dd>${esc(u.so_what||"—")}</dd></div>
+  </dl>`;
+}
+
+/* ---------- the week's changes, the thing people come for ---------- */
+function weekPanel(){
+  const list=upds();
+  let win=7, pool=list.filter(u=>staleDays(u.date)>=0&&staleDays(u.date)<=win);
+  if(!pool.length){win=30;pool=list.filter(u=>staleDays(u.date)>=0&&staleDays(u.date)<=win);}
+  if(!pool.length){win=90;pool=list.filter(u=>staleDays(u.date)>=0&&staleDays(u.date)<=win);}
+  const rank={high:0,medium:1,low:2};
+  const top=pool.slice().sort((a,b)=>(rank[a.significance]-rank[b.significance])||String(b.date).localeCompare(String(a.date))).slice(0,4);
+  const wl=win===7?"past 7 days":win===30?"past 30 days":"past 90 days";
+  const scopeNote=scoped()?"the changes that touch your business":"every framework we track";
+  return `<div class="hero">
+    <div class="hero-hd"><span class="pulse"></span><h3>What changed</h3>
+      <span class="cnt">${pool.length} in the ${wl} &middot; ${scopeNote}</span>
       <a class="all" data-goto="changes">See every change &#8594;</a></div>
-    <div class="hero-bd">${top.map(u=>`<div class="hc" data-goto="changes" data-fw="${u.framework}">
+    <div class="hero-bd">${top.map(u=>{const r=relevance(u.framework);
+      return `<div class="hc" data-goto="changes" data-fw="${u.framework}">
       <div class="hct">${fwTag(u.framework)}<span class="age">${relTime(u.date)}</span>
         <span class="sig ${esc(u.significance)}" title="${esc(u.significance)} significance"><i></i><i></i><i></i></span></div>
       <h4>${esc(u.headline)}</h4>
-      <div class="sw">${esc(u.so_what||"")}</div></div>`).join("")||'<div class="empty" style="padding:14px">Nothing new in your current filter. A quiet week is a real result.</div>'}</div>
-  </div>
+      <dl class="hc3">
+        <div><dt>Who it affects</dt><dd class="${"w-"+r.level}">${esc(r.text)}</dd></div>
+        <div><dt>What to do</dt><dd>${esc(u.so_what||"")}</dd></div>
+      </dl></div>`;}).join("")||'<div class="empty" style="padding:14px">Nothing new in your current filter. A quiet week is a real result.</div>'}</div>
+    <div class="panel-ft">
+      <b>Weekly 5</b><span>Five regulatory changes worth knowing, every Monday.</span>
+      <button class="btn pri" data-act="digest">Get the digest</button>
+    </div></div>`;
+}
 
-  <div class="strip"><div class="strip-in">
-    <div class="fld"><span class="lbl">Where</span><div class="opts" data-f="geo">
-      ${GEOS.map(([k,l])=>`<button class="opt ${SCOPE.geo.has(k)?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
-    <div class="fld"><span class="lbl">Turnover</span><div class="opts" data-f="rev">
+/* ---------- deadlines rail, urgent things shout ---------- */
+function railPanel(){
+  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
+    .sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(0,5);
+  return `<div class="rail">${ms.map(m=>{const u=urgency(m.date);
+    const dd=parseDate(m.date), days=dayDiff(TODAY,dd);
+    return `<div class="dt ${u?u.cls:""}" style="--sc:${fwc(m.framework)}">
+      <span class="w">Deadline${m.state==="projected"?" · projected":""}</span>
+      <div class="v">${fmtDate(m.date)}</div>
+      <span class="cd ${u?"":"q"}">${days<=90?days+(days===1?" day":" days"):relTime(m.date)}</span>
+      <p>${esc(m.label)}</p>
+      <span class="dt-fw">${fws(m.framework)}</span></div>`;}).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>`;
+}
+
+/* ---------- framework status, actionable ---------- */
+function fwStatus(f){
+  const ups=(DATA.updates||[]).filter(u=>u.framework===f.id);
+  const fresh=ups.filter(u=>staleDays(u.date)<=7).length;
+  const recent=ups.filter(u=>staleDays(u.date)<=30).length;
+  const next=(DATA.timeline_milestones||[]).filter(m=>m.framework===f.id&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
+    .sort((a,b)=>String(a.date).localeCompare(String(b.date)))[0];
+  const u=next?urgency(next.date):null;
+  if(u&&u.cls==="u-now")  return {cls:"s-now",  t:"Deadline in days"};
+  if(fresh)               return {cls:"s-new",  t:"New this week"};
+  if(u&&u.cls==="u-soon") return {cls:"s-soon", t:"Deadline approaching"};
+  if(recent)              return {cls:"s-chg",  t:"Changed this month"};
+  return {cls:"s-ok", t:"No action right now"};
+}
+
+function scopeStrip(){
+  const v=verdicts(), hits=v.filter(x=>x.status==="in"||x.status==="likely").length;
+  const primary=[["uk","UK"],["eu","EU"],["us","US"]];
+  const extra=GEOS.filter(g=>!primary.some(p=>p[0]===g[0]));
+  const extraOn=extra.some(g=>SCOPE.geo.has(g[0]));
+  return `<div class="strip"><div class="strip-in">
+    <div class="fld"><span class="lbl">Jurisdiction</span><div class="opts" data-f="geo">
+      ${primary.map(([k,l])=>`<button class="opt ${SCOPE.geo.has(k)?"on":""}" data-v="${k}">${l}</button>`).join("")}
+      </div></div>
+    <div class="fld"><span class="lbl">Group turnover</span><div class="opts" data-f="rev">
       ${REV.map(([k,l])=>`<button class="opt ${SCOPE.rev===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
-    <div class="fld ${MOREFILT?"":"hid"}"><span class="lbl">Staff</span><div class="opts" data-f="emp">
+    <div class="fld"><button class="morebtn ${MOREFILTERS||extraOn||SCOPE.emp||SCOPE.listed?"on":""}" data-act="more">
+      ${MOREFILTERS?"Fewer":"More"}${(extraOn||SCOPE.emp||SCOPE.listed)&&!MOREFILTERS?" · set":""}</button></div>
+  </div>
+  ${MOREFILTERS?`<div class="strip-in more">
+    <div class="fld"><span class="lbl">Other jurisdictions</span><div class="opts" data-f="geo">
+      ${extra.map(([k,l])=>`<button class="opt ${SCOPE.geo.has(k)?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
+    <div class="fld"><span class="lbl">Employees</span><div class="opts" data-f="emp">
       ${EMP.map(([k,l])=>`<button class="opt ${SCOPE.emp===k?"on":""}" data-v="${k}">${l}</button>`).join("")}</div></div>
-    <div class="fld ${MOREFILT?"":"hid"}"><span class="lbl">Listed</span><div class="opts" data-f="listed">
+    <div class="fld"><span class="lbl">Listed</span><div class="opts" data-f="listed">
       <button class="opt ${SCOPE.listed==="yes"?"on":""}" data-v="yes">Yes</button>
       <button class="opt ${SCOPE.listed==="no"?"on":""}" data-v="no">No</button></div></div>
-    <button class="morefilt" data-act="morefilt">${MOREFILT?"Fewer filters":"More filters"}</button>
-  </div><div class="strip-ft">
-    <span>${scoped()?`<b style="color:var(--ink);font-weight:500">${hits}</b> regimes likely to apply, saved as your perimeter. Indicative only. Check the linked legislation.`:"Answer a couple of questions and the whole tracker re-sorts to your business. We remember it next time."}</span>
-    <button data-act="reset">Clear</button><button data-act="share">Copy link to this view</button>
-  </div></div>
+  </div>`:""}
+  <div class="strip-ft">
+    <span>${scoped()?`<b>${hits}</b> regimes likely to apply. Indicative only, check the linked legislation.`:"Set your perimeter once and every view filters to it."}</span>
+    ${scoped()?`<button data-act="save">${SAVED?"✓ Perimeter saved":"Save my perimeter"}</button>`:""}
+    ${scoped()?'<button data-act="reset">Clear</button><button data-act="share">Copy link</button>':""}
+  </div></div>`;
+}
 
-  <div class="rail">${ms.map(m=>{const ug=urgency(m.date);return`<div class="dt ${ug}" style="--sc:${fwc(m.framework)}">
-    <span class="w">${fws(m.framework)} · ${m.state==="projected"?"projected":"confirmed"}</span>
-    <div class="v">${fmtDate(m.date)}${ug==="urgent"?'<span class="flag urgent">Due this week</span>':ug==="soon"?'<span class="flag soon">Within 30 days</span>':""}</div>
-    <span class="c ${ug}">${relTime(m.date)}</span>
-    <p>${esc(m.label)}</p></div>`;}).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>
-
+function renderOverview(){
+  const v=verdicts();
+  $("#v-overview").innerHTML=`
+  <div class="vhead"><span class="lbl">Sustainability and regulatory disclosure tracker</span>
+    <h2>Your live view of sustainability regulation.</h2>
+    <p class="lead">Track the standards, deadlines and regulatory changes that affect sustainability reporting across major global jurisdictions. Free, vendor neutral and verified against primary sources.</p></div>
+  ${scopeStrip()}
+  ${weekPanel()}
+  <div class="secline"><h3>Next deadlines</h3><span class="lbl">soonest first</span></div>
+  ${railPanel()}
   <div class="cols">
-    <div class="panel">
-      <div class="panel-hd"><h3>Settled against effort</h3><span class="lbl">${(DATA.matrix||[]).filter(p=>fwPass(p.framework)).length} workstreams</span></div>
+    <div class="panel"><div class="panel-hd"><h3>Where to focus</h3>
+      <span class="lbl">${(DATA.matrix||[]).filter(p=>fwPass(p.framework)).length} workstreams</span></div>
       <div class="panel-bd">${matrixSVG()}
-        <p style="font-size:11px;color:var(--mute-2);line-height:1.5;margin-top:6px">
-          Filled dot = confirmed or high confidence; hollow = still open. Vertical position is our own estimate of the work created for a mid-sized reporting team, not a sourced figure. The reasoning sits on every point and on the Method page.</p></div>
-    </div>
-    <div class="panel">
-      <div class="panel-hd"><h3>${scoped()?"What applies to you":"Everything tracked"}</h3><span class="lbl">${v.length} regimes · what needs action</span></div>
-      <div class="panel-bd flush">${v.map(x=>{const a=fwAction(x.fw);return`<div class="vrow ${x.status}" style="--sc:${fwc(x.fw)}" data-tip="${esc(x.why||"")}">
+        <p class="foot">Filled dot = confirmed or high confidence; hollow = still open. Vertical position is our own estimate of the work created for a mid-sized reporting team, not a sourced figure. The reasoning sits on every point and on the Method page.</p></div></div>
+    <div class="panel"><div class="panel-hd"><h3>${scoped()?"What applies to you":"Every regime tracked"}</h3>
+      <span class="lbl">${v.length} regimes</span></div>
+      <div class="panel-bd flush">${v.map(x=>`<div class="vrow ${x.status}" style="--sc:${fwc(x.fw)}" data-tip="${esc(x.why||"")}">
         <span class="st">${x.status==="in"?"In scope":x.status==="likely"?"Check":x.status==="indirect"?"Indirect":"Out"}</span>
-        <div><div class="nm">${esc(x.name)}</div><div class="ln">${esc(x.line)}</div>
-          <span class="act ${a.k}">${a.l}</span></div>
-        <span class="chip c-neutral" style="--sc:${fwc(x.fw)};margin-top:3px"><i></i>${esc(fws(x.fw))}</span></div>`;}).join("")}</div>
-    </div>
+        <div><div class="nm">${esc(x.name)}</div><div class="ln">${esc(x.line)}</div></div>
+        <span class="chip c-neutral" style="--sc:${fwc(x.fw)};margin-top:3px"><i></i>${esc(fws(x.fw))}</span></div>`).join("")}</div></div>
   </div>
-
-  <div class="digest">
-    <div class="dtxt"><h3>Get the 5 changes that matter this week</h3>
-      <p>One short email every Monday: the moves that affect reporters, verified against the primary source. No noise, unsubscribe anytime.</p></div>
-    <form data-digest><input type="email" name="email" placeholder="you@company.com" aria-label="Work email" required>
-      <button type="submit">Send me the weekly 5</button></form>
-  </div>
-
-  <div class="panel"><div class="panel-hd"><h3>Coverage</h3><span class="lbl">7 frameworks · 7 more jurisdictions</span></div>
+  <div class="panel"><div class="panel-hd"><h3>All active changes</h3><span class="lbl">7 frameworks · 7 more jurisdictions</span></div>
     <div class="panel-bd"><div class="grid3">${(DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{
-      const ws=f.workstreams||[], act=ws.filter(w=>["consultation","drafting","draft","legislation","adopted-pending"].includes(w.phase)).length;
-      return `<button class="fcard" style="--sc:${fwc(f.id)}" data-goto="frameworks" data-fw="${f.id}">
-        <h4>${esc(f.name)}</h4><span class="o">${esc(f.org||"")}</span>
+      const st=fwStatus(f), r=relevance(f.id);
+      return `<button class="fcard ${st.cls}" style="--sc:${fwc(f.id)}" data-goto="regulations" data-fw="${f.id}">
+        <div class="fc-top"><h4>${esc(f.name)}</h4><span class="fstat">${esc(st.t)}</span></div>
+        <span class="o">${esc(f.org||"")}</span>
         <p>${esc(f.status_headline||f.tagline||"")}</p>
-        <div class="m"><span class="chip c-neutral">${ws.length} workstreams</span>${act?`<span class="chip c-medium">${act} moving</span>`:""}</div>
-      </button>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}</div></div></div>`;
+        <span class="rp ${"r-"+r.level}">${esc(r.text)}</span></button>`;}).join("")}</div></div></div>`;
 }
 
-function appliesPill(fw){
-  if(!SCOPE.geo.size)return"";
-  const r=relevantFw(),yes=r&&r.has(fw);
-  return `<span class="apw ${yes?"yes":"no"}">${yes?"Applies to you":"Outside your scope"}</span>`;
-}
-function updatesFeed(){
+/* ---------- Changes: the feed and the old-versus-new tables ---------- */
+function feedHTML(){
   const list=upds(), B=[["Past week",7],["Past month",31],["Past three months",92],["Earlier",99999]];
   let html="";
   B.forEach(([label,days],i)=>{
@@ -790,33 +940,53 @@ function updatesFeed(){
     if(!inB.length){ if(i<3) html+=`<div class="bucket"><div class="bucket-hd"><h3>${label}</h3><span class="lbl">nothing new</span></div>
       <div class="empty">A quiet week is a real result. It means we checked and nothing moved.</div></div>`; return; }
     html+=`<div class="bucket"><div class="bucket-hd"><h3>${label}</h3><span class="lbl">${inB.length} update${inB.length===1?"":"s"}</span></div>
-      ${inB.map(u=>{const seen=new Set();return`<div class="upd">
+      ${inB.map(u=>{const seen=new Set();
+        return`<div class="upd">
         <div class="d"><b>${fmtDate(u.date)}</b>${relTime(u.date)}</div>
         <div><h4>${gloss(u.headline,seen)}</h4>
-          <ul class="det">${sentences(u.detail).map(s=>"<li>"+gloss(s,seen)+"</li>").join("")}</ul>
-          <div class="tags">${fwTag(u.framework)}${appliesPill(u.framework)}
+          <ul class="det">${sentences(u.detail).map(x=>"<li>"+gloss(x,seen)+"</li>").join("")}</ul>
+          <div class="tags">${fwTag(u.framework)}
             <span class="sig ${esc(u.significance)}" title="${esc(u.significance)} significance"><i></i><i></i><i></i></span>
             ${staleChip(u.last_verified)}</div>
           <div class="srcs" style="margin-top:7px">${srcLink(u.source_url,u.source_title,u.source_publisher)}</div></div>
-        <div class="sw"><b>What it means for you</b>${esc(u.so_what||"")}</div></div>`;}).join("")}</div>`;
+        <div>${three(u)}</div></div>`;}).join("")}</div>`;
   });
-  return {n:list.length,html};
+  return html;
+}
+function tablesHTML(){
+  const ch=(DATA.changes||[]).filter(c=>fwPass(c.framework)),by={};
+  ch.forEach(c=>{(by[c.framework]=by[c.framework]||[]).push(c);});
+  return Object.keys(by).map(f=>`<h3 class="fwh"><span style="background:${fwc(f)}"></span>${esc(fwn(f))}</h3>
+    ${relChip(f)}
+    <div class="tw"><table><thead><tr><th style="width:20%">Topic</th><th style="width:33%">Today</th><th style="width:33%">Proposed or adopted</th><th style="width:14%">Status</th></tr></thead>
+      <tbody>${by[f].map(c=>`<tr><td><strong>${esc(c.topic)}</strong>${c.source_url?`<div style="margin-top:7px">${srcLink(c.source_url,c.source_title)}</div>`:""}</td>
+        <td>${esc(c.old)}</td><td class="new">${esc(c.new)}</td>
+        <td><span class="chip ${c.status==="final"?"c-confirmed":c.status==="proposed"?"c-high":c.status==="litigation"?"c-lit":"c-medium"}">${esc(c.status)}</span></td></tr>`).join("")}</tbody></table></div>`).join("")
+    ||'<div class="empty">Nothing in this filter.</div>';
+}
+function renderChanges(){
+  const nFeed=upds().length, nTab=(DATA.changes||[]).filter(c=>fwPass(c.framework)).length;
+  $("#v-changes").innerHTML=`<div class="vhead"><span class="lbl">What moved, and what replaces what</span>
+    <h2>Changes</h2><p>Every entry cites the publication it came from, and says whether it is likely to apply to you.</p></div>
+  ${subTabs("changes",[["latest","Latest updates",nFeed],["oldnew","Old versus new",nTab]])}
+  ${toolbar(SUB.changes==="latest"?"updates":"changes")}
+  ${SUB.changes==="latest"?feedHTML():tablesHTML()}`;
 }
 
-function renderFrameworks(){
-  $("#v-frameworks").innerHTML=`<div class="vhead"><span class="lbl">Standards pipeline</span><h2>Where every workstream sits</h2>
-    <p>Phase, next milestone, and a confidence rating with its reasoning shown, so you can disagree with our judgement rather than take it on trust.</p></div>
-  ${(DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{const seen=new Set();
+/* ---------- Regulations: frameworks and jurisdictions ---------- */
+function frameworksHTML(){
+  return (DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{const seen=new Set();
     return`<div class="panel" style="margin-bottom:16px;--sc:${fwc(f.id)}">
     <div class="panel-hd" style="border-top:3px solid ${fwc(f.id)}">
       <div><h3 style="font-size:19px">${esc(f.name)}</h3><span class="lbl" style="color:var(--mute-2)">${esc(f.org||"")}</span></div>
       <span class="lbl">${(f.workstreams||[]).length} workstreams</span></div>
     <div class="panel-bd">
+      ${relChip(f.id)}
       <p style="font-size:13.5px;color:var(--mute);line-height:1.6;max-width:92ch">${gloss(f.description||"",seen)}</p>
       ${(f.workstreams||[]).map(w=>{const s2=new Set(seen),kp=w.key_points||[];
         return`<div class="ws"><div class="ws-top"><h4>${gloss(w.name,s2)}</h4>${confChip(w.confidence)}
           ${w.effort!=null?`<span class="chip c-neutral" data-tip="${esc(w.effort_note||"")}">effort ${w.effort}/100</span>`:""}
-          ${w.litigation_risk&&w.litigation_risk.exposed?`<span class="chip c-lit" data-tip="${esc((w.litigation_risk.case||"")+", "+(w.litigation_risk.posture||""))}">Litigation risk</span>`:""}
+          ${w.litigation_risk&&w.litigation_risk.exposed?`<span class="chip c-lit" data-tip="${esc((w.litigation_risk.case||"")+" — "+(w.litigation_risk.posture||""))}">Litigation risk</span>`:""}
           ${staleChip(w.last_verified)}</div>
         ${stepper(w.phase)}
         <div class="ws-meta">
@@ -824,50 +994,36 @@ function renderFrameworks(){
           ${w.next_milestone&&w.next_milestone.date?`<span>next <span class="v">${fmtDate(w.next_milestone.date)}</span> · ${relTime(w.next_milestone.date)}${w.next_milestone.projected?" · projected":""}</span>`:""}
           <span>verified <span class="v">${fmtDate(w.last_verified)}</span></span></div>
         <p class="ws-sum">${gloss(w.summary||"",s2)}</p>
-        <ul class="kp">${kp.map((p,i)=>`<li class="${i>2?"more":""}">${gloss(p,s2)}</li>`).join("")}</ul>
+        <ul class="kp">${kp.map((x,i)=>`<li class="${i>2?"more":""}">${gloss(x,s2)}</li>`).join("")}</ul>
         ${kp.length>3?`<button class="btn" style="margin-bottom:9px;font-size:11px;padding:4px 9px" data-exp="1">Show ${kp.length-3} more</button>`:""}
         ${w.so_what?`<div class="sowhat"><b>What to do about it</b>${esc(w.so_what)}</div>`:""}
         ${w.confidence&&w.confidence.reasoning?`<p style="font-size:11.5px;color:var(--mute-2);margin-bottom:8px"><b style="color:var(--mute);font-weight:500">Why ${esc(w.confidence.level)}:</b> ${esc(w.confidence.reasoning)}</p>`:""}
         ${srcLinks(w.sources)}</div>`;}).join("")}
-    </div></div>`;}).join("")||'<div class="empty">Nothing in this filter.</div>'}
-  ${jurisdictionsSection()}`;
+    </div></div>`;}).join("")||'<div class="empty">Nothing in this filter.</div>';
 }
-
-function renderChanges(){
-  const feed=updatesFeed();
-  const ch=(DATA.changes||[]).filter(c=>fwPass(c.framework)),by={};
-  ch.forEach(c=>{(by[c.framework]=by[c.framework]||[]).push(c);});
-  const tables=Object.keys(by).map(f=>`<h3 style="font-size:17px;margin:20px 0 8px;display:flex;align-items:center;gap:8px">
-      <span style="width:10px;height:10px;border-radius:2px;background:${fwc(f)}"></span>${esc(fwn(f))}</h3>
-    <div class="tw"><table><thead><tr><th style="width:20%">Topic</th><th style="width:33%">Today</th><th style="width:33%">Proposed or adopted</th><th style="width:14%">Status</th></tr></thead>
-      <tbody>${by[f].map(c=>`<tr><td><strong>${esc(c.topic)}</strong>${c.source_url?`<div style="margin-top:7px">${srcLink(c.source_url,c.source_title)}</div>`:""}</td>
-        <td>${esc(c.old)}</td><td class="new">${esc(c.new)}</td>
-        <td><span class="chip ${c.status==="final"?"c-confirmed":c.status==="proposed"?"c-high":c.status==="litigation"?"c-lit":"c-medium"}">${esc(c.status)}</span></td></tr>`).join("")}</tbody></table></div>`).join("")||'<div class="empty">Nothing in this filter.</div>';
-  $("#v-changes").innerHTML=`<div class="vhead"><span class="lbl">Dated feed · ${feed.n} entries</span><h2>What changed, and when</h2>
-    <p>Newest first, every entry citing the publication it came from, with what it means for you. Buckets are computed from the date, so an empty week is genuinely empty.</p></div>
-  ${toolbar("updates")}${feed.html}
-  <div class="vhead" style="margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)"><span class="lbl">Old versus new · ${ch.length} rows</span><h2>What is actually changing, side by side</h2>
-    <p>The reference you take into a meeting. Left is the rule today, right is what replaces it, status says whether it is settled.</p></div>
-  ${tables}`;
-}
-
-function jurisdictionsSection(){
+function jurisdictionsHTML(){
   const js=(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)),st=DATA.scope_tests||[];
-  return `<div class="vhead" style="margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)"><span class="lbl">Where the rules bite</span><h2>Jurisdiction by jurisdiction</h2>
-    <p>The same four questions for every country: who is in scope, from which year, which standard, whether assurance is required. Fixed schema, so the rows actually compare.</p></div>
-  ${toolbar("jurisdictions")}
-  <div class="tw"><table style="min-width:1000px"><thead><tr><th>Jurisdiction</th><th>Standard</th><th>Status</th><th style="width:24%">Who is in scope</th><th>First period</th><th>Scope 3</th><th>Assurance</th><th>Confidence</th></tr></thead>
+  return `<div class="tw"><table style="min-width:1000px"><thead><tr><th>Jurisdiction</th><th>Standard</th><th>Status</th><th style="width:24%">Who is in scope</th><th>First period</th><th>Scope 3</th><th>Assurance</th><th>Confidence</th></tr></thead>
     <tbody>${js.map(j=>`<tr><td><strong>${esc(j.name)}</strong><div style="font-size:11px;color:var(--mute-2);margin-top:2px">${esc(j.regulator||"")}</div></td>
-      <td class="new">${esc(j.standard||"")}</td>
+      <td class="new">${esc(j.standard||"—")}</td>
       <td><span class="chip ${/^mandatory/.test(j.status)?"c-lit":j.status==="voluntary"?"c-neutral":"c-medium"}">${esc(j.status)}</span></td>
-      <td>${esc(j.who_is_in_scope||"")}</td><td class="new">${esc(j.first_reporting_period||"")}</td>
-      <td>${esc(j.scope_3_required||"")}</td><td>${esc(j.assurance||"")}</td>
-      <td>${confChip(j.confidence)}${staleChip(j.last_verified)}${(j.sources||[]).slice(0,1).map(s=>`<div style="margin-top:6px">${srcLink(s.url,"Read the original",s.publisher)}</div>`).join("")}</td></tr>`).join("")||'<tr><td colspan="8" class="empty">Select a jurisdiction in the key, or clear your scope.</td></tr>'}</tbody></table></div>
+      <td>${esc(j.who_is_in_scope||"—")}</td><td class="new">${esc(j.first_reporting_period||"—")}</td>
+      <td>${esc(j.scope_3_required||"—")}</td><td>${esc(j.assurance||"—")}</td>
+      <td>${confChip(j.confidence)}${staleChip(j.last_verified)}${(j.sources||[]).slice(0,1).map(x=>`<div style="margin-top:6px">${srcLink(x.url,"Read the original",x.publisher)}</div>`).join("")}</td></tr>`).join("")}</tbody></table></div>
   ${st.length?`<h3 style="font-size:17px;margin:24px 0 8px">Scope tests, quoted from the legislation</h3>
   <div class="tw"><table><thead><tr><th>Regime</th><th style="width:42%">Threshold as written</th><th>First reporting period</th><th>Assurance</th><th></th></tr></thead>
-  <tbody>${st.map(s=>`<tr><td><strong>${esc(s.regime)}</strong></td><td>${esc(s.who_is_in_scope)}</td>
-    <td class="new">${esc(s.first_reporting_period||"")}${s.first_deadline?`<div class="mono" style="font-size:10.5px;margin-top:3px">due ${fmtDate(s.first_deadline)}</div>`:""}</td>
-    <td>${esc(s.assurance||"")}</td><td>${s.source_url?srcLink(s.source_url,"Read the original"):""}</td></tr>`).join("")}</tbody></table></div>`:""}`;
+  <tbody>${st.map(x=>`<tr><td><strong>${esc(x.regime)}</strong></td><td>${esc(x.who_is_in_scope)}</td>
+    <td class="new">${esc(x.first_reporting_period||"—")}${x.first_deadline?`<div class="mono" style="font-size:10.5px;margin-top:3px">due ${fmtDate(x.first_deadline)}</div>`:""}</td>
+    <td>${esc(x.assurance||"—")}</td><td>${x.source_url?srcLink(x.source_url,"Read the original"):""}</td></tr>`).join("")}</tbody></table></div>`:""}`;
+}
+function renderRegulations(){
+  const nF=(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length;
+  const nJ=(DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).length;
+  $("#v-regulations").innerHTML=`<div class="vhead"><span class="lbl">The rulebook itself</span><h2>Regulations</h2>
+    <p>Who writes the rules and where they bite. Every workstream carries a confidence rating with its reasoning shown, so you can disagree with our judgement rather than take it on trust.</p></div>
+  ${subTabs("regulations",[["frameworks","Frameworks",nF],["jurisdictions","Jurisdictions",nJ]])}
+  ${SUB.regulations==="jurisdictions"?toolbar("jurisdictions"):""}
+  ${SUB.regulations==="frameworks"?frameworksHTML():jurisdictionsHTML()}`;
 }
 
 function renderTimeline(){
@@ -876,8 +1032,11 @@ function renderTimeline(){
   const fut=all.filter(m=>parseDate(m.date)>=TODAY), past=all.filter(m=>parseDate(m.date)<TODAY).reverse(), G={};
   fut.forEach(m=>{const d=parseDate(m.date),k=d.getUTCFullYear()+" Q"+(Math.floor(d.getUTCMonth()/3)+1);(G[k]=G[k]||[]).push(m);});
   const nowK=TODAY.getUTCFullYear()+" Q"+(Math.floor(TODAY.getUTCMonth()/3)+1);
+  const urgent=fut.filter(m=>urgency(m.date)&&urgency(m.date).cls!=="u-near");
   $("#v-timeline").innerHTML=`<div class="vhead"><span class="lbl">${fut.length} dates ahead</span><h2>Deadlines</h2>
     <p>Counted from today, grouped by quarter. Hollow markers are projected from a published plan rather than fixed in law.</p></div>
+  ${urgent.length?`<div class="ban amber"><span class="ic">!</span><div><b>${urgent.length} within 30 days.</b>
+    ${urgent.slice(0,3).map(m=>esc(fws(m.framework)+" — "+m.label)).join("; ")}${urgent.length>3?"; and more below.":""}</div></div>`:""}
   <div class="tools"><button class="btn pri" data-act="ics"><svg viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>Add these deadlines to my calendar</button>
     <button class="btn" data-act="csv-timeline"><svg viewBox="0 0 16 16"><path d="M8 2v8m0 0 3-3m-3 3-3-3M2.5 12.5v1h11v-1"/></svg>CSV</button>
     <span class="sp"></span><label class="cnt" style="cursor:pointer"><input type="checkbox" id="tl-past" ${showPast?"checked":""}> Show the ${past.length} already passed</label></div>
@@ -885,13 +1044,13 @@ function renderTimeline(){
   ${showPast?`<div class="tl-q"><h3>Already passed</h3>${past.map(msRow).join("")}</div>`:""}`;
   const cb=$("#tl-past");if(cb)cb.onchange=renderTimeline;
 }
-function msRow(m){const passed=parseDate(m.date)<TODAY;
-  return`<div class="ms ${m.state==="projected"?"projected":""} ${passed?"completed":""}" style="--sc:${fwc(m.framework)}">
+function msRow(m){const passed=parseDate(m.date)<TODAY,u=passed?null:urgency(m.date);
+  return`<div class="ms ${m.state==="projected"?"projected":""} ${passed?"completed":""} ${u?u.cls:""}" style="--sc:${fwc(m.framework)}">
     <div class="dd">${fmtDate(m.date)}</div><div class="pin"><i></i></div>
     <div class="lb">${esc(m.label)}<div style="margin-top:4px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
       ${fwTag(m.framework)}${m.state==="projected"?'<span class="chip c-medium">projected</span>':""}
       ${m.source_url?srcLink(m.source_url,"Read the original"):""}</div></div>
-    <div class="cd ${isSoon(m.date)&&!passed?"soon":""}">${relTime(m.date)}</div></div>`;}
+    <div class="cd ${u?u.cls:""}">${u?esc(u.label):relTime(m.date)}</div></div>`;}
 
 function renderMethod(){
   const g=DATA.glossary||{},notes=DATA.coverage_notes||{},ws=(DATA.frameworks||[]).flatMap(f=>f.workstreams||[]);
@@ -909,6 +1068,8 @@ function renderMethod(){
       <div><dt>Medium</dt><dd>The outcome is genuinely open: a live consultation, a contested vote, or pending litigation.</dd></div>
       <div><dt>Low</dt><dd>Early signal only: scoping work or political intent.</dd></div></dl>
     <p>We never rate above <b>high</b> while a document says "subject to change", and never above <b>medium</b> while a court ruling could flip the outcome.</p>
+    <h3>Does it apply to you</h3>
+    <p>The perimeter you set on the Overview drives the "applies to you" line on every framework and every update. It is an indicative screen built from the thresholds quoted in the linked legislation, not a legal opinion, and it cannot see your group structure. Treat a green line as a prompt to check the threshold yourself.</p>
     <h3>The effort estimate</h3><p>${esc(DATA.matrix_method||"")}</p>
     <p>${esc(DATA.matrix_x_rule||"")}</p>
     ${DATA.verification?`<h3>Independent verification</h3>
@@ -981,15 +1142,15 @@ function exportICS(){
 /* ============================== SEARCH ============================== */
 let INDEX=[];
 function buildIndex(){INDEX=[];
-  (DATA.frameworks||[]).forEach(f=>(f.workstreams||[]).forEach(w=>INDEX.push({t:w.name,s:fwn(f.id)+" · workstream",v:"frameworks",fw:f.id,k:(w.name+" "+w.summary+" "+(w.key_points||[]).join(" ")).toLowerCase()})));
-  (DATA.updates||[]).forEach(u=>INDEX.push({t:u.headline,s:fwn(u.framework)+" · "+fmtDate(u.date),v:"updates",fw:u.framework,k:(u.headline+" "+u.detail+" "+u.so_what).toLowerCase()}));
-  (DATA.changes||[]).forEach(c=>INDEX.push({t:c.topic,s:fwn(c.framework)+" · change",v:"changes",fw:c.framework,k:(c.topic+" "+c.old+" "+c.new).toLowerCase()}));
-  (DATA.jurisdictions||[]).forEach(j=>INDEX.push({t:j.name+", "+j.standard,s:"jurisdiction",v:"jurisdictions",fw:j.id,k:(j.name+" "+j.standard+" "+j.who_is_in_scope).toLowerCase()}));
+  (DATA.frameworks||[]).forEach(f=>(f.workstreams||[]).forEach(w=>INDEX.push({t:w.name,s:fwn(f.id)+" · workstream",v:"regulations",fw:f.id,k:(w.name+" "+w.summary+" "+(w.key_points||[]).join(" ")).toLowerCase()})));
+  (DATA.updates||[]).forEach(u=>INDEX.push({t:u.headline,s:fwn(u.framework)+" · "+fmtDate(u.date),v:"changes",fw:u.framework,k:(u.headline+" "+u.detail+" "+u.so_what).toLowerCase()}));
+  (DATA.changes||[]).forEach(c=>INDEX.push({t:c.topic,s:fwn(c.framework)+" · change",v:"changes",fw:c.framework,sub:"oldnew",k:(c.topic+" "+c.old+" "+c.new).toLowerCase()}));
+  (DATA.jurisdictions||[]).forEach(j=>INDEX.push({t:j.name+", "+j.standard,s:"jurisdiction",v:"regulations",fw:j.id,sub:"jurisdictions",k:(j.name+" "+j.standard+" "+j.who_is_in_scope).toLowerCase()}));
   (DATA.timeline_milestones||[]).forEach(m=>INDEX.push({t:m.label,s:fwn(m.framework)+" · "+fmtDate(m.date),v:"timeline",fw:m.framework,k:(m.label+" "+m.date).toLowerCase()}));}
 function search(q){const box=$("#sres");q=q.trim().toLowerCase();
   if(q.length<2){box.classList.remove("on");return;}
   const T=q.split(/\s+/),h=INDEX.filter(x=>T.every(t=>x.k.includes(t))).slice(0,25);
-  box.innerHTML=h.length?h.map(x=>`<button data-v="${x.v}" data-fw="${x.fw}"><div class="t">${esc(x.t)}</div><div class="m">${esc(x.s)}</div></button>`).join("")
+  box.innerHTML=h.length?h.map(x=>`<button data-v="${x.v}" data-fw="${x.fw}" data-sub="${x.sub||""}"><div class="t">${esc(x.t)}</div><div class="m">${esc(x.s)}</div></button>`).join("")
     :'<div class="none">Nothing matches “'+esc(q)+'”. Try a standard name, a jurisdiction, or a year.</div>';
   box.classList.add("on");}
 
@@ -1008,12 +1169,12 @@ function renderScopeSum(){
   $("#scopesum").innerHTML=scoped()
     ?[["Where",g.join(", ")||""],["Turnover",rev||""],["Staff",emp||""],["Listed",SCOPE.listed||""]]
        .map(([a,b])=>`<div class="row"><span>${a}</span><b>${esc(b)}</b></div>`).join("")+
-       '<button data-act="reset">Clear perimeter</button>'
-    :'<div class="none">Not set yet. Set it on the Overview and we save it, so every view filters to your business next time too.</div>';
+       '<button data-act="reset">Clear scope</button>'
+    :'<div class="none">Set your regulatory perimeter once and every view will filter to what matters to your business.</div>';
 }
 function renderNav(){
-  const c={frameworks:(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length,
-    changes:upds().length,
+  const c={changes:upds().length,
+    regulations:(DATA.frameworks||[]).filter(f=>fwPass(f.id)).length,
     timeline:(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)>=TODAY).length};
   $("#nav").innerHTML=VIEWS.map(([id,l])=>`<button data-v="${id}" class="${VIEW===id?"on":""}">${l}${c[id]!=null?`<span class="n">${c[id]}</span>`:""}</button>`).join("");
 }
@@ -1023,29 +1184,31 @@ function writeHash(){const p=new URLSearchParams();p.set("v",VIEW);
   if(SCOPE.rev)p.set("rev",SCOPE.rev);if(SCOPE.emp)p.set("emp",SCOPE.emp);if(SCOPE.listed)p.set("listed",SCOPE.listed);
   history.replaceState(null,"","#"+p.toString());}
 function readHash(){const p=new URLSearchParams(location.hash.replace(/^#/,""));
-  let rv=p.get("v");if(rv){rv=VIEW_ALIAS[rv]||rv;if(VIEWS.some(v=>v[0]===rv))VIEW=rv;}
+  if(p.get("v")&&VIEWS.some(v=>v[0]===p.get("v")))VIEW=p.get("v");
   if(p.get("fw"))FWSEL=new Set(p.get("fw").split(",").filter(Boolean));
   if(p.get("geo"))SCOPE.geo=new Set(p.get("geo").split(",").filter(Boolean));
-  if(p.has("rev"))SCOPE.rev=p.get("rev")||"";if(p.has("emp"))SCOPE.emp=p.get("emp")||"";if(p.has("listed"))SCOPE.listed=p.get("listed")||"";}
+  SCOPE.rev=p.get("rev")||"";SCOPE.emp=p.get("emp")||"";SCOPE.listed=p.get("listed")||"";}
 function render(){renderNav();renderKey();renderScopeSum();
   $$(".view").forEach(v=>v.classList.remove("on"));$("#v-"+VIEW).classList.add("on");
-  ({overview:renderOverview,frameworks:renderFrameworks,changes:renderChanges,
+  ({overview:renderOverview,changes:renderChanges,regulations:renderRegulations,
     timeline:renderTimeline,method:renderMethod})[VIEW]();
   writeHash();}
-function go(v,fw){VIEW=VIEW_ALIAS[v]||v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
+function go(v,fw){VIEW=v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
 
 /* ============================== EVENTS ============================== */
 document.addEventListener("click",e=>{
   const o=e.target.closest(".opt");
   if(o&&o.parentElement.dataset.f){const f=o.parentElement.dataset.f,v=o.dataset.v;
     if(f==="geo")SCOPE.geo.has(v)?SCOPE.geo.delete(v):SCOPE.geo.add(v);else SCOPE[f]=SCOPE[f]===v?"":v;
-    saveScope();render();return;}
-  const t=e.target.closest("[data-v],[data-fwb],[data-act],[data-goto],[data-exp]");
+    SAVED=false;render();return;}
+  const t=e.target.closest("[data-v],[data-fwb],[data-act],[data-goto],[data-exp],[data-sub]");
   if(!t){$("#sres").classList.remove("on");return;}
   if(t.dataset.exp!=null){const ul=t.previousElementSibling;ul.classList.toggle("exp");
     t.textContent=ul.classList.contains("exp")?"Show fewer":"Show more";return;}
+  if(t.dataset.sub&&t.dataset.sub.includes(":")){const [v,k]=t.dataset.sub.split(":");SUB[v]=k;render();return;}
   if(t.dataset.goto){go(t.dataset.goto,t.dataset.fw);return;}
-  if(t.closest("#sres")){go(t.dataset.v,t.dataset.fw);$("#sres").classList.remove("on");$("#q").value="";return;}
+  if(t.closest("#sres")){if(t.dataset.sub)SUB[t.dataset.v]=t.dataset.sub;
+    go(t.dataset.v,t.dataset.fw);$("#sres").classList.remove("on");$("#q").value="";return;}
   if(t.closest("#nav")&&t.dataset.v){go(t.dataset.v);return;}
   if(t.dataset.fwb){const id=t.dataset.fwb;
     if(id==="_clear")FWSEL.clear();
@@ -1053,9 +1216,10 @@ document.addEventListener("click",e=>{
     else FWSEL.has(id)?FWSEL.delete(id):FWSEL.add(id);
     render();return;}
   if(t.dataset.act){const a=t.dataset.act;
-    if(a==="morefilt"){MOREFILT=!MOREFILT;render();return;}
-    if(a==="digest-side"){if(VIEW!=="overview")go("overview");setTimeout(()=>{const i=document.querySelector("[data-digest] input");if(i){i.scrollIntoView({block:"center",behavior:"smooth"});i.focus();}},60);return;}
-    if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();saveScope();render();return;}
+    if(a==="more"){MOREFILTERS=!MOREFILTERS;render();return;}
+    if(a==="save"){toast(saveScope()?"Perimeter saved to this browser. It will be waiting next time.":"Could not save. Your browser is blocking site storage.");render();return;}
+    if(a==="digest"){toast("Weekly digest signup goes here. Wire it to your HubSpot form before launch.");return;}
+    if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();clearSaved();render();return;}
     if(a==="share"){writeHash();const u=location.href;
       navigator.clipboard?navigator.clipboard.writeText(u).then(()=>toast("Link copied. It opens on exactly this view."),()=>toast(u)):toast(u);return;}
     if(a==="ics"){exportICS();return;}
@@ -1064,11 +1228,6 @@ document.addEventListener("click",e=>{
 $("#q").addEventListener("input",e=>search(e.target.value));
 $("#q").addEventListener("keydown",e=>{if(e.key==="Escape"){$("#sres").classList.remove("on");e.target.blur();}});
 $("#err-link").addEventListener("click",e=>{e.preventDefault();toast("Corrections go into the weekly pass. Wire this to your HubSpot form before launch.");});
-document.addEventListener("submit",e=>{const f=e.target.closest("[data-digest]");if(!f)return;e.preventDefault();
-  const em=(f.querySelector("input[name=email]")||{}).value||"";
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){toast("Enter a valid work email.");return;}
-  /* TODO before launch: POST to HubSpot form or Netlify Forms. Placeholder only. */
-  f.reset();toast("You are on the list. The weekly 5 lands each Monday.");});
 const tip=$("#tip");let tipFor=null;
 function showTip(el){
   tip.textContent=el.dataset.tip;tip.style.display="block";
@@ -1096,7 +1255,11 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")hideTip();});
   const lu=(DATA.meta||{}).last_updated;
   $("#stamp").textContent="Verified "+fmtDate(lu);
   $("#foot-stamp").textContent="Data as of "+fmtDate(lu);
-  buildIndex();loadScope();readHash();if(SCOPE.emp||SCOPE.listed)MOREFILT=true;render();
+  buildIndex();
+  const hadHash=/(^|&)(geo|rev|emp|listed)=/.test(location.hash.replace(/^#/,""));
+  readHash();
+  if(!hadHash) loadScope();
+  render();
 })();
 </script>
 </body>
