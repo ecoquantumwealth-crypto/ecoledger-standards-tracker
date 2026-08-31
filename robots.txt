@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://news.theecoledger.com/sitemap.xml
+Sitemap: https://tracker.theecoledger.com/sitemap.xml

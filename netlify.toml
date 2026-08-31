@@ -22,3 +22,10 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Anything still hitting the old subdomain moves permanently to tracker.
+[[redirects]]
+  from = "https://news.theecoledger.com/*"
+  to = "https://tracker.theecoledger.com/:splat"
+  status = 301
+  force = true
