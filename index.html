@@ -376,7 +376,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .src .h{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--mute-2);flex-shrink:0;}
 .src:hover .h{color:var(--accent-dk);}
-.src .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62ch;}
+.src .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:62ch;min-width:0;}
 .src .ar{margin-left:auto;padding-left:4px;flex-shrink:0;font-size:10px;opacity:.75;}
 .src:hover .ar{opacity:1;}
 .srcs-inline{display:flex;flex-wrap:wrap;gap:5px;}
@@ -563,6 +563,21 @@ footer .sp{flex:1;}
   .ms{grid-template-columns:76px 12px 1fr;}.ms .cd{grid-column:3;padding-top:0;}
   .vrow{grid-template-columns:66px 1fr;}
   .deflist div{grid-template-columns:1fr;gap:2px;}
+  /* grid children default to min-width:auto, so one long unbroken source URL
+     refuses to shrink and drags the whole row past the screen edge. */
+  .upd>*,.ms>*,.vrow>*,.wk>*,.deflist div>*{min-width:0;}
+  .upd h4,.upd .det,.upd .sw,.ms .lb,.vrow .nm,.vrow .ln,.wk-h,.wk-s{overflow-wrap:anywhere;}
+  .ms .cd{white-space:normal;}
+  .src,.srcs a{overflow-wrap:anywhere;}
+  .src{max-width:100%;flex-wrap:wrap;}
+  .src .t{max-width:none;}
+  /* the publisher name was flex-shrink:0, so a long one dragged the row wide */
+  .src .h{flex-shrink:1;min-width:0;overflow-wrap:anywhere;}
+  .src .ar{margin-left:6px;}
+}
+@media (max-width:420px){
+  .top-in{flex-wrap:wrap;padding:10px 14px;gap:10px 12px;}
+  .stamp{font-size:8.5px;}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 @media print{.top,.side,.tools,.strip,#toast{display:none!important;}.view{display:block!important;}body{background:#fff;}}
