@@ -483,12 +483,23 @@ footer .sp{flex:1;}
 .brand a:hover b{color:var(--accent-dk);}
 .w5 .free{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute-2);margin-left:auto;}
 .w5 .free+.go{margin-left:10px;}
-.railcta{margin:16px 16px 0;padding-top:14px;border-top:1px solid var(--rule);}
-.railcta .k{display:block;font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute-2);margin-bottom:6px;}
-.railcta p{font-size:11.5px;line-height:1.55;color:var(--mute);margin-bottom:8px;}
-.railcta a{font-size:11.5px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--rule-2);padding-bottom:1px;}
-.railcta a:hover{border-color:var(--navy);color:var(--navy);}
+.railcta{margin:18px 14px 18px;padding:13px 14px 14px;background:var(--navy);border-radius:7px;box-shadow:0 6px 18px rgba(10,22,40,.16);}
+.railcta .k{display:flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-lt);margin-bottom:7px;}
+.railcta .k::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent-lt);flex-shrink:0;}
+.railcta p{font-size:11.5px;line-height:1.6;color:rgba(255,255,255,.82);margin-bottom:11px;}
+.railcta a{display:block;text-align:center;background:#fff;color:var(--navy);border-radius:5px;padding:8px 6px;font-size:11.5px;font-weight:600;line-height:1.3;}
+.railcta a:hover{background:var(--accent-lt);color:var(--navy);}
+.railcta a:focus-visible{outline:2px solid var(--accent-lt);outline-offset:2px;}
 @media (max-width:860px){.railcta{display:none;}}
+/* same offer at the foot of the page on small screens, where the rail collapses */
+.footcta{display:none;}
+@media (max-width:860px){
+  .footcta{display:block;margin:22px 0 0;padding:15px 16px 16px;background:var(--navy);border-radius:7px;}
+  .footcta .k{display:flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-lt);margin-bottom:7px;}
+  .footcta .k::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent-lt);}
+  .footcta p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.85);margin-bottom:12px;}
+  .footcta a{display:inline-block;background:#fff;color:var(--navy);border-radius:5px;padding:10px 16px;font-size:13px;font-weight:600;}
+}
 /* Monday Five bar, persistent */
 .w5{border-bottom:1px solid var(--rule);background:var(--tint);}
 .w5-in{max-width:1400px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;}
@@ -593,6 +604,11 @@ footer .sp{flex:1;}
     <div class="view" id="v-regulations"></div>
     <div class="view" id="v-timeline"></div>
     <div class="view" id="v-method"></div>
+    <div class="footcta">
+      <span class="k">Beyond the tracker</span>
+      <p>Reporting against any of these frameworks? Talk to someone who has done it, not a salesperson.</p>
+      <a href="https://theecoledger.com/pages/contact" target="_blank" rel="noopener">Talk to the team &rarr;</a>
+    </div>
     <footer>
       <span>Free and open. Verified against primary sources, refreshed Mondays.</span>
       <span class="sp"></span>
