@@ -138,7 +138,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .view{display:none;} .view.on{display:block;}
 .vhead{margin-bottom:16px;}
 .vhead .lbl{color:var(--accent-dk);display:block;margin-bottom:5px;}
-.vhead h2{font-size:clamp(22px,2.6vw,29px);margin-bottom:6px;}
+.vhead h2{font-size:clamp(22px,2.6vw,29px);margin-bottom:6px;max-width:30ch;}
 .vhead p{font-size:14.5px;color:var(--mute);max-width:76ch;}
 .vhead p.lead{max-width:104ch;}
 
@@ -469,6 +469,44 @@ footer .sp{flex:1;}
 #dg .acts .sp{flex:1;}
 #dg .msg{font-size:12px;line-height:1.5;margin-top:10px;display:none;}
 #dg .msg.err{display:block;color:var(--rust);}
+
+/* Monday Five bar, persistent */
+.w5{border-bottom:1px solid var(--rule);background:var(--tint);}
+.w5-in{max-width:1400px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;}
+.w5 .k{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dk);font-weight:600;}
+.w5 .t{font-size:12.5px;color:var(--ink-2);}
+.w5 .go{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--rule-2);padding-bottom:1px;background:none;border-top:none;border-left:none;border-right:none;}
+.w5 .go:hover{border-color:var(--navy);}
+.w5.done .t{color:var(--accent-dk);}
+@media (max-width:640px){.w5-in{padding:9px 16px;}.w5 .go{margin-left:0;}}
+
+/* overview hero */
+.vh-vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:12px 22px;margin:16px 0 0;padding-top:14px;border-top:1px solid var(--rule);}
+.vh-vals .h{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.vh-vals p{font-size:12.5px;color:var(--mute);line-height:1.55;max-width:none;}
+.vh-cta{display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap;margin-top:16px;}
+.vh-cta .lnk{font-size:12.5px;font-weight:500;color:var(--ink-2);border-bottom:1px solid var(--rule-2);padding-bottom:1px;background:none;border-top:none;border-left:none;border-right:none;}
+.vh-cta .lnk:hover{border-color:var(--ink-2);}
+.vh-stats{display:flex;gap:8px 26px;flex-wrap:wrap;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--mute-2);}
+.vh-stats b{font-family:"IBM Plex Sans",sans-serif;font-size:13px;letter-spacing:-.01em;color:var(--ink);font-weight:600;margin-right:5px;}
+
+/* contextual product insert on regulation pages */
+.pcta{border-left:2px solid var(--accent);background:var(--tint);border-radius:0 4px 4px 0;padding:11px 14px;margin:2px 0 14px;max-width:82ch;}
+.pcta b{display:block;font-size:12.5px;color:var(--ink);margin-bottom:3px;}
+.pcta p{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin-bottom:6px;max-width:none;}
+.pcta a{font-size:12.5px;font-weight:500;color:var(--accent-dk);}
+.pcta a:hover{text-decoration:underline;}
+
+/* perimeter promo in the rail */
+.perim{border:1px solid var(--rule-2);border-radius:5px;padding:11px 12px;background:var(--paper);}
+.perim b{display:block;font-size:12.5px;color:var(--ink);margin-bottom:4px;}
+.perim p{font-size:11.5px;color:var(--mute);line-height:1.55;margin-bottom:9px;}
+.perim button{width:100%;font-size:11px;font-weight:600;background:var(--navy);color:#fff;border:none;border-radius:4px;padding:8px 6px;line-height:1.3;}
+.perim button:hover{background:var(--navy-2);}
+.scope-sum .hd{display:flex;align-items:baseline;gap:8px;margin-bottom:5px;}
+.scope-sum .hd b{font-size:12px;color:var(--ink);font-weight:600;}
+.scope-sum .hd button{margin-left:auto;font-size:11px;color:var(--accent-dk);background:none;border:none;padding:0;}
+.strip.flash{box-shadow:0 0 0 3px rgba(78,157,143,.35);}
 #toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:var(--navy);color:#fff;
   padding:10px 16px;border-radius:5px;font-size:12.5px;box-shadow:0 12px 30px rgba(0,0,0,.28);z-index:200;transition:transform .22s ease;max-width:90vw;}
 #toast.on{transform:translate(-50%,0);}
@@ -512,6 +550,12 @@ footer .sp{flex:1;}
   <div class="stamp"><span class="dot"></span><span id="stamp">Loading…</span></div>
 </div></div>
 
+<div class="w5" id="w5"><div class="w5-in">
+  <span class="k">The Monday Five</span>
+  <span class="t" id="w5t">The five regulatory changes worth knowing, in your inbox before nine.</span>
+  <button class="go" id="w5go" data-act="digest">Get it in my inbox &rarr;</button>
+</div></div>
+
 <div class="shell">
   <aside class="side">
     <nav id="nav"></nav>
@@ -536,21 +580,17 @@ footer .sp{flex:1;}
 <div id="toast"></div><div id="tip"></div>
 <div id="dg" role="dialog" aria-modal="true" aria-labelledby="dg-h"><div class="card">
   <div id="dg-form">
-    <h3 id="dg-h">The Weekly 5</h3>
-    <p class="sub">Five regulatory changes worth knowing, every Monday.</p>
+    <h3 id="dg-h">The Monday Five</h3>
+    <p class="sub">The five regulatory changes worth knowing, in your inbox before nine on Monday.</p>
     <label for="dg-email">Work email</label>
     <input id="dg-email" type="email" autocomplete="email" placeholder="you@company.com">
-    <div class="row">
-      <div><label for="dg-name">First name</label><input id="dg-name" type="text" autocomplete="given-name"></div>
-      <div><label for="dg-co">Company</label><input id="dg-co" type="text" autocomplete="organization"></div>
-    </div>
-    <p class="fine">By subscribing you agree to EcoLedger storing your details so it can send you the Weekly 5. One email a week, and you can unsubscribe from any of them.</p>
-    <div class="acts"><span class="sp"></span><button class="btn" data-dg-close="1">Cancel</button><button class="btn pri" id="dg-go">Subscribe</button></div>
+    <div class="acts" style="margin-top:2px"><button class="btn pri" id="dg-go" style="flex:1;justify-content:center">Send me the Monday Five &rarr;</button><button class="btn" data-dg-close="1">Cancel</button></div>
+    <p class="fine" style="margin:12px 0 0">Free. Unsubscribe anytime. By subscribing, you agree to receive the Monday Five. <a href="https://theecoledger.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy policy</a>.</p>
     <div id="dg-msg" class="msg"></div>
   </div>
   <div id="dg-done" style="display:none">
     <h3>You are on the list</h3>
-    <p class="sub">The next Weekly 5 goes out on Monday.</p>
+    <p class="sub">The next issue goes out on Monday morning.</p>
     <div class="acts"><span class="sp"></span><button class="btn pri" data-dg-close="1">Close</button></div>
   </div>
 </div></div>
@@ -870,10 +910,7 @@ function weekPanel(){
         <div><dt>Who it affects</dt><dd class="${"w-"+r.level}">${esc(r.text)}</dd></div>
         <div><dt>What to do</dt><dd>${esc(u.so_what||"")}</dd></div>
       </dl></div>`;}).join("")||'<div class="empty" style="padding:14px">Nothing new in your current filter. A quiet week is a real result.</div>'}</div>
-    <div class="panel-ft">
-      <b>Weekly 5</b><span>Five regulatory changes worth knowing, every Monday.</span>
-      <button class="btn pri" data-act="digest">Get the digest</button>
-    </div></div>`;
+</div>`;
 }
 
 /* ---------- deadlines rail, urgent things shout ---------- */
@@ -937,10 +974,24 @@ function scopeStrip(){
 
 function renderOverview(){
   const v=verdicts();
+  const nCh=(DATA.updates||[]).length;
+  const nDl=(DATA.timeline_milestones||[]).filter(m=>parseDate(m.date)&&parseDate(m.date)>=TODAY).length;
   $("#v-overview").innerHTML=`
-  <div class="vhead"><span class="lbl">Sustainability and regulatory disclosure tracker</span>
-    <h2>Your live view of sustainability regulation.</h2>
-    <p class="lead">Track the standards, deadlines and regulatory changes that affect sustainability reporting across major global jurisdictions. Free, vendor neutral and verified against primary sources.</p></div>
+  <div class="vhead"><span class="lbl">EcoLedger Standards Tracker</span>
+    <h2>Sustainability regulation changes faster than your reporting process can keep up.</h2>
+    <p class="lead">Know what changed, what applies to your business and what you need to do next.</p>
+    <p style="margin-top:6px">EcoLedger tracks sustainability standards, regulatory changes and deadlines across major jurisdictions, verifies them against primary sources and filters them to your regulatory perimeter.</p>
+    <div class="vh-vals">
+      <div><div class="h">What changed</div><p>See new rules and amendments without monitoring dozens of sources.</p></div>
+      <div><div class="h">What applies to you</div><p>Set your jurisdictions and company size once.</p></div>
+      <div><div class="h">What to do next</div><p>Every material update explains who it affects and the action required.</p></div>
+    </div>
+    <div class="vh-cta">
+      <button class="btn pri" data-act="setperim">${scoped()?"Edit my regulatory perimeter":"Set my regulatory perimeter"} &rarr;</button>
+      <button class="lnk" data-goto="changes">Browse all changes</button>
+    </div>
+    <div class="vh-stats"><span><b>${nCh}</b>changes tracked</span><span><b>${nDl}</b>upcoming deadlines</span><span>Verified against primary sources</span></div>
+  </div>
   ${scopeStrip()}
   ${weekPanel()}
   <div class="secline"><h3>Next deadlines</h3><span class="lbl">soonest first</span></div>
@@ -1010,6 +1061,17 @@ function renderChanges(){
 }
 
 /* ---------- Regulations: frameworks and jurisdictions ---------- */
+const PCTA={
+ ghgp:["Reporting against the GHG Protocol?","EcoLedger turns these requirements into a controlled reporting process, from underlying data and calculations through to evidence and disclosure.","See how GHG accounting works in EcoLedger","https://demo.theecoledger.com/"],
+ issb:["Reporting under ISSB?","See how EcoLedger maps your data directly into IFRS S1 and S2 requirements.","Explore ISSB reporting","https://demo.theecoledger.com/"],
+ eu:["Preparing for CSRD?","See how EcoLedger takes you from double materiality through to ESRS disclosure.","Explore CSRD reporting","https://demo.theecoledger.com/"],
+ sbti:["Setting science based targets?","See how EcoLedger plots your SBTi pathway and carries the numbers into every disclosure.","Explore target setting","https://demo.theecoledger.com/"],
+ iso:["Working to the ISO 14060 family?","EcoLedger records emission factors, calculation lineage and evidence as you work, so verification is a review rather than a rebuild.","See the platform","https://demo.theecoledger.com/"],
+ uk:["In scope for UK SRS?","Check which UK requirements apply to your business and when the first report is due.","Check if you are in scope","https://readiness.theecoledger.com/"],
+ us:["Reporting into California?","Check whether SB 253 and SB 261 catch your business, and what the timetable looks like.","Check if you are in scope","https://readiness.theecoledger.com/"]};
+function pctaHTML(id){const c=PCTA[id];if(!c)return"";
+  return `<div class="pcta"><b>${esc(c[0])}</b><p>${esc(c[1])}</p><a href="${c[3]}" target="_blank" rel="noopener">${esc(c[2])} &rarr;</a></div>`;}
+
 function frameworksHTML(){
   return (DATA.frameworks||[]).filter(f=>fwPass(f.id)).map(f=>{const seen=new Set();
     return`<div class="panel" style="margin-bottom:16px;--sc:${fwc(f.id)}">
@@ -1019,6 +1081,7 @@ function frameworksHTML(){
     <div class="panel-bd">
       ${relChip(f.id)}
       <p style="font-size:13.5px;color:var(--mute);line-height:1.6;max-width:92ch">${gloss(f.description||"",seen)}</p>
+      ${pctaHTML(f.id)}
       ${(f.workstreams||[]).map(w=>{const s2=new Set(seen),kp=w.key_points||[];
         return`<div class="ws"><div class="ws-top"><h4>${gloss(w.name,s2)}</h4>${confChip(w.confidence)}
           ${w.effort!=null?`<span class="chip c-neutral" data-tip="${esc(w.effort_note||"")}">effort ${w.effort}/100</span>`:""}
@@ -1203,10 +1266,11 @@ function renderScopeSum(){
   const g=[...SCOPE.geo].map(k=>(GEOS.find(x=>x[0]===k)||[])[1]).filter(Boolean);
   const rev=(REV.find(x=>x[0]===SCOPE.rev)||[])[1], emp=(EMP.find(x=>x[0]===SCOPE.emp)||[])[1];
   $("#scopesum").innerHTML=scoped()
-    ?[["Where",g.join(", ")||""],["Turnover",rev||""],["Staff",emp||""],["Listed",SCOPE.listed||""]]
+    ?'<div class="hd"><b>Your regulatory perimeter</b><button data-act="setperim">Edit</button></div>'+
+     [["Where",g.join(", ")||""],["Turnover",rev||""],["Staff",emp||""],["Listed",SCOPE.listed||""]]
        .map(([a,b])=>`<div class="row"><span>${a}</span><b>${esc(b)}</b></div>`).join("")+
        '<button data-act="reset">Clear scope</button>'
-    :'<div class="none">Set your regulatory perimeter once and every view will filter to what matters to your business.</div>';
+    :'<div class="perim"><b>Make this tracker yours</b><p>Select where you operate and your company size. Every change, deadline and regulation then filters to what is relevant to you.</p><button data-act="setperim">Set my perimeter &rarr;</button></div>';
 }
 function renderNav(){
   const c={changes:upds().length,
@@ -1253,6 +1317,7 @@ document.addEventListener("click",e=>{
     render();return;}
   if(t.dataset.act){const a=t.dataset.act;
     if(a==="more"){MOREFILTERS=!MOREFILTERS;render();return;}
+    if(a==="setperim"){setPerimeter();return;}
     if(a==="save"){toast(saveScope()?"Perimeter saved to this browser. It will be waiting next time.":"Could not save. Your browser is blocking site storage.");render();return;}
     if(a==="digest"){openDigest();return;}
     if(a==="reset"){SCOPE={geo:new Set(),rev:"",emp:"",listed:""};FWSEL.clear();clearSaved();render();return;}
@@ -1263,24 +1328,39 @@ document.addEventListener("click",e=>{
 });
 /* ---------- weekly digest signup, posts to HubSpot ---------- */
 const HS={region:"eu1",portal:"148816334",form:"25107106-968c-4dbf-becf-0ed3ef3bd6e8",sub:3462616535,
-  consentText:"By subscribing you agree to EcoLedger storing your details so it can send you the Weekly 5.",
-  commsText:"Email me the Weekly 5, five regulatory changes worth knowing, every Monday."};
+  consentText:"By subscribing, you agree to receive the Monday Five. Unsubscribe anytime.",
+  commsText:"Email me the Monday Five, the five regulatory changes worth knowing, every Monday."};
 function openDigest(){
   const d=$("#dg");d.classList.add("on");
   $("#dg-form").style.display="";$("#dg-done").style.display="none";
   const m=$("#dg-msg");m.className="msg";m.textContent="";
-  const g=$("#dg-go");g.disabled=false;g.textContent="Subscribe";
+  const g=$("#dg-go");g.disabled=false;g.innerHTML="Send me the Monday Five &rarr;";
   setTimeout(()=>{const e=$("#dg-email");if(e)e.focus();},40);
 }
 function closeDigest(){$("#dg").classList.remove("on");}
+function markSubscribed(){
+  try{localStorage.setItem("ecoledger-w5-v1","1");}catch(e){}
+  paintW5();
+}
+function paintW5(){
+  let on=false; try{on=localStorage.getItem("ecoledger-w5-v1")==="1";}catch(e){}
+  const bar=$("#w5"); if(!bar)return;
+  if(on){bar.classList.add("done");
+    $("#w5t").textContent="You are on the list. The next issue goes out on Monday morning.";
+    $("#w5go").style.display="none";}
+}
+function setPerimeter(){
+  MOREFILTERS=true; render();
+  const st=$(".strip"); if(!st)return;
+  st.scrollIntoView({behavior:"smooth",block:"center"});
+  st.classList.add("flash"); setTimeout(()=>st.classList.remove("flash"),1400);
+}
 async function submitDigest(){
-  const email=$("#dg-email").value.trim(),fn=$("#dg-name").value.trim(),co=$("#dg-co").value.trim();
+  const email=$("#dg-email").value.trim();
   const msg=$("#dg-msg"),btn=$("#dg-go");
   if(!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email)){msg.className="msg err";msg.textContent="That does not look like an email address.";$("#dg-email").focus();return;}
-  btn.disabled=true;btn.textContent="Sending";msg.className="msg";msg.textContent="";
+  btn.disabled=true;btn.textContent="Sending…";msg.className="msg";msg.textContent="";
   const fields=[{objectTypeId:"0-1",name:"email",value:email}];
-  if(fn)fields.push({objectTypeId:"0-1",name:"firstname",value:fn});
-  if(co)fields.push({objectTypeId:"0-1",name:"company",value:co});
   try{
     const r=await fetch("https://api-"+HS.region+".hsforms.com/submissions/v3/integration/submit/"+HS.portal+"/"+HS.form,
       {method:"POST",headers:{"Content-Type":"application/json"},
@@ -1288,10 +1368,10 @@ async function submitDigest(){
          legalConsentOptions:{consent:{consentToProcess:true,text:HS.consentText,
            communications:[{value:true,subscriptionTypeId:HS.sub,text:HS.commsText}]}}})});
     if(!r.ok)throw new Error(String(r.status));
-    $("#dg-form").style.display="none";$("#dg-done").style.display="block";
+    $("#dg-form").style.display="none";$("#dg-done").style.display="block";markSubscribed();
   }catch(e){
     msg.className="msg err";msg.textContent="That did not send. Please try again in a moment.";
-    btn.disabled=false;btn.textContent="Subscribe";
+    btn.disabled=false;btn.innerHTML="Send me the Monday Five &rarr;";
   }
 }
 $("#dg").addEventListener("click",e=>{if(e.target.id==="dg"||e.target.closest("[data-dg-close]"))closeDigest();});
@@ -1333,6 +1413,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")hideTip();});
   readHash();
   if(!hadHash) loadScope();
   render();
+  paintW5();
 })();
 </script>
 </body>
