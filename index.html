@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Standards Tracker, EcoLedger</title>
 <meta name="description" content="A free, continuously verified tracker of every major change to corporate emissions accounting and disclosure standards, GHG Protocol, ISO, SBTi, ISSB, EU, US, UK and seven more jurisdictions. Every entry linked to the regulator's own publication.">
+<link rel="canonical" href="https://tracker.theecoledger.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EcoLedger">
+<meta property="og:url" content="https://tracker.theecoledger.com/">
+<meta property="og:title" content="EcoLedger Standards Tracker">
+<meta property="og:description" content="Sustainability regulation changes faster than your reporting process can keep up. Track what changed, what applies to your business and what to do next, across ISSB, GHG Protocol, SBTi, ISO, the EU, UK, US and seven more jurisdictions. Free, no login.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EcoLedger Standards Tracker">
+<meta name="twitter:description" content="What changed in sustainability regulation, what applies to you, and what to do next. Verified against primary sources. Free, no login.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap">
@@ -470,6 +479,16 @@ footer .sp{flex:1;}
 #dg .msg{font-size:12px;line-height:1.5;margin-top:10px;display:none;}
 #dg .msg.err{display:block;color:var(--rust);}
 
+.brand a{display:flex;align-items:center;gap:9px;color:inherit;}
+.brand a:hover b{color:var(--accent-dk);}
+.w5 .free{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute-2);margin-left:auto;}
+.w5 .free+.go{margin-left:10px;}
+.railcta{margin:16px 16px 0;padding-top:14px;border-top:1px solid var(--rule);}
+.railcta .k{display:block;font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute-2);margin-bottom:6px;}
+.railcta p{font-size:11.5px;line-height:1.55;color:var(--mute);margin-bottom:8px;}
+.railcta a{font-size:11.5px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--rule-2);padding-bottom:1px;}
+.railcta a:hover{border-color:var(--navy);color:var(--navy);}
+@media (max-width:860px){.railcta{display:none;}}
 /* Monday Five bar, persistent */
 .w5{border-bottom:1px solid var(--rule);background:var(--tint);}
 .w5-in{max-width:1400px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;}
@@ -553,7 +572,8 @@ footer .sp{flex:1;}
 <div class="w5" id="w5"><div class="w5-in">
   <span class="k">The Monday Five</span>
   <span class="t" id="w5t">The five regulatory changes worth knowing, in your inbox before nine.</span>
-  <button class="go" id="w5go" data-act="digest">Get it in my inbox &rarr;</button>
+  <span class="free" id="w5free">Free</span>
+  <button class="go" id="w5go" data-act="digest">Sign me up &rarr;</button>
 </div></div>
 
 <div class="shell">
@@ -561,6 +581,11 @@ footer .sp{flex:1;}
     <nav id="nav"></nav>
     <div class="side-sec" style="margin-top:0;border-top:none;padding-top:14px">My regulatory perimeter</div>
     <div class="scope-sum" id="scopesum"></div>
+    <div class="railcta">
+      <span class="k">Beyond the tracker</span>
+      <p>Reporting against any of these frameworks? Talk to someone who has done it, not a salesperson.</p>
+      <a href="https://theecoledger.com/pages/contact" target="_blank" rel="noopener">Talk to the team &rarr;</a>
+    </div>
   </aside>
   <main class="main">
     <div class="view on" id="v-overview"></div>
@@ -571,7 +596,7 @@ footer .sp{flex:1;}
     <footer>
       <span>Free and open. Verified against primary sources, refreshed Mondays.</span>
       <span class="sp"></span>
-      <a href="#" id="err-link">Report an error</a>
+      <a href="mailto:hello@theecoledger.com?subject=Standards%20Tracker%20correction" id="err-link">Report an error</a>
       <span id="foot-stamp" class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase"></span>
     </footer>
   </main>
@@ -966,7 +991,7 @@ function scopeStrip(){
       <button class="opt ${SCOPE.listed==="no"?"on":""}" data-v="no">No</button></div></div>
   </div>`:""}
   <div class="strip-ft">
-    <span>${scoped()?`<b>${hits}</b> regimes likely to apply. Indicative only, check the linked legislation.`:"Set your perimeter once and every view filters to it."}</span>
+    <span>${scoped()?`<b>${hits}</b> regimes likely to apply. Indicative only, check the linked legislation. <a href="https://readiness.theecoledger.com/" target="_blank" rel="noopener" style="color:var(--accent-dk);font-weight:500">Check your dates &rarr;</a>`:"Set your perimeter once and every view filters to it."}</span>
     ${scoped()?`<button data-act="save">${SAVED?"✓ Perimeter saved":"Save my perimeter"}</button>`:""}
     ${scoped()?'<button data-act="reset">Clear</button><button data-act="share">Copy link</button>':""}
   </div></div>`;
@@ -1134,6 +1159,7 @@ function renderTimeline(){
   const urgent=fut.filter(m=>urgency(m.date)&&urgency(m.date).cls!=="u-near");
   $("#v-timeline").innerHTML=`<div class="vhead"><span class="lbl">${fut.length} dates ahead</span><h2>Deadlines</h2>
     <p>Counted from today, grouped by quarter. Hollow markers are projected from a published plan rather than fixed in law.</p></div>
+  <div class="pcta"><b>Not sure which of these dates are yours?</b><p>Your first reporting year depends on where you operate, your turnover and your headcount. The readiness check works it out in about two minutes.</p><a href="https://readiness.theecoledger.com/" target="_blank" rel="noopener">Check if you are in scope &rarr;</a></div>
   ${urgent.length?`<div class="ban amber"><span class="ic">!</span><div><b>${urgent.length} within 30 days.</b>
     ${urgent.slice(0,3).map(m=>esc(fws(m.framework)+" — "+m.label)).join("; ")}${urgent.length>3?"; and more below.":""}</div></div>`:""}
   <div class="tools"><button class="btn pri" data-act="ics"><svg viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>Add these deadlines to my calendar</button>
@@ -1347,7 +1373,7 @@ function paintW5(){
   const bar=$("#w5"); if(!bar)return;
   if(on){bar.classList.add("done");
     $("#w5t").textContent="You are on the list. The next issue goes out on Monday morning.";
-    $("#w5go").style.display="none";}
+    $("#w5go").style.display="none";const f=$("#w5free");if(f)f.style.display="none";}
 }
 function setPerimeter(){
   MOREFILTERS=true; render();
@@ -1380,7 +1406,6 @@ $("#dg-form").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefaul
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#dg").classList.contains("on"))closeDigest();});
 $("#q").addEventListener("input",e=>search(e.target.value));
 $("#q").addEventListener("keydown",e=>{if(e.key==="Escape"){$("#sres").classList.remove("on");e.target.blur();}});
-$("#err-link").addEventListener("click",e=>{e.preventDefault();toast("Corrections go into the weekly pass. Wire this to your HubSpot form before launch.");});
 const tip=$("#tip");let tipFor=null;
 function showTip(el){
   tip.textContent=el.dataset.tip;tip.style.display="block";
@@ -1404,7 +1429,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")hideTip();});
 (async function(){
   try{DATA=window.__TRACKER_DATA__||await(await fetch("data/data.json",{cache:"no-store"})).json();}
   catch(err){$(".main").innerHTML='<div class="ban amber"><span class="ic">!</span><div><b>Could not load the dataset.</b> This page needs <code>data/data.json</code> beside it, served over http.</div></div>';return;}
-  $("#brand").innerHTML=LOGO+"<span><b>EcoLedger</b><i>Standards Tracker</i></span>";
+  $("#brand").innerHTML='<a href="https://theecoledger.com/" title="EcoLedger home">'+LOGO+"<span><b>EcoLedger</b><i>Standards Tracker</i></span></a>";
   const lu=(DATA.meta||{}).last_updated;
   $("#stamp").textContent="Verified "+fmtDate(lu);
   $("#foot-stamp").textContent="Data as of "+fmtDate(lu);
