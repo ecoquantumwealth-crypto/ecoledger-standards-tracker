@@ -1,0 +1,94 @@
+name: Monday refresh
+
+# 06:00 UTC every Monday (07:00 BST, 06:00 in winter). Cron is always UTC.
+# workflow_dispatch lets you start it by hand from the GitHub mobile app.
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: monday-refresh
+  cancel-in-progress: false
+
+jobs:
+  # 1. Research and fact-check. Publishes nothing.
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check the primary sources and stage the update
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-5' }}
+        run: python3 .github/refresh.py
+
+      # The gate. If this fails, nothing is staged, so nothing can be approved.
+      - name: Validate
+        run: python3 .github/validate_data.py
+
+      - name: Did anything change
+        id: diff
+        run: |
+          if git diff --quiet -- data/data.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Put the report in the run summary
+        if: always()
+        run: cat refresh-report.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+
+      - name: Keep the staged dataset for the publish step
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: staged-data
+          path: |
+            data/data.json
+            refresh-report.md
+          retention-days: 7
+
+      - name: Raise an issue if the refresh broke
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title: `Monday refresh failed — ${new Date().toISOString().slice(0,10)}`,
+              body: `Nothing was published. The tracker still shows last week's verified data.\n\n[Run log](${url})\n\nUsual causes: the ANTHROPIC_API_KEY secret is missing or expired, the ANTHROPIC_MODEL name is stale, or the validator rejected the staged data.`
+            });
+
+  # 2. Waits for your approval, then pushes. Netlify deploys on the push.
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment: publish          # <- the approval gate lives here
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: staged-data
+      - name: Publish
+        run: |
+          git config user.name  "EcoLedger refresh"
+          git config user.email "action@github.com"
+          rm -f refresh-report.md
+          git add data/data.json
+          git commit -m "Monday refresh $(date -u +%Y-%m-%d)"
+          git push
