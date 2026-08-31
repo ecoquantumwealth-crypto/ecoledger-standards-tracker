@@ -678,7 +678,11 @@ const PHASE_LABEL={scoping:"Scoping",drafting:"Drafting",consultation:"Consultat
 const VIEWS=[["overview","Overview"],["changes","Changes"],["regulations","Regulations"],
  ["timeline","Deadlines"],["method","Method"]];
 const SUB={changes:"latest",regulations:"frameworks"};
-const STALE_DAYS=45, TODAY=new Date("2026-08-25T00:00:00Z");
+const STALE_DAYS=45;
+/* The clock must be the reader's, not the build's. This was pinned to a fixed
+   date during development, which froze every "days ago", every deadline
+   countdown and the 45-day staleness check at that date. */
+const TODAY=(()=>{const n=new Date();return new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate()));})();
 let DATA=null,VIEW="overview",FWSEL=new Set(),SCOPE={geo:new Set(),rev:"",emp:"",listed:""};
 let MOREFILTERS=false, SAVED=false;
 const STORE="ecoledger-perimeter-v1";
