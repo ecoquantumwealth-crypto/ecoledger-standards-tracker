@@ -1,4 +1,54 @@
+# The tracker exists to be found, read and cited, so search engines are welcome
+# and nothing here is hidden from them.
+#
+# Note on /data/: the page is rendered in the browser from data/data.json, so
+# blocking that path would leave search engines seeing an empty page and would
+# cost the tracker its search visibility. It is deliberately left open. A
+# copier ignores robots.txt anyway; the terms below are the real answer.
 User-agent: *
 Allow: /
+
+# Assistants fetching this page because a person just asked a question are
+# welcome. That is a citation with extra steps, and it sends readers here.
+# Crawlers collecting training corpora are a different thing, and we decline.
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# Explicitly welcome: user-initiated fetches and assistant search indexes.
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Terms of use: https://tracker.theecoledger.com/  (Method > Using this tracker)
+# Reuse enquiries: hello@theecoledger.com
 
 Sitemap: https://tracker.theecoledger.com/sitemap.xml

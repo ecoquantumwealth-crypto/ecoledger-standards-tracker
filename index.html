@@ -635,7 +635,10 @@ footer .sp{flex:1;}
     <footer>
       <span>Free and open. Verified against primary sources, refreshed Mondays.</span>
       <span class="sp"></span>
+      <!-- no href: the click handler routes this, and href="#" would jump the page to the top first -->
+      <a data-goto="method" style="cursor:pointer">Terms of use</a>
       <a href="mailto:hello@theecoledger.com?subject=Standards%20Tracker%20correction" id="err-link">Report an error</a>
+      <span>&copy; 2026 EcoLedger</span>
       <span id="foot-stamp" class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase"></span>
     </footer>
   </main>
@@ -1274,6 +1277,12 @@ function renderMethod(){
     <p>Research runs per framework family. Where an official page was unreachable, or two official sources disagreed, it is recorded here rather than smoothed over.</p>
     ${Object.entries(notes).map(([k,v])=>`<h4 class="lbl" style="color:var(--mute-2);margin:16px 0 5px">${esc(k)}</h4><p style="font-size:12.5px">${esc(v)}</p>`).join("")}
     <h3>Corrections</h3><p>If something here is wrong, tell us and it gets priority in the next weekly pass. A tracker that admits its errors is worth more than one that never appears to have any.</p>
+    <h3>Using this tracker</h3>
+    <p>The tracker is free to read and free to use in your own work. Quote from it, cite it in a board paper, send a link to a colleague. All we ask is a credit and a link back to <a href="https://tracker.theecoledger.com/">tracker.theecoledger.com</a>, so the reader can check the source and see whether it has moved on since.</p>
+    <p>What is not on offer is republication: copying the analysis, the dataset or the structure into another product, tracker or newsletter, or extracting the data in bulk to sit behind someone else's name. The dates themselves are public facts and belong to nobody. The work of finding them, verifying every one against the publication that issued it, and refusing the ones no official source would confirm, is ours, and so is the writing that explains what each change means.</p>
+    <p>If you want to use it more fully than that, ask. We would rather say yes to a sensible request than find out later. <a href="mailto:hello@theecoledger.com?subject=Standards%20Tracker%20reuse">hello@theecoledger.com</a>.</p>
+    <p class="fine" style="margin-top:10px">&copy; 2026 EcoLedger. Copyright in the analysis and database right in the dataset are reserved. The underlying legislation, standards and regulatory publications remain the property of the bodies that issued them and are cited throughout.</p>
+
     <h3>Not advice</h3><p>${esc((DATA.meta||{}).disclaimer||"")}</p>
     <h3>Glossary</h3><dl class="deflist">${Object.entries(g).sort().map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
   </div>`;
