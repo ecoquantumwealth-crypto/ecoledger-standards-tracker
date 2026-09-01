@@ -25,7 +25,27 @@ MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
 # Search results land in context and every later turn re-sends them, so the search
 # cap is the single biggest lever on what a run costs. 10 per family is enough to
 # check a handful of official pages; 30 was open-ended and could run into dollars.
+# max_uses is a CEILING, not a target: the model stops when it has what it needs.
+# Set it high enough that a busy week is not truncated, and cap the whole run so
+# one runaway family cannot drain the account.
 MAX_SEARCHES = int(os.environ.get("ANTHROPIC_MAX_SEARCHES", "10"))
+RUN_SEARCH_BUDGET = int(os.environ.get("ANTHROPIC_RUN_SEARCH_BUDGET", "70"))
+
+# Published rates, only used to put a number on the run report.
+PRICE_IN, PRICE_OUT, PRICE_SEARCH = 2.0 / 1e6, 10.0 / 1e6, 10.0 / 1000
+USAGE = {"in": 0, "out": 0, "searches": 0}
+
+
+def note_usage(r):
+    u = r.get("usage") or {}
+    USAGE["in"] += (u.get("input_tokens") or 0) + (u.get("cache_read_input_tokens") or 0)
+    USAGE["out"] += u.get("output_tokens") or 0
+    USAGE["searches"] += ((u.get("server_tool_use") or {}).get("web_search_requests") or 0)
+
+
+def spend():
+    return (USAGE["in"] * PRICE_IN + USAGE["out"] * PRICE_OUT
+            + USAGE["searches"] * PRICE_SEARCH)
 SEARCH_TOOL = os.environ.get("ANTHROPIC_SEARCH_TOOL", "web_search_20250305")
 API_URL = "https://api.anthropic.com/v1/messages"
 
@@ -45,11 +65,20 @@ OFFICIAL_DOMAINS = (
     "fsa.go.jp", "ssb-j.jp", "uaecma.gov.ae", "qfma.org.qa",
 )
 
+# One family per body. Nine bodies sharing four buckets meant the last bucket
+# was asked to cover twelve regulators on one search budget, which is where
+# coverage quietly fails. Narrow scopes also keep each conversation's context
+# small, and context is what the token bill is made of.
 FAMILIES = [
-    ("ghgp / iso", "GHG Protocol (ghgprotocol.org) and ISO (iso.org, the 14060 family and ISO/TC 207/SC 7)"),
-    ("sbti / issb", "SBTi (sciencebasedtargets.org, files.sciencebasedtargets.org) and the ISSB / IFRS Foundation (ifrs.org)"),
+    ("ghgp", "the GHG Protocol (ghgprotocol.org)"),
+    ("iso", "ISO (iso.org): the 14060 family, ISO 14068, and ISO/TC 207/SC 7"),
+    ("sbti", "the SBTi (sciencebasedtargets.org, files.sciencebasedtargets.org)"),
+    ("issb", "the ISSB and IFRS Foundation (ifrs.org)"),
     ("eu", "the EU: EUR-Lex and the Official Journal, EFRAG (efrag.org), the Commission (finance.ec.europa.eu), Council and Parliament"),
-    ("us / uk / other", "the US (sec.gov, federalregister.gov, ww2.arb.ca.gov, supremecourt.gov), the UK (gov.uk, legislation.gov.uk, fca.org.uk, frc.org.uk) and Canada, Australia, Singapore, Hong Kong, Japan, UAE and Qatar via their named regulator only"),
+    ("us", "the US: the SEC (sec.gov), the Federal Register (federalregister.gov), CARB (ww2.arb.ca.gov, arb.ca.gov), the EPA and the federal courts"),
+    ("uk", "the UK: the FCA (fca.org.uk), the FRC (frc.org.uk), gov.uk and legislation.gov.uk"),
+    ("apac", "Australia (aasb.gov.au, asic.gov.au), Singapore (acra.gov.sg, sgx.com), Hong Kong (hkex.com.hk) and Japan (fsa.go.jp, ssb-j.jp), each via its named regulator only"),
+    ("other", "Canada (frascanada.ca), the UAE (uaecma.gov.ae) and Qatar (qfma.org.qa), each via its named regulator only"),
 ]
 
 SOURCING_RULE = """SOURCING RULE, ABSOLUTE:
@@ -116,9 +145,16 @@ Only include a milestone if an official source publishes its date. Return empty 
              calls for evidence, expressions of interest, target publication dates.
 Test it by asking who has to act. If the answer is the body rather than the
 reader, it is an update, even when the word "deadline" appears in its own title."""
-    log(f"  asking about {label} ...")
+    left = max(0, RUN_SEARCH_BUDGET - USAGE["searches"])
+    cap = min(MAX_SEARCHES, left)
+    if cap == 0:
+        log(f"  ! {label}: whole-run search budget spent, skipping")
+        return {"updates": [], "milestones": [],
+                "notes": f"{label}: not checked, the run's search budget was already spent"}
+    log(f"  asking about {label} (up to {cap} searches) ...")
     r = api([{"role": "user", "content": prompt}],
-            [{"type": SEARCH_TOOL, "name": "web_search", "max_uses": MAX_SEARCHES}])
+            [{"type": SEARCH_TOOL, "name": "web_search", "max_uses": cap}])
+    note_usage(r)
     text = "".join(b.get("text", "") for b in r.get("content", []) if b.get("type") == "text")
     m = re.search(r"\{.*\}", text, re.S)
     if not m:
@@ -257,12 +293,21 @@ def main():
                   "These failed the sourcing or date rules and were dropped rather than guessed at.", ""] + rejects
     if notes:
         lines += ["", "## Caveats"] + [f"- {n}" for n in notes]
+    lines += ["", "## What this run cost",
+              f"- {USAGE['searches']} web searches across {len(FAMILIES)} sources "
+              f"(ceiling {MAX_SEARCHES} each, {RUN_SEARCH_BUDGET} for the run)",
+              f"- {USAGE['in']:,} input tokens, {USAGE['out']:,} output tokens",
+              f"- **about ${spend():.2f}** at published rates for {MODEL}",
+              "",
+              "If searches came in at the ceiling, the run was probably truncated and the "
+              "ceiling should go up. If it came in well under, the ceiling can come down."]
     lines += ["", f"_Ran unattended. {len(found_u)} candidate updates seen, "
                   f"{len(clean_u)} passed the gate, {len(new_u)} were not already in the dataset._"]
     with open(REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
-    log(f"done: {len(new_u)} updates, {len(new_m)} milestones, {len(rejects)} rejected")
+    log(f"done: {len(new_u)} updates, {len(new_m)} milestones, {len(rejects)} rejected, "
+        f"{USAGE['searches']} searches, about ${spend():.2f}")
     return 0
 
 
