@@ -22,6 +22,7 @@ jobs:
     timeout-minutes: 45
     outputs:
       changed: ${{ steps.diff.outputs.changed }}
+      base_blob: ${{ steps.base.outputs.blob }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -36,6 +37,12 @@ jobs:
           path: .github/watch-state.json
           key: watch-state-${{ github.run_id }}
           restore-keys: watch-state-
+
+      # Remember which data.json this run started from, so publish can tell
+      # whether anything else has touched it while the run waited for approval.
+      - name: Note the dataset this run is based on
+        id: base
+        run: echo "blob=$(git rev-parse HEAD:data/data.json)" >> "$GITHUB_OUTPUT"
 
       - name: Check the primary sources and stage the update
         env:
@@ -94,15 +101,51 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish          # <- the approval gate lives here
     steps:
+      # main, not the commit the run started from. A run can sit waiting for
+      # approval for hours, and checkout@v4 would otherwise pin it to a commit
+      # that is no longer the tip, so the push is rejected as non-fast-forward.
+      # That is exactly how the 1 September run failed.
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
       - uses: actions/download-artifact@v4
         with:
           name: staged-data
+          path: staged
+
       - name: Publish
+        env:
+          BASE_BLOB: ${{ needs.prepare.outputs.base_blob }}
         run: |
+          set -euo pipefail
           git config user.name  "EcoLedger refresh"
           git config user.email "action@github.com"
-          rm -f refresh-report.md
+          git fetch origin main
+          git checkout -B main origin/main
+
+          # Moving to the tip of main is safe only if nobody else changed the
+          # dataset in the meantime. If they did, this artifact was built on a
+          # version that no longer exists and publishing it would silently undo
+          # their work, so stop and say so.
+          NOW_BLOB=$(git rev-parse HEAD:data/data.json)
+          if [ -n "${BASE_BLOB:-}" ] && [ "$NOW_BLOB" != "$BASE_BLOB" ]; then
+            echo "::error::data/data.json changed on main while this run waited for approval."
+            echo "This staged refresh was built on $BASE_BLOB but main now has $NOW_BLOB."
+            echo "Nothing published. Re-run the refresh so it works from current data."
+            exit 1
+          fi
+
+          cp staged/data/data.json data/data.json
+          [ -f staged/.github/watch-state.json ] && cp staged/.github/watch-state.json .github/watch-state.json || true
+          rm -rf staged
+
           git add data/data.json
+          git add .github/watch-state.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing to publish: main already holds this data."
+            exit 0
+          fi
           git commit -m "Monday refresh $(date -u +%Y-%m-%d)"
-          git push
+          git push origin HEAD:main

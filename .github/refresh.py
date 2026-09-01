@@ -341,7 +341,11 @@ def main():
             w["last_verified"] = today
 
     with open(DATA, "w", encoding="utf-8") as f:
-        json.dump(d, f, indent=1, ensure_ascii=False)
+        # indent=2 because that is how data.json is stored. Writing indent=1
+        # re-indented all 9,498 lines every run, so the approval diff was 9,481
+        # changed lines of whitespace and you could not see what you were
+        # approving. A review gate you cannot read is not a review gate.
+        json.dump(d, f, indent=2, ensure_ascii=False)
 
     lines = [f"# Monday refresh, {today}", "",
              f"Checked {since} to {today}. "
