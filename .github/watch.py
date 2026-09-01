@@ -214,7 +214,8 @@ def diff():
     for r in results:
         fam = r["family"]
         slot = report["families"].setdefault(
-            fam, {"fws": r["fws"], "new": [], "checked": [], "failed": []})
+            fam, {"fws": r["fws"], "new": [], "checked": [], "failed": [],
+                  "unseeded": []})
         if r.get("error"):
             slot["failed"].append({"url": r["url"], "error": r["error"]})
             report["errors"].append(f"{fam} {r['url']}: {r['error']}")
@@ -230,11 +231,18 @@ def diff():
             "family": fam, "keys": sorted(r["items"].keys()),
             "seen": today, "count": len(r["items"])}
         known = set((pages.get(r["url"]) or {}).get("keys") or [])
-        if known:                      # no baseline means everything looks new
-            for k, v in r["items"].items():
-                if k not in known:
-                    slot["new"].append({"label": v["label"], "url": v["url"],
-                                        "page": r["url"]})
+        if not known:
+            # First sight of this page. Its links are not "new", but neither are
+            # they "unchanged": we have nothing to compare against and genuinely
+            # do not know. Saying nothing moved here would be the same false
+            # freshness the refresh already had to be fixed for, so the family
+            # goes to the model and the baseline starts from what it finds.
+            slot["unseeded"].append(r["url"])
+            continue
+        for k, v in r["items"].items():
+            if k not in known:
+                slot["new"].append({"label": v["label"], "url": v["url"],
+                                    "page": r["url"]})
     return report
 
 

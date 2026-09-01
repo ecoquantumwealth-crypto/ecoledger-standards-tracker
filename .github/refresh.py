@@ -292,7 +292,7 @@ def main():
     for label, fws, scope in FAMILIES:
         w = watch.get(label)
         leads = None
-        if w is not None and not w["failed"]:
+        if w is not None and not w["failed"] and not w.get("unseeded"):
             if not w["new"]:
                 # Every page for this body fetched cleanly and offered nothing new.
                 # That is a check that passed, not a check that was skipped.
@@ -302,6 +302,9 @@ def main():
                 continue
             leads = w["new"]
             log(f"  + {label}: {len(leads)} new links on its own pages")
+        elif w is not None and w.get("unseeded"):
+            log(f"  ? {label}: {len(w['unseeded'])} pages seen for the first time, "
+                f"checking the slow way to start the baseline honestly")
         try:
             r = ask(label, scope, since, today, leads)
         except Exception as e:                                   # noqa: BLE001
