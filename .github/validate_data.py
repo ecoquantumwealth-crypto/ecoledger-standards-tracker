@@ -43,6 +43,11 @@ for i, u in enumerate(d.get("updates", [])):
 for m in d.get("timeline_milestones", []):
     if m.get("date") and not DATE_RE.match(str(m["date"])):
         err(f"timeline_milestones: bad date '{m.get('date')}' for {m.get('label','?')[:40]}")
+    # deadline = somebody must act by this date. update = a dated event with
+    # nothing to file. The rail and the calendar export both depend on it.
+    if m.get("kind") not in ("deadline", "update"):
+        err(f"timeline_milestones: kind must be 'deadline' or 'update', got {m.get('kind')!r} "
+            f"for {m.get('label','?')[:40]}")
 
 if ERRORS:
     print(f"FAIL: {len(ERRORS)} validation error(s):")

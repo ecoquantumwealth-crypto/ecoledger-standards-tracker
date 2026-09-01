@@ -46,6 +46,19 @@ level and the reasoning. Always bump `last_verified`.
 **`timeline_milestones[]`** - move `projected` to `upcoming` to `completed` as things land.
 Adjust dates only when an official source says so. Dates must be `YYYY-MM-DD` or `YYYY-MM`.
 
+Every milestone needs a `kind`, and the validator rejects the file without one:
+
+- **`deadline`** - a reporting entity has to do something by that date. First reporting
+  periods, effective dates a company must apply, filing and submission deadlines, assurance
+  start dates, transposition deadlines.
+- **`update`** - a dated event where the standard-setter or regulator is the one acting and
+  the reader has nothing to file. Publications, adoptions, board meetings, consultations
+  opening or closing, comment deadlines, calls for evidence, target publication dates.
+
+Ask who has to act. If the answer is the body rather than the reader, it is an `update`,
+even when the word "deadline" appears in its own title. A `YYYY-MM` date means "sometime
+that month" and the tracker renders it that way rather than counting days to the first.
+
 **`changes[]`** - flip `status` from `proposed` to `final` on adoption; add a row when a new
 official proposal lands.
 

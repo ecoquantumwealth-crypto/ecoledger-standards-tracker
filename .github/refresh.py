@@ -97,10 +97,21 @@ Find anything published, adopted or announced between {since} and {today} inclus
 Reply with NOTHING BUT a single JSON object, no prose before or after, no markdown fence:
 
 {{"updates":[{{"date":"YYYY-MM-DD","framework":"one of ghgp|iso|sbti|issb|eu|us|uk|ca|au|sg|hk|jp|ae|qa","headline":"one line naming the acting body and leading with what changed","detail":"2 to 4 self-contained sentences","so_what":"one imperative sentence for a corporate reporting team","significance":"high|medium|low","source_url":"the official page","source_title":"...","source_publisher":"..."}}],
- "milestones":[{{"date":"YYYY-MM-DD or YYYY-MM","framework":"...","label":"...","state":"upcoming","source_url":"the official page"}}],
+ "milestones":[{{"date":"YYYY-MM-DD or YYYY-MM","framework":"...","label":"...","kind":"deadline|update","state":"upcoming","source_url":"the official page"}}],
  "notes":"anything you could not verify, any place two official sources disagreed, and any date you refused to state because no official source published one"}}
 
-Only include a milestone if an official source publishes its date. Return empty arrays if nothing moved."""
+Only include a milestone if an official source publishes its date. Return empty arrays if nothing moved.
+
+"kind" is not optional and the distinction matters more than it looks:
+  deadline = a reporting entity has to do something by that date. First reporting
+             periods, effective dates a company must apply, filing and submission
+             deadlines, assurance start dates, transposition deadlines.
+  update   = a dated event where the standard-setter or regulator is the one
+             acting and the reader has nothing to file. Publications, adoptions,
+             board meetings, consultations opening or closing, comment deadlines,
+             calls for evidence, expressions of interest, target publication dates.
+Test it by asking who has to act. If the answer is the body rather than the
+reader, it is an update, even when the word "deadline" appears in its own title."""
     log(f"  asking about {label} ...")
     r = api([{"role": "user", "content": prompt}],
             [{"type": SEARCH_TOOL, "name": "web_search", "max_uses": 30}])
@@ -156,6 +167,8 @@ def gate_milestone(m, rejects):
     for f in ("date", "framework", "label", "source_url"):
         if not str(m.get(f, "")).strip():
             why.append(f"missing {f}")
+    if m.get("kind") not in ("deadline", "update"):
+        why.append(f"kind must be 'deadline' or 'update', got {m.get('kind')!r}")
     if m.get("date") and not DATE_RE.match(str(m["date"])):
         why.append(f"bad date {m['date']!r}")
     if not host_ok(m.get("source_url")):
@@ -164,7 +177,9 @@ def gate_milestone(m, rejects):
         rejects.append(f"- milestone **{str(m.get('label', '?'))[:70]}** — {'; '.join(why)}")
         return None
     return {"date": str(m["date"]), "framework": str(m["framework"]),
-            "label": str(m["label"]).strip(), "state": m.get("state") or "upcoming",
+            "label": str(m["label"]).strip(),
+            "kind": "deadline" if m.get("kind") == "deadline" else "update",
+            "state": m.get("state") or "upcoming",
             "source_url": str(m["source_url"])}
 
 

@@ -303,6 +303,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* ---------------- urgency ---------------- */
 .dt .cd.q{color:var(--mute-2);font-weight:400;}
+.dt .w.is-dl{color:var(--accent-dk);font-weight:600;}
+.dt .w.is-up{color:var(--mute-2);}
+.dt.past{background:var(--rail);border-left-color:var(--mute-3)!important;}
+.dt.past .v{color:var(--mute);}
+.dt.past p{color:var(--mute-2);}
 .dt.u-now{border-color:var(--rust-line);background:var(--rust-bg);border-left-color:var(--rust)!important;}
 .dt.u-now .cd,.dt.u-now .w{color:var(--rust);font-weight:600;}
 .dt.u-soon{border-color:var(--amber-line);}
@@ -676,7 +681,7 @@ const PHASE_LABEL={scoping:"Scoping",drafting:"Drafting",consultation:"Consultat
  "adopted-pending":"Adopted, not in force",legislation:"In legislation",final:"Final",implementation:"In force",
  litigation:"In litigation",rescinding:"Being rescinded"};
 const VIEWS=[["overview","Overview"],["changes","Changes"],["regulations","Regulations"],
- ["timeline","Deadlines"],["method","Method"]];
+ ["timeline","Key dates"],["method","Method"]];
 const SUB={changes:"latest",regulations:"frameworks"};
 const STALE_DAYS=45;
 /* The clock must be the reader's, not the build's. This was pinned to a fixed
@@ -711,6 +716,20 @@ function relTime(s){const d=parseDate(s);if(!d)return"";const g=dayDiff(TODAY,d)
   if(a<14)n=a+(a===1?" day":" days");else if(a<60)n=Math.round(a/7)+" weeks";
   else if(a<730)n=Math.round(a/30.44)+" months";else n=(a/365.25).toFixed(1).replace(/\.0$/,"")+" years";
   return g>=0?"in "+n:n+" ago";}
+/* A milestone dated "2026-09" means sometime in September, not the 1st.
+   Reading a day count off one asserts precision the source never gave, which
+   is where the "0 days" on the deadline rail came from. */
+const exact=s=>String(s||"").length>7;
+function countdown(s){const d=parseDate(s);if(!d)return"";
+  const g=dayDiff(TODAY,d);
+  if(!exact(s)){const mn=d.toLocaleDateString("en-GB",{month:"long",timeZone:"UTC"});
+    return g>=0?"during "+mn:mn+", day not stated";}
+  if(g===0)return"today";
+  if(g>0)return g<=90?"in "+g+(g===1?" day":" days"):relTime(s);
+  return relTime(s);}
+/* deadline = somebody has to do something by this date.
+   update   = a dated event with nothing for the reader to action. */
+const isDeadline=m=>m&&m.kind!=="update";
 const isSoon=s=>{const d=parseDate(s);if(!d)return false;const g=dayDiff(TODAY,d);return g>=0&&g<=120;};
 const staleDays=s=>{const d=parseDate(s);return d?dayDiff(d,TODAY):999;};
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),3600);}
@@ -924,6 +943,7 @@ function relChip(fw){
 /* urgency */
 function urgency(dateStr){
   const d=parseDate(dateStr); if(!d) return null;
+  if(!exact(dateStr)) return null;   // month-only, no honest countdown
   const g=dayDiff(TODAY,d);
   if(g<0) return null;
   if(g<=7)  return {cls:"u-now",  label:g===0?"Due today":"Due in "+g+(g===1?" day":" days")};
@@ -976,18 +996,25 @@ function weekPanel(){
 </div>`;
 }
 
-/* ---------- deadlines rail, urgent things shout ---------- */
+/* ---------- the dates rail: what just went, what is next ---------- */
 function railPanel(){
-  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY)
-    .sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(0,5);
-  return `<div class="rail">${ms.map(m=>{const u=urgency(m.date);
-    const dd=parseDate(m.date), days=dayDiff(TODAY,dd);
-    return `<div class="dt ${u?u.cls:""}" style="--sc:${fwc(m.framework)}">
-      <span class="w">Deadline${m.state==="projected"?" · projected":""}</span>
+  const all=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date))
+    .sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+  const ahead=all.filter(m=>parseDate(m.date)>=TODAY);
+  let fut=ahead.slice(0,3);
+  /* A rail headed "deadlines" that shows three consultations is not much use.
+     If none of the next three is a deadline, trade the third for the soonest one. */
+  if(!fut.some(isDeadline)){const d=ahead.find(isDeadline); if(d) fut=ahead.slice(0,2).concat([d]);}
+  const past=all.filter(m=>parseDate(m.date)<TODAY).slice(-2);
+  const ms=past.concat(fut);
+  if(!ms.length) return '<div class="rail"><div class="empty">No dates in this filter.</div></div>';
+  return `<div class="rail">${ms.map(m=>{const gone=parseDate(m.date)<TODAY, u=gone?null:urgency(m.date), dl=isDeadline(m);
+    return `<div class="dt ${gone?"past":""} ${u?u.cls:""}" style="--sc:${fwc(m.framework)}">
+      <span class="w ${dl?"is-dl":"is-up"}">${dl?"Deadline":"Update"}${m.state==="projected"?" &middot; projected":""}</span>
       <div class="v">${fmtDate(m.date)}</div>
-      <span class="cd ${u?"":"q"}">${days<=90?days+(days===1?" day":" days"):relTime(m.date)}</span>
+      <span class="cd ${u?"":"q"}">${countdown(m.date)}</span>
       <p>${esc(m.label)}</p>
-      <span class="dt-fw">${fws(m.framework)}</span></div>`;}).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}</div>`;
+      <span class="dt-fw">${fws(m.framework)}</span></div>`;}).join("")}</div>`;
 }
 
 /* ---------- framework status, actionable ---------- */
@@ -1038,7 +1065,7 @@ function scopeStrip(){
 function renderOverview(){
   const v=verdicts();
   const nCh=(DATA.updates||[]).length;
-  const nDl=(DATA.timeline_milestones||[]).filter(m=>parseDate(m.date)&&parseDate(m.date)>=TODAY).length;
+  const nDl=(DATA.timeline_milestones||[]).filter(m=>isDeadline(m)&&parseDate(m.date)&&parseDate(m.date)>=TODAY).length;
   $("#v-overview").innerHTML=`
   <div class="vhead"><span class="lbl">EcoLedger Standards Tracker</span>
     <h2>Sustainability regulation changes faster than your reporting process can keep up.</h2>
@@ -1057,7 +1084,7 @@ function renderOverview(){
   </div>
   ${scopeStrip()}
   ${weekPanel()}
-  <div class="secline"><h3>Next deadlines</h3><span class="lbl">soonest first</span></div>
+  <div class="secline"><h3>Deadlines and key dates</h3><span class="lbl">just passed, and next up</span></div>
   ${railPanel()}
   <div class="cols">
     <div class="panel"><div class="panel-hd"><h3>Where to focus</h3>
@@ -1194,13 +1221,13 @@ function renderTimeline(){
   const fut=all.filter(m=>parseDate(m.date)>=TODAY), past=all.filter(m=>parseDate(m.date)<TODAY).reverse(), G={};
   fut.forEach(m=>{const d=parseDate(m.date),k=d.getUTCFullYear()+" Q"+(Math.floor(d.getUTCMonth()/3)+1);(G[k]=G[k]||[]).push(m);});
   const nowK=TODAY.getUTCFullYear()+" Q"+(Math.floor(TODAY.getUTCMonth()/3)+1);
-  const urgent=fut.filter(m=>urgency(m.date)&&urgency(m.date).cls!=="u-near");
-  $("#v-timeline").innerHTML=`<div class="vhead"><span class="lbl">${fut.length} dates ahead</span><h2>Deadlines</h2>
-    <p>Counted from today, grouped by quarter. Hollow markers are projected from a published plan rather than fixed in law.</p></div>
+  const urgent=fut.filter(m=>isDeadline(m)&&urgency(m.date)&&urgency(m.date).cls!=="u-near");
+  $("#v-timeline").innerHTML=`<div class="vhead"><span class="lbl">${fut.length} dates ahead</span><h2>Deadlines and key dates</h2>
+    <p>Counted from today, grouped by quarter. A <b>deadline</b> is a date by which somebody has to act. An <b>update</b> is a dated event with nothing to file. Hollow markers are projected from a published plan rather than fixed in law.</p></div>
   <div class="pcta"><b>Not sure which of these dates are yours?</b><p>Your first reporting year depends on where you operate, your turnover and your headcount. The readiness check works it out in about two minutes.</p><a href="https://readiness.theecoledger.com/" target="_blank" rel="noopener">Check if you are in scope &rarr;</a></div>
-  ${urgent.length?`<div class="ban amber"><span class="ic">!</span><div><b>${urgent.length} within 30 days.</b>
+  ${urgent.length?`<div class="ban amber"><span class="ic">!</span><div><b>${urgent.length} deadline${urgent.length===1?"":"s"} within 30 days.</b>
     ${urgent.slice(0,3).map(m=>esc(fws(m.framework)+" — "+m.label)).join("; ")}${urgent.length>3?"; and more below.":""}</div></div>`:""}
-  <div class="tools"><button class="btn pri" data-act="ics"><svg viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>Add these deadlines to my calendar</button>
+  <div class="tools"><button class="btn pri" data-act="ics"><svg viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="10.5" rx="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg>Add the deadlines to my calendar</button>
     <button class="btn" data-act="csv-timeline"><svg viewBox="0 0 16 16"><path d="M8 2v8m0 0 3-3m-3 3-3-3M2.5 12.5v1h11v-1"/></svg>CSV</button>
     <span class="sp"></span><label class="cnt" style="cursor:pointer"><input type="checkbox" id="tl-past" ${showPast?"checked":""}> Show the ${past.length} already passed</label></div>
   ${Object.keys(G).map(k=>`<div class="tl-q ${k===nowK?"now":""}"><h3>${k}${k===nowK?" · current quarter":""}</h3>${G[k].map(msRow).join("")}</div>`).join("")||'<div class="empty">No upcoming dates in this filter.</div>'}
@@ -1211,7 +1238,7 @@ function msRow(m){const passed=parseDate(m.date)<TODAY,u=passed?null:urgency(m.d
   return`<div class="ms ${m.state==="projected"?"projected":""} ${passed?"completed":""} ${u?u.cls:""}" style="--sc:${fwc(m.framework)}">
     <div class="dd">${fmtDate(m.date)}</div><div class="pin"><i></i></div>
     <div class="lb">${esc(m.label)}<div style="margin-top:4px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-      ${fwTag(m.framework)}${m.state==="projected"?'<span class="chip c-medium">projected</span>':""}
+      ${fwTag(m.framework)}<span class="chip ${isDeadline(m)?"c-high":"c-low"}">${isDeadline(m)?"deadline":"update"}</span>${m.state==="projected"?'<span class="chip c-medium">projected</span>':""}
       ${m.source_url?srcLink(m.source_url,"Read the original"):""}</div></div>
     <div class="cd ${u?u.cls:""}">${u?esc(u.label):relTime(m.date)}</div></div>`;}
 
@@ -1282,14 +1309,14 @@ function exportCSV(kind){
     (DATA.changes||[]).filter(c=>fwPass(c.framework)).forEach(c=>rows.push([fwn(c.framework),c.topic,c.old,c.new,c.status,c.source_title,c.source_url]));}
   else if(kind==="jurisdictions"){rows=[["Jurisdiction","Regulator","Standard","Status","Who is in scope","First reporting period","Scope 3","Assurance","Confidence","Verified","Source URL"]];
     (DATA.jurisdictions||[]).filter(j=>!FWSEL.size||FWSEL.has(j.id)).forEach(j=>rows.push([j.name,j.regulator,j.standard,j.status,j.who_is_in_scope,j.first_reporting_period,j.scope_3_required,j.assurance,(j.confidence||{}).level,j.last_verified,((j.sources||[])[0]||{}).url]));}
-  else if(kind==="timeline"){rows=[["Date","Framework","Milestone","State","Countdown","Source URL"]];
+  else if(kind==="timeline"){rows=[["Date","Framework","Milestone","Type","State","Countdown","Source URL"]];
     (DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)).sort((a,b)=>String(a.date).localeCompare(String(b.date)))
-      .forEach(m=>rows.push([m.date,fwn(m.framework),m.label,m.state,relTime(m.date),m.source_url]));}
+      .forEach(m=>rows.push([m.date,fwn(m.framework),m.label,isDeadline(m)?"Deadline":"Update",m.state,countdown(m.date),m.source_url]));}
   rows.push([],["Source: EcoLedger Standards Tracker, every entry verified against the publication in the Source URL column."]);
   deliver(toCSV(rows),"ecoledger-tracker-"+kind+".csv","text/csv;charset=utf-8");
 }
 function exportICS(){
-  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&parseDate(m.date)&&parseDate(m.date)>=TODAY);
+  const ms=(DATA.timeline_milestones||[]).filter(m=>fwPass(m.framework)&&isDeadline(m)&&exact(m.date)&&parseDate(m.date)>=TODAY);
   const pad=n=>String(n).padStart(2,"0"), stamp=d=>d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate());
   const fold=s=>String(s||"").replace(/\r?\n/g," ").replace(/([,;\\])/g,"\\$1");
   const L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//EcoLedger//Standards Tracker//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH","X-WR-CALNAME:Sustainability reporting deadlines"];
