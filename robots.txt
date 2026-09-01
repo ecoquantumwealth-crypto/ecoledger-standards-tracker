@@ -49,6 +49,6 @@ User-agent: PerplexityBot
 Allow: /
 
 # Terms of use: https://tracker.theecoledger.com/  (Method > Using this tracker)
-# Reuse enquiries: hello@theecoledger.com
+# Reuse enquiries: clientservices@theecoledger.com
 
 Sitemap: https://tracker.theecoledger.com/sitemap.xml
