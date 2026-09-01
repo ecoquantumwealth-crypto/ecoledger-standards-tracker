@@ -71,8 +71,10 @@ WATCH = [
     ("eu", ("eu",), "https://finance.ec.europa.eu/news_en"),
 
     ("us", ("us",), "https://www.sec.gov/news/pressreleases"),
-    ("us", ("us",), "https://ww2.arb.ca.gov/news"),
-    ("us", ("us",), "https://ww2.arb.ca.gov/our-work/programs/climate-corporate-data-accountability-program"),
+    # CARB's /news and programme pages build their listings in JavaScript, so a
+    # plain fetch sees zero links. These two render server-side.
+    ("us", ("us",), "https://ww2.arb.ca.gov/news-releases"),
+    ("us", ("us",), "https://ww2.arb.ca.gov/rulemaking"),
 
     ("uk", ("uk",), "https://www.fca.org.uk/news"),
     ("uk", ("uk",), "https://www.frc.org.uk/news-and-events/news/"),
@@ -83,9 +85,11 @@ WATCH = [
     ("apac", ("au", "sg", "hk", "jp"), "https://www.hkex.com.hk/News/News-Release"),
     ("apac", ("au", "sg", "hk", "jp"), "https://www.fsa.go.jp/en/news/index.html"),
 
-    ("other", ("ca", "ae", "qa"), "https://www.frascanada.ca/en/rss"),
+    # FRAS Canada refuses automated fetches at the host level and QFMA's news
+    # path has moved. Left in so the probe keeps testing them: if either opens
+    # up, this family stops costing money. Until then it falls back to the model.
     ("other", ("ca", "ae", "qa"), "https://www.frascanada.ca/en/cssb/news-listing"),
-    ("other", ("ca", "ae", "qa"), "https://www.qfma.org.qa/English/Pages/News.aspx"),
+    ("other", ("ca", "ae", "qa"), "https://www.qfma.org.qa/English/Pages/default.aspx"),
 ]
 
 # Links every page has and no page means: nav, social, legal, utility.

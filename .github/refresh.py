@@ -168,7 +168,10 @@ Only include a milestone if an official source publishes its date. Return empty 
 Test it by asking who has to act. If the answer is the body rather than the
 reader, it is an update, even when the word "deadline" appears in its own title."""
     left = max(0, RUN_SEARCH_BUDGET - USAGE["searches"])
-    cap = min(MAX_SEARCHES, left)
+    # With leads there is a shortlist to verify, so a few searches do it. Without
+    # leads the body blocks our fetches and this is a full sweep, but the scope is
+    # a single organisation, so it does not need the old open-ended ceiling.
+    cap = min(6 if leads else MAX_SEARCHES, left)
     if cap == 0:
         log(f"  ! {label}: whole-run search budget spent, skipping")
         return {"updates": [], "milestones": [],
