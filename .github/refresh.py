@@ -124,12 +124,28 @@ def api(messages, tools, max_tokens=8000, tries=3):
     raise RuntimeError(f"Anthropic API call failed: {last}")
 
 
-def ask(label, scope, since, today):
+def ask(label, scope, since, today, leads=None):
+    if leads:
+        listed = "\n".join(f"  - {x['label']}  <{x['url']}>" for x in leads[:40])
+        brief = (
+            "These items appeared on that body's OWN pages since the last run. They are "
+            "link text and nothing more: some will be genuine new publications, some will "
+            "be reposts, reordering, or pages unrelated to reporting standards.\n\n"
+            + listed +
+            "\n\nWork through them. Open the official page behind anything that looks like "
+            "a real change and report only what that page itself supports. You may report "
+            "something the list missed, but you do not need to hunt from scratch: this list "
+            "is what actually changed on the site."
+        )
+    else:
+        brief = (f"Find anything published, adopted or announced between {since} and "
+                 f"{today} inclusive by {scope}.")
+
     prompt = f"""You are running the weekly refresh of the EcoLedger Standards Tracker, a free public tracker of changes to corporate emissions accounting and disclosure standards.
 
 Today is {today}. The dataset was last verified {since}.
 
-Find anything published, adopted or announced between {since} and {today} inclusive by {scope}.
+{brief}
 
 {SOURCING_RULE}
 
@@ -248,11 +264,43 @@ def main():
 
     log(f"refreshing {since} -> {today}, model {MODEL}")
     found_u, found_m, notes, rejects = [], [], [], []
+    # The cheap pass first. A page that published nothing has nothing to ask
+    # about, and establishing that costs one fetch rather than a conversation.
+    watcher = None
+    watch = {}
+    watch_err = []
+    wreport = None
+    try:
+        import watch as watcher
+        wreport = watcher.diff()
+        watch = wreport.get("families") or {}
+        watch_err = wreport.get("errors") or []
+        moved = sum(len(v["new"]) for v in watch.values())
+        log(f"watch: {len(watch)} families, {moved} new links, "
+            f"{len(watch_err)} unreadable pages")
+    except Exception as e:                                       # noqa: BLE001
+        log(f"watch: unavailable ({e}); every family goes to the model")
+        notes.append(f"Change detection did not run ({e}), so every source was checked "
+                     f"the slow way. Coverage is unaffected; the run just cost more.")
+
     verified = set()          # frameworks whose check actually completed
     failed = []
+    skipped = []
     for label, fws, scope in FAMILIES:
+        w = watch.get(label)
+        leads = None
+        if w is not None and not w["failed"]:
+            if not w["new"]:
+                # Every page for this body fetched cleanly and offered nothing new.
+                # That is a check that passed, not a check that was skipped.
+                log(f"  = {label}: no new links on {len(w['checked'])} official pages")
+                verified.update(fws)
+                skipped.append(label)
+                continue
+            leads = w["new"]
+            log(f"  + {label}: {len(leads)} new links on its own pages")
         try:
-            r = ask(label, scope, since, today)
+            r = ask(label, scope, since, today, leads)
         except Exception as e:                                   # noqa: BLE001
             log(f"  ! {label}: {e}")
             notes.append(f"{label}: the check did not complete ({e})")
@@ -320,6 +368,16 @@ def main():
                   "The tracker will show them as ageing rather than as freshly checked."]
     if notes:
         lines += ["", "## Caveats"] + [f"- {n}" for n in notes]
+    if skipped:
+        lines += ["", "## Verified without needing the model",
+                  ", ".join(skipped) + " \u2014 every official page fetched cleanly and "
+                  "offered no new links, so there was nothing to interpret. These were "
+                  "checked, not skipped."]
+    if watch_err:
+        lines += ["", "## Pages the watcher could not read"] + \
+                 [f"- {e}" for e in watch_err] + \
+                 ["", "Those families were checked the slow way instead, so coverage is "
+                  "unaffected. It only costs more."]
     lines += ["", "## What this run cost",
               f"- {USAGE['searches']} web searches across {len(FAMILIES)} sources "
               f"(ceiling {MAX_SEARCHES} each, {RUN_SEARCH_BUDGET} for the run)",
@@ -332,6 +390,13 @@ def main():
                   f"{len(clean_u)} passed the gate, {len(new_u)} were not already in the dataset._"]
     with open(REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
+
+    if watcher is not None and wreport is not None:
+        done = {lab for lab, _f, _s in FAMILIES if lab not in failed}
+        try:
+            log(f"watch: baseline advanced for {watcher.save(wreport, done)} pages")
+        except Exception as e:                                   # noqa: BLE001
+            log(f"watch: could not save baseline ({e}); next run re-reports these links")
 
     log(f"done: {len(new_u)} updates, {len(new_m)} milestones, {len(rejects)} rejected, "
         f"{USAGE['searches']} searches, about ${spend():.2f}")

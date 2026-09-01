@@ -1,0 +1,28 @@
+name: Probe watched pages
+
+# Free. No API key, no model, no cost. Fetches every page watch.py monitors and
+# reports which return usable links, so a source that quietly starts blocking us
+# shows up here rather than as a silent gap in the tracker.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 1 * *'        # 05:00 UTC on the 1st, a monthly canary
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Which official pages can we read
+        run: |
+          python3 .github/watch.py --probe | tee /tmp/probe.txt
+          {
+            echo '## Watched pages'
+            echo '```'
+            cat /tmp/probe.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

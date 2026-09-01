@@ -28,6 +28,15 @@ jobs:
         with:
           python-version: '3.12'
 
+      # Free, deterministic pass: which official pages published anything.
+      # Cached so a failed run does not re-report the same links next week.
+      - name: Restore what the watcher saw last week
+        uses: actions/cache@v4
+        with:
+          path: .github/watch-state.json
+          key: watch-state-${{ github.run_id }}
+          restore-keys: watch-state-
+
       - name: Check the primary sources and stage the update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -63,6 +72,7 @@ jobs:
           path: |
             data/data.json
             refresh-report.md
+            .github/watch-state.json
           retention-days: 7
 
       - name: Raise an issue if the refresh broke
