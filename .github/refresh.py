@@ -47,6 +47,9 @@ def spend():
     return (USAGE["in"] * PRICE_IN + USAGE["out"] * PRICE_OUT
             + USAGE["searches"] * PRICE_SEARCH)
 SEARCH_TOOL = os.environ.get("ANTHROPIC_SEARCH_TOOL", "web_search_20250305")
+# An identity-linked key is rejected with HTTP 400 unless the request names the
+# workspace it acts in. Harmless to send when the key does not need it.
+WORKSPACE = os.environ.get("ANTHROPIC_WORKSPACE_ID", "").strip()
 API_URL = "https://api.anthropic.com/v1/messages"
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}(-\d{2})?$")
@@ -70,15 +73,15 @@ OFFICIAL_DOMAINS = (
 # coverage quietly fails. Narrow scopes also keep each conversation's context
 # small, and context is what the token bill is made of.
 FAMILIES = [
-    ("ghgp", "the GHG Protocol (ghgprotocol.org)"),
-    ("iso", "ISO (iso.org): the 14060 family, ISO 14068, and ISO/TC 207/SC 7"),
-    ("sbti", "the SBTi (sciencebasedtargets.org, files.sciencebasedtargets.org)"),
-    ("issb", "the ISSB and IFRS Foundation (ifrs.org)"),
-    ("eu", "the EU: EUR-Lex and the Official Journal, EFRAG (efrag.org), the Commission (finance.ec.europa.eu), Council and Parliament"),
-    ("us", "the US: the SEC (sec.gov), the Federal Register (federalregister.gov), CARB (ww2.arb.ca.gov, arb.ca.gov), the EPA and the federal courts"),
-    ("uk", "the UK: the FCA (fca.org.uk), the FRC (frc.org.uk), gov.uk and legislation.gov.uk"),
-    ("apac", "Australia (aasb.gov.au, asic.gov.au), Singapore (acra.gov.sg, sgx.com), Hong Kong (hkex.com.hk) and Japan (fsa.go.jp, ssb-j.jp), each via its named regulator only"),
-    ("other", "Canada (frascanada.ca), the UAE (uaecma.gov.ae) and Qatar (qfma.org.qa), each via its named regulator only"),
+    ("ghgp", ("ghgp",), "the GHG Protocol (ghgprotocol.org)"),
+    ("iso", ("iso",), "ISO (iso.org): the 14060 family, ISO 14068, and ISO/TC 207/SC 7"),
+    ("sbti", ("sbti",), "the SBTi (sciencebasedtargets.org, files.sciencebasedtargets.org)"),
+    ("issb", ("issb",), "the ISSB and IFRS Foundation (ifrs.org)"),
+    ("eu", ("eu",), "the EU: EUR-Lex and the Official Journal, EFRAG (efrag.org), the Commission (finance.ec.europa.eu), Council and Parliament"),
+    ("us", ("us",), "the US: the SEC (sec.gov), the Federal Register (federalregister.gov), CARB (ww2.arb.ca.gov, arb.ca.gov), the EPA and the federal courts"),
+    ("uk", ("uk",), "the UK: the FCA (fca.org.uk), the FRC (frc.org.uk), gov.uk and legislation.gov.uk"),
+    ("apac", ("au","sg","hk","jp"), "Australia (aasb.gov.au, asic.gov.au), Singapore (acra.gov.sg, sgx.com), Hong Kong (hkex.com.hk) and Japan (fsa.go.jp, ssb-j.jp), each via its named regulator only"),
+    ("other", ("ca","ae","qa"), "Canada (frascanada.ca), the UAE (uaecma.gov.ae) and Qatar (qfma.org.qa), each via its named regulator only"),
 ]
 
 SOURCING_RULE = """SOURCING RULE, ABSOLUTE:
@@ -98,11 +101,14 @@ def api(messages, tools, max_tokens=8000, tries=3):
         "model": MODEL, "max_tokens": max_tokens,
         "messages": messages, "tools": tools,
     }).encode()
-    req = urllib.request.Request(API_URL, data=body, method="POST", headers={
+    headers = {
         "content-type": "application/json",
         "x-api-key": API_KEY,
         "anthropic-version": "2023-06-01",
-    })
+    }
+    if WORKSPACE:
+        headers["anthropic-workspace-id"] = WORKSPACE
+    req = urllib.request.Request(API_URL, data=body, method="POST", headers=headers)
     last = None
     for attempt in range(tries):
         try:
@@ -242,13 +248,17 @@ def main():
 
     log(f"refreshing {since} -> {today}, model {MODEL}")
     found_u, found_m, notes, rejects = [], [], [], []
-    for label, scope in FAMILIES:
+    verified = set()          # frameworks whose check actually completed
+    failed = []
+    for label, fws, scope in FAMILIES:
         try:
             r = ask(label, scope, since, today)
         except Exception as e:                                   # noqa: BLE001
             log(f"  ! {label}: {e}")
             notes.append(f"{label}: the check did not complete ({e})")
+            failed.append(label)
             continue
+        verified.update(fws)
         found_u += r.get("updates") or []
         found_m += r.get("milestones") or []
         if r.get("notes"):
@@ -264,10 +274,21 @@ def main():
 
     d["updates"] = sorted(new_u + d.get("updates", []), key=lambda u: u["date"], reverse=True)
     d["timeline_milestones"] = sorted(d.get("timeline_milestones", []) + new_m, key=lambda m: str(m["date"]))
-    d["meta"]["last_updated"] = today
-    if "coverage_window_end" in d["meta"]:
-        d["meta"]["coverage_window_end"] = today
+    # The first live run failed every one of the nine checks on a bad auth header
+    # and still stamped the whole dataset as verified today. A tracker that says
+    # "verified" about something it never looked at is worse than one that says
+    # nothing, so freshness is now only ever claimed for what actually completed.
+    if not verified:
+        log(f"FAIL: every source check failed ({', '.join(failed)}). "
+            "Nothing written; the tracker keeps last week's verified data.")
+        return 1
+    if not failed:
+        d["meta"]["last_updated"] = today
+        if "coverage_window_end" in d["meta"]:
+            d["meta"]["coverage_window_end"] = today
     for fam in d.get("frameworks", []):
+        if fam.get("id") not in verified:
+            continue
         for w in fam.get("workstreams", []):
             w["last_verified"] = today
 
@@ -291,6 +312,12 @@ def main():
     if rejects:
         lines += ["", "## Rejected by the gate, not published",
                   "These failed the sourcing or date rules and were dropped rather than guessed at.", ""] + rejects
+    if failed:
+        lines += ["", "## Not checked this week",
+                  f"**{len(failed)} of {len(FAMILIES)} source checks did not complete: "
+                  f"{', '.join(failed)}.** Those frameworks keep their previous "
+                  "verification date and the dataset's own last_updated has not moved. "
+                  "The tracker will show them as ageing rather than as freshly checked."]
     if notes:
         lines += ["", "## Caveats"] + [f"- {n}" for n in notes]
     lines += ["", "## What this run cost",

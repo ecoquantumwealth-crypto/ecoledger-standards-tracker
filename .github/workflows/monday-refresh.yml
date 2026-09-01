@@ -32,6 +32,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-5' }}
+          # An identity-linked key is rejected outright without this.
+          ANTHROPIC_WORKSPACE_ID: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
           ANTHROPIC_MAX_SEARCHES: ${{ vars.ANTHROPIC_MAX_SEARCHES || '10' }}
           ANTHROPIC_RUN_SEARCH_BUDGET: ${{ vars.ANTHROPIC_RUN_SEARCH_BUDGET || '70' }}
         run: python3 .github/refresh.py
