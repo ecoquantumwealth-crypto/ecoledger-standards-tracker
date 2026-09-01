@@ -41,13 +41,22 @@ TIMEOUT = int(os.environ.get("WATCH_TIMEOUT", "30"))
 # family counts as changed if any of its pages changed. Every host here is on
 # refresh.py's official-domain allowlist, so nothing can enter the dataset from
 # a source the gate would reject anyway.
+# (family, frameworks covered, url). Several pages may back one family; the
+# family counts as changed if any of its pages changed. Every host here is on
+# refresh.py's official-domain allowlist, so nothing can enter the dataset from
+# a source the gate would reject anyway.
+#
+# Some of these bodies sit behind a bot filter and return 403 to any plain
+# fetch. Where they publish a feed we use that instead: a feed exists precisely
+# to be read by machines, so it is the front door rather than a way round the
+# back. Where neither works the family simply falls back to the model, which is
+# the old behaviour and costs money but never loses coverage.
 WATCH = [
+    ("ghgp", ("ghgp",), "https://ghgprotocol.org/feed"),
     ("ghgp", ("ghgp",), "https://ghgprotocol.org/newsroom"),
-    ("ghgp", ("ghgp",), "https://ghgprotocol.org/blog"),
 
+    ("iso", ("iso",), "https://www.iso.org/feed/news.rss"),
     ("iso", ("iso",), "https://www.iso.org/news.html"),
-    ("iso", ("iso",), "https://www.iso.org/standard/43279.html"),
-    ("iso", ("iso",), "https://www.iso.org/standard/94470.html"),
 
     ("sbti", ("sbti",), "https://sciencebasedtargets.org/news"),
     ("sbti", ("sbti",), "https://sciencebasedtargets.org/resources"),
@@ -55,9 +64,11 @@ WATCH = [
     ("issb", ("issb",), "https://www.ifrs.org/news-and-events/news/"),
     ("issb", ("issb",), "https://www.ifrs.org/projects/open-for-comment/"),
 
-    ("eu", ("eu",), "https://www.efrag.org/en/news-and-calendar"),
+    # eur-lex's direct-access page is a search form and offers no content links,
+    # so it told us nothing. EFRAG and the Commission cover the EU here, and the
+    # model still checks the Official Journal when this family moves.
+    ("eu", ("eu",), "https://www.efrag.org/en/news"),
     ("eu", ("eu",), "https://finance.ec.europa.eu/news_en"),
-    ("eu", ("eu",), "https://eur-lex.europa.eu/oj/direct-access.html"),
 
     ("us", ("us",), "https://www.sec.gov/news/pressreleases"),
     ("us", ("us",), "https://ww2.arb.ca.gov/news"),
@@ -67,11 +78,12 @@ WATCH = [
     ("uk", ("uk",), "https://www.frc.org.uk/news-and-events/news/"),
 
     ("apac", ("au", "sg", "hk", "jp"), "https://aasb.gov.au/news/"),
-    ("apac", ("au", "sg", "hk", "jp"), "https://asic.gov.au/newsroom/news-centre/"),
+    ("apac", ("au", "sg", "hk", "jp"), "https://asic.gov.au/newsroom/"),
     ("apac", ("au", "sg", "hk", "jp"), "https://www.acra.gov.sg/news-events"),
     ("apac", ("au", "sg", "hk", "jp"), "https://www.hkex.com.hk/News/News-Release"),
     ("apac", ("au", "sg", "hk", "jp"), "https://www.fsa.go.jp/en/news/index.html"),
 
+    ("other", ("ca", "ae", "qa"), "https://www.frascanada.ca/en/rss"),
     ("other", ("ca", "ae", "qa"), "https://www.frascanada.ca/en/cssb/news-listing"),
     ("other", ("ca", "ae", "qa"), "https://www.qfma.org.qa/English/Pages/News.aspx"),
 ]
@@ -83,6 +95,12 @@ NOISE = re.compile(
     r"|/terms|mailto:|tel:|javascript:|/cart|/account)", re.I)
 
 ANCHOR = re.compile(r"<a\b[^>]*?href=[\"']([^\"'>]+)[\"'][^>]*>(.*?)</a>", re.I | re.S)
+# RSS and Atom carry the same thing in a cleaner shape: one entry, one link,
+# one title. No layout noise at all, which is why a feed is worth preferring.
+RSS_ITEM = re.compile(r"<(?:item|entry)\b.*?</(?:item|entry)>", re.I | re.S)
+RSS_LINK = re.compile(r"<link[^>]*?(?:href=[\"']([^\"']+)[\"'][^>]*/?>|>([^<]+)</link>)", re.I)
+RSS_TITLE = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
+CDATA = re.compile(r"<!\[CDATA\[(.*?)\]\]>", re.S)
 TAGS = re.compile(r"<[^>]+>")
 WS = re.compile(r"\s+")
 
@@ -95,7 +113,7 @@ def fetch(url):
     ctx = ssl.create_default_context()
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
-        "Accept": "text/html,application/xhtml+xml",
+        "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8",
         "Accept-Language": "en-GB,en;q=0.9",
     })
     with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as r:
@@ -113,6 +131,25 @@ def items_of(url, html):
     """
     host = urllib.parse.urlparse(url).netloc.lower()
     out = {}
+
+    entries = RSS_ITEM.findall(html)
+    if entries:
+        for e in entries:
+            lm = RSS_LINK.search(e)
+            tm = RSS_TITLE.search(e)
+            if not (lm and tm):
+                continue
+            link = (lm.group(1) or lm.group(2) or "").strip()
+            title = clean(CDATA.sub(r"\1", tm.group(1)))
+            if not link or len(title) < 10:
+                continue
+            path = urllib.parse.urlparse(urllib.parse.urljoin(url, link)).path
+            key = hashlib.sha1(
+                (path + "|" + title.lower()).encode("utf-8")).hexdigest()[:12]
+            out[key] = {"label": title[:300],
+                        "url": urllib.parse.urljoin(url, link)}
+        return out
+
     for href, inner in ANCHOR.findall(html):
         href = href.strip()
         if not href or href.startswith("#") or NOISE.search(href):
@@ -219,6 +256,17 @@ def main():
 
     if mode == "--probe":
         results = run_all()
+        good = [r for r in results if not r.get("error") and len(r["items"]) >= 3]
+        poor = [r for r in results if r not in good]
+        print(f"{len(good)} of {len(results)} pages usable. "
+              f"An unusable page just means its family falls back to the model, "
+              f"which is the old behaviour: more expensive, never less covered.")
+        if poor:
+            print("\nNOT USABLE")
+            for r in sorted(poor, key=lambda x: (x["family"], x["url"])):
+                why = r.get("error") or f"only {len(r['items'])} content links"
+                print(f"  {r['family']:6} {r['url']}\n         {why}")
+        print("\nALL PAGES")
         ok = bad = 0
         print(f"{'family':7} {'links':>6}  url")
         print("-" * 100)
