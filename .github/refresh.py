@@ -21,7 +21,11 @@ DATA = os.path.join(ROOT, "data", "data.json")
 REPORT = os.path.join(ROOT, "refresh-report.md")
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY")
-MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-5")
+MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5")
+# Search results land in context and every later turn re-sends them, so the search
+# cap is the single biggest lever on what a run costs. 10 per family is enough to
+# check a handful of official pages; 30 was open-ended and could run into dollars.
+MAX_SEARCHES = int(os.environ.get("ANTHROPIC_MAX_SEARCHES", "10"))
 SEARCH_TOOL = os.environ.get("ANTHROPIC_SEARCH_TOOL", "web_search_20250305")
 API_URL = "https://api.anthropic.com/v1/messages"
 
@@ -114,7 +118,7 @@ Test it by asking who has to act. If the answer is the body rather than the
 reader, it is an update, even when the word "deadline" appears in its own title."""
     log(f"  asking about {label} ...")
     r = api([{"role": "user", "content": prompt}],
-            [{"type": SEARCH_TOOL, "name": "web_search", "max_uses": 30}])
+            [{"type": SEARCH_TOOL, "name": "web_search", "max_uses": MAX_SEARCHES}])
     text = "".join(b.get("text", "") for b in r.get("content", []) if b.get("type") == "text")
     m = re.search(r"\{.*\}", text, re.S)
     if not m:

@@ -31,7 +31,8 @@ jobs:
       - name: Check the primary sources and stage the update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-4-5' }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-5' }}
+          ANTHROPIC_MAX_SEARCHES: ${{ vars.ANTHROPIC_MAX_SEARCHES || '10' }}
         run: python3 .github/refresh.py
 
       # The gate. If this fails, nothing is staged, so nothing can be approved.
