@@ -6,6 +6,30 @@
 <title>Standards Tracker, EcoLedger</title>
 <meta name="description" content="A free, continuously verified tracker of every major change to corporate emissions accounting and disclosure standards, GHG Protocol, ISO, SBTi, ISSB, EU, US, UK and seven more jurisdictions. Every entry linked to the regulator's own publication.">
 <link rel="canonical" href="https://tracker.theecoledger.com/">
+
+<!-- Analytics. Consent Mode with analytics_storage denied and never granted,
+     so GA4 sends cookieless pings: we get visit counts and events, and the
+     tracker sets no analytics cookie. That is deliberate. This is a free lead
+     magnet with no consent banner, and a company selling compliance software
+     should not be dropping cookies on people who were never asked.
+     The linker keeps a visitor who goes tracker -> readiness -> shop as one
+     session rather than three strangers, which is the whole point of measuring
+     the tracker at all. -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  ad_storage:'denied', ad_user_data:'denied',
+  ad_personalization:'denied', analytics_storage:'denied'
+});
+gtag('js', new Date());
+gtag('config','G-3J3YDRJ1LZ',{
+  anonymize_ip:true,
+  linker:{domains:['theecoledger.com','tracker.theecoledger.com',
+                   'readiness.theecoledger.com','demo.theecoledger.com']}
+});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3J3YDRJ1LZ"></script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EcoLedger">
 <meta property="og:url" content="https://tracker.theecoledger.com/">
@@ -1415,7 +1439,17 @@ function render(){renderNav();renderKey();renderScopeSum();
   ({overview:renderOverview,changes:renderChanges,regulations:renderRegulations,
     timeline:renderTimeline,method:renderMethod})[VIEW]();
   writeHash();}
-function go(v,fw){VIEW=v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);}
+/* An ad blocker, a privacy browser or a slow network can all leave gtag
+   undefined. Analytics must never be able to take the tracker down with it. */
+function track(name,params){
+  try{ if(typeof gtag==="function") gtag("event",name,params||{}); }catch(e){}
+}
+function trackView(v){
+  const label=(VIEWS.find(x=>x[0]===v)||[,v])[1];
+  track("page_view",{page_title:"Standards Tracker, "+label,
+    page_location:location.origin+location.pathname+"?v="+v});
+}
+function go(v,fw){VIEW=v;if(fw)FWSEL=new Set([fw]);render();window.scrollTo(0,0);trackView(v);}
 
 /* ============================== EVENTS ============================== */
 document.addEventListener("click",e=>{
@@ -1462,6 +1496,7 @@ function openDigest(){
 function closeDigest(){$("#dg").classList.remove("on");}
 function markSubscribed(){
   try{localStorage.setItem("ecoledger-w5-v1","1");}catch(e){}
+  track("monday_five_signup",{view:VIEW});
   paintW5();
 }
 function paintW5(){
