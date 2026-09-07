@@ -757,7 +757,7 @@
             "label": "Target publication date for ISO 14068"
           },
           "so_what": "If you or any supplier makes a carbon neutral claim under ISO 14068-1:2023, plan a re-basing exercise for the new ISO 14068 landing around September 2026.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-07",
           "sources": [
             {
               "title": "ISO 14068 - Climate change management - Carbon neutrality",
@@ -804,7 +804,7 @@
             "label": "Length of the ISO/DIS 14060 public consultation from 17 June 2026"
           },
           "so_what": "Get your comments on ISO/DIS 14060 to BSI immediately - the ballot closes in early September 2026 and this will become the verifiable benchmark for net zero transition plans.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-07",
           "sources": [
             {
               "title": "ISO launches public consultation on the world's first International Standard for net zero alignment today",
@@ -2509,7 +2509,7 @@
             "label": "Reduction in total ESRS datapoints per the Commission"
           },
           "so_what": "Rebuild your ESRS datapoint inventory against the revised standards before your FY2027 reporting cycle, and decide now whether to early-apply for FY2026.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-07",
           "sources": [
             {
               "title": "Commission Delegated Regulation of 3.7.2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards - C(2026) 5010",
@@ -2704,6 +2704,7 @@
           "key_points": [
             "Applies to third-country undertakings with net turnover in the Union exceeding EUR 450 000 000 in each of the last two consecutive financial years AND either an EU branch with net turnover above EUR 200 000 000 or an EU subsidiary meeting that threshold.",
             "First sustainability statements are expected in 2029 covering financial year 2028, so this is the live workstream for non-EU groups.",
+            "EFRAG is running jurisdiction-specific outreach sessions through September 2026 with national standard setters in Mexico, Korea, the United States, New Zealand, Japan, Canada and the United Kingdom, with more to be announced; they supplement the consultation survey rather than extend it.",
             "Consultation runs 23 July to 31 October 2026 (100 days); EFRAG technical advice is due to the Commission in early 2027.",
             "This is the route by which a UK, US or other non-EU parent is captured even when no single EU subsidiary meets the CSRD 1,000-employee test.",
             "The standard is separate from, and lighter than, the full revised ESRS applied by EU undertakings."
@@ -2722,7 +2723,7 @@
             "label": "First reporting year for third-country undertakings under Article 40a"
           },
           "so_what": "If your non-EU parent clears EUR 450m of EU turnover, respond to the ESRS-40a consultation before 31 October 2026 and start scoping an FY2028 group-level EU sustainability statement.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-07",
           "sources": [
             {
               "title": "European Sustainability Standards for Third-Country Undertakings (ESRS-40a)",
@@ -4357,6 +4358,19 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-09-01",
+      "framework": "eu",
+      "workstream": "eu-nesrs",
+      "headline": "EFRAG schedules September outreach sessions on the ESRS-40a exposure draft for non-EU groups",
+      "detail": "EFRAG announced a series of outreach events running through September 2026 on the exposure draft of the European Sustainability Reporting Standards for certain non-EU undertakings, the standard that applies under Article 40a of the Accounting Directive. Sessions are organised jointly with national standard setters and business bodies in Mexico on 14 September, Korea on 16 September, the United States on 17 September, New Zealand on 22 September, Japan and Canada on 25 September and the United Kingdom on 29 September, and EFRAG says further jurisdictions will be added. The events supplement rather than replace the public consultation survey, which remains open until 31 October 2026. Nothing in the announcement changes the exposure draft, its thresholds or the consultation deadline.",
+      "so_what": "If your non-EU parent expects to be captured by Article 40a, register for your local September session and use it to test your reading of the draft before filing a consultation response by 31 October 2026.",
+      "significance": "low",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/save-the-dates-efrag-outreach-events-on-the-esrs-for-certain-noneu-undertakings",
+      "source_title": "Save the Dates: EFRAG Outreach Events on the ESRS for Certain Non-EU Undertakings",
+      "source_publisher": "EFRAG",
+      "last_verified": "2026-09-07"
+    },
     {
       "date": "2026-08-28",
       "framework": "eu",
@@ -9278,9 +9292,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-08-31",
+    "last_updated": "2026-09-07",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-08-31",
+    "coverage_window_end": "2026-09-07",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
