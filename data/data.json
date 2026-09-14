@@ -734,10 +734,11 @@
           "id": "iso-14068",
           "name": "ISO 14068 (carbon neutrality)",
           "phase": "adopted-pending",
-          "status_label": "Stage 60.00, under publication as at 7 August 2026; target publication September 2026",
+          "status_label": "Still stage 60.00, under publication, as at 14 September 2026; ISO's target publication month of September 2026 has not yet been met",
           "summary": "ISO 14068-1:2023, the carbon neutrality standard published on 30 November 2023, moved to stage 90.92, International Standard to be revised, on 8 May 2026. Its replacement, designated simply ISO 14068 and titled Climate change management - Carbon neutrality, reached stage 60.00, under publication, on 7 August 2026 with a target publication date of September 2026.",
           "key_points": [
-            "Publication is imminent: stage 60.00 means the text is fixed and at the printer, with a September 2026 target date.",
+            "Re-checked on 14 September 2026: the catalogue record still shows stage 60.00 reached on 7 August 2026 and the 60.60 'International Standard published' line is undated, so the standard has not published.",
+            "ISO's catalogue gives the publication date only as 2026-09, a month with no day, and the ISO/TC 207/SC 7 committee catalogue table separately shows the item as 'ISO 14068:2026' at stage 60.60; the individual catalogue record and ISO's own project feed are the more conservative and are taken as the record here.",
             "The new edition drops the part number, replacing ISO 14068-1:2023 with a single ISO 14068.",
             "Applies to both organisations and products, and prioritises emissions reductions and removal enhancements within the value chain over offsetting.",
             "Explicitly excludes territories and UNFCCC national reporting.",
@@ -745,7 +746,7 @@
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "Stage 60.00 with a September 2026 target is taken from the ISO catalogue record, but a standard at 'under publication' has not published yet and ISO target dates routinely move by a month or two."
+            "reasoning": "Stage 60.00 with a September 2026 target is taken from the ISO catalogue record and was re-confirmed on 14 September 2026, but a standard at 'under publication' has not published yet and ISO target dates routinely move. ISO's committee catalogue table and the individual catalogue record disagree on the stage, so the more conservative individual record is used."
           },
           "next_milestone": {
             "date": "2026-09",
@@ -757,7 +758,7 @@
             "label": "Target publication date for ISO 14068"
           },
           "so_what": "If you or any supplier makes a carbon neutral claim under ISO 14068-1:2023, plan a re-basing exercise for the new ISO 14068 landing around September 2026.",
-          "last_verified": "2026-09-07",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "ISO 14068 - Climate change management - Carbon neutrality",
@@ -780,10 +781,10 @@
           "id": "iso-14060-netzero",
           "name": "ISO 14060 (Net zero aligned organizations)",
           "phase": "consultation",
-          "status_label": "OPEN - DIS ballot launched 17 June 2026, 12-week consultation closing early September 2026",
+          "status_label": "DIS ballot launched 17 June 2026 for 12 weeks; ISO has published no closing date and the record still shows stage 40.20",
           "summary": "ISO/DIS 14060, Net zero aligned organizations, is described by ISO as the world's first international independently verifiable standard for credible and comprehensive net zero transition plans. ISO launched a 12-week public consultation on 17 June 2026 through national standards bodies. It replaces IWA 42:2022, the non-normative ISO Net Zero Guidelines.",
           "key_points": [
-            "This consultation is closing within days or weeks - ISO opened it on 17 June 2026 for 12 weeks, i.e. early September 2026.",
+            "As at 14 September 2026 the catalogue record still shows stage 40.20, DIS ballot initiated, reached on 17 June 2026, and the 40.60 'close of voting' line carries no date, so there is no published closing date.",
             "Comments must be routed through a national standards body (BSI in the UK), not submitted directly to ISO.",
             "Turns the voluntary IWA 42:2022 net zero guidelines into an independently verifiable standard covering net zero strategy, targets and delivery against them, aligned to the Paris Agreement.",
             "Stage history: project approved 27 May 2024, working draft study 6 September 2024, CD approved for DIS registration 24 March 2026, DIS registered 21 April 2026, DIS ballot initiated 17 June 2026 (stage 40.20).",
@@ -792,19 +793,19 @@
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The DIS stage, ballot launch date and 12-week duration are confirmed on ISO's own catalogue record and news release, but ISO's news item gives the closing date only as 'early September 2026' rather than a precise date."
+            "reasoning": "The DIS stage, ballot launch date and 12-week duration are confirmed on ISO's own catalogue record and news release and were re-checked on 14 September 2026, but ISO gives the closing date only as 'early September 2026' and has recorded no close-of-voting date, so the close cannot be dated."
           },
           "next_milestone": {
-            "date": "2026-09",
-            "label": "Close of the ISO/DIS 14060 enquiry ballot",
+            "date": null,
+            "label": "Close of the ISO/DIS 14060 enquiry ballot (no date published)",
             "projected": true
           },
           "stat": {
             "value": "12 weeks",
             "label": "Length of the ISO/DIS 14060 public consultation from 17 June 2026"
           },
-          "so_what": "Get your comments on ISO/DIS 14060 to BSI immediately - the ballot closes in early September 2026 and this will become the verifiable benchmark for net zero transition plans.",
-          "last_verified": "2026-09-07",
+          "so_what": "Get any comments on ISO/DIS 14060 to your national standards body without delay, because ISO's stated ballot window has effectively run and this will become the verifiable benchmark for net zero transition plans.",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "ISO launches public consultation on the world's first International Standard for net zero alignment today",
@@ -2008,10 +2009,11 @@
           "id": "issb-human-capital",
           "name": "Human Capital",
           "phase": "scoping",
-          "status_label": "Research project; project direction decision still pending",
-          "summary": "Human Capital is one of the two research projects the ISSB launched in April 2024 under its 2024-2026 work plan, covering workforce size and composition, compensation, engagement, turnover, training and development, and workplace health and safety. The ISSB analysed the initial research phase in October 2025 and received a project update on 10 December 2025 focused on the necessity and feasibility of standard-setting, but has taken no decisions. The work plan lists the next milestone as 'Decide Project Direction' with no date attached.",
+          "status_label": "Research project; on the ISSB's 24 September 2026 agenda, project direction still undecided",
+          "summary": "Human Capital is one of the two research projects the ISSB launched in April 2024 under its 2024-2026 work plan, covering workforce size and composition, compensation, engagement, turnover, training and development, and workplace health and safety. The ISSB analysed the initial research phase in October 2025 and received a project update on 10 December 2025 focused on the necessity and feasibility of standard-setting, but has taken no decisions. The work plan lists the next milestone as 'Decide Project Direction' with no date attached. Human Capital is one of only two items on the agenda for the ISSB's meeting in Montreal on 24 September 2026.",
           "key_points": [
             "Still formally a research project — no Discussion Paper or Exposure Draft has been published or announced.",
+            "Human Capital is one of two items on the published agenda for the ISSB's 24 September 2026 meeting in Montreal, alongside supporting implementation of IFRS S1 and IFRS S2.",
             "The ISSB received a project update on 10 December 2025 on 'the necessity and feasibility of standard-setting' and made no decisions.",
             "The next work-plan milestone is 'Decide Project Direction'; the IFRS Foundation has not published a date for it.",
             "The IFRS Sustainability Reference Group discussed the project in June 2026.",
@@ -2022,17 +2024,23 @@
             "reasoning": "The ISSB has explicitly not yet decided whether to move to standard-setting, so both the outcome and the timing are genuinely open."
           },
           "next_milestone": {
-            "date": null,
-            "label": "ISSB decision on project direction (no official date published) (no date published)",
-            "projected": true
+            "date": "2026-09-24",
+            "label": "ISSB discusses Human Capital in Montreal; no date published for the project-direction decision itself",
+            "projected": false
           },
           "stat": {
             "value": "0",
             "label": "human capital consultation documents published to date"
           },
           "so_what": "Do not build a human-capital reporting programme around an imminent ISSB standard; there is no draft and no dated decision point.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-14",
           "sources": [
+            {
+              "title": "International Sustainability Standards Board, September 2026 meeting agenda and papers",
+              "url": "https://www.ifrs.org/news-and-events/calendar/2026/september/international-sustainability-standards-board/",
+              "publisher": "IFRS Foundation",
+              "date": "2026-09-10"
+            },
             {
               "title": "Human Capital — project page",
               "url": "https://www.ifrs.org/projects/work-plan/human-capital/",
@@ -2253,17 +2261,18 @@
             "New seat of the ISSB in Geneva, expected to open mid-2027; Frankfurt continues as the EU engagement hub and Montreal retains key functions, with existing multi-location funding from Beijing, Frankfurt, Montreal and Tokyo supporters continuing.",
             "ISSB funding secured through 2031 via philanthropic contributions, jurisdictional commitments and earned revenue; beyond 2031 the Trustees intend a more durable long-term funding model as adoption matures.",
             "Board size: the ISSB is transitioning from 14 to 10 members; the Trustees announced this in June 2025 and expect each board to comprise 10 members from 2028, subject to Constitution amendments.",
+            "The Trustees published the Exposure Draft Proposed Targeted Amendments to the IFRS Foundation Constitution on 18 August 2026, covering board size, member attributes and voting arrangements; comments close on 16 November 2026.",
             "Leadership: Emmanuel Faber continues as ISSB Chair; Sue Lloyd was reappointed as ISSB Vice-Chair for a second four-year term effective 1 March 2026.",
             "Wider Foundation leadership: Steven Maijoor becomes Chair of the Trustees on 1 January 2027 and Laura Forzani becomes Managing Director on 1 September 2026 (announced 11 August 2026).",
             "The 2025 Annual Report (31 March 2026) reported total comprehensive income of £1.3 million and reserves up to £49.2 million, alongside cost-reduction and restructuring work."
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The Trustees have approved the plan and announced the Geneva seat and funding horizon, but the board-size reduction still requires Constitution amendments to be finalised."
+            "reasoning": "The Trustees have approved the plan and announced the Geneva seat and funding horizon, but the board-size reduction still requires Constitution amendments, and the exposure draft for those amendments is open for comment until 16 November 2026."
           },
           "next_milestone": {
-            "date": "2027-01-01",
-            "label": "Steven Maijoor takes office as Chair of the IFRS Foundation Trustees",
+            "date": "2026-11-16",
+            "label": "Comment deadline on the proposed targeted amendments to the IFRS Foundation Constitution",
             "projected": false
           },
           "stat": {
@@ -2271,11 +2280,17 @@
             "label": "year to which ISSB funding is secured"
           },
           "so_what": "Note that ISSB capacity is funded and stable to 2031, so plan on the standard-setter persisting rather than treating ISSB requirements as reversible.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "IFRS Foundation Trustees announce five-year plan including new seat of the ISSB in Geneva",
               "url": "https://www.ifrs.org/news-and-events/news/2026/08/trustees-announce-five-year-plan/",
+              "publisher": "IFRS Foundation",
+              "date": "2026-08-18"
+            },
+            {
+              "title": "Exposure Draft and comment letters: Proposed Targeted Amendments to the IFRS Foundation Constitution",
+              "url": "https://www.ifrs.org/projects/work-plan/proposed-amendments-ifrs-foundation-constitution/ed-cl-constitution/",
               "publisher": "IFRS Foundation",
               "date": "2026-08-18"
             },
@@ -2492,7 +2507,7 @@
             "Applies mandatorily to financial years beginning on or after 1 January 2027; undertakings may voluntarily apply the revised ESRS for financial years beginning between 1 January 2026 and 31 December 2026 and must state in the sustainability statement which version they used.",
             "The Commission reports mandatory datapoints down more than 60%, total datapoints down more than 70%, and expected cost reduction of more than 30% per company against a 25% target.",
             "EFRAG's advice claimed a 61% reduction in datapoints required if material and the removal of all voluntary disclosures; design changes include a streamlined double materiality assessment, a 'fair presentation' filter and wider use of estimates for value-chain data.",
-            "Not yet law: it is subject to European Parliament and Council scrutiny (2 months, extendable to 4) and the act itself provides it shall not enter into force earlier than four months after adoption.",
+            "Not yet law: re-checked on 14 September 2026, it had still not appeared in the Official Journal. It is subject to European Parliament and Council scrutiny (2 months, extendable to 4) and the act itself provides it shall not enter into force earlier than four months after adoption.",
             "Interim relief still applies to wave-one reporters via Delegated Regulation (EU) 2025/1416 (the 'quick fix') for FY2025 and FY2026."
           ],
           "confidence": {
@@ -2509,7 +2524,7 @@
             "label": "Reduction in total ESRS datapoints per the Commission"
           },
           "so_what": "Rebuild your ESRS datapoint inventory against the revised standards before your FY2027 reporting cycle, and decide now whether to early-apply for FY2026.",
-          "last_verified": "2026-09-07",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "Commission Delegated Regulation of 3.7.2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards - C(2026) 5010",
@@ -2704,6 +2719,7 @@
           "key_points": [
             "Applies to third-country undertakings with net turnover in the Union exceeding EUR 450 000 000 in each of the last two consecutive financial years AND either an EU branch with net turnover above EUR 200 000 000 or an EU subsidiary meeting that threshold.",
             "First sustainability statements are expected in 2029 covering financial year 2028, so this is the live workstream for non-EU groups.",
+            "EFRAG opened a separate cost-benefit analysis survey on 11 September 2026, closing 11 October 2026, asking in-scope non-EU companies to estimate the costs and benefits of the proposed requirements; the resulting report will be published with EFRAG's advice to the Commission.",
             "EFRAG is running jurisdiction-specific outreach sessions through September 2026 with national standard setters in Mexico, Korea, the United States, New Zealand, Japan, Canada and the United Kingdom, with more to be announced; they supplement the consultation survey rather than extend it.",
             "Consultation runs 23 July to 31 October 2026 (100 days); EFRAG technical advice is due to the Commission in early 2027.",
             "This is the route by which a UK, US or other non-EU parent is captured even when no single EU subsidiary meets the CSRD 1,000-employee test.",
@@ -2714,8 +2730,8 @@
             "reasoning": "Consultation dates and thresholds are taken from EFRAG's own project page, but the standard is only an exposure draft and the Commission has not adopted any delegated act, so the final content can still change."
           },
           "next_milestone": {
-            "date": "2026-10-31",
-            "label": "Close of EFRAG's ESRS-40a public consultation",
+            "date": "2026-10-11",
+            "label": "Close of EFRAG's cost-benefit analysis survey on ESRS-40a",
             "projected": false
           },
           "stat": {
@@ -2723,13 +2739,19 @@
             "label": "First reporting year for third-country undertakings under Article 40a"
           },
           "so_what": "If your non-EU parent clears EUR 450m of EU turnover, respond to the ESRS-40a consultation before 31 October 2026 and start scoping an FY2028 group-level EU sustainability statement.",
-          "last_verified": "2026-09-07",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "European Sustainability Standards for Third-Country Undertakings (ESRS-40a)",
               "url": "https://www.efrag.org/en/projects/noneu-groups-standard-setting/research-phase",
               "publisher": "EFRAG",
               "date": null
+            },
+            {
+              "title": "EFRAG Calls for Public Input on Cost-Benefit Analysis for the Exposure Draft ESRS for Certain Non-EU Undertakings (ESRS-40a)",
+              "url": "https://www.efrag.org/en/news-and-calendar/news/efrag-calls-for-public-input-on-costbenefit-analysis-for-the-exposure-draft-esrs-for-certain-noneu",
+              "publisher": "EFRAG",
+              "date": "2026-09-11"
             },
             {
               "title": "EFRAG submits its Sustainability Reporting Work Programme 2026 to the European Commission",
@@ -3235,7 +3257,8 @@
           "summary": "CARB's 'initial regulation' establishes the definitions of covered and reporting entity, the 'doing business in California' and revenue tests, the flat-rate fee mechanism and the first reporting deadlines. The Board approved it for adoption by Resolution 26-1 on 26 February 2026. CARB submitted the final rulemaking package to the Office of Administrative Law on 20 May 2026, then withdrew it to make limited clarifying changes, and has said it will resubmit.",
           "key_points": [
             "Not yet legally final: the OAL package submitted on 20 May 2026 was withdrawn by CARB for clarifying changes and will be resubmitted, so the regulation is approved but not filed with the Secretary of State.",
-            "Fee mechanics in section 96074: CARB issues a fee determination notice on or by 10 September, and payment is due within 60 days of the notice date. Fees are a flat rate per entity per programme.",
+            "Fee mechanics in section 96074: CARB issues a fee determination notice and payment is due within 60 days of the notice date. CARB's 15-day modified text moves that notice date from 10 September to 10 December, and moves the first SB 253 report from 10 August to 10 November 2026; neither is final until the package is filed.",
+            "CARB committed to publishing additional guidance supporting 2026 Scope 1 and Scope 2 reporting by 1 September 2026. As at 14 September 2026 nothing new had appeared on CARB's climate disclosure resources page, where the most recent postings still date from December 2025.",
             "Programme cost basis presented by staff: roughly $13.9 million in annual programme cost plus about $20.7 million of one-time set-up cost initially funded by a loan; the rulemaking notice projected about $90.2 million of fee revenue over five years.",
             "Definitions adopted: 'doing business in California' per Rev. & Tax. Code s.23101(b)(1) or (b)(2) (property and payroll tests deliberately excluded); 'revenue' equals 'gross receipts' per Rev. & Tax. Code s.25120(f)(2); parent-subsidiary relationships per 17 CCR s.95833.",
             "A second rulemaking will handle 2027-2030 issues, including Scope 3 categories and the 2030 reasonable-assurance step; CARB ran stakeholder listening sessions on 5, 12, 19 and 26 August and 2 and 9 September 2026.",
@@ -3246,9 +3269,9 @@
             "reasoning": "The Board formally approved the regulation and CARB has publicly committed to resubmitting it to OAL, but a procedural step (OAL review and filing) remains outstanding."
           },
           "next_milestone": {
-            "date": "2026-09-01",
-            "label": "CARB commitment to publish additional guidance materials supporting 2026 Scope 1 and 2 reporting",
-            "projected": false
+            "date": null,
+            "label": "Resubmission of the rulemaking package to the Office of Administrative Law (no date published)",
+            "projected": true
           },
           "stat": {
             "value": "17 CCR 96070-96077",
@@ -3261,7 +3284,7 @@
             "posture": "A merits ruling for the challengers would undercut the statutory basis for this rulemaking; a ruling for CARB would remove the SB 261 injunction.",
             "source_url": "https://ww2.arb.ca.gov/public-comments/climate-related-financial-risk-reports-sb-261-docket"
           },
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-14",
           "sources": [
             {
               "title": "Notice of Public Hearing to Consider the Proposed California Corporate Greenhouse Gas Reporting and Climate-Related Financial Risk Disclosure Programs Initial Regulation",
@@ -3286,6 +3309,12 @@
               "url": "https://ww2.arb.ca.gov/sites/default/files/barcu/board/res/2026/res26-1.pdf",
               "publisher": "California Air Resources Board",
               "date": "2026-02-26"
+            },
+            {
+              "title": "15-Day Change Regulation Text, California Corporate Greenhouse Gas Reporting and Climate-Related Financial Risk Disclosure Programs Initial Regulation",
+              "url": "https://ww2.arb.ca.gov/sites/default/files/barcu/regact/2026/sb%20253-261/15-Day%20Change%20Reg%20Text%20SB%20253-261.pdf",
+              "publisher": "California Air Resources Board",
+              "date": "2026-07-27"
             },
             {
               "title": "SB 253 Public Workshop presentation (July 2026)",
@@ -4358,6 +4387,32 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-09-11",
+      "framework": "eu",
+      "workstream": "eu-nesrs",
+      "headline": "EFRAG opens a cost and benefit survey on the ESRS-40a exposure draft, closing 11 October",
+      "detail": "EFRAG has launched an online survey to gather evidence for a cost-benefit analysis of the exposure draft of the European Sustainability Reporting Standard for certain non-EU undertakings, known as ESRS-40a. The survey runs in parallel with the main public consultation, which still closes on 31 October 2026, and asks non-EU companies that would be in scope to estimate the costs and the benefits of applying the proposed requirements. Responses are due by 11 October 2026 at 23:59 CEST and the analysis is being carried out by external consultants. EFRAG says the final cost-benefit report will be published together with its advice to the European Commission on ESRS-40a.",
+      "so_what": "If your non-EU parent would be caught by the EUR 450 million EU turnover test, submit your own cost estimates to EFRAG before 11 October, because this survey is the evidence base that will shape how heavy the final standard is.",
+      "significance": "medium",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-calls-for-public-input-on-costbenefit-analysis-for-the-exposure-draft-esrs-for-certain-noneu",
+      "source_title": "EFRAG Calls for Public Input on Cost-Benefit Analysis for the Exposure Draft ESRS for Certain Non-EU Undertakings (ESRS-40a)",
+      "source_publisher": "EFRAG",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "date": "2026-09-10",
+      "framework": "issb",
+      "workstream": "issb-human-capital",
+      "headline": "ISSB September agenda published: Human Capital returns to the board on 24 September",
+      "detail": "The IFRS Foundation has published the agenda and meeting papers for the ISSB's September 2026 meeting, which is held in Montreal, Canada on 24 September 2026. The agenda carries two items only: Human Capital, and Supporting Implementation of IFRS S1 and IFRS S2. Human Capital remains a research project and the published work-plan milestone is still 'Decide Project Direction', for which the IFRS Foundation has published no date. Nature-related disclosures, the proposed SASB Standards amendments and the sustainability disclosure taxonomy are not on this agenda.",
+      "so_what": "Watch the 24 September session for the first signal on whether human capital becomes a standard-setting project, and do not commit resource to human-capital reporting before that direction is decided.",
+      "significance": "low",
+      "source_url": "https://www.ifrs.org/news-and-events/calendar/2026/september/international-sustainability-standards-board/",
+      "source_title": "International Sustainability Standards Board, September 2026 meeting agenda and papers",
+      "source_publisher": "IFRS Foundation",
+      "last_verified": "2026-09-14"
+    },
     {
       "date": "2026-09-01",
       "framework": "eu",
@@ -6405,7 +6460,7 @@
       "workstream": "Mandatory climate reporting",
       "headline": "Australia's mandatory climate reporting begins for Group 1 entities",
       "detail": "Mandatory sustainability reporting under Chapter 2M of the Corporations Act commenced for Group 1 entities for financial years beginning on or after 1 January 2025. Group 1 comprises entities meeting at least two of consolidated revenue of A$500m or more, consolidated gross assets of A$1bn or more, and 500 or more employees, plus entities registered or required to register under the NGER Act. Reports must comply with AASB S2 and include climate statements, notes, a directors' declaration and scenario analysis against two mandated temperature scenarios. Limited assurance over governance, strategy risks and opportunities and Scope 1 and 2 emissions applies in year one under ASSA 5010.",
-      "so_what": "Australia is the first of EcoLedger's markets with a hard statutory climate report and audit trail — treat it as the reference implementation.",
+      "so_what": "Australia is among the first jurisdictions with a hard statutory climate report and audit trail, so treat it as the reference implementation.",
       "significance": "high",
       "source_url": "https://www.asic.gov.au/regulatory-resources/sustainability-reporting/for-preparers-of-sustainability-reports/who-must-prepare-a-sustainability-report/",
       "source_title": "Who must prepare a sustainability report?",
@@ -8420,7 +8475,7 @@
       "framework": "sbti",
       "label": "Power Sector Net-Zero Standard second consultation closes",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://sciencebasedtargets.org/news/the-sbti-launches-second-public-consultation-on-updated-draft-power-sector-net-zero-standard"
     },
     {
@@ -8428,7 +8483,7 @@
       "framework": "sbti",
       "label": "FLAG regional convening expressions of interest close",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://sciencebasedtargets.org/blog/get-involved-today-your-chance-to-help-shape-the-next-generation-of-sbti-standards"
     },
     {
@@ -8436,29 +8491,21 @@
       "framework": "us",
       "label": "Last of CARB's six stakeholder listening sessions on the 2027-2030 rulemaking",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://ww2.arb.ca.gov/sites/default/files/2026-07/SB_253_Presentation_July_2026.pdf"
-    },
-    {
-      "date": "2026-09-10",
-      "framework": "us",
-      "label": "Fee determination notice date under 17 CCR s.96074 (payment due within 60 days)",
-      "kind": "deadline",
-      "state": "projected",
-      "source_url": "https://ww2.arb.ca.gov/sites/default/files/barcu/regact/2025/sb253-261/reg%20text.pdf"
     },
     {
       "date": "2026-09-11",
       "framework": "sbti",
       "label": "Call for evidence on high-emitting sectors closes",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://sciencebasedtargets.org/blog/get-involved-today-your-chance-to-help-shape-the-next-generation-of-sbti-standards"
     },
     {
-      "date": "2026-09-21",
+      "date": "2026-09-24",
       "framework": "issb",
-      "label": "ISSB September board meeting, the next scheduled decision point",
+      "label": "ISSB board meeting, Montreal: Human Capital and IFRS S1 and S2 implementation support",
       "kind": "update",
       "state": "upcoming",
       "source_url": "https://www.ifrs.org/news-and-events/calendar/2026/september/international-sustainability-standards-board/"
@@ -8502,6 +8549,14 @@
       "kind": "update",
       "state": "upcoming",
       "source_url": "https://sciencebasedtargets.org/news/sbti-issues-call-for-input-to-inform-revision-of-forest-land-and-agriculture-standard"
+    },
+    {
+      "date": "2026-10-11",
+      "framework": "eu",
+      "label": "EFRAG's cost-benefit analysis survey on the ESRS-40a exposure draft closes",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-calls-for-public-input-on-costbenefit-analysis-for-the-exposure-draft-esrs-for-certain-noneu"
     },
     {
       "date": "2026-10-23",
@@ -8560,6 +8615,14 @@
       "source_url": "https://ww2.arb.ca.gov/sites/default/files/2026-07/SB_253_Presentation_July_2026.pdf"
     },
     {
+      "date": "2026-11-16",
+      "framework": "issb",
+      "label": "Comment deadline on the proposed targeted amendments to the IFRS Foundation Constitution",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.ifrs.org/projects/work-plan/proposed-amendments-ifrs-foundation-constitution/ed-cl-constitution/"
+    },
+    {
       "date": "2026-12",
       "framework": "sbti",
       "label": "Final V2.0 methods and pathways, interpretation guidance and Renewal Policy expected",
@@ -8574,6 +8637,14 @@
       "kind": "update",
       "state": "projected",
       "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/12/council-moves-to-strengthen-the-eu-s-carbon-border-adjustment-mechanism/"
+    },
+    {
+      "date": "2026-12-10",
+      "framework": "us",
+      "label": "Fee determination notice date under 17 CCR s.96074 as proposed in CARB's 15-day changes, moved from 10 September (payment due within 60 days)",
+      "kind": "deadline",
+      "state": "projected",
+      "source_url": "https://ww2.arb.ca.gov/sites/default/files/barcu/regact/2026/sb%20253-261/15-Day%20Change%20Reg%20Text%20SB%20253-261.pdf"
     },
     {
       "date": "2026-12-15",
@@ -9292,9 +9363,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-09-07",
+    "last_updated": "2026-09-14",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-09-07",
+    "coverage_window_end": "2026-09-14",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
