@@ -1834,7 +1834,7 @@
             "Relief 2: entities may use a classification system other than the Global Industry Classification Standard (GICS) when disaggregating financed emissions, provided a commonly used system is applied.",
             "Relief 3: the jurisdictional relief from using the GHG Protocol Corporate Standard now applies even where only part of an entity is required by a jurisdictional authority or exchange to use a different measurement basis.",
             "Relief 4: jurisdictional relief is available from using global warming potential values from the latest IPCC Assessment Report where a jurisdiction mandates different GWP values.",
-            "Effective for annual reporting periods beginning on or after 1 January 2027; early application permitted — so a calendar-year 2026 reporter can take the reliefs a year early.",
+            "Effective for annual reporting periods beginning on or after 1 January 2027; early application permitted, so a calendar-year 2026 reporter can take the reliefs a year early.",
             "ISSB Vice-Chair Sue Lloyd: the amendments 'will bring real relief to companies applying ISSB Standards without significantly affecting the decision-usefulness of information for investors'."
           ],
           "confidence": {
@@ -1860,7 +1860,7 @@
               "date": "2025-12-11"
             },
             {
-              "title": "Amendments to Greenhouse Gas Emissions Disclosures (Amendments to IFRS S2) — completed project",
+              "title": "Amendments to Greenhouse Gas Emissions Disclosures (Amendments to IFRS S2), completed project",
               "url": "https://www.ifrs.org/projects/completed-projects/2025/amendments-to-disclosure-of-greenhouse-gas-emissions-s2/",
               "publisher": "IFRS Foundation",
               "date": "2025-12-11"
@@ -1895,7 +1895,7 @@
           "status_label": "GHG Protocol Corporate Standard (2004) remains the default basis, with widened jurisdictional relief from 2027",
           "summary": "IFRS S2 paragraph 29(a)(i) requires absolute gross Scope 1, 2 and 3 emissions to be measured in accordance with the Greenhouse Gas Protocol Corporate Accounting and Reporting Standard (2004). Paragraph 29(a)(ii) permits a different basis where a jurisdictional authority, or an exchange on which the entity is listed, requires it. The December 2025 amendments widen that relief so it applies where only part of the entity is subject to such a requirement, and the ISSB has an observer seat on the GHG Protocol's Independent Standards Board under a 2024 Memorandum of Understanding.",
           "key_points": [
-            "Default measurement basis is the GHG Protocol Corporate Standard (2004 edition) — an explicit, dated reference in IFRS S2 paragraph 29(a)(i).",
+            "Default measurement basis is the GHG Protocol Corporate Standard (2004 edition), an explicit, dated reference in IFRS S2 paragraph 29(a)(i).",
             "Jurisdictional/exchange exception in paragraph 29(a)(ii) allows a different basis where mandated; from 2027 this applies even to partial application within an entity.",
             "IFRS S2 Appendix C paragraph C4(a) separately lets an entity keep its pre-existing measurement method for the first annual reporting period it applies IFRS S2.",
             "The ISSB announced a Memorandum of Understanding with the GHG Protocol in June 2024 and appoints an observer to the GHG Protocol's Independent Standards Board, so future GHG Protocol revisions feed back into ISSB thinking.",
@@ -1918,7 +1918,7 @@
           "last_verified": "2026-08-31",
           "sources": [
             {
-              "title": "Greenhouse Gas Emissions Disclosure requirements in IFRS S2 — educational material",
+              "title": "Greenhouse Gas Emissions Disclosure requirements in IFRS S2, educational material",
               "url": "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s2/ghg-ifrs-s2-educational-material.pdf",
               "publisher": "IFRS Foundation",
               "date": null
@@ -1947,7 +1947,7 @@
           "status_label": "Exposure Draft balloting under way; publication targeted October 2026",
           "summary": "The ISSB's Biodiversity, Ecosystems and Ecosystem Services research project moved into standard-setting on 10 December 2025 and was renamed Nature-related Disclosures in February 2026. In April 2026 the ISSB decided the output should be an IFRS Practice Statement that supplements IFRS S1 and IFRS S2 rather than a new Standard, drawing on the TNFD framework. On 21 July 2026 all 12 ISSB members confirmed due process was met and agreed a 120-day comment period; publication of the Exposure Draft is targeted for October 2026.",
           "key_points": [
-            "Form of output: an IFRS Practice Statement, agreed 12-0 in April 2026 — a tool companies may choose to use, unless a jurisdiction requires it. It does not amend IFRS S1 or IFRS S2.",
+            "Form of output: an IFRS Practice Statement, agreed 12-0 in April 2026, a tool companies may choose to use, unless a jurisdiction requires it. It does not amend IFRS S1 or IFRS S2.",
             "The ISSB has been explicit that nature disclosure is not new: Chair Emmanuel Faber said 'Providing material nature-related disclosures is not optional; IFRS S1 already requires that.'",
             "Balloting permission granted 21 July 2026, all 12 members, no dissents; 120-day comment period agreed; Exposure Draft targeted October 2026, so comments would close around February 2027.",
             "Content decided so far: 'environmental resources' replaces 'environmental assets'; defined nature-related transition and physical risks; entities may reference TNFD metrics where these meet IFRS S1 objectives; the TNFD LEAP approach is referenced in guidance but is optional.",
@@ -1971,7 +1971,7 @@
           "last_verified": "2026-08-31",
           "sources": [
             {
-              "title": "Nature-related Disclosures — project page",
+              "title": "Nature-related Disclosures, project page",
               "url": "https://www.ifrs.org/projects/work-plan/biodiversity-ecosystems-and-ecosystem-services/",
               "publisher": "IFRS Foundation",
               "date": null
@@ -2012,7 +2012,7 @@
           "status_label": "Research project; on the ISSB's 24 September 2026 agenda, project direction still undecided",
           "summary": "Human Capital is one of the two research projects the ISSB launched in April 2024 under its 2024-2026 work plan, covering workforce size and composition, compensation, engagement, turnover, training and development, and workplace health and safety. The ISSB analysed the initial research phase in October 2025 and received a project update on 10 December 2025 focused on the necessity and feasibility of standard-setting, but has taken no decisions. The work plan lists the next milestone as 'Decide Project Direction' with no date attached. Human Capital is one of only two items on the agenda for the ISSB's meeting in Montreal on 24 September 2026.",
           "key_points": [
-            "Still formally a research project — no Discussion Paper or Exposure Draft has been published or announced.",
+            "Still formally a research project; no Discussion Paper or Exposure Draft has been published or announced.",
             "Human Capital is one of two items on the published agenda for the ISSB's 24 September 2026 meeting in Montreal, alongside supporting implementation of IFRS S1 and IFRS S2.",
             "The ISSB received a project update on 10 December 2025 on 'the necessity and feasibility of standard-setting' and made no decisions.",
             "The next work-plan milestone is 'Decide Project Direction'; the IFRS Foundation has not published a date for it.",
@@ -2042,7 +2042,7 @@
               "date": "2026-09-10"
             },
             {
-              "title": "Human Capital — project page",
+              "title": "Human Capital, project page",
               "url": "https://www.ifrs.org/projects/work-plan/human-capital/",
               "publisher": "IFRS Foundation",
               "date": null
@@ -2072,13 +2072,13 @@
         },
         {
           "id": "issb-sasb",
-          "name": "Enhancing the SASB Standards (Phase 1 and Phase 1—Continued)",
+          "name": "Enhancing the SASB Standards (Phase 1 and Phase 1 Continued)",
           "phase": "drafting",
           "status_label": "Both Exposure Drafts closed; redeliberations under way; Technology & Communications scoped for Phase 2",
           "summary": "The ISSB is running the first substantive overhaul of the SASB Standards since it took them over from the Value Reporting Foundation in 2022. An Exposure Draft published 3 July 2025 proposed comprehensive amendments to 9 SASB Standards and targeted amendments to 41 others, closing 30 November 2025 after a 150-day period. A follow-up Exposure Draft published 26 March 2026 covered three further Standards plus consequential amendments to the Industry-based Guidance on Implementing IFRS S2, closing 24 July 2026. On 22 July 2026 the ISSB agreed unanimously to enhance six SASB Standards in the Technology & Communications sector next.",
           "key_points": [
-            "Phase 1 Exposure Draft (3 July 2025): comprehensive review of 9 industries — all 8 in Extractives & Minerals Processing plus Processed Foods — and targeted amendments to 41 more, on topics such as Water Management and Workforce Health & Safety. Comments closed 30 November 2025.",
-            "Phase 1—Continued Exposure Draft (26 March 2026): Agricultural Products, Meat, Poultry & Dairy, and Electric Utilities & Power Generators, plus consequential amendments to the Industry-based Guidance on Implementing IFRS S2. Comments closed 24 July 2026 after a 120-day period.",
+            "Phase 1 Exposure Draft (3 July 2025): comprehensive review of 9 industries, all 8 in Extractives & Minerals Processing plus Processed Foods, and targeted amendments to 41 more, on topics such as Water Management and Workforce Health & Safety. Comments closed 30 November 2025.",
+            "Phase 1 Continued Exposure Draft (26 March 2026): Agricultural Products, Meat, Poultry & Dairy, and Electric Utilities & Power Generators, plus consequential amendments to the Industry-based Guidance on Implementing IFRS S2. Comments closed 24 July 2026 after a 120-day period.",
             "Together the two Exposure Drafts cover 12 prioritised SASB Standards.",
             "Ratified effective date approach (February 2026 decision): 12-18 months after issuance of the final amendments, with early application permitted.",
             "On 22 July 2026 all 12 ISSB members agreed to enhance six SASB Standards in the Technology & Communications sector of SICS; an Exposure Draft for those is being prepared.",
@@ -2097,17 +2097,17 @@
             "value": "12",
             "label": "prioritised SASB Standards covered by the two Phase 1 Exposure Drafts"
           },
-          "so_what": "If you report against SASB-derived industry metrics under IFRS S2 paragraph 32, review both Exposure Drafts against your current metric set now — final amendments could bite as early as 12 months after issuance.",
+          "so_what": "If you report against SASB-derived industry metrics under IFRS S2 paragraph 32, review both Exposure Drafts against your current metric set now, because final amendments could bite as early as 12 months after issuance.",
           "last_verified": "2026-08-31",
           "sources": [
             {
-              "title": "Enhancing the SASB Standards—Phase 1",
+              "title": "Enhancing the SASB Standards: Phase 1",
               "url": "https://www.ifrs.org/projects/work-plan/enhancing-the-sasb-standards/",
               "publisher": "IFRS Foundation",
               "date": null
             },
             {
-              "title": "Enhancing the SASB Standards—Phase 1—Continued",
+              "title": "Enhancing the SASB Standards: Phase 1 Continued",
               "url": "https://www.ifrs.org/projects/work-plan/enhancing-sasb-standards-phase-1-cont/",
               "publisher": "IFRS Foundation",
               "date": null
@@ -2150,7 +2150,7 @@
           "key_points": [
             "IFRS Sustainability Disclosure Taxonomy published April 2024; supports structured electronic tagging of IFRS S1/S2 disclosures.",
             "Proposed Update 1: Amendments to Greenhouse Gas Emissions Disclosures published 29 July 2026, open for comment until 28 September 2026.",
-            "The update only adds/adjusts tagging elements for the amended IFRS S2 GHG requirements — it creates no new disclosure obligations.",
+            "The update only adds/adjusts tagging elements for the amended IFRS S2 GHG requirements, and it creates no new disclosure obligations.",
             "A separate SASB Standards Taxonomy was updated in 2024 and will need to follow the SASB amendments once final."
           ],
           "confidence": {
@@ -2182,7 +2182,7 @@
               "date": "2024-04-30"
             },
             {
-              "title": "IFRS Sustainability Disclosure Taxonomy — completed project",
+              "title": "IFRS Sustainability Disclosure Taxonomy, completed project",
               "url": "https://www.ifrs.org/projects/completed-projects/2024/ifrs-sustainability-disclosure-taxonomy/",
               "publisher": "IFRS Foundation",
               "date": null
@@ -2307,7 +2307,7 @@
               "date": "2025-09-26"
             },
             {
-              "title": "IFRS Foundation publishes 2025 Annual Report—Fit for the future",
+              "title": "IFRS Foundation publishes 2025 Annual Report: Fit for the future",
               "url": "https://www.ifrs.org/news-and-events/news/2026/03/ifrs-foundation-publishes-2025-annual-report-fit-for-the-future/",
               "publisher": "IFRS Foundation",
               "date": "2026-03-31"
@@ -3632,7 +3632,7 @@
       "name": "United Kingdom",
       "short": "UK",
       "org": "DBT / FCA / FRC / DESNZ",
-      "tagline": "Final standards exist; the legal duty to use them does not — yet.",
+      "tagline": "Final standards exist; the legal duty to use them does not, yet.",
       "description": "The UK published its own endorsed versions of the ISSB standards, UK SRS S1 and UK SRS S2, on 25 February 2026. They are available for any entity to use voluntarily and carry no effective date of their own. The mandatory layer is being built separately: the FCA consulted on replacing its TCFD listing rules with UK SRS from 1 January 2027, while SECR and the 2022 climate-related financial disclosure regulations remain the only climate reporting duties actually in force in company law.",
       "status_headline": "UK SRS final and voluntary since 25 February 2026; FCA policy statement expected autumn 2026 for periods from 1 January 2027.",
       "workstreams": [
@@ -3644,7 +3644,7 @@
           "summary": "The Department for Business and Trade published the finalised UK SRS S1 and UK SRS S2 on 25 February 2026, created by assessing and endorsing the IFRS Sustainability Disclosure Standards. The FRC confirms that reporting against UK SRS is not currently mandatory. Effective-date clauses were deliberately stripped out of the standards so that regulators and legislation set the timing instead.",
           "key_points": [
             "Published 25 February 2026 by DBT; available for voluntary use by any entity, in whole or in part.",
-            "Effective dates were removed from the standards themselves — implementation dates come from FCA rules or future legislation, not the standards.",
+            "Effective dates were removed from the standards themselves. Implementation dates come from FCA rules or future legislation, not the standards.",
             "The transitional relief allowing sustainability information to be published later than the financial statements was removed, pushing towards integrated reporting.",
             "The 'climate-first' relief (delaying non-climate sustainability reporting) was kept but with no fixed time limit, so voluntary users can use it indefinitely and regulators can set their own window.",
             "The requirement to use GICS industry classification was removed, following the ISSB's December 2025 amendments.",
@@ -3663,7 +3663,7 @@
             "value": "Voluntary",
             "label": "Legal status of UK SRS today"
           },
-          "so_what": "Treat UK SRS as a dry run now — build the S2 data model this year so the FCA's 1 January 2027 start date is a formality, not a scramble.",
+          "so_what": "Treat UK SRS as a dry run now and build the S2 data model this year so the FCA's 1 January 2027 start date is a formality, not a scramble.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -3702,17 +3702,17 @@
           "status_label": "Consultation closed 20 March 2026; policy statement due autumn 2026",
           "summary": "CP26/5 proposes replacing the FCA's existing TCFD-aligned listing rules with requirements based on UK SRS, in force from 1 January 2027 for accounting periods beginning on or after that date. UK SRS S2 would be mandatory except Scope 3; Scope 3 and UK SRS S1 would sit on a comply-or-explain footing with transitional reliefs. The FCA aims to publish final rules in autumn 2026.",
           "key_points": [
-            "Rules would come into force 1 January 2027 and apply to accounting periods beginning on or after that date — first annual reports land in 2028.",
+            "Rules would come into force 1 January 2027 and apply to accounting periods beginning on or after that date, so first annual reports land in 2028.",
             "UK SRS S2 mandatory (climate), except Scope 3 GHG emissions which are comply-or-explain with an optional one-year deferral.",
             "UK SRS S1 (wider sustainability) is comply-or-explain, with an optional two-year deferral for non-climate matters.",
-            "Issuers must say whether and where they have published a climate transition plan, or explain why they have not — there is no proposed duty to have one.",
+            "Issuers must say whether and where they have published a climate transition plan, or explain why they have not, and there is no proposed duty to have one.",
             "No mandatory assurance, but issuers must state whether third-party assurance was obtained and, if so, name the provider, scope and standard used.",
             "Scope covers UKLR 6 commercial companies, UKLR 14 secondary listings, UKLR 15 depositary receipts, UKLR 16 non-equity/non-voting shares and UKLR 22 transition category.",
             "For periods beginning before 1 January 2027, issuers stay on the existing TCFD rules or may adopt UK SRS early."
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "CP26/5 is published and closed, but the proposals are not yet rules — the policy statement is still outstanding as at 25 August 2026."
+            "reasoning": "CP26/5 is published and closed, but the proposals are not yet rules, and the policy statement is still outstanding as at 25 August 2026."
           },
           "next_milestone": {
             "date": "2026-10",
@@ -3768,7 +3768,7 @@
             "value": "Comply or explain",
             "label": "Basis of the current TCFD listing rule"
           },
-          "so_what": "Keep producing the TCFD comply-or-explain statement for FY2026 — nothing is repealed until the FCA policy statement lands.",
+          "so_what": "Keep producing the TCFD comply-or-explain statement for FY2026, because nothing is repealed until the FCA policy statement lands.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -3798,7 +3798,7 @@
             "In scope: UK companies with more than 500 employees that are relevant public interest entities (regulated-market issuers, banking or insurance companies); AIM-quoted companies with more than 500 employees; and other companies with more than 500 employees and turnover above £500 million.",
             "Large LLPs with more than 500 employees and turnover above £500 million, plus traded or banking LLPs with more than 500 employees, are caught by the equivalent LLP regulations (SI 2022/46).",
             "Eight disclosures: governance; risk identification and assessment processes; integration into overall risk management; principal risks and opportunities with time horizons; impact on business model and strategy; scenario resilience analysis; targets and performance against them; and KPIs with methodologies.",
-            "Applies to accounting periods starting on or after 6 April 2022 — so FY2026 filers are in their fifth cycle.",
+            "Applies to accounting periods starting on or after 6 April 2022, so FY2026 filers are in their fifth cycle.",
             "There is no assurance requirement attached to these disclosures."
           ],
           "confidence": {
@@ -3814,7 +3814,7 @@
             "value": "500 employees",
             "label": "Core scope trigger"
           },
-          "so_what": "Reconcile your existing eight-point CFD statement against UK SRS S2 line by line — the gap analysis is your cheapest route to 2027 readiness.",
+          "so_what": "Reconcile your existing eight-point CFD statement against UK SRS S2 line by line, because the gap analysis is your cheapest route to 2027 readiness.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -3857,7 +3857,7 @@
             "Quoted companies report global Scope 1 and 2 emissions and underlying global energy use; large unquoted companies and LLPs report UK energy use and associated emissions.",
             "Must also disclose at least one intensity ratio, the methodology used, prior-year comparatives, and a narrative on principal energy efficiency measures taken.",
             "Low energy user exemption: organisations consuming 40,000 kWh or less in the period may state that instead of reporting.",
-            "'Large' follows the Companies Act test — for accounting periods beginning on or after 6 April 2025 a company exceeds two of: turnover £54m, balance sheet total £27m, 250 employees, so some companies drop out of SECR on the uplifted thresholds.",
+            "'Large' follows the Companies Act test: for accounting periods beginning on or after 6 April 2025 a company exceeds two of: turnover £54m, balance sheet total £27m, 250 employees, so some companies drop out of SECR on the uplifted thresholds.",
             "The 26 May 2026 post-implementation review found SECR improved transparency and consistency but flagged simplification opportunities; findings will inform future work rather than trigger immediate change."
           ],
           "confidence": {
@@ -3922,7 +3922,7 @@
             "Option 1: entities explain why they have not disclosed a transition plan. Option 2: entities must develop and disclose one, potentially as a standalone document refreshed at least every three years.",
             "The consultation also tested whether plans must be aligned to net zero by 2050 and 1.5°C, and whether delivery of commitments should be mandatory.",
             "Frameworks referenced are the Transition Plan Taskforce disclosure framework and UK SRS S2.",
-            "Separately, FCA CP26/5 would only require listed issuers to say whether and where a transition plan exists — not to have one."
+            "Separately, FCA CP26/5 would only require listed issuers to say whether and where a transition plan exists, not to have one."
           ],
           "confidence": {
             "level": "medium",
@@ -3937,7 +3937,7 @@
             "value": "2 routes",
             "label": "Implementation options still on the table"
           },
-          "so_what": "Do not wait for the outcome — build a TPT-structured transition plan now, because both routes end with you disclosing one or explaining its absence.",
+          "so_what": "Do not wait for the outcome. Build a TPT-structured transition plan now, because both routes end with you disclosing one or explaining its absence.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -3964,7 +3964,7 @@
           "status_label": "Government response published 30 January 2026; interim register from mid-2026",
           "summary": "The government confirmed on 30 January 2026 that it will create a voluntary, opt-in registration regime for sustainability assurance practitioners, operated by the FRC. Assurance itself is not being made mandatory. An interim, non-legislative register was to be operational by mid-2026, with a statutory regime to follow when parliamentary time allows.",
           "key_points": [
-            "Assurance of sustainability reporting is not mandated — the regime governs who may hold themselves out as a registered assurance provider, not whether companies must buy assurance.",
+            "Assurance of sustainability reporting is not mandated. The regime governs who may hold themselves out as a registered assurance provider, not whether companies must buy assurance.",
             "Registration is voluntary and opt-in; practitioners register with the financial reporting regulator subject to meeting conditions.",
             "The FRC operates the regime. The government confirmed it is not proceeding with the Audit Reform Bill, so ARGA will not be created.",
             "Deliberately profession-agnostic: statutory auditors, sustainability specialists and independent providers can all register.",
@@ -3984,7 +3984,7 @@
             "value": "Voluntary",
             "label": "Nature of the registration regime"
           },
-          "so_what": "When you tender for sustainability assurance, ask providers whether they intend to join the FRC's interim register — the FCA will make you name the provider and standard used.",
+          "so_what": "When you tender for sustainability assurance, ask providers whether they intend to join the FRC's interim register, because the FCA will make you name the provider and standard used.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -4030,7 +4030,7 @@
             "value": "4 Feb 2026",
             "label": "Latest strategic report guidance"
           },
-          "so_what": "Read the FRC's climate thematic reviews before drafting — they are the closest thing to a marking scheme for UK climate disclosures.",
+          "so_what": "Read the FRC's climate thematic reviews before drafting, because they are the closest thing to a marking scheme for UK climate disclosures.",
           "last_verified": "2026-08-31",
           "sources": [
             {
@@ -4639,7 +4639,7 @@
       "framework": "issb",
       "workstream": "issb-taxonomy",
       "headline": "ISSB consults on taxonomy update reflecting the December 2025 IFRS S2 GHG amendments",
-      "detail": "The ISSB published IFRS Sustainability Disclosure Taxonomy—Proposed Update 1: Amendments to Greenhouse Gas Emissions Disclosures. It adds and adjusts digital tagging elements so that disclosures made under the amended IFRS S2 greenhouse gas requirements can be tagged consistently. Comments close on 28 September 2026. The proposal introduces no new reporting requirements for companies.",
+      "detail": "The ISSB published IFRS Sustainability Disclosure Taxonomy: Proposed Update 1: Amendments to Greenhouse Gas Emissions Disclosures. It adds and adjusts digital tagging elements so that disclosures made under the amended IFRS S2 greenhouse gas requirements can be tagged consistently. Comments close on 28 September 2026. The proposal introduces no new reporting requirements for companies.",
       "so_what": "Pass this to your XBRL or structured-filing owner so tagging templates are updated before jurisdictions mandate the amended IFRS S2 elements.",
       "significance": "low",
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/07/issb-proposes-update-ifrs-sustainability-disclosure-taxonomy/",
@@ -4653,7 +4653,7 @@
       "workstream": "Singapore Sustainability Disclosure Standards",
       "headline": "ACRA opens consultation on localised Singapore sustainability disclosure standards",
       "detail": "ACRA's Interim Sustainability Standards Committee published draft Singapore Sustainability Disclosure Standards for public consultation on 27 July 2026, comprising SFRS S1 covering broader sustainability disclosures on a voluntary basis and SFRS S2 covering mandatory climate-related disclosures. The drafts propose Singapore-specific adjustments to structure, transition reliefs, compliance statements and references to SASB material. The consultation closes on 25 October 2026 and no outcome has been published.",
-      "so_what": "If you report in Singapore, respond before 25 October 2026 — the transition reliefs in the draft are where the compliance cost is decided.",
+      "so_what": "If you report in Singapore, respond before 25 October 2026, because the transition reliefs in the draft are where the compliance cost is decided.",
       "significance": "high",
       "source_url": "https://www.acra.gov.sg/public-consultations/public-consultation-on-singapore-s-sustainability-disclosure-standards/",
       "source_title": "Public Consultation on Singapore's Sustainability Disclosure Standards",
@@ -4835,7 +4835,7 @@
       "workstream": "issb-nature",
       "headline": "ISSB settles nature terminology, TNFD metric references and first-application provisions",
       "detail": "At its 24-25 June 2026 meeting the ISSB decided to replace 'environmental assets' with 'environmental resources' (12 of 12) and to define nature-related transition risks and nature-related physical risks (8 of 12). It agreed entities may reference TNFD metrics where these meet IFRS S1 objectives and do not conflict with the Standards (11 of 12), and to retain the CDSB Framework Application Guidance reference in IFRS S1 (12 of 12). On first application (12 of 12), the Practice Statement will be available from its issuance date, no comparative information is required in the first year, and a full compliance statement is required only when all requirements are met.",
-      "so_what": "If you already report TNFD metrics, keep them — the ISSB is explicitly permitting them as a source rather than replacing them.",
+      "so_what": "If you already report TNFD metrics, keep them, because the ISSB is explicitly permitting them as a source rather than replacing them.",
       "significance": "medium",
       "source_url": "https://www.ifrs.org/news-and-events/updates/issb/2026/issb-update-june-2026/",
       "source_title": "ISSB Update June 2026",
@@ -5017,7 +5017,7 @@
       "workstream": "ASIC supervision",
       "headline": "ASIC publishes early observations from the first mandatory sustainability reports",
       "detail": "ASIC reviewed sustainability reports lodged by 31 December 2025 and reported on 18 May 2026 that 259 reports had been lodged as at 6 May 2026, 34 from listed and 225 from unlisted entities, concentrated in mining, construction and manufacturing, financial services, oil and gas and energy. ASIC set out six observations for 30 June 2026 reporters: avoid conflicting disclaimers that discourage reliance on the report; use available historical data when identifying climate risks; clearly disclose assumptions and measurement uncertainty; do not obscure material information with excess voluntary content; meet cross-referencing requirements precisely; and recognise regulatory obligations such as the Safeguard Mechanism as climate-related targets. Final observations are due in the second half of 2026.",
-      "so_what": "Strip reliance-limiting disclaimers out of any Australian climate statement — ASIC has named them as its first observation.",
+      "so_what": "Strip reliance-limiting disclaimers out of any Australian climate statement, because ASIC has named them as its first observation.",
       "significance": "high",
       "source_url": "https://www.asic.gov.au/about-asic/news-centre/news-items/asic-issues-early-observations-on-sustainability-reporting-ahead-of-30-june-2026/",
       "source_title": "ASIC issues early observations on sustainability reporting ahead of 30 June 2026",
@@ -5030,7 +5030,7 @@
       "workstream": "Regime reform",
       "headline": "ASIC flags Government plan to consult on reducing sustainability reporting burden",
       "detail": "In setting its financial reporting, audit and sustainability focus areas for FY2026-27, ASIC noted that the Government announced in the Budget that it proposes to commence consultation on reforms to reduce reporting burden while maintaining core sustainability reporting requirements. The 2026-27 Budget regulatory reform factsheet describes clarifying how key concepts such as 'undue cost or effort' apply in practice, adjusting assurance settings and setting clearer boundaries on requests for supplier information. ASIC's own administration in FY2026-27 focuses on Group 1 sustainability reports and engagement with large audit firms on assurance methodology.",
-      "so_what": "Do not slow your Group 2 preparation on the strength of a promised simplification consultation — the core requirements are explicitly being kept.",
+      "so_what": "Do not slow your Group 2 preparation on the strength of a promised simplification consultation, because the core requirements are explicitly being kept.",
       "significance": "medium",
       "source_url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-098mr-asic-sets-financial-reporting-audit-and-sustainability-focus-areas-for-fy-2026-27/",
       "source_title": "26-098MR ASIC sets financial reporting, audit and sustainability focus areas for FY 2026-27",
@@ -5147,7 +5147,7 @@
       "workstream": "issb-nature",
       "headline": "ISSB decides nature requirements will be a Practice Statement, not a new Standard",
       "detail": "At its April 2026 meeting in Beijing the ISSB unanimously decided to propose nature-related disclosure requirements as an IFRS Practice Statement complementing IFRS S1 and IFRS S2, rather than amending them or issuing a new Standard. Stakeholders will be asked to comment on the appropriateness of the Practice Statement format itself. The board also unanimously approved guidance on how asset and site locations relate to identifying nature-related risks, and required disclosure of the percentage of assets vulnerable to identified nature-related risks with a proportionality mechanism. Ten of 12 members agreed to provide guidance on engagement with Indigenous Peoples and Local Communities. Chair Emmanuel Faber said: 'Providing material nature-related disclosures is not optional; IFRS S1 already requires that.'",
-      "so_what": "Do not wait for a nature Standard — audit whether nature-related risks are already material under IFRS S1 in your current reporting.",
+      "so_what": "Do not wait for a nature Standard. Audit whether nature-related risks are already material under IFRS S1 in your current reporting.",
       "significance": "high",
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/05/issb-agrees-proposed-way-forward-nature-related-disclosures/",
       "source_title": "ISSB agrees on the proposed way forward for nature-related disclosures",
@@ -5241,7 +5241,7 @@
       "so_what": "Use the annual report as the Foundation's own evidence base if you need to justify ISSB-aligned investment internally.",
       "significance": "low",
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/03/ifrs-foundation-publishes-2025-annual-report-fit-for-the-future/",
-      "source_title": "IFRS Foundation publishes 2025 Annual Report—Fit for the future",
+      "source_title": "IFRS Foundation publishes 2025 Annual Report: Fit for the future",
       "source_publisher": "IFRS Foundation",
       "last_verified": "2026-08-25"
     },
@@ -5394,7 +5394,7 @@
       "workstream": "UK SRS",
       "headline": "DBT publishes final UK SRS S1 and UK SRS S2",
       "detail": "The Department for Business and Trade published the finalised UK Sustainability Reporting Standards, UK SRS S1 on general requirements and UK SRS S2 on climate-related disclosures, on 25 February 2026, together with the response to the consultation that ran from 25 June to 17 September 2025. The standards endorse the IFRS Sustainability Disclosure Standards with a small number of UK amendments: the relief allowing sustainability information to be published separately from the financial statements in year one was removed, the climate-first relief was retained without a fixed time limit, the GICS classification requirement was dropped, and effective date clauses were deleted so that timing is set by regulation instead. The standards are available for voluntary use by any entity and impose no new mandatory obligations.",
-      "so_what": "Adopt UK SRS S2 voluntarily for FY2026 as a rehearsal — the standard will not change before the FCA mandates it.",
+      "so_what": "Adopt UK SRS S2 voluntarily for FY2026 as a rehearsal, because the standard will not change before the FCA mandates it.",
       "significance": "high",
       "source_url": "https://www.gov.uk/government/publications/uk-sustainability-reporting-standards-uk-srs-s1-and-uk-srs-s2",
       "source_title": "UK Sustainability Reporting Standards: UK SRS S1 and UK SRS S2",
@@ -5472,7 +5472,7 @@
       "workstream": "FRC guidance",
       "headline": "FRC publishes updated Guidance on the Strategic Report",
       "detail": "The Financial Reporting Council published an updated Guidance on the Strategic Report on 4 February 2026, revised to reflect changes to legislative and regulatory requirements and developments in sustainability-related and wider corporate reporting practice. The guidance is intended to help entities address reporting obligations in a way that is practical and proportionate. It is the FRC's principal non-mandatory reference for the narrative front half of a UK annual report, including the climate-related financial disclosures required by law.",
-      "so_what": "Re-read the strategic report guidance before the FY2026 drafting cycle — it is the reference the FRC's reviewers use.",
+      "so_what": "Re-read the strategic report guidance before the FY2026 drafting cycle, because it is the reference the FRC's reviewers use.",
       "significance": "medium",
       "source_url": "https://www.frc.org.uk/news-and-events/news/2026/02/frc-publishes-updated-strategic-report-guidance/",
       "source_title": "FRC publishes updated strategic report guidance",
@@ -5511,7 +5511,7 @@
       "workstream": "FCA listing rules",
       "headline": "FCA opens CP26/5 proposing UK SRS-based rules for listed issuers from 2027",
       "detail": "The FCA published CP26/5 on 30 January 2026, proposing to replace its TCFD-aligned listing rules with requirements based on UK SRS, in force from 1 January 2027 for accounting periods beginning on or after that date. UK SRS S2 would be mandatory except for Scope 3 emissions, which would be comply-or-explain with an optional one-year deferral; UK SRS S1 would be comply-or-explain with a two-year deferral for non-climate matters. Issuers would have to state whether and where they have published a climate transition plan, and whether they obtained third-party assurance, naming the provider, scope and standard. Assurance itself would not be mandatory.",
-      "so_what": "Build the Scope 3 inventory now — the deferral buys one year, not an exemption.",
+      "so_what": "Build the Scope 3 inventory now, because the deferral buys one year, not an exemption.",
       "significance": "high",
       "source_url": "https://www.fca.org.uk/publication/consultation/cp26-5.pdf",
       "source_title": "Consultation Paper CP26/5: Aligning listed issuers' sustainability disclosures with international standards",
@@ -5537,7 +5537,7 @@
       "workstream": "issb-nature",
       "headline": "ISSB confirms an unrestricted scope for the nature standard-setting project",
       "detail": "At its 28 January 2026 meeting the ISSB unanimously (12 of 12) agreed the nature project should address all material nature-related information that could reasonably be expected to affect an entity's prospects, rather than restricting the scope. It also agreed the new requirements would build on and supplement IFRS S1 and IFRS S2 rather than replace them. The board received a Transition Implementation Group update on IFRS S1 and IFRS S2 implementation but made no decisions on that item.",
-      "so_what": "Expect nature coverage broader than biodiversity alone — water, land use, ocean and pollution all fall inside the project scope.",
+      "so_what": "Expect nature coverage broader than biodiversity alone: water, land use, ocean and pollution all fall inside the project scope.",
       "significance": "medium",
       "source_url": "https://www.ifrs.org/news-and-events/updates/issb/2026/issb-update-january-2026/",
       "source_title": "ISSB Update January 2026",
@@ -5641,7 +5641,7 @@
       "workstream": "issb-nature",
       "headline": "ISSB moves its nature project into standard-setting and skips the discussion paper",
       "detail": "At its 10 December 2025 meeting the ISSB voted 11 of 12 to move the Biodiversity, Ecosystems and Ecosystem Services project from research into standard-setting, aiming to develop disclosure requirements responding to primary users' needs on nature-related risks and opportunities and building on IFRS S1 and IFRS S2. A further 11 of 12 agreed to proceed directly to an Exposure Draft rather than first publishing a discussion paper. All 12 agreed to use existing advisory structures rather than form a dedicated consultative group. The board also received a Human Capital project update without taking decisions.",
-      "so_what": "Skipping the discussion paper compresses the timeline — the first formal consultation on nature is the Exposure Draft itself.",
+      "so_what": "Skipping the discussion paper compresses the timeline, so the first formal consultation on nature is the Exposure Draft itself.",
       "significance": "high",
       "source_url": "https://www.ifrs.org/news-and-events/updates/issb/2025/issb-update-december-2025/",
       "source_title": "ISSB Update December 2025",
@@ -5849,7 +5849,7 @@
       "workstream": "FSA roadmap",
       "headline": "FSA publishes its interim report and roadmap on sustainability disclosure and assurance",
       "detail": "The Financial Services Agency published the interim report of the Financial System Council's Working Group on Disclosure and Assurance of Sustainability-related Financial Information, together with a roadmap for sustainability disclosures and assurance in Japan, on 6 November 2025. The interim report was issued in Japanese with the roadmap available in English. It set out the phased mandatory application of SSBJ Standards across the TSE Prime Market and the accompanying assurance timetable, later confirmed in the final report of April 2026.",
-      "so_what": "Use the November 2025 roadmap and its April 2026 successor together — the phasing thresholds did not change between them.",
+      "so_what": "Use the November 2025 roadmap and its April 2026 successor together, because the phasing thresholds did not change between them.",
       "significance": "high",
       "source_url": "https://www.fsa.go.jp/en/news/2025/20251106/20251106.html",
       "source_title": "Publication of Interim Report of the Working Group on Disclosure and Assurance of Sustainability-related Financial Information and Roadmap for sustainability disclosures and assurance in Japan",
@@ -5927,7 +5927,7 @@
       "workstream": "issb-governance",
       "headline": "ISSB membership updates confirm the board will shrink from 14 to 10 members by end-2028",
       "detail": "The IFRS Foundation announced reappointments of Sue Lloyd as Vice-Chair for a second four-year term effective 1 March 2026, Elizabeth Seeger for a second five-year term effective 1 October 2025, and Hiroshi Komori for a second one-year term effective 1 October 2025. Michael Jantzi and Tae-Young Paik stepped down with terms ending 30 September 2025, with Paik becoming Senior Advisor to the ISSB Chair for one year. The ISSB will gradually transition from 14 to 10 members by the end of 2028, a plan the Trustees announced in June 2025, while maintaining geographical balance.",
-      "so_what": "No action required, but a smaller board means a narrower work plan — expect the ISSB to keep prioritising implementation over new Standards.",
+      "so_what": "No action required, but a smaller board means a narrower work plan, so expect the ISSB to keep prioritising implementation over new Standards.",
       "significance": "low",
       "source_url": "https://www.ifrs.org/news-and-events/news/2025/09/updates-inaugural-issb-membership/",
       "source_title": "IFRS Foundation announces updates to inaugural ISSB membership",
@@ -5940,7 +5940,7 @@
       "workstream": "issb-s2-ghg-amendments",
       "headline": "ISSB tentatively finalises the IFRS S2 GHG reliefs and sets a 1 January 2027 effective date",
       "detail": "At its 24-26 September 2025 meeting the ISSB tentatively agreed the substance of the IFRS S2 greenhouse gas amendments. It finalised relief from measuring Scope 3 Category 15 emissions beyond financed emissions, with a requirement to describe the excluded financial activities including derivatives; replaced the prescriptive GICS hierarchy with a flexible approach requiring a commonly used classification system; and extended jurisdictional relief for alternative measurement methods and global warming potential values. The effective date was set at 1 January 2027 with early application permitted. Twelve of the 14 members present supported all decisions with no dissent indicated.",
-      "so_what": "This meeting is where the final relief wording was fixed — read it alongside the December 2025 text if you need the ISSB's reasoning.",
+      "so_what": "This meeting is where the final relief wording was fixed, so read it alongside the December 2025 text if you need the ISSB's reasoning.",
       "significance": "medium",
       "source_url": "https://www.ifrs.org/news-and-events/updates/issb/2025/issb-update-september-2025/",
       "source_title": "ISSB Update September 2025",
@@ -5966,7 +5966,7 @@
       "workstream": "UK SRS and transition plans",
       "headline": "UK consultations on UK SRS exposure drafts and transition plan requirements close",
       "detail": "The DBT consultation on the exposure drafts of UK SRS S1 and S2 and the DESNZ consultation on climate-related transition plan requirements both closed at 11:59pm on 17 September 2025, having opened on 25 June 2025. The UK SRS consultation produced a government response and final standards on 25 February 2026. As at 25 August 2026 the transition plan consultation response has not been published and the government's page still states it is analysing feedback.",
-      "so_what": "Track the transition plan outcome separately from UK SRS — the two consultations ran together but only one has been answered.",
+      "so_what": "Track the transition plan outcome separately from UK SRS, because the two consultations ran together but only one has been answered.",
       "significance": "medium",
       "source_url": "https://www.gov.uk/government/consultations/climate-related-transition-plan-requirements",
       "source_title": "Climate-related transition plan requirements",
@@ -6044,7 +6044,7 @@
       "workstream": "Climate reporting timeline",
       "headline": "ACRA and SGX RegCo defer most Singapore climate reporting requirements",
       "detail": "ACRA and SGX RegCo announced on 25 August 2025 that most climate reporting requirements would be deferred to help companies build capability. Scope 1 and 2 emissions reporting remains mandatory for all listed issuers from FY2025, but other ISSB-based climate disclosures were deferred to FY2028 for non-STI issuers with market capitalisation of S$1bn or more and to FY2030 for those below S$1bn, with STI constituents unchanged at FY2025. Scope 3 remains mandatory only for STI constituents from FY2026 and voluntary for everyone else. External limited assurance was deferred to FY2029 for listed issuers. For large non-listed companies, ISSB-based climate disclosures including Scope 1 and 2 were deferred to FY2030 and assurance to FY2032.",
-      "so_what": "Singapore-listed subsidiaries outside the STI now only need Scope 1 and 2 for FY2025 — reallocate effort to jurisdictions with harder deadlines.",
+      "so_what": "Singapore-listed subsidiaries outside the STI now only need Scope 1 and 2 for FY2025, so reallocate effort to jurisdictions with harder deadlines.",
       "significance": "high",
       "source_url": "https://www.acra.gov.sg/news-events/news-announcements/887/",
       "source_title": "Extended Timelines for Most Climate Reporting Requirements to Support Companies",
@@ -6186,7 +6186,7 @@
       "framework": "issb",
       "workstream": "issb-sasb",
       "headline": "ISSB opens the first comprehensive consultation on SASB Standards content",
-      "detail": "The ISSB published two Exposure Drafts proposing a comprehensive review of the SASB Standards for 9 industries — all 8 in the Extractives & Minerals Processing sector plus Processed Foods — and targeted amendments to 41 further industries on topics including Water Management and Workforce Health & Safety. Consequential updates were proposed to the Industry-based Guidance on Implementing IFRS S2 for 9 prioritised industries and 37 of the 41 others. The comment deadline was 30 November 2025, a 150-day period. Vice-Chair Sue Lloyd called it 'the first noteworthy opportunity to weigh in comprehensively on the content of the SASB Standards in the context of the ISSB Standards'.",
+      "detail": "The ISSB published two Exposure Drafts proposing a comprehensive review of the SASB Standards for 9 industries, all 8 in the Extractives & Minerals Processing sector plus Processed Foods, and targeted amendments to 41 further industries on topics including Water Management and Workforce Health & Safety. Consequential updates were proposed to the Industry-based Guidance on Implementing IFRS S2 for 9 prioritised industries and 37 of the 41 others. The comment deadline was 30 November 2025, a 150-day period. Vice-Chair Sue Lloyd called it 'the first noteworthy opportunity to weigh in comprehensively on the content of the SASB Standards in the context of the ISSB Standards'.",
       "so_what": "Check whether your industry sits in the 50 Standards covered, because SASB-derived metrics feed directly into IFRS S2 reporting.",
       "significance": "high",
       "source_url": "https://www.ifrs.org/news-and-events/news/2025/07/issb-comprehensive-review-sasb/",
@@ -6200,7 +6200,7 @@
       "workstream": "UK SRS",
       "headline": "UK publishes UK SRS exposure drafts alongside transition plan and assurance consultations",
       "detail": "On 25 June 2025 the UK government published exposure drafts of UK SRS S1 and UK SRS S2 for consultation, together with a DESNZ consultation on climate-related transition plan requirements and a DBT consultation on developing an oversight regime for assurance of sustainability-related financial disclosures. The transition plan consultation set out two implementation routes: requiring entities to explain why they have not disclosed a transition plan, or requiring them to develop and disclose one, potentially as a standalone document refreshed at least every three years. Scope centred on UK-regulated financial institutions and FTSE 100 companies, with the government considering widening it to economically significant entities while excluding SMEs. All three consultations closed on 17 September 2025.",
-      "so_what": "The three June 2025 consultations are the origin of every UK obligation now landing — read them together rather than in isolation.",
+      "so_what": "The three June 2025 consultations are the origin of every UK obligation now landing, so read them together rather than in isolation.",
       "significance": "high",
       "source_url": "https://www.gov.uk/government/consultations/exposure-drafts-uk-sustainability-reporting-standards",
       "source_title": "Exposure drafts: UK Sustainability Reporting Standards",
@@ -6291,7 +6291,7 @@
       "workstream": "ADX ESG disclosure",
       "headline": "ADX publishes updated voluntary ESG disclosure guidance recommending IFRS S1 and S2",
       "detail": "The Abu Dhabi Securities Exchange published ESG Disclosure Guidance for Listed Companies in June 2025, setting out 38 ESG metrics across environmental, social, governance and integrated KPI categories. The guide is explicitly voluntary and recommends alignment with the IFRS Sustainability Disclosure Standards S1 and S2 and with GRI. It complements the SCA Corporate Governance Code, which incorporates sustainability disclosure requirements for listed companies. Third-party assurance is described as optional.",
-      "so_what": "For UAE listings, use the ADX 38-metric set as the floor and IFRS S2 as the target — the mandatory layer names neither.",
+      "so_what": "For UAE listings, use the ADX 38-metric set as the floor and IFRS S2 as the target, because the mandatory layer names neither.",
       "significance": "medium",
       "source_url": "https://www.adx.ae/-/media/adx/related-documents/sustainability/esg-disclosure-guidance-for-listed-companies---english.pdf",
       "source_title": "ESG Disclosure Guidance for Listed Companies",
@@ -6330,7 +6330,7 @@
       "workstream": "CSA climate rule",
       "headline": "CSA pauses work on a mandatory Canadian climate-related disclosure rule",
       "detail": "The Canadian Securities Administrators announced on 23 April 2025 that it was pausing work on developing a mandatory climate-related disclosure rule, and on its diversity-related disclosure project, citing increased uncertainty and rising competitiveness concerns for Canadian issuers arising from global economic and geopolitical change. The CSA said it will monitor domestic and international regulatory developments and expects to revisit both projects in future years, giving issuers appropriate notice ahead of any changes. It emphasised that existing securities legislation still requires disclosure of material climate risks and pointed issuers to the CSSB's voluntary standards, issued December 2024, as an interim framework.",
-      "so_what": "Canada is now a voluntary market — report material climate risk under existing continuous disclosure rules and use CSDS 2 as the template.",
+      "so_what": "Canada is now a voluntary market, so report material climate risk under existing continuous disclosure rules and use CSDS 2 as the template.",
       "significance": "high",
       "source_url": "https://www.osc.ca/en/news-events/news/csa-updates-market-approach-climate-related-and-diversity-related-disclosure-projects",
       "source_title": "CSA updates market on approach to climate-related and diversity-related disclosure projects",
@@ -6420,7 +6420,7 @@
       "framework": "jp",
       "workstream": "SSBJ standards",
       "headline": "SSBJ issues Japan's three inaugural sustainability disclosure standards",
-      "detail": "The Sustainability Standards Board of Japan issued its inaugural standards on 5 March 2025: the Universal Sustainability Disclosure Standard on application of the standards, Theme-based Standard No. 1 on General Disclosures and Theme-based Standard No. 2 on Climate-related Disclosures. Entities could voluntarily apply them to annual reporting periods ending on or after that date. The standards themselves do not prescribe which entities must apply them or when — that is set by the FSA's roadmap and Japanese securities law.",
+      "detail": "The Sustainability Standards Board of Japan issued its inaugural standards on 5 March 2025: the Universal Sustainability Disclosure Standard on application of the standards, Theme-based Standard No. 1 on General Disclosures and Theme-based Standard No. 2 on Climate-related Disclosures. Entities could voluntarily apply them to annual reporting periods ending on or after that date. The standards themselves do not prescribe which entities must apply them or when, because that is set by the FSA's roadmap and Japanese securities law.",
       "so_what": "Voluntary early SSBJ application has been available since March 2025; use it to test data readiness before the March 2027 mandate.",
       "significance": "high",
       "source_url": "https://www.ssb-j.jp/jp/wp-content/uploads/sites/7/20250305_e.pdf",
@@ -6499,7 +6499,7 @@
       "workstream": "UK SRS",
       "headline": "UK Sustainability Disclosure TAC recommends endorsing IFRS S1 and S2",
       "detail": "The FRC announced on 18 December 2024 that the UK Sustainability Disclosure Technical Advisory Committee had issued its final recommendations, agreed on 5 December 2024, that the UK endorse IFRS S1 and IFRS S2 for use in the UK. The TAC recommended lengthening the climate-first reporting relief from one year to two, and asked the UK Sustainability Disclosure Policy and Implementation Committee to develop guidance on aligning IFRS S1 with existing UK sustainability-related disclosure requirements. It concluded that adoption would support long-term public good in the UK with only minor modifications.",
-      "so_what": "The TAC recommendations explain why UK SRS differs from IFRS S1/S2 — read them when reconciling group and UK reporting.",
+      "so_what": "The TAC recommendations explain why UK SRS differs from IFRS S1/S2, so read them when reconciling group and UK reporting.",
       "significance": "medium",
       "source_url": "https://www.frc.org.uk/news-and-events/news/2024/12/uk-sustainability-tac-issues-final-recommendations/",
       "source_title": "UK Sustainability TAC issues final recommendations",
@@ -6525,7 +6525,7 @@
       "workstream": "Government roadmap",
       "headline": "Hong Kong Government launches its roadmap on sustainability disclosure",
       "detail": "The Hong Kong SAR Government launched the Roadmap on Sustainability Disclosure in Hong Kong on 10 December 2024, requiring publicly accountable entities to adopt the ISSB Standards over time. Key milestones are HKICPA finalising Hong Kong-aligned standards by end-2024 with effect from 1 August 2025, all Main Board issuers disclosing climate information on comply-or-explain from 1 January 2025, LargeCap Index constituents facing mandatory climate disclosure from 1 January 2026, and full adoption by large publicly accountable entities including non-listed financial institutions by 2028. HKEX will consult the market in 2027 on mandating sustainability reporting for listed publicly accountable entities from 1 January 2028. The AFRC leads the sustainability assurance workstream.",
-      "so_what": "Plan Hong Kong on a 2028 horizon — non-listed financial institutions are in scope even though no listing rule touches them.",
+      "so_what": "Plan Hong Kong on a 2028 horizon, because non-listed financial institutions are in scope even though no listing rule touches them.",
       "significance": "high",
       "source_url": "https://www.info.gov.hk/gia/general/202412/10/P2024121000243.htm",
       "source_title": "Government launches roadmap on sustainability disclosure in Hong Kong",
@@ -6564,7 +6564,7 @@
       "workstream": "Legislation",
       "headline": "Australia's mandatory climate reporting legislation receives Royal Assent",
       "detail": "The Treasury Laws Amendment (Financial Market Infrastructure and Other Measures) Act 2024, Act No. 87 of 2024, received Royal Assent on 17 September 2024. Schedule 4 introduces climate-related financial disclosure and sustainability reporting requirements into the Corporations Act 2001, including the sustainability report under s296A, the obligation to comply with sustainability standards made by the AASB, audit requirements, and the modified liability arrangements. It also amends the ASIC Act to provide for sustainability standards and assurance standards.",
-      "so_what": "Australia's requirement is primary legislation, not regulator guidance — it will not be softened by a policy shift.",
+      "so_what": "Australia's requirement is primary legislation, not regulator guidance, so it will not be softened by a policy shift.",
       "significance": "high",
       "source_url": "https://www.legislation.gov.au/C2024A00087/asmade/text",
       "source_title": "Treasury Laws Amendment (Financial Market Infrastructure and Other Measures) Act 2024",
@@ -6577,7 +6577,7 @@
       "workstream": "issb-s1-s2-core",
       "headline": "ISSB sets its two-year work plan and takes on the Transition Plan Taskforce materials",
       "detail": "The ISSB announced its 2024-2026 work plan, prioritising support for implementation of IFRS S1 and IFRS S2 alongside new research on nature and human capital. The IFRS Foundation assumed responsibility for the disclosure-specific materials of the Transition Plan Taskforce. A Memorandum of Understanding with the GHG Protocol was announced, under which the ISSB appoints an observer to the GHG Protocol's Independent Standards Board. CDP aligned its 2024 questionnaire with IFRS S2, GRI committed to full interoperability, and the ISSB confirmed it would incorporate TNFD recommendations into its biodiversity research. The ISSB reported that over 20 jurisdictions representing 55% of global GDP had adopted or were adopting ISSB Standards.",
-      "so_what": "This is the origin of the current work plan — everything now in flight on nature, human capital and SASB traces back to it.",
+      "so_what": "This is the origin of the current work plan, and everything now in flight on nature, human capital and SASB traces back to it.",
       "significance": "medium",
       "source_url": "https://www.ifrs.org/news-and-events/news/2024/06/issb-delivers-further-harmonisation-of-the-sustainability-disclosure-landscape-new-work-plan/",
       "source_title": "ISSB delivers further harmonisation of the sustainability disclosure landscape as it embarks on new work plan",
@@ -6590,7 +6590,7 @@
       "workstream": "UAE Sustainable Finance Working Group",
       "headline": "UAE launches Principles for Sustainability-Related Disclosures for reporting entities",
       "detail": "The UAE Sustainable Finance Working Group, whose members include the Central Bank of the UAE, the securities regulator and other federal authorities, issued the Principles for Sustainability-Related Disclosures on 14 June 2024. They apply to domestic entities and to branches and subsidiaries of foreign entities falling under the purview of UAE authorities. Crucially, implementation discretion rests with each individual authority, which may choose voluntary, comply-or-explain or mandatory routes and set its own timeline. The Principles acknowledge the international movement towards the ISSB standards as a potential global baseline but do not adopt them.",
-      "so_what": "Do not treat the UAE Principles as a reporting standard — identify which specific UAE regulator binds each of your entities.",
+      "so_what": "Do not treat the UAE Principles as a reporting standard. Identify which specific UAE regulator binds each of your entities.",
       "significance": "medium",
       "source_url": "https://rulebook.centralbank.ae/en/rulebook/principles-sustainability-related-disclosures",
       "source_title": "Principles for Sustainability-Related Disclosures",
@@ -6616,7 +6616,7 @@
       "workstream": "HKEX climate requirements",
       "headline": "HKEX publishes conclusions mandating IFRS S2-aligned climate disclosures",
       "detail": "HKEX published its consultation conclusions on enhancement of climate-related disclosures under the ESG framework on 19 April 2024, following 115 responses showing broad-based support. The amended Listing Rules take effect from 1 January 2025 and introduce a new Part D of Appendix C2 reflecting IFRS S2 more closely, phased by issuer type with proportionality and scaling-in reliefs. HKEX also published Implementation Guidance referencing IFRS S1 principles to help issuers meet the new requirements.",
-      "so_what": "HKEX's implementation guidance is the practical bridge from IFRS S2 to Appendix C2 — use it rather than mapping from scratch.",
+      "so_what": "HKEX's implementation guidance is the practical bridge from IFRS S2 to Appendix C2, so use it rather than mapping from scratch.",
       "significance": "medium",
       "source_url": "https://www.hkex.com.hk/News/Regulatory-Announcements/2024/240419news?sc_lang=en",
       "source_title": "Exchange Publishes Conclusions on Climate Disclosure Requirements",
@@ -7032,7 +7032,7 @@
     {
       "topic": "Form of ISSB nature-related requirements",
       "old": "Nature sat in a research project (Biodiversity, Ecosystems and Ecosystem Services) with no decided output.",
-      "new": "An IFRS Practice Statement supplementing IFRS S1 and IFRS S2 — a tool companies may choose to use unless a jurisdiction requires it. Exposure Draft targeted for October 2026 with a 120-day comment period.",
+      "new": "An IFRS Practice Statement supplementing IFRS S1 and IFRS S2, a tool companies may choose to use unless a jurisdiction requires it. Exposure Draft targeted for October 2026 with a 120-day comment period.",
       "status": "proposed",
       "framework": "issb",
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/05/issb-agrees-proposed-way-forward-nature-related-disclosures/",
@@ -7054,7 +7054,7 @@
       "status": "open",
       "framework": "issb",
       "source_url": "https://www.ifrs.org/projects/work-plan/enhancing-sasb-standards-phase-1-cont/",
-      "source_title": "Enhancing the SASB Standards—Phase 1—Continued"
+      "source_title": "Enhancing the SASB Standards: Phase 1 Continued"
     },
     {
       "topic": "ISSB board size",
@@ -9147,7 +9147,7 @@
     "Jurisdictional snapshot": "A shorter IFRS Foundation overview for a jurisdiction whose approach to ISSB Standards is still being developed or consulted on.",
     "Global warming potential": "A conversion factor used to express emissions of different greenhouse gases as a carbon dioxide equivalent, published in IPCC Assessment Reports.",
     "Industry-based guidance": "Non-mandatory ISSB material, derived from the SASB Standards, that entities must refer to and consider the applicability of when identifying climate-related disclosures under IFRS S2.",
-    "Due process": "The IFRS Foundation's mandatory procedural steps — consultation, deliberation in public, effects analysis and balloting — that a proposal must pass before publication.",
+    "Due process": "The IFRS Foundation's mandatory procedural steps (consultation, deliberation in public, effects analysis and balloting) that a proposal must pass before publication.",
     "CSRD": "The EU directive that requires large companies to publish an audited sustainability statement inside their management report.",
     "ESRS": "The detailed EU reporting standards that tell a company exactly what sustainability information to disclose and how.",
     "Omnibus I": "The 2025-2026 EU simplification package that cut the number of companies in sustainability reporting scope and thinned the rules.",
@@ -9177,7 +9177,7 @@
     "Covered entity": "The CARB term for a company caught by SB 261's $500 million revenue threshold.",
     "Scope 1 emissions": "Greenhouse gases released directly by things the company owns or controls, such as its boilers and vehicles.",
     "Scope 2 emissions": "Greenhouse gases released by the power stations that generate the electricity, heat or steam the company buys.",
-    "Scope 3 emissions": "Greenhouse gases released across the company's value chain — suppliers, transport, product use and disposal — which it does not own or control.",
+    "Scope 3 emissions": "Greenhouse gases released across the company's value chain (suppliers, transport, product use and disposal) which it does not own or control.",
     "Injunction pending appeal": "A court order pausing a law's enforcement while an appeal is decided, without deciding whether the law is ultimately valid.",
     "Held in abeyance": "A court putting a case on hold without deciding it, usually to wait for the agency involved to act.",
     "Office of Administrative Law": "The California body that reviews an agency's final regulation for legal sufficiency before it can be filed and take effect.",
@@ -9356,10 +9356,10 @@
   "coverage_notes": {
     "ghgp-iso": "Checked and verified against official sources only: ghgprotocol.org (standards pages, public consultations page, news index pages 1-2, Consolidated Standard Development Plan v2.0 of 29 July 2026, Scope 3 Phase 1 Progress Update of 31 March 2026, AMI Phase 1 White Paper and explanatory memo, LSR Standard and Guidance pages, Forest Carbon Accounting RFI, ISB and CEO announcements) and iso.org / committee.iso.org (catalogue records for ISO 14064-1:2018, ISO/WD 14064-1.2, ISO 14064-2:2019, ISO/WD 14064-2.2, ISO 14064-3:2019, ISO/TS 14064-4:2025, ISO 14064-5:2026, ISO 14067:2018, ISO 14068-1:2023, ISO 14068, ISO/DIS 14060; the ISO/TC 207/SC 7 projects and under-development listings; ISO news releases of 9 September 2025, 26 February 2026 and 17 June 2026). No third-party tracker, consultancy, law-firm, vendor or news source was used or cited. COULD NOT VERIFY: (1) an exact closing date for the ISO/DIS 14060 enquiry ballot - ISO's news release states only 'early September 2026' for the 12-week window opened on 17 June 2026, so the September 2026 date here is derived from that stated duration; (2) any GHG Protocol revision workstream for the Project Protocol - it appears on ghgprotocol.org/standards as a current publication but no Standard Development Plan, draft or consultation exists for it, so its 'scoping' phase here is inferred from absence rather than from a positive official statement; (3) any published target date, draft or consultation for the joint ISO-GHGP product-level standard beyond the formation of the Joint Working Group; (4) reconciliation between the Q2 2027 consolidated consultation date and the Q3 2027 AMI draft consultation date, both of which appear on official pages without explanation of the gap; (5) the status of ISO 14064-1:2018/DAmd 1 - it is listed on the ISO/TC 207/SC 7 projects page but its catalogue record at iso.org/standard/88065.html returned HTTP 404, so no claim about that amendment is made here. UNREACHABLE PAGES: https://ghgprotocol.org/standards-development returned HTTP 404; https://www.iso.org/committee/546319.html returned HTTP 404; https://www.iso.org/standard/88065.html returned HTTP 404. TIMELINE CAVEAT: all Q2 2027 and Q4 2028 dates are labelled as estimates in GHG Protocol's own Standard Development Plan, and the Scope 3 progress update states that all its revisions remain under development and subject to change; no workstream that relies on those documents is rated above 'high' confidence.",
     "sbti": "Checked and verified against sciencebasedtargets.org and files.sciencebasedtargets.org only: the Corporate Net-Zero Standard V2.0 landing page and PDF, the official V2.0 Main Changes Document, V2.0 Criteria, Category B Minimum Criteria, V2.0 FAQs, the Continuing Use of V1.3.1 transition note, the Understanding Scope 2 explainer, the V1.3.1 standard and Corporate Near-Term Criteria V5.3.1 PDFs, the standards and guidance index, the sectors index, the oil and gas and financial institutions sector pages, the Financial Institutions Net-Zero Standard PDF, the Chemicals, Buildings and Steel sector PDFs, the developing-the-net-zero-standard timeline page, and SBTi news and blog items from May 2024 to August 2026. No third-party tracker, consultancy, law-firm, vendor or news source was used or consulted as a citation. NOT VERIFIED: (1) the aluminium sector page at sciencebasedtargets.org/sectors/aluminum returned HTTP 404, so aluminium's document status rests only on the sectors index listing; (2) no ICT or information and communication technology sector workstream appears anywhere on SBTi's sectors index or standards index, so the requested ICT item is recorded as absent rather than in development; (3) SBTi's news and blog indexes did not paginate on fetch, so items before May 2024 and some mid-2024 to early-2025 items may be missing from the updates array; (4) the oil and gas sector page presented an internally inconsistent chronology (a February 2026 research report listed before an April 2025 pause), so only the pause and the 2027 re-scoping intent are asserted, at medium confidence; (5) the exact boolean combination logic of the Category A thresholds and the precise final low-carbon electricity milestone year (2040 was the March 2025 draft proposal) should be confirmed against the full V2.0 criteria text; (6) numeric old-versus-new annual reduction rates for the revised Absolute Contraction Approach were not published in the SBTi announcement, only the retained 4.2% floor; (7) V2.0 does not specify a numeric residual emissions percentage for net-zero; (8) SBTi's own pages give the V2.0 validation opening variously as 'Q1 2027', '1 February 2027' and, in the Main Changes Document, 'in effect as of 31 January 2027' - all three are recorded as the same Q1 2027 opening; (9) SBTi Services documents hosted on docs.sbtiservices.com (including the V2.0 transition guide, SME FAQs and SME validation checklist) were deliberately not used because that domain is outside the permitted source list, so SME-specific procedural detail is drawn from the Category B Minimum Criteria and the 2023 SME definition news item instead; (10) publication dates for the final Power Sector and Automotive sector standards have not been announced by SBTi.",
-    "issb": "Every fact in this file was verified against, and cites, a page or PDF on ifrs.org. Checked: the IFRS S1 and IFRS S2 standard pages; the completed project page and final amendment PDFs for Amendments to Greenhouse Gas Emissions Disclosures (Amendments to IFRS S2), plus the April 2025 Exposure Draft announcement; the IFRS S2 greenhouse gas educational material (for the paragraph 29(a)(i)/(ii) GHG Protocol requirement and the Appendix C paragraph C4(a) transition relief); the Nature-related Disclosures and Human Capital project pages; both Enhancing the SASB Standards project pages and the SASB Standards projects list; the IFRS Sustainability Disclosure Taxonomy project and proposed-update announcement; ISSB Updates for January, February, March, April, May, June and July 2026 and for September, October, November and December 2025; IFRS Foundation news items from June 2023 to August 2026; and the 'Use of IFRS Sustainability Disclosure Standards by jurisdiction' page together with individual jurisdictional profiles for Australia, Japan, Hong Kong SAR, Singapore and Brazil and snapshots for the United Kingdom, Canada and mainland China. NOT VERIFIED / CAVEATS: (1) The IFRS Foundation work plan table at ifrs.org/projects/work-plan/ renders via JavaScript and could not be read directly, so the project inventory here was assembled from individual project pages and ISSB Updates; there may be minor ISSB work-plan items not captured. (2) The 'Use by jurisdiction' page states no headline count of jurisdictions — the 22 profiles / 13 snapshots figures are my tally of the jurisdictions it lists as at its stated last-updated date of 16 July 2026, not a number the IFRS Foundation prints. The only official aggregate numbers found on ifrs.org are 'nearly 40 jurisdictions' taking steps and 'requirements in 19 jurisdictions have already come into effect' (24 February 2026), and '36 jurisdictions' at the June 2025 profile launch. (3) No official date has been published for the ISSB's Human Capital 'Decide Project Direction' milestone or for issuance of the final SASB Phase 1 amendments; entries marked projected reflect that. (4) The exact publication date within October 2026 for the nature Exposure Draft is not stated by the IFRS Foundation. (5) Direct HTTP retrieval (curl) to ifrs.org was blocked in this environment; all pages were read through the fetch tool, so a small number of dynamically loaded page elements may not have been visible. (6) No third-party tracker, consultancy, law-firm or news source was used or cited.",
+    "issb": "Every fact in this file was verified against, and cites, a page or PDF on ifrs.org. Checked: the IFRS S1 and IFRS S2 standard pages; the completed project page and final amendment PDFs for Amendments to Greenhouse Gas Emissions Disclosures (Amendments to IFRS S2), plus the April 2025 Exposure Draft announcement; the IFRS S2 greenhouse gas educational material (for the paragraph 29(a)(i)/(ii) GHG Protocol requirement and the Appendix C paragraph C4(a) transition relief); the Nature-related Disclosures and Human Capital project pages; both Enhancing the SASB Standards project pages and the SASB Standards projects list; the IFRS Sustainability Disclosure Taxonomy project and proposed-update announcement; ISSB Updates for January, February, March, April, May, June and July 2026 and for September, October, November and December 2025; IFRS Foundation news items from June 2023 to August 2026; and the 'Use of IFRS Sustainability Disclosure Standards by jurisdiction' page together with individual jurisdictional profiles for Australia, Japan, Hong Kong SAR, Singapore and Brazil and snapshots for the United Kingdom, Canada and mainland China. NOT VERIFIED / CAVEATS: (1) The IFRS Foundation work plan table at ifrs.org/projects/work-plan/ renders via JavaScript and could not be read directly, so the project inventory here was assembled from individual project pages and ISSB Updates; there may be minor ISSB work-plan items not captured. (2) The 'Use by jurisdiction' page states no headline count of jurisdictions, so the 22 profiles / 13 snapshots figures are my tally of the jurisdictions it lists as at its stated last-updated date of 16 July 2026, not a number the IFRS Foundation prints. The only official aggregate numbers found on ifrs.org are 'nearly 40 jurisdictions' taking steps and 'requirements in 19 jurisdictions have already come into effect' (24 February 2026), and '36 jurisdictions' at the June 2025 profile launch. (3) No official date has been published for the ISSB's Human Capital 'Decide Project Direction' milestone or for issuance of the final SASB Phase 1 amendments; entries marked projected reflect that. (4) The exact publication date within October 2026 for the nature Exposure Draft is not stated by the IFRS Foundation. (5) Direct HTTP retrieval (curl) to ifrs.org was blocked in this environment; all pages were read through the fetch tool, so a small number of dynamically loaded page elements may not have been visible. (6) No third-party tracker, consultancy, law-firm or news source was used or cited.",
     "eu": "CHECKED AND VERIFIED against official sources only (eur-lex.europa.eu, ec.europa.eu, finance.ec.europa.eu, taxation-customs.ec.europa.eu, commission.europa.eu, consilium.europa.eu, europarl.europa.eu, efrag.org, esma.europa.eu): Directive (EU) 2026/470 (OJ text, thresholds in amended Articles 19a(1), 29a(1), 40a, recitals 5, 7, 15, 16, 31, the Article 29b(1) sector-standard deletion, the new Article 29ca and the 1 July 2027 limited assurance deadline); Directive (EU) 2025/794; Delegated Regulation (EU) 2025/1416; Commission Recommendation (EU) 2025/1710; the two delegated acts of 3 July 2026 (C(2026) 5010 revised ESRS and C(2026) 5011 voluntary standard / value-chain cap); Regulation (EU) 2025/2083 (CBAM, with the 50-tonne Annex VII threshold, the 30 September declaration and surrender date, the 1 February 2027 certificate sales date and the 50% quarterly holding rule quoted from the OJ text); Delegated Regulation (EU) 2026/73 and the fourth Commission Notice (OJ C, 30 April 2026); the Council press releases of 23 June 2025, 29 September 2025, 9 December 2025, 24 February 2026 and 12 June 2026; the European Parliament press releases of 13 November 2025 and 16 December 2025 with recorded vote counts; and EFRAG's ESRS simplification, work programme and ESRS-40a project pages. COULD NOT VERIFY VERBATIM: the transposition article of Directive (EU) 2026/470. EUR-Lex returns the OJ text truncated through the available fetch path (both the HTML and PDF renderings stop inside the amendments to Directive 2013/34/EU before the final articles), and direct HTTP retrieval of eur-lex.europa.eu was blocked by network policy in this environment. The 18 March 2027 CSRD transposition date used here is therefore DERIVED from the Council's 24 February 2026 press release, which states Member States have 'one year after the entry into force of the directive to transpose its provisions into national legislation except for article 4 on the level of harmonisation, with which they must comply by 26 July 2028 at the latest', applied to the confirmed 18 March 2026 entry into force. It is flagged projected in the milestone list and should be confirmed against the OJ text before being relied on. CONFLICTS BETWEEN OFFICIAL SOURCES, conservative reading taken in each case: (1) Entry into force of the revised ESRS delegated act - the Commission's 3 July 2026 news page describes a two-month scrutiny period extendable to four, while the delegated act itself states it shall not enter into force earlier than four months after adoption; the later date (from November 2026) is used. (2) Wave-one relief for FY2025-FY2026 - Council and Parliament press releases describe an exemption as though automatic, whereas recital 31 of the directive frames it as a Member State option ('Member States should be able to exempt'); the national-option reading is used throughout and is the material difference for multi-jurisdiction groups. (3) Taxonomy first covered year - the Commission news page says the simplification applies as of 1 January 2026 and covers financial year 2025 with an option to start in FY2026, while a reading of Delegated Regulation (EU) 2026/73 suggested application to financial years beginning on or after 1 January 2026; both formulations are recorded rather than one being asserted. (4) EFRAG technical advice date - EFRAG's July 2025 press release targeted 30 November 2025 while its delivery announcement is dated 3 December 2025; the delivery date is used. NOT DATED PRECISELY, so recorded without a day or omitted from the updates feed: ESMA's 2025 European Common Enforcement Priorities (October 2025), its opinion on the revised ESRS (February 2026) and its 2025 corporate reporting enforcement report (May 2026) - these appear on esma.europa.eu without a machine-readable publication date on the pages retrieved. The European Parliament press release on the stop-the-clock vote (531-69-17) also carries an ambiguous date on its page, so that vote is described inside the 16 April 2025 Official Journal update rather than given its own dated row. NOT COVERED because outside the requested slice: the SFDR/PRIIPs omnibus proposal COM(2025) 841 of December 2025, the ESAs' March 2026 call for advice on Taxonomy Article 8, and the two further Taxonomy technical-screening delegated acts that were in feedback until 14 April 2026 and had not been adopted as at 25 August 2026. No third-party tracker, consultancy, law-firm or vendor material was consulted or cited.",
     "us": "CHECKED: CARB's climate disclosure programme pages, resources page, meetings and workshops page, SB 261 docket page, the 26 February 2026 news release and its printable version, Resolution 26-1, the 26 February 2026 Board presentation, the December 2025 Notice of Public Hearing, the Staff Report/ISOR, the Article 6 regulation text, the November 2025 FAQs and SB 261 checklist, the December 2025 SB 261 enforcement advisory, and the May 2025, August 2025, November 2025, March 2026 and July 2026 workshop decks. On the federal side: SEC press releases 2024-31 and 2026-49, the 4 April 2024 stay order (33-11280), the S7-2026-19 rulemaking page and fact sheet, the Uyeda (11 Feb 2025) and Crenshaw (27 Mar 2025, 23 Jul 2025) statements, and Federal Register documents 2026-11091, 2026-03995 and 2026-11360. Litigation was verified against the Supreme Court docket for No. 25A561 and the applicants' emergency application PDF. State bills were verified on nysenate.gov, assembly.state.ny.us, leg.colorado.gov, ilga.gov, pub.njleg.gov and app.leg.wa.gov. COULD NOT VERIFY / UNREACHABLE: leginfo.legislature.ca.gov is entirely disallowed by robots.txt for automated fetching, so the primary statutory text of SB 253, SB 261, SB 219 and Health and Safety Code sections 38532 and 38533 could not be read directly - all statutory content here is taken from CARB's own official restatements (FAQs, ISOR, regulation text, Board materials), and the statutory penalty caps (commonly cited as $500,000 for SB 253 and $50,000 for SB 261) are therefore NOT asserted in this dataset. Also unreachable: CARB's 15-day Notice of Public Availability of Modified Text at /barcu/regact/2026/sb 253-261/15_day_notice 253-261.pdf, the December 2024 SB 253 enforcement notice PDF, and the CARB climate disclosure news page - all returned HTTP 403 - so the exact date of the 15-day comment period and the verbatim text of the December 2024 enforcement notice are unconfirmed. CARB's 24 June 2026 'Notice on Upcoming Rulemaking Update and 2026 Reporting Deadline Deferral' is cited via CARB's July 2026 workshop deck because the notice itself is distributed through CARB's bulletin service rather than an arb.ca.gov page reachable here. No per-entity dollar fee amount has been published in any CARB document reviewed - only the formula (total required revenue divided by number of regulated entities) and the programme cost figures. The count of entities on CARB's 24 September 2025 preliminary list could not be read (XLSX). CONFLICTS: CARB's November 2025 FAQs state the SB 261 docket closes on 1 July 2026, while the live docket page states submissions are accepted from 1 December 2025 through 31 December 2026 - the docket page is treated as current. CARB's programme page dates the rulemaking materials 23 December 2025 while the Notice of Public Hearing document itself is dated 9 December 2025; the 45-day comment period ran 26 December 2025 to 9 February 2026. The Board's 26 February 2026 news release, as rendered, refers in one place to a 'February 2024 meeting', which is a rendering artefact - Resolution 26-1 confirms the hearing date as 26 February 2026. The Ninth Circuit's own docket and orders in No. 25-5327 are not published on ca9.uscourts.gov in a form reachable here; the 18 November 2025 SB 261 injunction is therefore sourced to CARB's official docket page and enforcement advisory, and the 9 January 2026 argument date to the applicants' Supreme Court filing, which describes it as scheduled. As at 25 August 2026 no Ninth Circuit merits opinion in No. 25-5327 appears on the court's published opinions page, and the SEC has taken no final action on the proposed rescission.",
-    "jurisdictions": "Checked and cited only original official sources: gov.uk, legislation.gov.uk, fca.org.uk, frc.org.uk (UK); frascanada.ca, securities-administrators.ca via osc.ca and asc.ca (Canada); asic.gov.au, aasb.gov.au, auasb.gov.au, legislation.gov.au, budget.gov.au (Australia); acra.gov.sg and sgx.com (Singapore); hkex.com.hk, hkicpa.org.hk, info.gov.hk and fstb.gov.hk (Hong Kong); fsa.go.jp and ssb-j.jp (Japan); uaecma.gov.ae, rulebook.centralbank.ae and adx.ae (UAE); qfma.org.qa (Qatar). No third-party tracker, consultancy, law-firm or vendor material was used or consulted as a source. Could NOT verify: (1) several frascanada.ca pages returned HTTP 403 (the CSDS 1/CSDS 2 launch page, the CSSB media release and the detailed-changes page), so the December 2024 issuance and voluntary status of CSDS 1 and 2 rest on the CSA's own statement plus the CSSB 'In Brief' and project pages, and the exact final-standard transition relief durations are taken from the CSSB In Brief page describing the exposure drafts; (2) qcb.gov.qa was unreachable (robots.txt/TLS failure), so Qatar Central Bank's ISSB-based Sustainability Reporting Framework for the financial sector is noted but not included as a jurisdiction entry; (3) legislation.gov.uk PDF endpoints were blocked by robots.txt, so the uplifted UK company size thresholds are cited to Companies House guidance rather than SI 2024/1303 directly; (4) the QFMA Governance Code for Listed Companies PDF returned 404, so the specific article number creating Qatar's mandatory sustainability disclosure obligation is not cited — only QFMA's own statement in its November 2025 guidance that the provision is mandatory; (5) no official page states a decision number or content standard for the UAE listed-company sustainability report obligation, so the UAE entry is marked medium confidence; (6) the DESNZ transition plan consultation response and the FCA CP26/5 policy statement had not been published as at 25 August 2026; (7) the UK 'Modernising Corporate Reporting' consultation on mandating UK SRS for private companies is referenced in the February 2026 government response but has not itself been launched, so it appears only as a next step."
+    "jurisdictions": "Checked and cited only original official sources: gov.uk, legislation.gov.uk, fca.org.uk, frc.org.uk (UK); frascanada.ca, securities-administrators.ca via osc.ca and asc.ca (Canada); asic.gov.au, aasb.gov.au, auasb.gov.au, legislation.gov.au, budget.gov.au (Australia); acra.gov.sg and sgx.com (Singapore); hkex.com.hk, hkicpa.org.hk, info.gov.hk and fstb.gov.hk (Hong Kong); fsa.go.jp and ssb-j.jp (Japan); uaecma.gov.ae, rulebook.centralbank.ae and adx.ae (UAE); qfma.org.qa (Qatar). No third-party tracker, consultancy, law-firm or vendor material was used or consulted as a source. Could NOT verify: (1) several frascanada.ca pages returned HTTP 403 (the CSDS 1/CSDS 2 launch page, the CSSB media release and the detailed-changes page), so the December 2024 issuance and voluntary status of CSDS 1 and 2 rest on the CSA's own statement plus the CSSB 'In Brief' and project pages, and the exact final-standard transition relief durations are taken from the CSSB In Brief page describing the exposure drafts; (2) qcb.gov.qa was unreachable (robots.txt/TLS failure), so Qatar Central Bank's ISSB-based Sustainability Reporting Framework for the financial sector is noted but not included as a jurisdiction entry; (3) legislation.gov.uk PDF endpoints were blocked by robots.txt, so the uplifted UK company size thresholds are cited to Companies House guidance rather than SI 2024/1303 directly; (4) the QFMA Governance Code for Listed Companies PDF returned 404, so the specific article number creating Qatar's mandatory sustainability disclosure obligation is not cited, only QFMA's own statement in its November 2025 guidance that the provision is mandatory; (5) no official page states a decision number or content standard for the UAE listed-company sustainability report obligation, so the UAE entry is marked medium confidence; (6) the DESNZ transition plan consultation response and the FCA CP26/5 policy statement had not been published as at 25 August 2026; (7) the UK 'Modernising Corporate Reporting' consultation on mandating UK SRS for private companies is referenced in the February 2026 government response but has not itself been launched, so it appears only as a next step."
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
@@ -9555,7 +9555,7 @@
       "y": 68,
       "conf": "high",
       "note": "Listed issuers move from TCFD comply-or-explain to mandatory UK SRS S2 for FY2027, which requires scenario analysis and a Scope 3 inventory many issuers have never assured.",
-      "why": "CP26/5 is published and closed, but the proposals are not yet rules — the policy statement is still outstanding as at 25 August 2026.",
+      "why": "CP26/5 is published and closed, but the proposals are not yet rules, and the policy statement is still outstanding as at 25 August 2026.",
       "phase": "consultation"
     },
     {
