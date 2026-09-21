@@ -2501,31 +2501,38 @@
           "id": "eu-esrs",
           "name": "Revised ESRS (Set 1 simplification)",
           "phase": "adopted-pending",
-          "status_label": "Delegated act adopted 3 July 2026, in scrutiny",
-          "summary": "On 3 July 2026 the Commission adopted a delegated regulation amending Delegated Regulation (EU) 2023/2772 to simplify the ESRS, based on EFRAG technical advice delivered on 3 December 2025. Mandatory datapoints fall by more than 60% and total datapoints by more than 70%. It applies to financial years beginning on or after 1 January 2027, with optional early application for FY2026.",
+          "status_label": "Published in the Official Journal 21 September 2026; in force 10 November 2026",
+          "summary": "The revised ESRS were published in the Official Journal on 21 September 2026 as Commission Delegated Regulation (EU) 2026/1563, amending Delegated Regulation (EU) 2023/2772. The act enters into force on 10 November 2026 and applies to financial years beginning on or after 1 January 2027. Mandatory datapoints fall by more than 60% and total datapoints by more than 70%. Reporters with a financial year beginning in 2026 get a three way choice of which version to apply.",
           "key_points": [
-            "Applies mandatorily to financial years beginning on or after 1 January 2027; undertakings may voluntarily apply the revised ESRS for financial years beginning between 1 January 2026 and 31 December 2026 and must state in the sustainability statement which version they used.",
+            "Now law. Published in the Official Journal on 21 September 2026 as Delegated Regulation (EU) 2026/1563; Article 3 sets entry into force at 10 November 2026 and application to financial years beginning on or after 1 January 2027.",
+            "For a financial year beginning between 1 January and 31 December 2026, Article 2 allows three options: the standards as last amended by Delegated Regulation (EU) 2025/1416, the new Annex I standards, or the older standards with eight named ESRS 1 reliefs. The version used must be stated in the sustainability statement.",
+            "The eight ESRS 1 reliefs available for FY2026 cover the top down approach to double materiality (para 27), undue cost and effort and value chain limitation (paras 32 to 33), acquisitions and disposals (paras 74 to 75), metrics for non-significant activities (para 90), partial value chain reporting scope (para 91), joint operations (para 92), Taxonomy disclosures in a separate appendix (para 106) and the executive summary (para 110).",
             "The Commission reports mandatory datapoints down more than 60%, total datapoints down more than 70%, and expected cost reduction of more than 30% per company against a 25% target.",
-            "EFRAG's advice claimed a 61% reduction in datapoints required if material and the removal of all voluntary disclosures; design changes include a streamlined double materiality assessment, a 'fair presentation' filter and wider use of estimates for value-chain data.",
-            "Not yet law: re-checked on 14 September 2026, it had still not appeared in the Official Journal. It is subject to European Parliament and Council scrutiny (2 months, extendable to 4) and the act itself provides it shall not enter into force earlier than four months after adoption.",
-            "Interim relief still applies to wave-one reporters via Delegated Regulation (EU) 2025/1416 (the 'quick fix') for FY2025 and FY2026."
+            "The Commission departed from EFRAG's technical advice on thirteen named areas, including materiality and materiality assessment, fair presentation, greenhouse gas emissions, climate transition plans and coherence with the due diligence directive.",
+            "Annexes I and II of Delegated Regulation (EU) 2023/2772 are replaced in full."
           ],
           "confidence": {
-            "level": "high",
-            "reasoning": "Formally adopted by the Commission on 3 July 2026 and published on ec.europa.eu, but not yet in the Official Journal and still capable of objection during Parliament/Council scrutiny, so it is not rated confirmed."
+            "level": "confirmed",
+            "reasoning": "Final published text. The act appeared in the Official Journal on 21 September 2026 with a stated entry into force date, so scrutiny is over and the content can no longer change."
           },
           "next_milestone": {
-            "date": "2026-11",
-            "label": "End of scrutiny / earliest entry into force of the revised ESRS delegated act",
-            "projected": true
+            "date": "2026-11-10",
+            "label": "Revised ESRS delegated act enters into force",
+            "projected": false
           },
           "stat": {
             "value": "-70%",
             "label": "Reduction in total ESRS datapoints per the Commission"
           },
-          "so_what": "Rebuild your ESRS datapoint inventory against the revised standards before your FY2027 reporting cycle, and decide now whether to early-apply for FY2026.",
-          "last_verified": "2026-09-14",
+          "so_what": "Rebuild your ESRS datapoint inventory against the revised standards before your FY2027 cycle, and decide which of the three FY2026 options you are taking.",
+          "last_verified": "2026-09-21",
           "sources": [
+            {
+              "title": "Commission Delegated Regulation (EU) 2026/1563 of 3 July 2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563",
+              "publisher": "Official Journal of the European Union",
+              "date": "2026-09-21"
+            },
             {
               "title": "Commission Delegated Regulation of 3.7.2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards - C(2026) 5010",
               "url": "https://ec.europa.eu/finance/docs/level-2-measures/csrd-delegated-act-2026-5010_en.pdf",
@@ -2655,32 +2662,38 @@
           "id": "eu-vsme",
           "name": "Voluntary standard and the value-chain cap",
           "phase": "adopted-pending",
-          "status_label": "Delegated act adopted 3 July 2026; VSME Recommendation already in force",
-          "summary": "Commission Recommendation (EU) 2025/1710 of 30 July 2025 published the VSME voluntary standard for SMEs. Directive (EU) 2026/470 then inserted Article 29ca into the Accounting Directive requiring the Commission to turn it into a binding value-chain cap by 19 July 2026; the Commission adopted that delegated act on 3 July 2026.",
+          "status_label": "Published in the Official Journal 21 September 2026; cap applies from FY2027",
+          "summary": "Commission Recommendation (EU) 2025/1710 of 30 July 2025 published the VSME voluntary standard. Directive (EU) 2026/470 then inserted Article 29ca into the Accounting Directive requiring the Commission to turn it into a binding value chain cap. The delegated act adopted on 3 July 2026 was published in the Official Journal on 21 September 2026 as Delegated Regulation (EU) 2026/1560, and the cap in its Article 3 applies from financial years beginning on or after 1 January 2027.",
           "key_points": [
-            "The cap protects 'protected undertakings' - those with an average of 1 000 or fewer employees in the preceding year that sit in a reporting company's value chain.",
-            "A reporting undertaking may not REQUIRE information exceeding what the voluntary standard specifies as necessary; it may still ask, but must flag which items exceed the cap and inform the counterparty of its statutory right to decline.",
-            "The Commission's May 2026 note is explicit that the cap 'applies only in the context of fulfilling CSRD reporting obligations and does not affect information requests for purposes other than sustainability reporting under CSRD' - so due-diligence, contractual and customer requests are not capped.",
-            "The delegated act's standard has two modules: a Basic Module (general, environmental, social, governance metrics) and a Comprehensive Module (transition, human rights, governance detail).",
-            "Article 3 of the delegated act (the cap itself) applies for financial years beginning on or after 1 January 2027; the standard may be used voluntarily as soon as the act is in force.",
-            "The standard is a ceiling for mandatory demands, not a floor - the Commission says companies should request less if they need less."
+            "Now law. Published in the Official Journal on 21 September 2026 as Delegated Regulation (EU) 2026/1560. Article 4 sets entry into force at the third day following publication and applies Article 3 from financial years beginning on or after 1 January 2027.",
+            "Article 1 defines the cap as the upper limit of sustainability information that a reporting undertaking may require from a value chain undertaking that did not exceed an average of 1 000 employees during the preceding financial year.",
+            "Article 3(2) is the operative limit: the cap comprises only the datapoints specified in Annex II to the Regulation.",
+            "Article 2 lets undertakings outside mandatory scope report voluntarily against the Annex I standard, and says they may also use EFRAG's practical guidance.",
+            "The Commission's May 2026 note remains that the cap applies only to CSRD reporting obligations and does not affect information requests made for other purposes, so due diligence, contractual and customer requests are not capped.",
+            "Recital 5 states that undertakings applying the standard are not obliged to seek assurance on the information they report."
           ],
           "confidence": {
-            "level": "high",
-            "reasoning": "The Article 29ca empowerment is confirmed in Directive (EU) 2026/470, but the implementing delegated act adopted 3 July 2026 is still in Parliament/Council scrutiny and not yet in the Official Journal."
+            "level": "confirmed",
+            "reasoning": "Final published text. The act appeared in the Official Journal on 21 September 2026, so the Annex II datapoint list that defines the cap is fixed."
           },
           "next_milestone": {
-            "date": "2026-09",
-            "label": "End of scrutiny / entry into force of the voluntary standard delegated act",
-            "projected": true
+            "date": "2027-01-01",
+            "label": "Value chain cap in Article 3 of Delegated Regulation (EU) 2026/1560 begins to apply",
+            "projected": false
           },
           "stat": {
             "value": "<=1,000 employees",
             "label": "Size of a 'protected undertaking' shielded by the value-chain cap"
           },
           "so_what": "Rewrite your supplier sustainability questionnaires against the voluntary standard's necessary-information set, and add the statutory right-to-decline notice to any request that goes beyond it.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-21",
           "sources": [
+            {
+              "title": "Commission Delegated Regulation (EU) 2026/1560 of 3 July 2026 supplementing Directive 2013/34/EU of the European Parliament and of the Council by establishing sustainability reporting standards for voluntary use by undertakings protected by the value chain cap",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601560",
+              "publisher": "Official Journal of the European Union",
+              "date": "2026-09-21"
+            },
             {
               "title": "Commission Recommendation (EU) 2025/1710 on a voluntary sustainability reporting standard for non-listed micro-, small- and medium-sized undertakings",
               "url": "https://eur-lex.europa.eu/eli/reco/2025/1710/oj/eng",
@@ -2931,18 +2944,19 @@
           "id": "eu-cbam-scope",
           "name": "CBAM scope extension to downstream goods",
           "phase": "legislation",
-          "status_label": "Council mandate agreed 12 June 2026; trilogues pending",
-          "summary": "The Commission proposed in December 2025 to extend CBAM to selected downstream products and add anti-circumvention measures. The Council agreed its negotiating position on 12 June 2026; negotiations with Parliament are to start once Parliament adopts its position, with the aim of concluding before the end of 2026.",
+          "status_label": "Council mandate 12 June 2026, Parliament position 15 September 2026; trilogues to start",
+          "summary": "The Commission proposed in December 2025 to extend CBAM to selected downstream products and add anti-circumvention measures. The Council agreed its negotiating position on 12 June 2026 and the European Parliament adopted its first reading position on 15 September 2026. Both co-legislators now have mandates, and the downstream product list is the main open question for trilogue.",
           "key_points": [
-            "The Council position extends CBAM to a selection of downstream products and mandates the Commission to review annually which further downstream products to include.",
-            "Anti-circumvention: pre-consumer metal scrap is brought into scope and the Commission gains powers to address deceptive reporting practices by high-risk companies.",
-            "The Council press release does not name the specific goods added or an application date - those remain open until trilogue.",
-            "Outcome is genuinely open: Parliament has not yet adopted its position and the product list is the most contested element.",
-            "Council states negotiations should conclude 'before the end of the year' (2026)."
+            "Parliament adopted its position on 15 September 2026 by 464 votes to 50 with 159 abstentions, and a position on the related temporary decarbonisation fund by 433 to 97 with 146 abstentions.",
+            "Parliament would extend scope beyond basic materials to downstream products such as finished steel and aluminium goods, going further than the Commission proposed, and would exempt electricity flows from non-EU countries used by grid operators for network stability.",
+            "Parliament lowered the threshold at which small product changes count as circumvention, rejected the Commission's price shock safeguard, and removed the option to count Paris Agreement Article 6 carbon credits against CBAM obligations.",
+            "The Council position of 12 June 2026 also adds pre-consumer metal scrap and mandates an annual Commission review of further downstream products to include.",
+            "No official source publishes a date for the opening or the conclusion of trilogue negotiations. The Council has said it aims to conclude before the end of 2026.",
+            "The specific downstream product list is still open and is the most contested element."
           ],
           "confidence": {
-            "level": "medium",
-            "reasoning": "Only the Council's negotiating mandate exists; Parliament has not voted and the product list can still change materially in trilogue, so no higher rating is defensible."
+            "level": "high",
+            "reasoning": "Both co-legislators have now adopted formal negotiating positions and only trilogue remains, which is a procedural step rather than an open outcome on whether the extension happens. It is not confirmed, because the two mandates differ and the downstream product list can still change materially before adoption."
           },
           "next_milestone": {
             "date": "2026-12",
@@ -2954,8 +2968,14 @@
             "label": "Downstream product list still to be fixed in trilogue"
           },
           "so_what": "Map which of your imported finished and semi-finished goods contain CBAM materials now, because the downstream list could be fixed before the end of 2026.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-21",
           "sources": [
+            {
+              "title": "Strengthening the EU carbon border adjustment mechanism and closing loopholes",
+              "url": "https://www.europarl.europa.eu/news/en/press-room/20260911IPR47450/strengthening-the-eu-carbon-border-adjustment-mechanism-and-closing-loopholes",
+              "publisher": "European Parliament",
+              "date": "2026-09-15"
+            },
             {
               "title": "Council moves to strengthen the EU's carbon border adjustment mechanism",
               "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/12/council-moves-to-strengthen-the-eu-s-carbon-border-adjustment-mechanism/",
@@ -4387,6 +4407,71 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-09-21",
+      "framework": "eu",
+      "workstream": "eu-esrs",
+      "headline": "Revised ESRS published in the Official Journal as Delegated Regulation (EU) 2026/1563",
+      "detail": "The revised European Sustainability Reporting Standards were published in the Official Journal on 21 September 2026 as Commission Delegated Regulation (EU) 2026/1563, ending the Parliament and Council scrutiny period that began when the Commission adopted the act on 3 July 2026. Article 3 states that the Regulation enters into force on 10 November 2026 and applies to the financial years beginning on or after 1 January 2027. Article 2 lets an undertaking reporting for a financial year starting between 1 January and 31 December 2026 choose between the standards as last amended by Delegated Regulation (EU) 2025/1416, the new Annex I standards, or the older standards with eight named reliefs in ESRS 1, and requires it to state in the sustainability statement which version it applied. The Regulation replaces Annexes I and II of Delegated Regulation (EU) 2023/2772 in full.",
+      "so_what": "Settle your FY2026 choice between the old standards, the new standards and the eight ESRS 1 reliefs now, because whichever you pick has to be named in the sustainability statement.",
+      "significance": "high",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563",
+      "source_title": "Commission Delegated Regulation (EU) 2026/1563 of 3 July 2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards",
+      "source_publisher": "Official Journal of the European Union",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "date": "2026-09-21",
+      "framework": "eu",
+      "workstream": "eu-vsme",
+      "headline": "Voluntary standard and the value chain cap published in the Official Journal as Delegated Regulation (EU) 2026/1560",
+      "detail": "The delegated regulation establishing the sustainability reporting standard for voluntary use was published in the Official Journal on 21 September 2026 as Commission Delegated Regulation (EU) 2026/1560, adopted on 3 July 2026 under Article 29ca(1) of the Accounting Directive. Article 1 defines the value chain cap as the upper limit of sustainability information that undertakings reporting under Articles 19a and 29a of Directive 2013/34/EU may require from undertakings in their value chain that did not exceed an average of 1 000 employees during the preceding financial year. Article 3 provides that the voluntary standard establishes that cap, and that the cap comprises only the datapoints specified in Annex II. Article 4 states that the Regulation enters into force on the third day following that of its publication in the Official Journal, and that Article 3 applies from the financial years beginning on or after 1 January 2027.",
+      "so_what": "Rewrite your supplier sustainability questionnaires against the Annex II datapoint list before FY2027, because that list is now the legal ceiling on what you can require from a counterparty below 1 000 employees.",
+      "significance": "high",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601560",
+      "source_title": "Commission Delegated Regulation (EU) 2026/1560 of 3 July 2026 supplementing Directive 2013/34/EU of the European Parliament and of the Council by establishing sustainability reporting standards for voluntary use by undertakings protected by the value chain cap",
+      "source_publisher": "Official Journal of the European Union",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "date": "2026-09-18",
+      "framework": "au",
+      "workstream": "Regime reform",
+      "headline": "AASB reports a Treasury consultation on establishing External Reporting Australia's sustainability standard-setting board",
+      "detail": "The Australian Accounting Standards Board published a news item stating that Treasury has released an exposure draft determination for public consultation to establish the standard setting boards of External Reporting Australia. The determination covers the boards responsible for accounting standards, for auditing and assurance standards, and for sustainability standards. The AASB states that expressions of interest to take part in a roundtable close on 28 September 2026 and that written submissions close on 15 October 2026. The consultation documents are hosted on the Treasury consultation site rather than on the AASB site.",
+      "so_what": "If you report under AASB S2, read the exposure draft and file a submission by 15 October 2026, because it sets who will write and amend Australian sustainability standards.",
+      "significance": "low",
+      "source_url": "https://aasb.gov.au/news/treasury-consultation/",
+      "source_title": "Treasury consultation",
+      "source_publisher": "Australian Accounting Standards Board",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "date": "2026-09-17",
+      "framework": "eu",
+      "workstream": "eu-esrs",
+      "headline": "EFRAG opens a consultation on the draft XBRL taxonomy for the revised ESRS, closing 11 November",
+      "detail": "EFRAG released the draft XBRL taxonomy for the revised European Sustainability Reporting Standards and opened a public consultation that closes on 11 November 2026. EFRAG says the draft taxonomy is aligned with the draft list of datapoints released in August 2026 and carries the same datapoints, adding the technical attributes needed for digital representation. It replaces the taxonomy EFRAG released in August 2024 and reflects the revised ESRS adopted in July 2026. EFRAG states that digital tagging of ESRS disclosures is not yet mandatory because the ESEF framework for it has still to be established by ESMA and the European Commission, and says it intends to submit the final taxonomy to them by the end of 2026.",
+      "so_what": "Put the draft taxonomy in front of whoever owns your ESEF tagging, and file any structural problems through the consultation before 11 November 2026.",
+      "significance": "medium",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-releases-draft-esrs-xbrl-taxonomy-for-the-revised-esrs-and-launches-public-consultation",
+      "source_title": "EFRAG Releases Draft ESRS XBRL Taxonomy for the Revised ESRS and Launches Public Consultation",
+      "source_publisher": "EFRAG",
+      "last_verified": "2026-09-21"
+    },
+    {
+      "date": "2026-09-15",
+      "framework": "eu",
+      "workstream": "eu-cbam-scope",
+      "headline": "European Parliament adopts its negotiating position on extending CBAM to downstream goods",
+      "detail": "The European Parliament adopted its first reading negotiating position on the CBAM scope extension by 464 votes to 50 with 159 abstentions, and its position on the related temporary decarbonisation fund by 433 votes to 97 with 146 abstentions. MEPs support extending the mechanism beyond basic materials to downstream products such as finished steel and aluminium goods, going further than the Commission proposed, while adding an exemption for electricity flows from non-EU countries used by grid operators for network stability. Parliament lowered the threshold at which small product changes count as circumvention, rejected the price shock safeguard that would have removed goods from scope, and removed the option to count Paris Agreement Article 6 carbon credits against CBAM obligations. The press release says Parliament is now ready to start negotiations with the Council and publishes no date for the opening or the conclusion of those negotiations.",
+      "so_what": "Audit your import bill of materials for finished steel and aluminium goods now, because both co-legislators now want downstream products in scope and only the list itself is still open.",
+      "significance": "high",
+      "source_url": "https://www.europarl.europa.eu/news/en/press-room/20260911IPR47450/strengthening-the-eu-carbon-border-adjustment-mechanism-and-closing-loopholes",
+      "source_title": "Strengthening the EU carbon border adjustment mechanism and closing loopholes",
+      "source_publisher": "European Parliament",
+      "last_verified": "2026-09-21"
+    },
     {
       "date": "2026-09-11",
       "framework": "eu",
@@ -7195,19 +7280,19 @@
       "topic": "Number of ESRS datapoints",
       "old": "ESRS Set 1 under Delegated Regulation (EU) 2023/2772, with over a thousand datapoints and extensive voluntary disclosures",
       "new": "Mandatory datapoints reduced by more than 60% and total datapoints by more than 70%; voluntary disclosures removed and quantitative datapoints prioritised over narrative text",
-      "status": "proposed",
+      "status": "final",
       "framework": "eu",
-      "source_url": "https://finance.ec.europa.eu/news/commission-adopts-revised-sustainability-reporting-standards-reduce-administrative-burdens-eu-2026-07-03_en",
-      "source_title": "Commission adopts revised sustainability reporting standards"
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563",
+      "source_title": "Commission Delegated Regulation (EU) 2026/1563 of 3 July 2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards"
     },
     {
       "topic": "ESRS version applicable to FY2026",
       "old": "ESRS Set 1 as amended by the quick fix applied to all reporters",
       "new": "Revised ESRS are mandatory only from financial years beginning on or after 1 January 2027; early application is permitted for financial years beginning in 2026 if the undertaking states which version it applied",
-      "status": "proposed",
+      "status": "final",
       "framework": "eu",
-      "source_url": "https://ec.europa.eu/finance/docs/level-2-measures/csrd-delegated-act-2026-5010_en.pdf",
-      "source_title": "Commission Delegated Regulation of 3.7.2026 amending Delegated Regulation (EU) 2023/2772"
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563",
+      "source_title": "Commission Delegated Regulation (EU) 2026/1563 of 3 July 2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards"
     },
     {
       "topic": "CSDDD employee threshold",
@@ -7311,11 +7396,11 @@
     {
       "topic": "CBAM product scope",
       "old": "Cement, iron and steel, aluminium, fertilisers, electricity and hydrogen",
-      "new": "Council position of 12 June 2026 would add selected downstream products and pre-consumer metal scrap, with annual Commission review of further additions - not yet agreed with Parliament",
+      "new": "Council position of 12 June 2026 and Parliament position of 15 September 2026 would both add downstream products and pre-consumer metal scrap, with Parliament going further than the Commission proposed; the final list is still to be agreed in trilogue",
       "status": "open",
       "framework": "eu",
-      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/12/council-moves-to-strengthen-the-eu-s-carbon-border-adjustment-mechanism/",
-      "source_title": "Council moves to strengthen the EU's carbon border adjustment mechanism"
+      "source_url": "https://www.europarl.europa.eu/news/en/press-room/20260911IPR47450/strengthening-the-eu-carbon-border-adjustment-mechanism-and-closing-loopholes",
+      "source_title": "Strengthening the EU carbon border adjustment mechanism and closing loopholes"
     },
     {
       "topic": "EU Taxonomy KPI materiality",
@@ -8503,6 +8588,30 @@
       "source_url": "https://sciencebasedtargets.org/blog/get-involved-today-your-chance-to-help-shape-the-next-generation-of-sbti-standards"
     },
     {
+      "date": "2026-09-15",
+      "framework": "eu",
+      "label": "European Parliament adopts its first reading position on the CBAM scope extension",
+      "kind": "update",
+      "state": "completed",
+      "source_url": "https://www.europarl.europa.eu/news/en/press-room/20260911IPR47450/strengthening-the-eu-carbon-border-adjustment-mechanism-and-closing-loopholes"
+    },
+    {
+      "date": "2026-09-21",
+      "framework": "eu",
+      "label": "Revised ESRS published in the Official Journal as Delegated Regulation (EU) 2026/1563",
+      "kind": "update",
+      "state": "completed",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563"
+    },
+    {
+      "date": "2026-09-21",
+      "framework": "eu",
+      "label": "Voluntary standard and value chain cap published in the Official Journal as Delegated Regulation (EU) 2026/1560",
+      "kind": "update",
+      "state": "completed",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601560"
+    },
+    {
       "date": "2026-09-24",
       "framework": "issb",
       "label": "ISSB board meeting, Montreal: Human Capital and IFRS S1 and S2 implementation support",
@@ -8559,6 +8668,14 @@
       "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-calls-for-public-input-on-costbenefit-analysis-for-the-exposure-draft-esrs-for-certain-noneu"
     },
     {
+      "date": "2026-10-15",
+      "framework": "au",
+      "label": "Submissions close on the Treasury exposure draft determination establishing External Reporting Australia",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://aasb.gov.au/news/treasury-consultation/"
+    },
+    {
       "date": "2026-10-23",
       "framework": "eu",
       "label": "EFRAG fatal flaw review of the draft ESRS datapoint list closes",
@@ -8599,12 +8716,12 @@
       "source_url": "https://www.iso.org/cms/%20render/live/en/sites/isoorg/contents/news/2026/02/iso-and-ghgp-launch-webinar.html"
     },
     {
-      "date": "2026-11",
+      "date": "2026-11-10",
       "framework": "eu",
-      "label": "Earliest entry into force of the revised ESRS delegated act after scrutiny",
+      "label": "Revised ESRS delegated act enters into force",
       "kind": "update",
-      "state": "projected",
-      "source_url": "https://ec.europa.eu/finance/docs/level-2-measures/csrd-delegated-act-2026-5010_en.pdf"
+      "state": "upcoming",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202601563"
     },
     {
       "date": "2026-11-10",
@@ -8613,6 +8730,14 @@
       "kind": "deadline",
       "state": "projected",
       "source_url": "https://ww2.arb.ca.gov/sites/default/files/2026-07/SB_253_Presentation_July_2026.pdf"
+    },
+    {
+      "date": "2026-11-11",
+      "framework": "eu",
+      "label": "EFRAG consultation on the draft ESRS XBRL taxonomy closes",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-releases-draft-esrs-xbrl-taxonomy-for-the-revised-esrs-and-launches-public-consultation"
     },
     {
       "date": "2026-11-16",
@@ -9191,7 +9316,8 @@
     "Publicly accountable entity": "A listed company or a business that holds assets in a fiduciary capacity for outsiders, such as a bank, insurer or pension fund.",
     "Directors' report": "The part of a UK annual report where SECR energy and carbon figures must sit.",
     "Strategic report": "The narrative part of a UK annual report where the mandatory climate-related financial disclosures must sit.",
-    "Group 1, 2 and 3": "Australia's three waves of mandatory climate reporters, defined by size and phased in from 2025, 2026 and 2027 respectively."
+    "Group 1, 2 and 3": "Australia's three waves of mandatory climate reporters, defined by size and phased in from 2025, 2026 and 2027 respectively.",
+    "XBRL taxonomy": "A machine readable dictionary that tags each reported datapoint so software can read a sustainability statement without a human retyping it."
   },
   "acronyms": {
     "GHGP": "Greenhouse Gas Protocol",
@@ -9351,7 +9477,9 @@
     "SRS": "Sustainability Reporting Standards",
     "STI": "Straits Times Index",
     "TAC": "Technical Advisory Committee",
-    "UKLR": "UK Listing Rules"
+    "UKLR": "UK Listing Rules",
+    "XBRL": "eXtensible Business Reporting Language",
+    "ESEF": "European Single Electronic Format"
   },
   "coverage_notes": {
     "ghgp-iso": "Checked and verified against official sources only: ghgprotocol.org (standards pages, public consultations page, news index pages 1-2, Consolidated Standard Development Plan v2.0 of 29 July 2026, Scope 3 Phase 1 Progress Update of 31 March 2026, AMI Phase 1 White Paper and explanatory memo, LSR Standard and Guidance pages, Forest Carbon Accounting RFI, ISB and CEO announcements) and iso.org / committee.iso.org (catalogue records for ISO 14064-1:2018, ISO/WD 14064-1.2, ISO 14064-2:2019, ISO/WD 14064-2.2, ISO 14064-3:2019, ISO/TS 14064-4:2025, ISO 14064-5:2026, ISO 14067:2018, ISO 14068-1:2023, ISO 14068, ISO/DIS 14060; the ISO/TC 207/SC 7 projects and under-development listings; ISO news releases of 9 September 2025, 26 February 2026 and 17 June 2026). No third-party tracker, consultancy, law-firm, vendor or news source was used or cited. COULD NOT VERIFY: (1) an exact closing date for the ISO/DIS 14060 enquiry ballot - ISO's news release states only 'early September 2026' for the 12-week window opened on 17 June 2026, so the September 2026 date here is derived from that stated duration; (2) any GHG Protocol revision workstream for the Project Protocol - it appears on ghgprotocol.org/standards as a current publication but no Standard Development Plan, draft or consultation exists for it, so its 'scoping' phase here is inferred from absence rather than from a positive official statement; (3) any published target date, draft or consultation for the joint ISO-GHGP product-level standard beyond the formation of the Joint Working Group; (4) reconciliation between the Q2 2027 consolidated consultation date and the Q3 2027 AMI draft consultation date, both of which appear on official pages without explanation of the gap; (5) the status of ISO 14064-1:2018/DAmd 1 - it is listed on the ISO/TC 207/SC 7 projects page but its catalogue record at iso.org/standard/88065.html returned HTTP 404, so no claim about that amendment is made here. UNREACHABLE PAGES: https://ghgprotocol.org/standards-development returned HTTP 404; https://www.iso.org/committee/546319.html returned HTTP 404; https://www.iso.org/standard/88065.html returned HTTP 404. TIMELINE CAVEAT: all Q2 2027 and Q4 2028 dates are labelled as estimates in GHG Protocol's own Standard Development Plan, and the Scope 3 progress update states that all its revisions remain under development and subject to change; no workstream that relies on those documents is rated above 'high' confidence.",
@@ -9363,9 +9491,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-09-14",
+    "last_updated": "2026-09-21",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-09-14",
+    "coverage_window_end": "2026-09-21",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
@@ -9463,11 +9591,11 @@
       "id": "eu-esrs",
       "label": "Revised ESRS",
       "framework": "eu",
-      "x": 70,
+      "x": 90,
       "y": 72,
-      "conf": "high",
+      "conf": "confirmed",
       "note": "Mandatory datapoints fall by over 60 percent, which still means rebuilding the datapoint inventory, remapping every data owner and deciding on early application for FY2026.",
-      "why": "Formally adopted by the Commission on 3 July 2026 and published on ec.europa.eu, but not yet in the Official Journal and still capable of objection during Parliament/Council scrutiny, so it is not rated confirmed.",
+      "why": "The revised standards were published in the Official Journal on 21 September 2026 as Delegated Regulation (EU) 2026/1563, with entry into force on 10 November 2026, so the text is fixed.",
       "phase": "adopted-pending"
     },
     {
@@ -9485,11 +9613,11 @@
       "id": "eu-vsme",
       "label": "VSME value-chain cap",
       "framework": "eu",
-      "x": 70,
+      "x": 90,
       "y": 55,
-      "conf": "high",
+      "conf": "confirmed",
       "note": "Supplier questionnaires have to be rewritten to the necessary-information set and a statutory right-to-decline notice added, which touches procurement systems and every live supplier data request.",
-      "why": "The Article 29ca empowerment is confirmed in Directive (EU) 2026/470, but the implementing delegated act adopted 3 July 2026 is still in Parliament/Council scrutiny and not yet in the Official Journal.",
+      "why": "The voluntary standard and the Annex II datapoint list that defines the value chain cap were published in the Official Journal on 21 September 2026 as Delegated Regulation (EU) 2026/1560.",
       "phase": "adopted-pending"
     },
     {
