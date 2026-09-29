@@ -175,19 +175,19 @@
           "id": "ghgp-ami",
           "name": "Actions and Market Instruments (AMI) Standard",
           "phase": "drafting",
-          "status_label": "RFI closed 31 May 2026; moving to drafting, consultation planned Q3 2027",
+          "status_label": "RFI feedback summary published 23 September 2026 confirming broad support; drafting toward a Q2 2027 consultation",
           "summary": "The AMI workstream is building the rules for how companies account for climate actions and purchased market instruments - PPAs, energy attribute certificates, green steel and cement certificates, biomethane, sustainable aviation fuel and carbon credits. Its Phase 1 White Paper, released for a Request for Information on 31 March 2026, proposes a multi-statement reporting structure that separates the physical inventory from market-based accounting and from consequential impact claims. The RFI closed on 31 May 2026 with close to 500 responses and preliminary findings supporting the multi-statement approach.",
           "key_points": [
             "The multi-statement structure would separate physical inventory emissions, market-instrument-linked emissions, and GHG impacts of climate actions assessed using consequential methods, plus non-GHG indicators.",
+            "The AMI Request for Information feedback summary, published 23 September 2026, reports that of more than 400 respondents, 84% supported the overall multi-statement framework, 87% supported the market-based GHG Inventory Statement and 80% supported the GHG Impact Statement; the proposed Non-GHG Indicators Statement drew weaker, more mixed support.",
             "This is the single biggest architectural change proposed anywhere in the programme: market-based figures would stop being a variant of the inventory and become a separate statement.",
             "AMI absorbed the electricity-sector consequential accounting work after the Independent Standards Board declined to advance the proposed Marginal Impact Method within Scope 2 in July 2025 (7 against, 4 for).",
-            "The AMI Technical Working Group held its second in-person meeting in Amsterdam on 30 June to 2 July 2026 on market-based inventory design, GHG impact assessment, additionality and traceability, and is moving to drafting.",
-            "GHG Protocol advises that organisations wishing to adopt a multi-statement approach ahead of finalisation should report physical inventory emissions, market-based emissions and climate action impacts separately and transparently.",
-            "AMI becomes Part 2 of the consolidated corporate standard; a formal draft consultation is indicated for Q3 2027."
+            "GHG Protocol states the AMI Technical Working Group will use the feedback to advance drafting, targeting public consultation on the draft consolidated Corporate Standard in Q2 2027 and final publication in Q4 2028.",
+            "GHG Protocol advises that organisations wishing to adopt a multi-statement approach ahead of finalisation should report physical inventory emissions, market-based emissions and climate action impacts separately and transparently."
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The white paper, the RFI dates and the multi-statement proposal are all officially published, but the standard is pre-draft and the Q3 2027 consultation date sits later than the Q2 2027 date given for the consolidated standard, which GHG Protocol has not reconciled on any page I could find."
+            "reasoning": "The RFI feedback summary and its reported support levels are officially published, and it gives a single reconciled timeline (Q2 2027 consultation, Q4 2028 final), but the standard remains pre-draft and GHG Protocol states these dates are targets, not fixed."
           },
           "next_milestone": {
             "date": "2027-04",
@@ -199,7 +199,7 @@
             "label": "Separate statements proposed: physical inventory, market-based, GHG impact"
           },
           "so_what": "Start reporting your market-based renewable electricity claim and any certificate-backed commodity claims as clearly separable figures now, so a future split into physical and market-based statements is a presentation change rather than a re-measurement.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-28",
           "sources": [
             {
               "title": "Actions and Market Instruments Standard",
@@ -230,6 +230,12 @@
               "url": "https://ghgprotocol.org/blog/ghg-protocol-pulse-august-update",
               "publisher": "GHG Protocol",
               "date": "2026-08-12"
+            },
+            {
+              "title": "ANNOUNCEMENT: GHG Protocol Releases AMI Feedback Summary Showing Broad Support for Proposed Multi-Statement Reporting Framework",
+              "url": "https://ghgprotocol.org/blog/announcement-ghg-protocol-releases-ami-feedback-summary-showing-broad-support-proposed-multi",
+              "publisher": "GHG Protocol",
+              "date": "2026-09-23"
             }
           ],
           "effort": 45,
@@ -2009,11 +2015,11 @@
           "id": "issb-human-capital",
           "name": "Human Capital",
           "phase": "scoping",
-          "status_label": "Research project; on the ISSB's 24 September 2026 agenda, project direction still undecided",
+          "status_label": "Research project; ISSB discussed a staff proposal at its 24 September 2026 meeting to continue research and rename the project; Board decision not yet published",
           "summary": "Human Capital is one of the two research projects the ISSB launched in April 2024 under its 2024-2026 work plan, covering workforce size and composition, compensation, engagement, turnover, training and development, and workplace health and safety. The ISSB analysed the initial research phase in October 2025 and received a project update on 10 December 2025 focused on the necessity and feasibility of standard-setting, but has taken no decisions. The work plan lists the next milestone as 'Decide Project Direction' with no date attached. Human Capital is one of only two items on the agenda for the ISSB's meeting in Montreal on 24 September 2026.",
           "key_points": [
             "Still formally a research project; no Discussion Paper or Exposure Draft has been published or announced.",
-            "Human Capital is one of two items on the published agenda for the ISSB's 24 September 2026 meeting in Montreal, alongside supporting implementation of IFRS S1 and IFRS S2.",
+            "At the ISSB's 24 September 2026 meeting in Montreal, the staff agenda paper recommended further targeted research in five areas and proposed renaming the project from Human Capital to Workforce-related Disclosures rather than moving to standard-setting; this is a staff recommendation, and the IFRS Foundation has not yet published the Board's actual decision.",
             "The ISSB received a project update on 10 December 2025 on 'the necessity and feasibility of standard-setting' and made no decisions.",
             "The next work-plan milestone is 'Decide Project Direction'; the IFRS Foundation has not published a date for it.",
             "The IFRS Sustainability Reference Group discussed the project in June 2026.",
@@ -2021,19 +2027,19 @@
           ],
           "confidence": {
             "level": "medium",
-            "reasoning": "The ISSB has explicitly not yet decided whether to move to standard-setting, so both the outcome and the timing are genuinely open."
+            "reasoning": "The ISSB discussed a staff proposal on 24 September 2026 to continue research under a new name rather than move to standard-setting, but the Board's decision has not been published, so both the project's direction and its timing remain genuinely open."
           },
           "next_milestone": {
-            "date": "2026-09-24",
-            "label": "ISSB discusses Human Capital in Montreal; no date published for the project-direction decision itself",
-            "projected": false
+            "date": null,
+            "label": "ISSB Board decision on project direction, including the proposed rename to Workforce-related Disclosures (no date published)",
+            "projected": true
           },
           "stat": {
             "value": "0",
             "label": "human capital consultation documents published to date"
           },
           "so_what": "Do not build a human-capital reporting programme around an imminent ISSB standard; there is no draft and no dated decision point.",
-          "last_verified": "2026-09-14",
+          "last_verified": "2026-09-28",
           "sources": [
             {
               "title": "International Sustainability Standards Board, September 2026 meeting agenda and papers",
@@ -2064,6 +2070,12 @@
               "url": "https://www.ifrs.org/projects/sasb-standards-projects/",
               "publisher": "IFRS Foundation",
               "date": null
+            },
+            {
+              "title": "AP4: Project update and proposed next steps (Human Capital)",
+              "url": "https://www.ifrs.org/content/dam/ifrs/meetings/2026/september/issb/ap4-project-update-proposed-next-steps.pdf",
+              "publisher": "IFRS Foundation",
+              "date": "2026-09-24"
             }
           ],
           "effort": 5,
@@ -3011,7 +3023,8 @@
             "Templates are significantly shortened and the separate fossil gas and nuclear disclosure templates are deleted.",
             "Financial undertakings may, until 31 December 2027, opt out of full taxonomy reporting by stating that no activities are claimed as environmentally sustainable.",
             "The Commission states the measures apply as of 1 January 2026 and cover financial year 2025, with an option for undertakings to begin in financial year 2026 instead.",
-            "A fourth Commission Notice interpreting the amended Disclosures Delegated Act was published in the OJ C series on 30 April 2026."
+            "A fourth Commission Notice interpreting the amended Disclosures Delegated Act was published in the OJ C series on 30 April 2026.",
+            "The Platform on Sustainable Finance published a brief on 22 September 2026 feeding into ESMA's review of the Article 8 Taxonomy Disclosures Delegated Act, recommending a two-tier OpEx approach, dropping weighted-average consolidated metrics, adding climate-adaptation clarifications and retaining mandatory CapEx Type C reporting; no Commission decision has been taken."
           ],
           "confidence": {
             "level": "confirmed",
@@ -3027,7 +3040,7 @@
             "label": "Materiality threshold below which activities need not be assessed"
           },
           "so_what": "Apply the 10% materiality filter and the OpEx exemption to your next taxonomy disclosure and delete the fossil gas and nuclear templates from your reporting pack.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-09-28",
           "sources": [
             {
               "title": "Commission Delegated Regulation (EU) 2026/73 of 4 July 2025",
@@ -3052,6 +3065,12 @@
               "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AC_202602558",
               "publisher": "Official Journal of the European Union (C series)",
               "date": "2026-04-30"
+            },
+            {
+              "title": "Platform on Sustainable Finance's brief on ESMA's consultation on the review of the Taxonomy Disclosures Delegated Act",
+              "url": "https://finance.ec.europa.eu/publications/brief-esmas-consultation-review-taxonomy-disclosures-delegated-act_en",
+              "publisher": "European Commission (DG FISMA)",
+              "date": "2026-09-22"
             }
           ],
           "effort": 30,
@@ -4407,6 +4426,58 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-09-24",
+      "framework": "issb",
+      "workstream": "issb-human-capital",
+      "headline": "ISSB discusses Human Capital at its 24 September Montreal meeting; staff propose renaming the project and continuing research rather than moving to standard-setting",
+      "detail": "The ISSB held its scheduled board meeting in Montreal on 24 September 2026, with Human Capital one of two items on the published agenda. The staff agenda paper for that session recommended further targeted research in five areas (workforce terminology, investor information needs on pay, benefits, health and safety and AI-related workforce risks, links to the business model, jurisdictional feasibility, and emerging IFRS S1 disclosure practice) and proposed renaming the project from Human Capital to Workforce-related Disclosures. As of 28 September 2026, the IFRS Foundation has not published an ISSB Update or work-plan revision recording what the Board actually decided, so this remains a staff recommendation rather than a confirmed outcome.",
+      "so_what": "Do not assume the project has been renamed or that a further-research path has been confirmed; wait for the ISSB Update or work-plan page before adjusting a human-capital reporting programme.",
+      "significance": "medium",
+      "source_url": "https://www.ifrs.org/content/dam/ifrs/meetings/2026/september/issb/ap4-project-update-proposed-next-steps.pdf",
+      "source_title": "AP4: Project update and proposed next steps (Human Capital)",
+      "source_publisher": "IFRS Foundation",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "date": "2026-09-23",
+      "framework": "ghgp",
+      "workstream": "ghgp-ami",
+      "headline": "GHG Protocol publishes AMI Request for Information feedback summary, reporting broad support for the multi-statement reporting framework",
+      "detail": "GHG Protocol released a feedback summary covering the Actions and Market Instruments Request for Information conducted from 31 March to 15 June 2026. Of more than 400 respondents, 84% supported the overall multi-statement framework, 87% supported the proposed market-based GHG Inventory Statement and 80% supported the GHG Impact Statement, while the proposed Non-GHG Indicators Statement drew weaker and more mixed support. GHG Protocol states the AMI Technical Working Group will use this feedback to advance drafting, with a draft consolidated Corporate Standard targeted for public consultation in Q2 2027 and final publication targeted for Q4 2028.",
+      "so_what": "Keep separating physical inventory, market-based and climate-action-impact figures in internal reporting now, since the RFI feedback confirms the multi-statement split is the direction GHG Protocol is drafting toward.",
+      "significance": "high",
+      "source_url": "https://ghgprotocol.org/blog/announcement-ghg-protocol-releases-ami-feedback-summary-showing-broad-support-proposed-multi",
+      "source_title": "ANNOUNCEMENT: GHG Protocol Releases AMI Feedback Summary Showing Broad Support for Proposed Multi-Statement Reporting Framework",
+      "source_publisher": "GHG Protocol",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "date": "2026-09-22",
+      "framework": "eu",
+      "workstream": "eu-taxonomy",
+      "headline": "Platform on Sustainable Finance publishes a brief feeding into ESMA's review of the Taxonomy Disclosures Delegated Act",
+      "detail": "The Platform on Sustainable Finance, the European Commission's official sustainable-finance expert group, published a brief responding to ESMA's July 2026 consultation on reviewing the Article 8 Taxonomy Disclosures Delegated Act. It recommends a two-tier approach to OpEx reporting (a mandatory R&D-focused disclosure plus a voluntary broader one), dropping weighted-average consolidated metrics for group reporting, adding climate-adaptation clarifications, and retaining mandatory CapEx Type C reporting with clearer definitions. This is expert-group input feeding the Commission's own review; no Commission decision has been taken.",
+      "so_what": "Watch this review before finalising next year's Article 8 OpEx and CapEx templates, since the recommended two-tier OpEx approach and dropped consolidated metrics could change how those KPIs are structured.",
+      "significance": "medium",
+      "source_url": "https://finance.ec.europa.eu/publications/brief-esmas-consultation-review-taxonomy-disclosures-delegated-act_en",
+      "source_title": "Platform on Sustainable Finance's brief on ESMA's consultation on the review of the Taxonomy Disclosures Delegated Act",
+      "source_publisher": "European Commission (DG FISMA)",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "date": "2026-09-21",
+      "framework": "au",
+      "workstream": "Regime reform",
+      "headline": "ASIC reports improved climate disclosures in its first review of mandatory sustainability reports, flags gaps",
+      "detail": "ASIC published Report 839, its review of 40 sustainability reports lodged for the year ended 31 December 2025 under Australia's mandatory climate reporting regime, alongside media release 26-222MR. It found meaningful improvement in the quality, quantity and consistency of disclosures since the requirement began, but continuing weaknesses in forward-looking disclosures, strategy articulation, and metrics and targets. ASIC set out eight practical action items for reporting entities, building on its earlier May 2026 observations.",
+      "so_what": "Benchmark your next Australian sustainability report against ASIC's eight named action items, particularly forward-looking statements, strategy and metrics and targets, before lodgement.",
+      "significance": "medium",
+      "source_url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-222mr-asic-observes-improved-sustainability-reporting-and-notes-areas-for-further-development",
+      "source_title": "26-222MR ASIC observes improved sustainability reporting and notes areas for further development",
+      "source_publisher": "Australian Securities and Investments Commission",
+      "last_verified": "2026-09-28"
+    },
     {
       "date": "2026-09-21",
       "framework": "eu",
@@ -8616,7 +8687,7 @@
       "framework": "issb",
       "label": "ISSB board meeting, Montreal: Human Capital and IFRS S1 and S2 implementation support",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://www.ifrs.org/news-and-events/calendar/2026/september/international-sustainability-standards-board/"
     },
     {
@@ -9491,7 +9562,7 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-09-21",
+    "last_updated": "2026-09-29",
     "coverage_window_start": "2024-04-01",
     "coverage_window_end": "2026-09-21",
     "update_cadence": "Weekly (Mondays)",
