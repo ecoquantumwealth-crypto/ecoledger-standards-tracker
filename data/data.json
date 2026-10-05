@@ -739,33 +739,38 @@
         {
           "id": "iso-14068",
           "name": "ISO 14068 (carbon neutrality)",
-          "phase": "adopted-pending",
-          "status_label": "Still stage 60.00, under publication, as at 14 September 2026; ISO's target publication month of September 2026 has not yet been met",
-          "summary": "ISO 14068-1:2023, the carbon neutrality standard published on 30 November 2023, moved to stage 90.92, International Standard to be revised, on 8 May 2026. Its replacement, designated simply ISO 14068 and titled Climate change management - Carbon neutrality, reached stage 60.00, under publication, on 7 August 2026 with a target publication date of September 2026.",
+          "phase": "final",
+          "status_label": "Published 11 September 2026 (stage 60.60), replacing ISO 14068-1:2023",
+          "summary": "ISO 14068-1:2023, the carbon neutrality standard published on 30 November 2023, moved to stage 90.92, International Standard to be revised, on 8 May 2026. Its replacement, designated simply ISO 14068 and titled Climate change management - Carbon neutrality, reached stage 60.60, International Standard published, on 11 September 2026, following formal approval voting that closed on 7 August 2026.",
           "key_points": [
-            "Re-checked on 14 September 2026: the catalogue record still shows stage 60.00 reached on 7 August 2026 and the 60.60 'International Standard published' line is undated, so the standard has not published.",
-            "ISO's catalogue gives the publication date only as 2026-09, a month with no day, and the ISO/TC 207/SC 7 committee catalogue table separately shows the item as 'ISO 14068:2026' at stage 60.60; the individual catalogue record and ISO's own project feed are the more conservative and are taken as the record here.",
+            "ISO's catalogue record for ISO 14068:2026 shows stage 60.60, International Standard published, on 2026-09-11 (edition 1).",
             "The new edition drops the part number, replacing ISO 14068-1:2023 with a single ISO 14068.",
             "Applies to both organisations and products, and prioritises emissions reductions and removal enhancements within the value chain over offsetting.",
             "Explicitly excludes territories and UNFCCC national reporting.",
-            "Any carbon neutral claim currently made against ISO 14068-1:2023 will need re-basing to the new edition once it publishes."
+            "Any carbon neutral claim currently made against ISO 14068-1:2023 will need re-basing to the new edition."
           ],
           "confidence": {
-            "level": "high",
-            "reasoning": "Stage 60.00 with a September 2026 target is taken from the ISO catalogue record and was re-confirmed on 14 September 2026, but a standard at 'under publication' has not published yet and ISO target dates routinely move. ISO's committee catalogue table and the individual catalogue record disagree on the stage, so the more conservative individual record is used."
+            "level": "confirmed",
+            "reasoning": "The ISO catalogue record for ISO 14068:2026 shows the standard as published at stage 60.60 on 11 September 2026, which resolves the earlier conflict between the committee table and the individual record."
           },
           "next_milestone": {
-            "date": "2026-09",
-            "label": "Publication of ISO 14068 (Climate change management - Carbon neutrality)",
+            "date": null,
+            "label": "Re-basing of existing carbon neutral claims from ISO 14068-1:2023 to ISO 14068 (no date published)",
             "projected": true
           },
           "stat": {
-            "value": "2026-09",
-            "label": "Target publication date for ISO 14068"
+            "value": "2026-09-11",
+            "label": "Publication date of ISO 14068"
           },
-          "so_what": "If you or any supplier makes a carbon neutral claim under ISO 14068-1:2023, plan a re-basing exercise for the new ISO 14068 landing around September 2026.",
-          "last_verified": "2026-09-14",
+          "so_what": "If you or any supplier makes a carbon neutral claim under ISO 14068-1:2023, start a re-basing exercise against the new ISO 14068 now.",
+          "last_verified": "2026-10-05",
           "sources": [
+            {
+              "title": "ISO 14068:2026 - Climate change management - Carbon neutrality",
+              "url": "https://www.iso.org/standard/14068",
+              "publisher": "ISO",
+              "date": "2026-09-11"
+            },
             {
               "title": "ISO 14068 - Climate change management - Carbon neutrality",
               "url": "https://www.iso.org/standard/94470.html",
@@ -780,7 +785,7 @@
             }
           ],
           "effort": 40,
-          "effort_note": "Any carbon neutral claim made under ISO 14068-1:2023, including supplier claims you rely on, needs re-basing against the replacement standard landing in September 2026.",
+          "effort_note": "Any carbon neutral claim made under ISO 14068-1:2023, including supplier claims you rely on, needs re-basing against the newly published ISO 14068.",
           "short_label": "ISO 14068 Neutrality"
         },
         {
@@ -989,8 +994,8 @@
             "reasoning": "Dates are stated consistently in SBTi's V2.0 landing page, the 'Continuing Use of V1.3.1' transition note and the 'what comes next' blog of 11 June 2026."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "Renewal Policy published, defining early adoption of V2.0 innovations",
+            "date": null,
+            "label": "Renewal Policy published, defining early adoption of V2.0 innovations (expected Q4 2026 per SBTi; no date published)",
             "projected": true
           },
           "stat": {
@@ -998,7 +1003,7 @@
             "label": "last date to submit targets under V1.3.1"
           },
           "so_what": "Fix your submission version now: if your renewal falls in 2026 or 2027, submit under V1.3.1 and budget for a full V2.0 rebuild at the following cycle.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-05",
           "sources": [
             {
               "title": "Continuing Use of Corporate Net-Zero Standard Version 1.3.1 and Transition to Version 2.0",
@@ -1101,8 +1106,8 @@
             "reasoning": "Every point is set out in the published V2.0 Main Changes Document and the V2.0 Criteria document."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "Interpretation guidance and preliminary interim accounting and reporting guidance",
+            "date": null,
+            "label": "Interpretation guidance and preliminary interim accounting and reporting guidance (preliminary interim guidance expected Q4 2026 per SBTi; no date published)",
             "projected": true
           },
           "stat": {
@@ -1110,7 +1115,7 @@
             "label": "significance threshold for a scope 3 category to require a target"
           },
           "so_what": "Re-run your scope 3 screening against the 5% significance test now, because categories that fell outside your V1 coverage percentage may become mandatory under V2.0.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-05",
           "sources": [
             {
               "title": "Main Changes Document: Corporate Net-Zero Standard V2.0",
@@ -1261,8 +1266,8 @@
             "reasoning": "Requirements including the 2035 Category A removals obligation are stated in the published Main Changes Document and reflected in the V2.0 Criteria chapter on ongoing emissions responsibility."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "Initial Interoperability and Recognition Framework for the OER programme",
+            "date": null,
+            "label": "Initial Interoperability and Recognition Framework for the OER programme (OER recognition process expected Q4 2026 per SBTi; no date published)",
             "projected": true
           },
           "stat": {
@@ -1270,7 +1275,7 @@
             "label": "year mandatory removals begin for Category A companies"
           },
           "so_what": "Start scoping durable removals procurement and its budget line now - a 2035 obligation needs contracting and supplier diligence well before then.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-05",
           "sources": [
             {
               "title": "Main Changes Document: Corporate Net-Zero Standard V2.0",
@@ -2013,25 +2018,25 @@
         },
         {
           "id": "issb-human-capital",
-          "name": "Human Capital",
+          "name": "Workforce-related Disclosures (formerly Human Capital)",
           "phase": "scoping",
-          "status_label": "Research project; ISSB discussed a staff proposal at its 24 September 2026 meeting to continue research and rename the project; Board decision not yet published",
-          "summary": "Human Capital is one of the two research projects the ISSB launched in April 2024 under its 2024-2026 work plan, covering workforce size and composition, compensation, engagement, turnover, training and development, and workplace health and safety. The ISSB analysed the initial research phase in October 2025 and received a project update on 10 December 2025 focused on the necessity and feasibility of standard-setting, but has taken no decisions. The work plan lists the next milestone as 'Decide Project Direction' with no date attached. Human Capital is one of only two items on the agenda for the ISSB's meeting in Montreal on 24 September 2026.",
+          "status_label": "Research project renamed Workforce-related Disclosures by unanimous ISSB vote on 24 September 2026; project direction not yet decided",
+          "summary": "Workforce-related Disclosures, formerly Human Capital, is one of the two research projects the ISSB launched in April 2024, covering risks and opportunities tied to the direct workforce and value chain workers. At its 24 September 2026 meeting the ISSB voted unanimously, with all 12 members agreeing, to rename the project and received a research update but made no decisions on focus areas. The work plan lists the next milestone as 'Decide Project Direction' with no date attached.",
           "key_points": [
+            "On 24 September 2026 the ISSB voted unanimously (12 members) to rename the project from Human Capital to Workforce-related Disclosures.",
+            "The Board received a research update but did not decide on specific focus areas; the work plan next milestone is 'Decide Project Direction' with no date published.",
             "Still formally a research project; no Discussion Paper or Exposure Draft has been published or announced.",
-            "At the ISSB's 24 September 2026 meeting in Montreal, the staff agenda paper recommended further targeted research in five areas and proposed renaming the project from Human Capital to Workforce-related Disclosures rather than moving to standard-setting; this is a staff recommendation, and the IFRS Foundation has not yet published the Board's actual decision.",
-            "The ISSB received a project update on 10 December 2025 on 'the necessity and feasibility of standard-setting' and made no decisions.",
-            "The next work-plan milestone is 'Decide Project Direction'; the IFRS Foundation has not published a date for it.",
-            "The IFRS Sustainability Reference Group discussed the project in June 2026.",
-            "A parallel SASB Standards project on Human Capital (and one on Diversity, Equity & Inclusion) sits in the SASB projects list, so some human-capital content may arrive through SASB rather than a new Standard."
+            "Topics under research may include workforce size, composition, compensation, engagement, turnover, training, working conditions, and health and safety, but the ISSB has not decided which proceed to standard-setting.",
+            "The work plan names the Sustainability Standards Advisory Forum in October 2026 as the next meeting, with no date given.",
+            "A parallel SASB Standards project on Human Capital sits in the SASB projects list, so some content may arrive through SASB rather than a new Standard."
           ],
           "confidence": {
             "level": "medium",
-            "reasoning": "The ISSB discussed a staff proposal on 24 September 2026 to continue research under a new name rather than move to standard-setting, but the Board's decision has not been published, so both the project's direction and its timing remain genuinely open."
+            "reasoning": "The rename is a recorded Board decision on the official project page, but the project direction and timing remain genuinely open because no decision on focus areas or on moving to standard-setting has been published."
           },
           "next_milestone": {
             "date": null,
-            "label": "ISSB Board decision on project direction, including the proposed rename to Workforce-related Disclosures (no date published)",
+            "label": "ISSB decision on project direction (no date published)",
             "projected": true
           },
           "stat": {
@@ -2039,19 +2044,19 @@
             "label": "human capital consultation documents published to date"
           },
           "so_what": "Do not build a human-capital reporting programme around an imminent ISSB standard; there is no draft and no dated decision point.",
-          "last_verified": "2026-09-28",
+          "last_verified": "2026-10-05",
           "sources": [
+            {
+              "title": "Workforce-related Disclosures (formerly Human Capital), project page",
+              "url": "https://www.ifrs.org/projects/work-plan/human-capital/",
+              "publisher": "IFRS Foundation",
+              "date": null
+            },
             {
               "title": "International Sustainability Standards Board, September 2026 meeting agenda and papers",
               "url": "https://www.ifrs.org/news-and-events/calendar/2026/september/international-sustainability-standards-board/",
               "publisher": "IFRS Foundation",
               "date": "2026-09-10"
-            },
-            {
-              "title": "Human Capital, project page",
-              "url": "https://www.ifrs.org/projects/work-plan/human-capital/",
-              "publisher": "IFRS Foundation",
-              "date": null
             },
             {
               "title": "ISSB to commence research projects about risks and opportunities related to nature and human capital",
@@ -3679,10 +3684,11 @@
           "id": "uk-srs",
           "name": "UK Sustainability Reporting Standards (UK SRS S1 and S2)",
           "phase": "final",
-          "status_label": "Final text published, voluntary use only",
-          "summary": "The Department for Business and Trade published the finalised UK SRS S1 and UK SRS S2 on 25 February 2026, created by assessing and endorsing the IFRS Sustainability Disclosure Standards. The FRC confirms that reporting against UK SRS is not currently mandatory. Effective-date clauses were deliberately stripped out of the standards so that regulators and legislation set the timing instead.",
+          "status_label": "Final text published; voluntary generally, with FCA listing rules (PS26/19) applying from accounting periods starting 1 January 2027",
+          "summary": "The Department for Business and Trade published the finalised UK SRS S1 and UK SRS S2 on 25 February 2026, created by assessing and endorsing the IFRS Sustainability Disclosure Standards. The FRC confirms that reporting against UK SRS is not currently mandatory. Effective-date clauses were deliberately stripped out of the standards so that regulators and legislation set the timing instead. On 30 September 2026 the FCA published final listing rules (PS26/19) that set first application for UK-listed issuers on a comply-or-explain basis.",
           "key_points": [
             "Published 25 February 2026 by DBT; available for voluntary use by any entity, in whole or in part.",
+            "FCA PS26/19, published 30 September 2026, sets comply-or-explain reporting against UK SRS for in-scope listed issuers for accounting periods starting on or after 1 January 2027.",
             "Effective dates were removed from the standards themselves. Implementation dates come from FCA rules or future legislation, not the standards.",
             "The transitional relief allowing sustainability information to be published later than the financial statements was removed, pushing towards integrated reporting.",
             "The 'climate-first' relief (delaying non-climate sustainability reporting) was kept but with no fixed time limit, so voluntary users can use it indefinitely and regulators can set their own window.",
@@ -3694,17 +3700,23 @@
             "reasoning": "Final standard PDFs and the government response are published on gov.uk and the FRC states plainly that UK SRS reporting is not currently mandatory."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "FCA policy statement expected to set the first mandatory application of UK SRS",
-            "projected": true
+            "date": "2027-01-01",
+            "label": "FCA UK SRS listing rules begin to apply to accounting periods starting on or after this date",
+            "projected": false
           },
           "stat": {
             "value": "Voluntary",
             "label": "Legal status of UK SRS today"
           },
-          "so_what": "Treat UK SRS as a dry run now and build the S2 data model this year so the FCA's 1 January 2027 start date is a formality, not a scramble.",
-          "last_verified": "2026-08-31",
+          "so_what": "If you are UK-listed, build the UK SRS S2 data model this year so first reporting in 2028 is a formality, not a scramble.",
+          "last_verified": "2026-10-05",
           "sources": [
+            {
+              "title": "PS26/19: Aligning listed issuers' sustainability disclosures with international standards",
+              "url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards",
+              "publisher": "Financial Conduct Authority",
+              "date": "2026-09-30"
+            },
             {
               "title": "UK Sustainability Reporting Standards: UK SRS S1 and UK SRS S2",
               "url": "https://www.gov.uk/government/publications/uk-sustainability-reporting-standards-uk-srs-s1-and-uk-srs-s2",
@@ -3736,35 +3748,47 @@
         },
         {
           "id": "uk-fca-listing",
-          "name": "FCA listing rules: CP26/5 on listed issuers' sustainability disclosures",
-          "phase": "consultation",
-          "status_label": "Consultation closed 20 March 2026; policy statement due autumn 2026",
-          "summary": "CP26/5 proposes replacing the FCA's existing TCFD-aligned listing rules with requirements based on UK SRS, in force from 1 January 2027 for accounting periods beginning on or after that date. UK SRS S2 would be mandatory except Scope 3; Scope 3 and UK SRS S1 would sit on a comply-or-explain footing with transitional reliefs. The FCA aims to publish final rules in autumn 2026.",
+          "name": "FCA listing rules: PS26/19 on listed issuers' sustainability disclosures",
+          "phase": "final",
+          "status_label": "Final rules published 30 September 2026 (PS26/19); apply to accounting periods starting on or after 1 January 2027",
+          "summary": "On 30 September 2026 the FCA published Policy Statement PS26/19, confirming final rules that replace its TCFD-aligned listing rules with a comply-or-explain requirement to report against UK SRS. The rules apply to accounting periods starting on or after 1 January 2027, so first reports land in 2028. Compared with the January 2026 proposal (CP26/5), the final rules extend comply-or-explain to all UK SRS disclosures rather than making UK SRS S2 climate reporting mandatory.",
           "key_points": [
-            "Rules would come into force 1 January 2027 and apply to accounting periods beginning on or after that date, so first annual reports land in 2028.",
-            "UK SRS S2 mandatory (climate), except Scope 3 GHG emissions which are comply-or-explain with an optional one-year deferral.",
-            "UK SRS S1 (wider sustainability) is comply-or-explain, with an optional two-year deferral for non-climate matters.",
-            "Issuers must say whether and where they have published a climate transition plan, or explain why they have not, and there is no proposed duty to have one.",
-            "No mandatory assurance, but issuers must state whether third-party assurance was obtained and, if so, name the provider, scope and standard used.",
-            "Scope covers UKLR 6 commercial companies, UKLR 14 secondary listings, UKLR 15 depositary receipts, UKLR 16 non-equity/non-voting shares and UKLR 22 transition category.",
-            "For periods beginning before 1 January 2027, issuers stay on the existing TCFD rules or may adopt UK SRS early."
+            "Final rules published 30 September 2026 as PS26/19; they apply to accounting periods starting on or after 1 January 2027, with first reporting in 2028.",
+            "A single comply-or-explain approach applies across the UK SRS framework. The consultation proposal had made UK SRS S2 (climate) mandatory, so this is a softening for issuers.",
+            "Transitional relief: one year for Scope 3 emissions disclosures and two years for wider sustainability disclosures under UK SRS S1.",
+            "The rules replace the existing TCFD-aligned listing rules (UKLR 6.6.6R(8) and LR 14.3.27R).",
+            "Issuers must say whether they have published a climate transition plan, or explain why not.",
+            "In scope: commercial companies, transition category, non-equity and non-voting equity shares, secondary listings and depositary receipts. Investment funds, shell companies and debt securities stay out.",
+            "The FCA lists a technical note consultation with a feedback deadline of 28 October 2026 and an explanatory webinar on 19 October 2026."
           ],
           "confidence": {
-            "level": "high",
-            "reasoning": "CP26/5 is published and closed, but the proposals are not yet rules, and the policy statement is still outstanding as at 25 August 2026."
+            "level": "confirmed",
+            "reasoning": "Final rules and policy statement PS26/19 are published on fca.org.uk, which is a final published text under the confidence rules; the separate technical note consultation does not change the rules themselves."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "FCA policy statement and final rules",
-            "projected": true
+            "date": "2026-10-28",
+            "label": "Feedback deadline on the FCA technical note consultation",
+            "projected": false
           },
           "stat": {
             "value": "1 Jan 2027",
-            "label": "Proposed start of accounting periods in scope"
+            "label": "Start of accounting periods in scope"
           },
-          "so_what": "If you are UK-listed, assume a 2027 financial year on UK SRS S2 and start closing the Scope 3 and scenario-analysis gaps now rather than relying on the deferral.",
-          "last_verified": "2026-08-31",
+          "so_what": "If you are UK-listed, plan UK SRS reporting for your 2027 financial year and choose any Scope 3 or S1 relief deliberately, because comply-or-explain still requires a published explanation.",
+          "last_verified": "2026-10-05",
           "sources": [
+            {
+              "title": "PS26/19: Aligning listed issuers' sustainability disclosures with international standards",
+              "url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards",
+              "publisher": "Financial Conduct Authority",
+              "date": "2026-09-30"
+            },
+            {
+              "title": "Policy Statement PS26/19 (PDF)",
+              "url": "https://www.fca.org.uk/publication/policy/ps26-19.pdf",
+              "publisher": "Financial Conduct Authority",
+              "date": "2026-09-30"
+            },
             {
               "title": "CP26/5: Aligning listed issuers' sustainability disclosures with international standards",
               "url": "https://www.fca.org.uk/publications/consultation-papers/cp26-5-sustainability-disclosures",
@@ -3779,8 +3803,8 @@
             }
           ],
           "effort": 68,
-          "effort_note": "Listed issuers move from TCFD comply-or-explain to mandatory UK SRS S2 for FY2027, which requires scenario analysis and a Scope 3 inventory many issuers have never assured.",
-          "short_label": "FCA CP26/5"
+          "effort_note": "Listed issuers move from TCFD comply-or-explain to comply-or-explain against UK SRS from FY2027, which still means building a UK SRS S2 data model including scenario analysis and a Scope 3 inventory, though with one- and two-year reliefs.",
+          "short_label": "FCA PS26/19"
         },
         {
           "id": "uk-tcfd-listing-rules",
@@ -4426,6 +4450,45 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-09-30",
+      "framework": "uk",
+      "workstream": "uk-fca-listing",
+      "headline": "FCA publishes final UK SRS listing rules (PS26/19): comply-or-explain for all disclosures from accounting periods starting 1 January 2027",
+      "detail": "The FCA published Policy Statement PS26/19 on 30 September 2026, replacing its TCFD-aligned listing rules with a requirement for in-scope listed issuers to report against UK SRS on a comply-or-explain basis. The rules apply to accounting periods starting on or after 1 January 2027, with first reporting in 2028. Unlike the January 2026 proposal, which would have made UK SRS S2 climate reporting mandatory, the final rules apply comply-or-explain across all UK SRS components. Transitional relief runs for one year for Scope 3 emissions and two years for wider UK SRS S1 disclosures.",
+      "so_what": "Plan UK SRS reporting for your 2027 financial year and document now which reliefs you will use and what you would say in an explanation.",
+      "significance": "high",
+      "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards",
+      "source_title": "PS26/19: Aligning listed issuers' sustainability disclosures with international standards",
+      "source_publisher": "Financial Conduct Authority",
+      "last_verified": "2026-10-05"
+    },
+    {
+      "date": "2026-09-24",
+      "framework": "issb",
+      "workstream": "issb-human-capital",
+      "headline": "ISSB votes unanimously to rename Human Capital as Workforce-related Disclosures; no decision yet on project direction",
+      "detail": "The IFRS Foundation's project page records that at its 24 September 2026 meeting the ISSB voted unanimously, with all 12 members agreeing, to rename the project from Human Capital to Workforce-related Disclosures. The Board received an update on the research but did not decide on specific focus areas. The work plan lists 'Decide Project Direction' as the next milestone with no date, so the direction of the project is still open.",
+      "so_what": "Use the new project name when tracking this work, and do not build a programme around an ISSB workforce standard until a direction decision is published.",
+      "significance": "low",
+      "source_url": "https://www.ifrs.org/projects/work-plan/human-capital/",
+      "source_title": "Workforce-related Disclosures (formerly Human Capital), project page",
+      "source_publisher": "IFRS Foundation",
+      "last_verified": "2026-10-05"
+    },
+    {
+      "date": "2026-09-11",
+      "framework": "iso",
+      "workstream": "iso-14068",
+      "headline": "ISO publishes ISO 14068:2026, the single-part carbon neutrality standard replacing ISO 14068-1:2023",
+      "detail": "ISO's catalogue shows ISO 14068:2026, Climate change management - Carbon neutrality, at stage 60.60 (International Standard published) on 11 September 2026, after formal approval voting closed on 7 August 2026. It is edition 1 and replaces ISO 14068-1:2023, which moved to stage 90.92 on 8 May 2026. This tracker's 14 September check had read the record as still under publication.",
+      "so_what": "Re-base any carbon neutral claim, including supplier claims you rely on, from ISO 14068-1:2023 to the new ISO 14068.",
+      "significance": "medium",
+      "source_url": "https://www.iso.org/standard/14068",
+      "source_title": "ISO 14068:2026 - Climate change management - Carbon neutrality",
+      "source_publisher": "ISO",
+      "last_verified": "2026-10-05"
+    },
     {
       "date": "2026-09-24",
       "framework": "issb",
@@ -6808,6 +6871,15 @@
   ],
   "changes": [
     {
+      "topic": "UK listed issuer sustainability reporting",
+      "old": "CP26/5 (January 2026) proposed mandatory UK SRS S2 climate reporting with comply-or-explain for Scope 3 and S1.",
+      "new": "PS26/19 (30 September 2026) applies comply-or-explain across all UK SRS disclosures, with one-year Scope 3 and two-year S1 reliefs, from accounting periods starting on or after 1 January 2027.",
+      "status": "final",
+      "framework": "uk",
+      "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards",
+      "source_title": "PS26/19: Aligning listed issuers' sustainability disclosures with international standards"
+    },
+    {
       "topic": "Structure of the corporate accounting rulebook",
       "old": "Separate GHG Protocol Corporate Standard (2004), Scope 2 Guidance (2015) and Scope 3 Standard (2011), plus a separate ISO 14064-1:2018.",
       "new": "One co-branded GHGP-ISO consolidated corporate standard in two parts: Part 1 general requirements and physical GHG inventory, Part 2 actions and market instruments.",
@@ -6873,10 +6945,10 @@
     {
       "topic": "Carbon neutrality standard",
       "old": "ISO 14068-1:2023, Climate change management - Transition to net zero - Part 1: Carbon neutrality.",
-      "new": "ISO 14068, Climate change management - Carbon neutrality, single part, at stage 60.00 under publication with a September 2026 target date; ISO 14068-1:2023 moved to stage 90.92 on 8 May 2026.",
+      "new": "ISO 14068, Climate change management - Carbon neutrality, single part, published 11 September 2026 (stage 60.60); ISO 14068-1:2023 moved to stage 90.92 on 8 May 2026.",
       "status": "final",
       "framework": "iso",
-      "source_url": "https://www.iso.org/standard/94470.html",
+      "source_url": "https://www.iso.org/standard/14068",
       "source_title": "ISO 14068 - Climate change management - Carbon neutrality"
     },
     {
@@ -8611,12 +8683,12 @@
       "source_url": "https://www.iso.org/news/2026/06/standard-for-net-zero-alignment"
     },
     {
-      "date": "2026-09",
+      "date": "2026-09-11",
       "framework": "iso",
-      "label": "Target publication of ISO 14068 (carbon neutrality)",
+      "label": "ISO 14068 (carbon neutrality) published",
       "kind": "update",
-      "state": "upcoming",
-      "source_url": "https://www.iso.org/standard/94470.html"
+      "state": "completed",
+      "source_url": "https://www.iso.org/standard/14068"
     },
     {
       "date": "2026-09-01",
@@ -8715,12 +8787,12 @@
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/06/sue-lloyd-nature-related-disclosure-ifrs-conference/"
     },
     {
-      "date": "2026-10",
+      "date": "2026-09-30",
       "framework": "uk",
-      "label": "FCA policy statement and final UK SRS listing rules expected",
+      "label": "FCA publishes PS26/19 final UK SRS listing rules",
       "kind": "update",
-      "state": "projected",
-      "source_url": "https://www.fca.org.uk/publications/consultation-papers/cp26-5-sustainability-disclosures"
+      "state": "completed",
+      "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards"
     },
     {
       "date": "2026-10-08",
@@ -8901,10 +8973,10 @@
     {
       "date": "2027-01-01",
       "framework": "uk",
-      "label": "Proposed commencement of FCA UK SRS rules for listed issuers",
+      "label": "FCA UK SRS listing rules apply to accounting periods starting on or after this date",
       "kind": "deadline",
-      "state": "projected",
-      "source_url": "https://www.fca.org.uk/publication/consultation/cp26-5.pdf"
+      "state": "upcoming",
+      "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards"
     },
     {
       "date": "2027-01-01",
@@ -9137,6 +9209,14 @@
       "kind": "deadline",
       "state": "projected",
       "source_url": "https://files.sciencebasedtargets.org/production/files/Corporate-Net-Zero-Standard-V2-Main-Changes-Document.pdf"
+    },
+    {
+      "date": "2026-10-28",
+      "framework": "uk",
+      "label": "Feedback deadline on FCA technical note consultation linked to PS26/19",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards"
     }
   ],
   "scope_tests": [
@@ -9562,9 +9642,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-09-29",
+    "last_updated": "2026-10-05",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-09-21",
+    "coverage_window_end": "2026-10-05",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
@@ -9748,14 +9828,14 @@
     },
     {
       "id": "uk-fca-listing",
-      "label": "FCA CP26/5",
+      "label": "FCA PS26/19",
       "framework": "uk",
-      "x": 62,
+      "x": 92,
       "y": 68,
-      "conf": "high",
-      "note": "Listed issuers move from TCFD comply-or-explain to mandatory UK SRS S2 for FY2027, which requires scenario analysis and a Scope 3 inventory many issuers have never assured.",
-      "why": "CP26/5 is published and closed, but the proposals are not yet rules, and the policy statement is still outstanding as at 25 August 2026.",
-      "phase": "consultation"
+      "conf": "confirmed",
+      "note": "Listed issuers move from TCFD comply-or-explain to comply-or-explain against UK SRS from FY2027, which still means building a UK SRS S2 data model including scenario analysis and a Scope 3 inventory, though with one- and two-year reliefs.",
+      "why": "Final rules and policy statement PS26/19 are published on fca.org.uk, which is a final published text under the confidence rules; the separate technical note consultation does not change the rules themselves.",
+      "phase": "final"
     },
     {
       "id": "uk-transition-plans",
