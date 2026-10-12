@@ -469,6 +469,7 @@
           "key_points": [
             "The Independent Standards Board approves final standards and its votes are published, which makes it the point where proposals actually live or die - as it did when it declined the Marginal Impact Method in July 2025.",
             "Tim Mohin became GHG Protocol's first CEO on 1 June 2026, describing the programme as a once-in-a-generation restructuring of how the world accounts for carbon.",
+            "Suzanne Greene was named Vice-Chair of the Independent Standards Board, working with ISB Chair Alex Bassen (GHG Protocol September update, 5 October 2026).",
             "ISB recruitment round opened 8 July 2026 and closed 8 August 2026, targeting civil society, academia and under-represented regions.",
             "Final approval of the consolidated standard requires concurrent ISB ratification and a two-thirds majority of permanent members of ISO/TC 207/SC 7 - a genuinely new double-lock.",
             "A Standard Development and Governance Repository publishes Technical Working Group meeting records.",
@@ -488,8 +489,14 @@
             "label": "ISO/TC 207/SC 7 majority needed alongside ISB ratification to publish the consolidated standard"
           },
           "so_what": "Watch Independent Standards Board vote outcomes rather than consultation drafts - the ISB is where proposals such as the Marginal Impact Method have actually been killed.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-12",
           "sources": [
+            {
+              "title": "GHG Protocol Pulse: September Update",
+              "url": "https://ghgprotocol.org/blog/ghg-protocol-pulse-september-update",
+              "publisher": "GHG Protocol",
+              "date": "2026-10-05"
+            },
             {
               "title": "RELEASE: Greenhouse Gas Protocol Appoints Tim Mohin as CEO, Marking New Phase in Global Standards Evolution",
               "url": "https://ghgprotocol.org/blog/release-greenhouse-gas-protocol-appoints-tim-mohin-ceo-marking-new-phase-global-standards",
@@ -792,10 +799,10 @@
           "id": "iso-14060-netzero",
           "name": "ISO 14060 (Net zero aligned organizations)",
           "phase": "consultation",
-          "status_label": "DIS ballot launched 17 June 2026 for 12 weeks; ISO has published no closing date and the record still shows stage 40.20",
-          "summary": "ISO/DIS 14060, Net zero aligned organizations, is described by ISO as the world's first international independently verifiable standard for credible and comprehensive net zero transition plans. ISO launched a 12-week public consultation on 17 June 2026 through national standards bodies. It replaces IWA 42:2022, the non-normative ISO Net Zero Guidelines.",
+          "status_label": "DIS ballot closed 10 September 2026 (stage 40.60); no date published for the next stage",
+          "summary": "ISO/DIS 14060, Net zero aligned organizations, is described by ISO as the world's first international independently verifiable standard for credible and comprehensive net zero transition plans. ISO launched a 12-week public consultation on 17 June 2026 through national standards bodies, and its catalogue record now shows the ballot closed on 10 September 2026. It replaces IWA 42:2022, the non-normative ISO Net Zero Guidelines.",
           "key_points": [
-            "As at 14 September 2026 the catalogue record still shows stage 40.20, DIS ballot initiated, reached on 17 June 2026, and the 40.60 'close of voting' line carries no date, so there is no published closing date.",
+            "As at 12 October 2026 the catalogue record shows stage 40.60, close of voting, with a ballot closing date of 10 September 2026; no date is published for the next stage.",
             "Comments must be routed through a national standards body (BSI in the UK), not submitted directly to ISO.",
             "Turns the voluntary IWA 42:2022 net zero guidelines into an independently verifiable standard covering net zero strategy, targets and delivery against them, aligned to the Paris Agreement.",
             "Stage history: project approved 27 May 2024, working draft study 6 September 2024, CD approved for DIS registration 24 March 2026, DIS registered 21 April 2026, DIS ballot initiated 17 June 2026 (stage 40.20).",
@@ -804,19 +811,19 @@
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The DIS stage, ballot launch date and 12-week duration are confirmed on ISO's own catalogue record and news release and were re-checked on 14 September 2026, but ISO gives the closing date only as 'early September 2026' and has recorded no close-of-voting date, so the close cannot be dated."
+            "reasoning": "The DIS stage, ballot launch and the 10 September 2026 ballot close are confirmed on ISO's own catalogue record, but the ballot outcome, any resulting changes and the next stage are not published, so the standard is not final and no later date can be given."
           },
           "next_milestone": {
             "date": null,
-            "label": "Close of the ISO/DIS 14060 enquiry ballot (no date published)",
+            "label": "Next stage after the DIS ballot, such as a final draft or publication (no date published)",
             "projected": true
           },
           "stat": {
-            "value": "12 weeks",
-            "label": "Length of the ISO/DIS 14060 public consultation from 17 June 2026"
+            "value": "10 Sep 2026",
+            "label": "ISO/DIS 14060 enquiry ballot closing date per ISO's catalogue"
           },
-          "so_what": "Get any comments on ISO/DIS 14060 to your national standards body without delay, because ISO's stated ballot window has effectively run and this will become the verifiable benchmark for net zero transition plans.",
-          "last_verified": "2026-09-14",
+          "so_what": "Treat the comment window as closed and watch ISO's record for the next stage, because the ballot outcome and timing are not yet public.",
+          "last_verified": "2026-10-12",
           "sources": [
             {
               "title": "ISO launches public consultation on the world's first International Standard for net zero alignment today",
@@ -1411,12 +1418,13 @@
           "id": "sbti-finz",
           "name": "Financial Institutions Net-Zero Standard (FINZ)",
           "phase": "implementation",
-          "status_label": "V1.0 published July 2025; FI Near-Term Criteria usable until at least July 2027",
-          "summary": "FINZ Version 1.0 was published in July 2025 and covers banks, asset owners and managers, private equity and insurers across lending, investment, insurance and capital markets activity. It requires timelines for ceasing new financial activity to the fossil fuel industry and portfolio deforestation assessment.",
+          "status_label": "V1.0 published July 2025; FINZ and FI Near-Term Criteria both available with no end date (8 October 2026)",
+          "summary": "FINZ Version 1.0 was published in July 2025 and covers banks, asset owners and managers, private equity and insurers across lending, investment, insurance and capital markets activity. It requires timelines for ceasing new financial activity to the fossil fuel industry and portfolio deforestation assessment. On 8 October 2026 the SBTi said FINZ and the Financial Institutions Near-Term Criteria will both be available without a specific end date.",
           "key_points": [
+            "SBTi announced on 8 October 2026 that FINZ and the FI Near-Term Criteria will both be available without a specific end date. The announcement names no new deadlines.",
             "FINZ Version 1.0 published July 2025 (announced 22 July 2025) after Technical Council approval and Board of Trustees adoption.",
             "Requires clear steps and timelines for ceasing new financial activities and insurance services to the fossil fuel industry, and net-zero by 2050 at the latest.",
-            "Financial institutions may choose between the FI Near-Term Criteria and FINZ until at least the end of July 2027.",
+            "Financial institutions may choose between the FI Near-Term Criteria and FINZ; since 8 October 2026 both are available without a specific end date, replacing the earlier \"until at least July 2027\" position.",
             "Targets validated under the FI Near-Term Criteria cannot be transferred to FINZ - FIs with existing near-term targets must update them to FINZ to have net-zero targets validated.",
             "FIs with near-term-only commitments that requested a finance commitment extension have until 31 July 2027 to submit targets for assessment.",
             "Portfolio alignment with net-zero for customers is offered as an alternative to financed emissions reduction pathways.",
@@ -1424,7 +1432,7 @@
           ],
           "confidence": {
             "level": "confirmed",
-            "reasoning": "Version, date and the July 2027 dual-route deadline are stated on SBTi's financial institutions page and in the published FINZ standard."
+            "reasoning": "Version, publication date and the open-ended availability of both routes are stated on SBTi's news page and financial institutions page. The 31 July 2027 extended-commitment deadline comes from earlier SBTi material and is not repeated on the current financial institutions page, so it is kept as previously sourced and flagged for re-check."
           },
           "next_milestone": {
             "date": "2027-07-31",
@@ -1435,9 +1443,15 @@
             "value": "~135",
             "label": "financial institutions committed under FINZ at launch"
           },
-          "so_what": "UK banks and asset managers should confirm whether their existing near-term targets need a full FINZ resubmission, since they cannot simply be carried across.",
-          "last_verified": "2026-08-31",
+          "so_what": "Financial institutions with near-term targets can keep using the Near-Term Criteria, but should still plan a FINZ resubmission if they want net-zero validation, since targets cannot be carried across.",
+          "last_verified": "2026-10-12",
           "sources": [
+            {
+              "title": "Financial Institutions Near-Term Criteria to continue without end date",
+              "url": "https://sciencebasedtargets.org/news/financial-institutions-near-term-criteria-to-continue-without-end-date",
+              "publisher": "SBTi",
+              "date": "2026-10-08"
+            },
             {
               "title": "Financial Institutions",
               "url": "https://sciencebasedtargets.org/financial-institutions",
@@ -1954,33 +1968,40 @@
         {
           "id": "issb-nature",
           "name": "Nature-related Disclosures (proposed IFRS Practice Statement)",
-          "phase": "drafting",
-          "status_label": "Exposure Draft balloting under way; publication targeted October 2026",
-          "summary": "The ISSB's Biodiversity, Ecosystems and Ecosystem Services research project moved into standard-setting on 10 December 2025 and was renamed Nature-related Disclosures in February 2026. In April 2026 the ISSB decided the output should be an IFRS Practice Statement that supplements IFRS S1 and IFRS S2 rather than a new Standard, drawing on the TNFD framework. On 21 July 2026 all 12 ISSB members confirmed due process was met and agreed a 120-day comment period; publication of the Exposure Draft is targeted for October 2026.",
+          "phase": "consultation",
+          "status_label": "Exposure Draft published 6 October 2026; comments close 19 February 2027",
+          "summary": "The ISSB's Nature-related Disclosures project moved into standard-setting on 10 December 2025. In April 2026 the ISSB decided the output should be an IFRS Practice Statement that supplements IFRS S1 and IFRS S2 rather than a new Standard, drawing on the TNFD framework. On 21 July 2026 all 12 ISSB members confirmed due process was met and agreed a 120-day comment period. The IFRS Foundation announced the Exposure Draft on 6 October 2026, with comments closing on 19 February 2027.",
           "key_points": [
             "Form of output: an IFRS Practice Statement, agreed 12-0 in April 2026, a tool companies may choose to use, unless a jurisdiction requires it. It does not amend IFRS S1 or IFRS S2.",
             "The ISSB has been explicit that nature disclosure is not new: Chair Emmanuel Faber said 'Providing material nature-related disclosures is not optional; IFRS S1 already requires that.'",
-            "Balloting permission granted 21 July 2026, all 12 members, no dissents; 120-day comment period agreed; Exposure Draft targeted October 2026, so comments would close around February 2027.",
+            "Exposure Draft announced 6 October 2026 after balloting permission was granted on 21 July 2026 (all 12 members, no dissents); the 120-day comment period closes on 19 February 2027.",
+            "The ISSB holds a launch webinar on 22 October 2026 at 16:00 CEST. No date is published for the final Practice Statement.",
             "Content decided so far: 'environmental resources' replaces 'environmental assets'; defined nature-related transition and physical risks; entities may reference TNFD metrics where these meet IFRS S1 objectives; the TNFD LEAP approach is referenced in guidance but is optional.",
             "First application: available from the issuance date, no comparative information required in the first year, and a full compliance statement only when all requirements are met.",
             "Scenario analysis: no new requirement to disclose use of scenario analysis for nature-related risks, but an incremental requirement for opportunities and a tentative requirement to use nature-related scenario analysis for resilience assessment."
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The Practice Statement form, 120-day comment period and October 2026 target are formal ISSB decisions recorded in ISSB Updates, but the Exposure Draft itself has not yet been published."
+            "reasoning": "The Exposure Draft is published and its comment deadline is stated by the IFRS Foundation, but it is a proposal in live consultation and the final Practice Statement text and timing are not yet decided; no date for the final Practice Statement is published."
           },
           "next_milestone": {
-            "date": "2026-10",
-            "label": "Publication of the Exposure Draft of the proposed nature-related disclosures Practice Statement",
-            "projected": true
+            "date": "2027-02-19",
+            "label": "Close of the 120-day comment period on the nature-related disclosures Exposure Draft",
+            "projected": false
           },
           "stat": {
-            "value": "120 days",
-            "label": "agreed comment period for the nature Exposure Draft"
+            "value": "19 Feb 2027",
+            "label": "comment deadline for the nature-related disclosures Exposure Draft"
           },
-          "so_what": "Map your existing TNFD or nature-related work against IFRS S1 now, because the Practice Statement builds on requirements IFRS S1 already imposes rather than creating them.",
-          "last_verified": "2026-08-31",
+          "so_what": "Map your existing TNFD or nature-related work against the Exposure Draft now, and decide whether to respond before 19 February 2027.",
+          "last_verified": "2026-10-12",
           "sources": [
+            {
+              "title": "Live from COP17: ISSB nature-related disclosures consultation",
+              "url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/",
+              "publisher": "IFRS Foundation",
+              "date": "2026-10-06"
+            },
             {
               "title": "Nature-related Disclosures, project page",
               "url": "https://www.ifrs.org/projects/work-plan/biodiversity-ecosystems-and-ecosystem-services/",
@@ -2749,7 +2770,7 @@
           "key_points": [
             "Applies to third-country undertakings with net turnover in the Union exceeding EUR 450 000 000 in each of the last two consecutive financial years AND either an EU branch with net turnover above EUR 200 000 000 or an EU subsidiary meeting that threshold.",
             "First sustainability statements are expected in 2029 covering financial year 2028, so this is the live workstream for non-EU groups.",
-            "EFRAG opened a separate cost-benefit analysis survey on 11 September 2026, closing 11 October 2026, asking in-scope non-EU companies to estimate the costs and benefits of the proposed requirements; the resulting report will be published with EFRAG's advice to the Commission.",
+            "EFRAG opened a separate cost-benefit analysis survey on 11 September 2026 and on 9 October 2026 extended its deadline to 18 October 2026, asking in-scope non-EU companies to estimate the costs and benefits of the proposed requirements; the resulting report will be published with EFRAG's advice to the Commission.",
             "EFRAG is running jurisdiction-specific outreach sessions through September 2026 with national standard setters in Mexico, Korea, the United States, New Zealand, Japan, Canada and the United Kingdom, with more to be announced; they supplement the consultation survey rather than extend it.",
             "Consultation runs 23 July to 31 October 2026 (100 days); EFRAG technical advice is due to the Commission in early 2027.",
             "This is the route by which a UK, US or other non-EU parent is captured even when no single EU subsidiary meets the CSRD 1,000-employee test.",
@@ -2760,8 +2781,8 @@
             "reasoning": "Consultation dates and thresholds are taken from EFRAG's own project page, but the standard is only an exposure draft and the Commission has not adopted any delegated act, so the final content can still change."
           },
           "next_milestone": {
-            "date": "2026-10-11",
-            "label": "Close of EFRAG's cost-benefit analysis survey on ESRS-40a",
+            "date": "2026-10-18",
+            "label": "Close of EFRAG's extended cost-benefit analysis survey on ESRS-40a",
             "projected": false
           },
           "stat": {
@@ -2769,8 +2790,14 @@
             "label": "First reporting year for third-country undertakings under Article 40a"
           },
           "so_what": "If your non-EU parent clears EUR 450m of EU turnover, respond to the ESRS-40a consultation before 31 October 2026 and start scoping an FY2028 group-level EU sustainability statement.",
-          "last_verified": "2026-09-14",
+          "last_verified": "2026-10-12",
           "sources": [
+            {
+              "title": "EFRAG Extends Deadline for Cost-Benefit Analysis Survey on ESRS-40a to 18 October 2026",
+              "url": "https://www.efrag.org/en/news-and-calendar/news/efrag-extends-deadline-for-costbenefit-analysis-survey-on-esrs40a-to-18-october-2026",
+              "publisher": "EFRAG",
+              "date": "2026-10-09"
+            },
             {
               "title": "European Sustainability Standards for Third-Country Undertakings (ESRS-40a)",
               "url": "https://www.efrag.org/en/projects/noneu-groups-standard-setting/research-phase",
@@ -4451,6 +4478,58 @@
   ],
   "updates": [
     {
+      "date": "2026-10-09",
+      "framework": "eu",
+      "workstream": "eu-nesrs",
+      "headline": "EFRAG extends the ESRS-40a cost-benefit survey deadline to 18 October 2026",
+      "detail": "EFRAG announced on 9 October 2026 that non-EU companies within ESRS-40a scope can now respond to its cost-benefit analysis survey until 18 October 2026. The survey collects estimates of the costs and benefits of the requirements in the ESRS-40a Exposure Draft and feeds EFRAG's cost-benefit analysis. The extension is to allow broader participation. The separate public consultation on the Exposure Draft is unchanged and still closes on 31 October 2026.",
+      "so_what": "Submit your cost and benefit estimates to EFRAG by 18 October 2026 if your group may fall within Article 40a.",
+      "significance": "medium",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-extends-deadline-for-costbenefit-analysis-survey-on-esrs40a-to-18-october-2026",
+      "source_title": "EFRAG Extends Deadline for Cost-Benefit Analysis Survey on ESRS-40a to 18 October 2026",
+      "source_publisher": "EFRAG",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "date": "2026-10-08",
+      "framework": "sbti",
+      "workstream": "sbti-finz",
+      "headline": "SBTi lets financial institutions keep setting near-term targets with no end date",
+      "detail": "On 8 October 2026 the SBTi announced that both the Financial Institutions Net-Zero Standard (FINZ) and the Financial Institutions Near-Term Criteria will be available to financial institutions without a specific end date. It says this responds to company feedback and mirrors Corporate Net-Zero Standard V2.0, which also allows near-term-only targets. The same release updates FAQs, an implementation list and target-setting methods, and clarifies timelines for the Mandatory Five-Year Review, which the SBTi says does not necessarily require a company to update its targets. The target-setting tool temporarily pauses technology share targets for the power sector and automotive emissions intensity targets until the relevant sector standards are finalised.",
+      "so_what": "Stop planning around a July 2027 cut-off for near-term financial institution targets, and decide on a near-term or net-zero route on its merits.",
+      "significance": "high",
+      "source_url": "https://sciencebasedtargets.org/news/financial-institutions-near-term-criteria-to-continue-without-end-date",
+      "source_title": "Financial Institutions Near-Term Criteria to continue without end date",
+      "source_publisher": "Science Based Targets initiative",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "date": "2026-10-06",
+      "framework": "issb",
+      "workstream": "issb-nature",
+      "headline": "ISSB publishes its nature-related disclosures Exposure Draft for a 120-day consultation closing 19 February 2027",
+      "detail": "The IFRS Foundation announced on 6 October 2026 an Exposure Draft proposing an IFRS Practice Statement on nature-related disclosures, intended to help companies apply IFRS S1 to nature-related risks and opportunities. The consultation is 120 days long and closes on 19 February 2027. The proposals draw on the work of the Taskforce on Nature-related Financial Disclosures (TNFD) and aim to support proportionate implementation. The ISSB will hold a launch webinar on 22 October 2026 at 16:00 CEST.",
+      "so_what": "Compare your TNFD or other nature-related disclosures against the Exposure Draft and decide whether to respond before 19 February 2027.",
+      "significance": "high",
+      "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/",
+      "source_title": "Live from COP17: ISSB nature-related disclosures consultation",
+      "source_publisher": "IFRS Foundation",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "date": "2026-10-05",
+      "framework": "ghgp",
+      "workstream": "ghgp-governance",
+      "headline": "GHG Protocol names Suzanne Greene Vice-Chair of its Independent Standards Board",
+      "detail": "GHG Protocol's September update, posted on 5 October 2026, reports that Suzanne Greene has been named Vice-Chair of the Independent Standards Board (ISB), working with ISB Chair Alex Bassen. The same update restates that a draft consolidated Corporate Standard is slated for public consultation in the second quarter of 2027. It also repeats that no forest carbon accounting approach has been selected.",
+      "so_what": "Note the new ISB leadership, and keep the consolidated Corporate Standard consultation in your plan for the second quarter of 2027.",
+      "significance": "low",
+      "source_url": "https://ghgprotocol.org/blog/ghg-protocol-pulse-september-update",
+      "source_title": "GHG Protocol Pulse: September Update",
+      "source_publisher": "GHG Protocol",
+      "last_verified": "2026-10-12"
+    },
+    {
       "date": "2026-09-30",
       "framework": "uk",
       "workstream": "uk-fca-listing",
@@ -4618,6 +4697,19 @@
       "source_title": "EFRAG Calls for Public Input on Cost-Benefit Analysis for the Exposure Draft ESRS for Certain Non-EU Undertakings (ESRS-40a)",
       "source_publisher": "EFRAG",
       "last_verified": "2026-09-14"
+    },
+    {
+      "date": "2026-09-10",
+      "framework": "iso",
+      "workstream": "iso-14060-netzero",
+      "headline": "ISO records 10 September 2026 as the close of the ISO/DIS 14060 net zero enquiry ballot",
+      "detail": "ISO's catalogue record for ISO/DIS 14060, Net zero aligned organizations, now shows the stage as 40.60, close of voting, with a ballot closing date of 10 September 2026. The ballot opened on 17 June 2026 for 12 weeks. ISO has published no date for the next stage, so the timing of any final draft or publication is not known.",
+      "so_what": "Treat the comment window as closed and watch the ISO record for the next stage, as no date has been published.",
+      "significance": "medium",
+      "source_url": "https://www.iso.org/standard/14060",
+      "source_title": "ISO/DIS 14060 - Net zero aligned organizations",
+      "source_publisher": "International Organization for Standardization",
+      "last_verified": "2026-10-12"
     },
     {
       "date": "2026-09-10",
@@ -7679,6 +7771,24 @@
       "framework": "us",
       "source_url": "https://www.nysenate.gov/legislation/bills/2025/S9072/amendment/A",
       "source_title": "NY State Senate Bill 2025-S9072A"
+    },
+    {
+      "topic": "SBTi Financial Institutions Near-Term Criteria availability",
+      "old": "FI Near-Term Criteria usable until at least July 2027, with the SBTi to consider their future in 2027.",
+      "new": "FINZ and the FI Near-Term Criteria both available to financial institutions without a specific end date (8 October 2026).",
+      "status": "final",
+      "framework": "sbti",
+      "source_url": "https://sciencebasedtargets.org/news/financial-institutions-near-term-criteria-to-continue-without-end-date",
+      "source_title": "Financial Institutions Near-Term Criteria to continue without end date"
+    },
+    {
+      "topic": "Nature-related disclosures Practice Statement",
+      "old": "Practice Statement form and 120-day comment period agreed by the ISSB; Exposure Draft targeted for October 2026.",
+      "new": "Exposure Draft published 6 October 2026, proposing an IFRS Practice Statement; comments close 19 February 2027.",
+      "status": "proposed",
+      "framework": "issb",
+      "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/",
+      "source_title": "Live from COP17: ISSB nature-related disclosures consultation"
     }
   ],
   "timeline_milestones": [
@@ -8675,12 +8785,12 @@
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/08/trustees-announce-five-year-plan/"
     },
     {
-      "date": "2026-09",
+      "date": "2026-09-10",
       "framework": "iso",
-      "label": "ISO/DIS 14060 enquiry ballot closes (ISO states 'early September 2026')",
+      "label": "ISO/DIS 14060 enquiry ballot closes (ISO catalogue ballot closing date)",
       "kind": "update",
-      "state": "upcoming",
-      "source_url": "https://www.iso.org/news/2026/06/standard-for-net-zero-alignment"
+      "state": "completed",
+      "source_url": "https://www.iso.org/standard/14060"
     },
     {
       "date": "2026-09-11",
@@ -8779,12 +8889,12 @@
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/07/issb-proposes-update-ifrs-sustainability-disclosure-taxonomy/"
     },
     {
-      "date": "2026-10",
+      "date": "2026-10-06",
       "framework": "issb",
-      "label": "Targeted publication of the Exposure Draft of the nature-related disclosures Practice Statement",
+      "label": "ISSB publishes the Exposure Draft of the nature-related disclosures Practice Statement",
       "kind": "update",
-      "state": "projected",
-      "source_url": "https://www.ifrs.org/news-and-events/news/2026/06/sue-lloyd-nature-related-disclosure-ifrs-conference/"
+      "state": "completed",
+      "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/"
     },
     {
       "date": "2026-09-30",
@@ -8803,12 +8913,12 @@
       "source_url": "https://sciencebasedtargets.org/news/sbti-issues-call-for-input-to-inform-revision-of-forest-land-and-agriculture-standard"
     },
     {
-      "date": "2026-10-11",
+      "date": "2026-10-18",
       "framework": "eu",
-      "label": "EFRAG's cost-benefit analysis survey on the ESRS-40a exposure draft closes",
+      "label": "EFRAG's extended cost-benefit analysis survey on the ESRS-40a exposure draft closes",
       "kind": "update",
       "state": "upcoming",
-      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-calls-for-public-input-on-costbenefit-analysis-for-the-exposure-draft-esrs-for-certain-noneu"
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-extends-deadline-for-costbenefit-analysis-survey-on-esrs40a-to-18-october-2026"
     },
     {
       "date": "2026-10-15",
@@ -9085,7 +9195,7 @@
     {
       "date": "2027-07-31",
       "framework": "sbti",
-      "label": "Deadline for extended finance commitments to submit targets; FI Near-Term Criteria route available to at least end July 2027",
+      "label": "Deadline for extended finance commitments to submit targets (FI Near-Term Criteria now have no end date)",
       "kind": "deadline",
       "state": "upcoming",
       "source_url": "https://sciencebasedtargets.org/financial-institutions"
@@ -9217,6 +9327,22 @@
       "kind": "update",
       "state": "upcoming",
       "source_url": "https://www.fca.org.uk/publications/policy-statements/ps26-19-aligning-listed-issuers-sustainability-disclosures-international-standards"
+    },
+    {
+      "date": "2026-10-22",
+      "framework": "issb",
+      "label": "ISSB launch webinar on the nature-related disclosures Exposure Draft",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/"
+    },
+    {
+      "date": "2027-02-19",
+      "framework": "issb",
+      "label": "Comment deadline on the nature-related disclosures Exposure Draft",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/"
     }
   ],
   "scope_tests": [
@@ -9642,9 +9768,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-10-05",
+    "last_updated": "2026-10-12",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-10-05",
+    "coverage_window_end": "2026-10-12",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
@@ -9680,7 +9806,7 @@
       "y": 30,
       "conf": "high",
       "note": "It turns a transition plan into something independently verifiable, so the work is comment drafting now and, later, evidencing a plan you may currently publish unaudited.",
-      "why": "The DIS stage, ballot launch date and 12-week duration are confirmed on ISO's own catalogue record and news release, but ISO's news item gives the closing date only as 'early September 2026' rather than a precise date.",
+      "why": "The DIS stage, ballot launch and the 10 September 2026 ballot close are confirmed on ISO's own catalogue record, but the ballot outcome, any resulting changes and the next stage are not published, so the standard is not final and no later date can be given.",
       "phase": "consultation"
     },
     {
@@ -9720,12 +9846,12 @@
       "id": "issb-nature",
       "label": "ISSB Nature",
       "framework": "issb",
-      "x": 60,
+      "x": 62,
       "y": 35,
       "conf": "high",
       "note": "A Practice Statement supplementing S1 rather than a new standard, so existing TNFD work gets mapped across instead of a new disclosure programme being built.",
-      "why": "The Practice Statement form, 120-day comment period and October 2026 target are formal ISSB decisions recorded in ISSB Updates, but the Exposure Draft itself has not yet been published.",
-      "phase": "drafting"
+      "why": "The Exposure Draft is published and its comment deadline is stated by the IFRS Foundation, but it is a proposal in live consultation and the final Practice Statement text and timing are not yet decided; no date for the final Practice Statement is published.",
+      "phase": "consultation"
     },
     {
       "id": "eu-csrd",
