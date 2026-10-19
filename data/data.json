@@ -71,9 +71,10 @@
           "id": "ghgp-scope2",
           "name": "Scope 2 Guidance revision",
           "phase": "drafting",
-          "status_label": "Consultation closed 31 Jan 2026; proposals being reworked inside the consolidated standard",
+          "status_label": "Consultation closed 31 Jan 2026; two-method direction proposed, date to move to Method 1 not published",
           "summary": "A public consultation on revised Scope 2 accounting ran from 20 October 2025 to 31 January 2026 and drew close to 1,100 responses from 56 countries. The headline proposals were an hourly and geographic matching requirement for market-based claims and a new emission factor hierarchy for the location-based method. GHG Protocol reported on 29 July 2026 that responses diverged sharply on renewable energy accounting and that the technical team is now exploring multiple reporting approaches rather than finalising the consulted text.",
           "key_points": [
+            "On 16 October 2026 GHG Protocol reported the ISB's proposed direction: two market-based methods (Method 1 with hourly matching, deliverability and incrementality; Method 2 on the 2015 requirements), with the date after which Method 1 is required still to be decided (no date published).",
             "The Independent Standards Board approved the location-based and market-based revisions for consultation on 14 July 2025 by 10 votes to 1 on each.",
             "Consulted market-based proposals included hourly matching (required only for voluntary claims), deliverability/geographic matching, permission to approximate hourly data from load profiles, exemptions for smaller organisations, legacy clauses for long-term contracts, and a multi-year phase-in.",
             "Consultation attracted close to 1,100 responses from 56 countries, with broad support for improving accuracy, comparability and integrity but no consensus on renewable energy accounting.",
@@ -82,7 +83,7 @@
           ],
           "confidence": {
             "level": "high",
-            "reasoning": "The consultation, its content, its response volume and its absorption into the consolidated standard are all documented on official GHG Protocol pages, but the substantive outcome is genuinely unresolved because GHG Protocol itself says multiple reporting approaches are still being explored."
+            "reasoning": "The consultation, its content, its response volume and its absorption into the consolidated standard are all documented on official GHG Protocol pages, but the substantive outcome is genuinely unresolved because GHG Protocol itself says multiple reporting approaches are still being explored. As of 16 October 2026 the ISB direction is still to be refined by the technical working group and the cut-over date is undecided."
           },
           "next_milestone": {
             "date": "2027-04",
@@ -94,7 +95,7 @@
             "label": "Consultation responses received, from 56 countries"
           },
           "so_what": "Keep hourly-matched procurement optionality open in any PPA or REGO/GO contract signed now, because hourly and geographic matching remains a live proposal even though it did not survive consultation unchanged.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-19",
           "sources": [
             {
               "title": "Scope 2 Standard Advances: ISB Approves Consultation on Market- and Location-Based Revisions; Signals Cross-Sectoral Work Ahead on Avoided Emissions",
@@ -314,6 +315,7 @@
           "summary": "Alongside the LSR Guidance on 30 June 2026, GHG Protocol opened a Request for Information on forest carbon accounting. It invites proposals that are both scientifically robust and practically implementable, reflecting that forest carbon was the least settled area of the LSR work. It is the only GHG Protocol consultation currently open.",
           "key_points": [
             "Open now and closes 1 February 2027 - the only GHG Protocol consultation window currently available to reporters.",
+            "On 2 October 2026 GHG Protocol confirmed that its ISB approved neither preliminary proposal (Managed Land Proxy Plus or Activity-Based Accounting) and that no forest carbon accounting approach has been selected.",
             "Seeks workable proposals on forest carbon accounting from academic and practitioner communities rather than consulting on drafted text.",
             "GHG Protocol advises that in the meantime organisations disclosing forest carbon should be transparent about the methodology they use.",
             "Preview questions are published as a PDF ahead of the survey form, so responses can be prepared internally before submission."
@@ -332,7 +334,7 @@
             "label": "RFI closing date"
           },
           "so_what": "If forest carbon sits anywhere in your value chain or your removals portfolio, submit to this RFI before 1 February 2027 - it is the only open door into the programme right now.",
-          "last_verified": "2026-08-31",
+          "last_verified": "2026-10-19",
           "sources": [
             {
               "title": "GHG Protocol Public Consultations",
@@ -2547,7 +2549,8 @@
             "The eight ESRS 1 reliefs available for FY2026 cover the top down approach to double materiality (para 27), undue cost and effort and value chain limitation (paras 32 to 33), acquisitions and disposals (paras 74 to 75), metrics for non-significant activities (para 90), partial value chain reporting scope (para 91), joint operations (para 92), Taxonomy disclosures in a separate appendix (para 106) and the executive summary (para 110).",
             "The Commission reports mandatory datapoints down more than 60%, total datapoints down more than 70%, and expected cost reduction of more than 30% per company against a 25% target.",
             "The Commission departed from EFRAG's technical advice on thirteen named areas, including materiality and materiality assessment, fair presentation, greenhouse gas emissions, climate transition plans and coherence with the due diligence directive.",
-            "Annexes I and II of Delegated Regulation (EU) 2023/2772 are replaced in full."
+            "Annexes I and II of Delegated Regulation (EU) 2023/2772 are replaced in full.",
+            "EFRAG opened a consultation on its 2027-2029 sustainability reporting agenda on 16 October 2026; feedback is due by 15 February 2027 and the workplan is expected in Q2 2027 (no more precise date published)."
           ],
           "confidence": {
             "level": "confirmed",
@@ -2563,7 +2566,7 @@
             "label": "Reduction in total ESRS datapoints per the Commission"
           },
           "so_what": "Rebuild your ESRS datapoint inventory against the revised standards before your FY2027 cycle, and decide which of the three FY2026 options you are taking.",
-          "last_verified": "2026-09-21",
+          "last_verified": "2026-10-19",
           "sources": [
             {
               "title": "Commission Delegated Regulation (EU) 2026/1563 of 3 July 2026 amending Delegated Regulation (EU) 2023/2772 as regards the simplification of certain sustainability reporting standards",
@@ -2781,8 +2784,8 @@
             "reasoning": "Consultation dates and thresholds are taken from EFRAG's own project page, but the standard is only an exposure draft and the Commission has not adopted any delegated act, so the final content can still change."
           },
           "next_milestone": {
-            "date": "2026-10-18",
-            "label": "Close of EFRAG's extended cost-benefit analysis survey on ESRS-40a",
+            "date": "2026-10-31",
+            "label": "ESRS-40a public consultation closes",
             "projected": false
           },
           "stat": {
@@ -2790,7 +2793,7 @@
             "label": "First reporting year for third-country undertakings under Article 40a"
           },
           "so_what": "If your non-EU parent clears EUR 450m of EU turnover, respond to the ESRS-40a consultation before 31 October 2026 and start scoping an FY2028 group-level EU sustainability statement.",
-          "last_verified": "2026-10-12",
+          "last_verified": "2026-10-19",
           "sources": [
             {
               "title": "EFRAG Extends Deadline for Cost-Benefit Analysis Survey on ESRS-40a to 18 October 2026",
@@ -4477,6 +4480,45 @@
     }
   ],
   "updates": [
+    {
+      "date": "2026-10-16",
+      "framework": "ghgp",
+      "workstream": "ghgp-scope2",
+      "headline": "GHG Protocol sets out the Scope 2 market-based direction: two methods, with the end of the older one still undated",
+      "detail": "GHG Protocol reported on 16 October 2026 that its Independent Standards Board (ISB) reviewed three implementation options at its September 2026 meeting. The ISB's proposed direction is two market-based methods: Method 1 adds hourly matching, deliverability and incrementality, and Method 2 keeps the 2015 requirements. Companies may use Method 2 until a date that has not yet been decided, and must use Method 1 after that date if quality data is available. The technical working group will refine the direction at an in-person workshop in October 2026, before the revised text goes to the ISB for a consolidated public consultation slated for Q2 2027.",
+      "so_what": "Keep contracts and data collection able to support both annual and hourly matching, because the cut-over date between the two methods has not been published.",
+      "significance": "high",
+      "source_url": "https://ghgprotocol.org/blog/scope-2-market-based-method-update-2025-2026-public-consultation-current-status",
+      "source_title": "Scope 2 Market-based Method Update: From 2025-2026 Public Consultation to Current Status",
+      "source_publisher": "GHG Protocol",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "date": "2026-10-02",
+      "framework": "ghgp",
+      "workstream": "ghgp-forest-carbon",
+      "headline": "GHG Protocol says no forest carbon accounting approach has been selected",
+      "detail": "GHG Protocol published a progress note on 2 October 2026 on forest carbon accounting. Its technical working group developed two preliminary proposals, Managed Land Proxy Plus and Activity-Based Accounting, and the ISB approved neither, concluding that more methodological development, testing and stakeholder input are needed. An independent third-party review found no material breach of the Terms of Reference or due process. The Request for Information remains open until 1 February 2027 and will inform how the ISB and Steering Committee proceed.",
+      "so_what": "Disclose the forest carbon methodology you use and respond to the Request for Information by 1 February 2027, because no approach has been endorsed.",
+      "significance": "medium",
+      "source_url": "https://ghgprotocol.org/blog/forest-carbon-accounting-where-process-stands-and-what-comes-next",
+      "source_title": "Forest Carbon Accounting: Where the Process Stands and What Comes Next",
+      "source_publisher": "GHG Protocol",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "date": "2026-10-16",
+      "framework": "eu",
+      "workstream": "eu-esrs",
+      "headline": "EFRAG opens a public consultation on its 2027-2029 sustainability reporting agenda",
+      "detail": "EFRAG launched a public consultation on 16 October 2026 on its sustainability reporting agenda for 2027 to 2029. It asks for views on strategic direction, the features of future implementation support, stakeholder needs and priority research topics. Feedback is due by 15 February 2027. EFRAG says it will discuss the feedback in Q1 and Q2 2027 and expects to issue the workplan in Q2 2027 after approval by its Sustainability Reporting Board, with no more precise date published.",
+      "so_what": "Respond by 15 February 2027 if you want to shape the implementation support and guidance EFRAG prioritises for the revised ESRS.",
+      "significance": "low",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-launches-public-consultation-on-its-sustainability-reporting-agenda-for-20272029",
+      "source_title": "EFRAG Launches Public Consultation on Its Sustainability Reporting Agenda for 2027-2029",
+      "source_publisher": "EFRAG",
+      "last_verified": "2026-10-19"
+    },
     {
       "date": "2026-10-09",
       "framework": "eu",
@@ -8917,7 +8959,7 @@
       "framework": "eu",
       "label": "EFRAG's extended cost-benefit analysis survey on the ESRS-40a exposure draft closes",
       "kind": "update",
-      "state": "upcoming",
+      "state": "completed",
       "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-extends-deadline-for-costbenefit-analysis-survey-on-esrs40a-to-18-october-2026"
     },
     {
@@ -9343,6 +9385,14 @@
       "kind": "update",
       "state": "upcoming",
       "source_url": "https://www.ifrs.org/news-and-events/news/2026/10/cop17-issb-nature-related-disclosures-consultation/"
+    },
+    {
+      "date": "2027-02-15",
+      "framework": "eu",
+      "label": "EFRAG 2027-2029 sustainability reporting agenda consultation closes",
+      "kind": "update",
+      "state": "upcoming",
+      "source_url": "https://www.efrag.org/en/news-and-calendar/news/efrag-launches-public-consultation-on-its-sustainability-reporting-agenda-for-20272029"
     }
   ],
   "scope_tests": [
@@ -9768,9 +9818,9 @@
   },
   "meta": {
     "title": "EcoLedger Standards Tracker",
-    "last_updated": "2026-10-12",
+    "last_updated": "2026-10-19",
     "coverage_window_start": "2024-04-01",
-    "coverage_window_end": "2026-10-12",
+    "coverage_window_end": "2026-10-19",
     "update_cadence": "Weekly (Mondays)",
     "sourcing_policy": "Every entry is verified against, and links to, the standard-setter or regulator’s own publication. No third-party trackers, consultancy notes or news reports are used as sources of record.",
     "disclaimer": "Indicative guide, not legal, accounting or assurance advice. Confirm your obligations against the primary sources linked on every entry before relying on them."
